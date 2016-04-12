@@ -47,14 +47,9 @@
 
 
 
-\section{Introduction}
-As a consequence of Einstein's Theory of General Relativity, it has been postulated that information about the spatial distribution of matter in the universe is transmitted via a gravitational field. From a theoretical standpoint, gravitational waves are manifested in the form of detectable ripples within the fabric of space and time, by changes in gravitational field and as a function of the movement of masses.
+\section{Introduction (Curtis Rau will be doing this)}
 
-Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) confirmed the discovery of gravitational waves. Neutron stars have been implicated as one of the prime sources of gravitational waves. These stars are expected to emit single frequency waves over very long periods of time. Additionally, it has also been proposed that an appreciable fraction of detectable gravitational waves are binary neutron star systems --- two neutron starts orbiting around each other.
-
-A fundamental challenge to efficient detection of gravitational waves is that orbiting binary neutron star systems invoke phase modulations which reduce the power of the carrier frequency and distributes it to higher and lower harmonics. In essence, the power of the signal is dispersed over a range of frequencies. Since the noise observed in the LIGO data is approximately Gaussian and of low signal-to-noise ratio, the extraction of reliable information about gravitational waves is arduous and in some cases meta-data can be tenuous.  
-
-The goal of this paper is to design an algorithm that extracts the ABC, DEF and GHI by BLAH BLAH BLAH:
+Just last week the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are neurton stars.  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.  It would be nice to have an algorithm that does the following:
 
 \begin{equation}
 G e^{i\left( \omega_c t + \Gamma \cos (\Omega t + \phi ) \right)} \to G \delta (\omega_c) \delta (\Gamma ) \delta (\Omega )
@@ -156,35 +151,20 @@ The important thing to take away from this is that it takes an infinite bandwidt
 
 -Nyquist frequency and the effects that puts on our wave.  What waves can we hope to detect with this restriction?  What restriction does this put on the (gamma, Omega, and omegac)?
 
-\section{Noise: Sources and Elimination}
-\subsection{Noise Sources}
-Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
-%-The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
+\section{Noise Sources and Dealing with them (Samuel Akwei-Sekyere will be working on this section)}
+-The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
 
-%-Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
+-Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
 
-%-This means taking the fourier transform over more data will increase the signal to noise ratio.
+-This means taking the fourier transform over more data will increase the signal to noise ratio.
 
-%-Sam will provide a rigerous proof of this.
+-Sam will provide a rigerous proof of this.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.75\linewidth]{aligoNoise.png}
 	\caption{This plot shows the theoretical noise sources, and the measured noise (red) in the interferometer.}
 \end{figure}
-
-\subsection{Noise Characteristics}
-asdf
-
-\subsection{Noise Elimination}
-As mentioned before, most of the noise observed in data from LIGO is relatively Gaussian. By the same token, the proposed approach will assume the noise therein is Gaussian.
-
-Let $\xi$ be the recorded signal. Assume we have a phase-modulated signal $X$ that has been adulterated with Gaussian noise $\epsilon$, which give rise to $\xi$:
-\begin{equation}
-\xi = X + \epsilon
-\end{equation}
-
-We first decompose the signal into intrinsic mode functions by empirical mode decomposition. 
 
 \section{Possible Other Areas to Reasearch}
 1) Instead of performing a Fourier Transform on the data f(t) maybe we could expand the data in terms of some other, cleverly chosen, set of orthogonal basis functions.  Is this viable and what would be the set of functions?  Can this reduce our search to a two dimentional search instead of a three dimentional search? (Task for Fourier Analysis Class MTH 490)
