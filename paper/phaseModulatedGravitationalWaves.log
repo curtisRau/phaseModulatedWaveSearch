@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 APR 2016 17:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 APR 2016 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -936,42 +936,42 @@ Overfull \hbox (48.01111pt too wide) in paragraph at lines 439--439
 File: images/BesselBadBoundary.png Graphic file (type png)
 
 <use images/BesselBadBoundary.png>
-Package pdftex.def Info: images/BesselBadBoundary.png used on input line 514.
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 516.
 (pdftex.def)             Requested size: 225.21626pt x 141.606pt.
 
 <images/BesselGoodBoundary.png, id=50, 803.0pt x 506.89375pt>
 File: images/BesselGoodBoundary.png Graphic file (type png)
 
 <use images/BesselGoodBoundary.png>
-Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 519.
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 521.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
 
 <images/BesselJ4.png, id=51, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
 
 <use images/BesselJ4.png>
-Package pdftex.def Info: images/BesselJ4.png used on input line 550.
+Package pdftex.def Info: images/BesselJ4.png used on input line 552.
 (pdftex.def)             Requested size: 225.21626pt x 136.48413pt.
 
 <images/BesselJ40.png, id=52, 501.875pt x 300.12125pt>
 File: images/BesselJ40.png Graphic file (type png)
 
 <use images/BesselJ40.png>
-Package pdftex.def Info: images/BesselJ40.png used on input line 555.
+Package pdftex.def Info: images/BesselJ40.png used on input line 557.
 (pdftex.def)             Requested size: 225.21626pt x 134.68237pt.
 
 <images/BesselJ400.png, id=53, 501.875pt x 306.14375pt>
 File: images/BesselJ400.png Graphic file (type png)
 
 <use images/BesselJ400.png>
-Package pdftex.def Info: images/BesselJ400.png used on input line 560.
+Package pdftex.def Info: images/BesselJ400.png used on input line 562.
 (pdftex.def)             Requested size: 225.21626pt x 137.38503pt.
 
 <images/BesselJn80.png, id=54, 803.0pt x 500.87125pt>
 File: images/BesselJn80.png Graphic file (type png)
 
 <use images/BesselJn80.png>
-Package pdftex.def Info: images/BesselJn80.png used on input line 568.
+Package pdftex.def Info: images/BesselJn80.png used on input line 570.
 (pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
  [6] [7 <./images/BesselBadBoundary.png (PNG copy)> <./images/BesselGoodBoundar
 y.png (PNG copy)>] [8 <./images/BesselJ4.png (PNG copy)> <./images/BesselJ40.pn
@@ -981,21 +981,21 @@ g (PNG copy)> <./images/BesselJ400.png (PNG copy)>]
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
-Package pdftex.def Info: images/classicSignal.png used on input line 652.
+Package pdftex.def Info: images/classicSignal.png used on input line 654.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/interestingSignal.png, id=74, 488.82625pt x 290.08376pt>
 File: images/interestingSignal.png Graphic file (type png)
 
 <use images/interestingSignal.png>
-Package pdftex.def Info: images/interestingSignal.png used on input line 657.
+Package pdftex.def Info: images/interestingSignal.png used on input line 659.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/nastySignal.png, id=75, 488.82625pt x 291.0875pt>
 File: images/nastySignal.png Graphic file (type png)
 
 <use images/nastySignal.png>
-Package pdftex.def Info: images/nastySignal.png used on input line 662.
+Package pdftex.def Info: images/nastySignal.png used on input line 664.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
  (./phaseModulatedGravitationalWaves.bbl
 Overfull \vbox (21.32866pt too high) has occurred while \output is active []
@@ -1009,12 +1009,7 @@ tySignal.png>])
 
 Package natbib Warning: There were undefined citations.
 
-[11] (./phaseModulatedGravitationalWaves.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
- ) 
+[11] (./phaseModulatedGravitationalWaves.aux) ) 
 Here is how much of TeX's memory you used:
  13239 strings out of 493089
  223510 string characters out of 6134842
@@ -1023,27 +1018,28 @@ Here is how much of TeX's memory you used:
  11284 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,18n,38p,10383b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+</usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmti9.pfb>
 Output written on phaseModulatedGravitationalWaves.pdf (11 pages, 712744 bytes)
 .
 PDF statistics:
