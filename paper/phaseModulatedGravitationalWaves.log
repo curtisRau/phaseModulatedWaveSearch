@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  11 APR 2016 20:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 APR 2016 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -383,6 +383,43 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count107
+\calc@Bcount=\count108
+\calc@Adimen=\dimen111
+\calc@Bdimen=\dimen112
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count109
+\calc@Cskip=\skip51
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count110
+\l_MT_multwidth_dim=\dimen113
+\origjot=\skip52
+\l_MT_shortvdotswithinadjustabove_dim=\dimen114
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen115
+\l_MT_above_intertext_sep=\dimen116
+\l_MT_below_intertext_sep=\dimen117
+\l_MT_above_shortintertext_sep=\dimen118
+\l_MT_below_shortintertext_sep=\dimen119
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -398,10 +435,6 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks23
-)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
@@ -422,10 +455,10 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count107
+\Gread@gobject=\count111
 ))
-\Gin@req@height=\dimen111
-\Gin@req@width=\dimen112
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -441,22 +474,22 @@ Package ifvtex Info: VTeX not detected.
 (/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count108
-\Gm@cntv=\count109
-\c@Gm@tempcnt=\count110
-\Gm@bindingoffset=\dimen113
-\Gm@wd@mp=\dimen114
-\Gm@odd@mp=\dimen115
-\Gm@even@mp=\dimen116
-\Gm@layoutwidth=\dimen117
-\Gm@layoutheight=\dimen118
-\Gm@layouthoffset=\dimen119
-\Gm@layoutvoffset=\dimen120
+\Gm@cnth=\count112
+\Gm@cntv=\count113
+\c@Gm@tempcnt=\count114
+\Gm@bindingoffset=\dimen122
+\Gm@wd@mp=\dimen123
+\Gm@odd@mp=\dimen124
+\Gm@even@mp=\dimen125
+\Gm@layoutwidth=\dimen126
+\Gm@layoutheight=\dimen127
+\Gm@layouthoffset=\dimen128
+\Gm@layoutvoffset=\dimen129
 \Gm@dimlist=\toks24
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count111
+\c@float@type=\count115
 \float@exts=\toks25
 \float@box=\box43
 \@float@everytoks=\toks26
@@ -476,37 +509,37 @@ L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
 L3 Module: l3str 2015/03/01 v5545 L3 Strings
 L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
 L3 Module: l3int 2015/02/21 v5529 L3 Integers
-\c_max_int=\count112
-\l_tmpa_int=\count113
-\l_tmpb_int=\count114
-\g_tmpa_int=\count115
-\g_tmpb_int=\count116
+\c_max_int=\count116
+\l_tmpa_int=\count117
+\l_tmpb_int=\count118
+\g_tmpa_int=\count119
+\g_tmpb_int=\count120
 L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
 L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
-\g__prg_map_int=\count117
+\g__prg_map_int=\count121
 L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
 L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
 L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
 L3 Module: l3msg 2015/02/26 v5537 L3 Messages
 L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
-\l_iow_line_count_int=\count118
-\l__iow_target_count_int=\count119
-\l__iow_current_line_int=\count120
-\l__iow_current_word_int=\count121
-\l__iow_current_indentation_int=\count122
+\l_iow_line_count_int=\count122
+\l__iow_target_count_int=\count123
+\l__iow_current_line_int=\count124
+\l__iow_current_word_int=\count125
+\l__iow_current_indentation_int=\count126
 L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
-\c_zero_dim=\dimen121
-\c_max_dim=\dimen122
-\l_tmpa_dim=\dimen123
-\l_tmpb_dim=\dimen124
-\g_tmpa_dim=\dimen125
-\g_tmpb_dim=\dimen126
-\c_zero_skip=\skip49
-\c_max_skip=\skip50
-\l_tmpa_skip=\skip51
-\l_tmpb_skip=\skip52
-\g_tmpa_skip=\skip53
-\g_tmpb_skip=\skip54
+\c_zero_dim=\dimen130
+\c_max_dim=\dimen131
+\l_tmpa_dim=\dimen132
+\l_tmpb_dim=\dimen133
+\g_tmpa_dim=\dimen134
+\g_tmpb_dim=\dimen135
+\c_zero_skip=\skip53
+\c_max_skip=\skip54
+\l_tmpa_skip=\skip55
+\l_tmpb_skip=\skip56
+\g_tmpa_skip=\skip57
+\g_tmpb_skip=\skip58
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
@@ -514,18 +547,18 @@ L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
 L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
-\g__keyval_level_int=\count123
-\l_keys_choice_int=\count124
+\g__keyval_level_int=\count127
+\l_keys_choice_int=\count128
 L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
-\c__fp_leading_shift_int=\count125
-\c__fp_middle_shift_int=\count126
-\c__fp_trailing_shift_int=\count127
-\c__fp_big_leading_shift_int=\count128
-\c__fp_big_middle_shift_int=\count129
-\c__fp_big_trailing_shift_int=\count130
-\c__fp_Bigg_leading_shift_int=\count131
-\c__fp_Bigg_middle_shift_int=\count132
-\c__fp_Bigg_trailing_shift_int=\count133
+\c__fp_leading_shift_int=\count129
+\c__fp_middle_shift_int=\count130
+\c__fp_trailing_shift_int=\count131
+\c__fp_big_leading_shift_int=\count132
+\c__fp_big_middle_shift_int=\count133
+\c__fp_big_trailing_shift_int=\count134
+\c__fp_Bigg_leading_shift_int=\count135
+\c__fp_Bigg_middle_shift_int=\count136
+\c__fp_Bigg_trailing_shift_int=\count137
 L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
 \c_empty_box=\box45
 \l_tmpa_box=\box46
@@ -534,13 +567,13 @@ L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
 \g_tmpb_box=\box49
 L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_internal_box=\box50
-\l__coffin_internal_dim=\dimen127
-\l__coffin_offset_x_dim=\dimen128
-\l__coffin_offset_y_dim=\dimen129
-\l__coffin_x_dim=\dimen130
-\l__coffin_y_dim=\dimen131
-\l__coffin_x_prime_dim=\dimen132
-\l__coffin_y_prime_dim=\dimen133
+\l__coffin_internal_dim=\dimen136
+\l__coffin_offset_x_dim=\dimen137
+\l__coffin_offset_y_dim=\dimen138
+\l__coffin_x_dim=\dimen139
+\l__coffin_y_dim=\dimen140
+\l__coffin_x_prime_dim=\dimen141
+\l__coffin_y_prime_dim=\dimen142
 \c_empty_coffin=\box51
 \l__coffin_aligned_coffin=\box52
 \l__coffin_aligned_internal_coffin=\box53
@@ -549,34 +582,34 @@ L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_display_coffin=\box56
 \l__coffin_display_coord_coffin=\box57
 \l__coffin_display_pole_coffin=\box58
-\l__coffin_display_offset_dim=\dimen134
-\l__coffin_display_x_dim=\dimen135
-\l__coffin_display_y_dim=\dimen136
+\l__coffin_display_offset_dim=\dimen143
+\l__coffin_display_x_dim=\dimen144
+\l__coffin_display_y_dim=\dimen145
 L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
 L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
-\l__box_top_dim=\dimen137
-\l__box_bottom_dim=\dimen138
-\l__box_left_dim=\dimen139
-\l__box_right_dim=\dimen140
-\l__box_top_new_dim=\dimen141
-\l__box_bottom_new_dim=\dimen142
-\l__box_left_new_dim=\dimen143
-\l__box_right_new_dim=\dimen144
+\l__box_top_dim=\dimen146
+\l__box_bottom_dim=\dimen147
+\l__box_left_dim=\dimen148
+\l__box_right_dim=\dimen149
+\l__box_top_new_dim=\dimen150
+\l__box_bottom_new_dim=\dimen151
+\l__box_left_new_dim=\dimen152
+\l__box_right_new_dim=\dimen153
 \l__box_internal_box=\box59
-\l__coffin_bounding_shift_dim=\dimen145
-\l__coffin_left_corner_dim=\dimen146
-\l__coffin_right_corner_dim=\dimen147
-\l__coffin_bottom_corner_dim=\dimen148
-\l__coffin_top_corner_dim=\dimen149
-\l__coffin_scaled_total_height_dim=\dimen150
-\l__coffin_scaled_width_dim=\dimen151
+\l__coffin_bounding_shift_dim=\dimen154
+\l__coffin_left_corner_dim=\dimen155
+\l__coffin_right_corner_dim=\dimen156
+\l__coffin_bottom_corner_dim=\dimen157
+\l__coffin_top_corner_dim=\dimen158
+\l__coffin_scaled_total_height_dim=\dimen159
+\l__coffin_scaled_width_dim=\dimen160
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
 File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count134
+\l__driver_color_stack_int=\count138
 ))
 Package: breqn 2012/05/10 v0.98b Breaking equations
 
@@ -619,80 +652,67 @@ LaTeX Info: Redefining \scriptstyle on input line 86.
 LaTeX Info: Redefining \scriptscriptstyle on input line 88.
 LaTeX Info: Redefining \genfrac on input line 122.
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count135
-\calc@Bcount=\count136
-\calc@Adimen=\dimen152
-\calc@Bdimen=\dimen153
-\calc@Askip=\skip55
-\calc@Bskip=\skip56
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count137
-\calc@Cskip=\skip57
-)
-\inf@bad=\count138
-\maxint=\count139
-\listwidth=\dimen154
-\eqnumsep=\dimen155
-\eqmargin=\dimen156
-\eqlinespacing=\skip58
-\eqlineskip=\skip59
-\eqlineskiplimit=\dimen157
+\inf@bad=\count139
+\maxint=\count140
+\listwidth=\dimen161
+\eqnumsep=\dimen162
+\eqmargin=\dimen163
+\eqlinespacing=\skip59
+\eqlineskip=\skip60
+\eqlineskiplimit=\dimen164
 \eqbinoffset=\muskip18
 \eqdelimoffset=\muskip19
-\eqindentstep=\dimen158
+\eqindentstep=\dimen165
 \eqstyle=\toks27
-\eqbreakdepth=\count140
-\eqinterlinepenalty=\count141
-\intereqpenalty=\count142
-\intereqskip=\skip60
-\prerelpenalty=\count143
-\prebinoppenalty=\count144
+\eqbreakdepth=\count141
+\eqinterlinepenalty=\count142
+\intereqpenalty=\count143
+\intereqskip=\skip61
+\prerelpenalty=\count144
+\prebinoppenalty=\count145
 \Dmedmuskip=\muskip20
 \Dthickmuskip=\muskip21
-\eqleftskip=\skip61
-\eqrightskip=\skip62
-\eq@vspan=\skip63
+\eqleftskip=\skip62
+\eqrightskip=\skip63
+\eq@vspan=\skip64
 \eq@binoffset=\muskip22
 \EQ@box=\box60
 \EQ@copy=\box61
 \EQ@numbox=\box62
-\eq@wdNum=\dimen159
+\eq@wdNum=\dimen166
 \GRP@numbox=\box63
-\grp@wdNum=\dimen160
-\eq@lines=\count145
-\eq@curline=\count146
-\eq@badness=\count147
-\EQ@vims=\count148
-\eq@dp=\dimen161
-\eq@wdL=\dimen162
-\eq@wdT=\dimen163
-\eq@wdMin=\dimen164
-\grp@wdL=\dimen165
-\grp@wdR=\dimen166
-\grp@wdT=\dimen167
-\eq@wdRmax=\dimen168
-\eq@firstht=\dimen169
-\eq@wdCond=\dimen170
-\eq@indentstep=\dimen171
-\eq@linewidth=\dimen172
-\grp@linewidth=\dimen173
-\eq@hshift=\dimen174
-\eq@given@sidespace=\dimen175
-\mathindent=\dimen176
-\eq@final@linecount=\count149
-\eq@wdR=\dimen177
+\grp@wdNum=\dimen167
+\eq@lines=\count146
+\eq@curline=\count147
+\eq@badness=\count148
+\EQ@vims=\count149
+\eq@dp=\dimen168
+\eq@wdL=\dimen169
+\eq@wdT=\dimen170
+\eq@wdMin=\dimen171
+\grp@wdL=\dimen172
+\grp@wdR=\dimen173
+\grp@wdT=\dimen174
+\eq@wdRmax=\dimen175
+\eq@firstht=\dimen176
+\eq@wdCond=\dimen177
+\eq@indentstep=\dimen178
+\eq@linewidth=\dimen179
+\grp@linewidth=\dimen180
+\eq@hshift=\dimen181
+\eq@given@sidespace=\dimen182
+\mathindent=\dimen183
+\eq@final@linecount=\count150
+\eq@wdR=\dimen184
 \EQ@continue=\toks28
-\lr@level=\count150
+\lr@level=\count151
 \GRP@queue=\toks29
 \GRP@box=\box64
 \GRP@wholebox=\box65
-\darraycolsep=\skip64
-\cur@row=\count151
-\cur@col=\count152
-\conditionsep=\skip65
+\darraycolsep=\skip65
+\cur@row=\count152
+\cur@col=\count153
+\conditionsep=\skip66
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
@@ -708,13 +728,13 @@ Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen178
-\captionmargin@=\dimen179
-\captionwidth=\dimen180
-\caption@tempdima=\dimen181
-\caption@indent=\dimen182
-\caption@parindent=\dimen183
-\caption@hangindent=\dimen184
+\captionmargin=\dimen185
+\captionmargin@=\dimen186
+\captionwidth=\dimen187
+\caption@tempdima=\dimen188
+\caption@indent=\dimen189
+\caption@parindent=\dimen190
+\caption@hangindent=\dimen191
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
@@ -729,51 +749,51 @@ onskip \begingroup \small \rmfamily \sbox \@tempboxa {\let \\\heading@cr \@make
 lushing \let \footnote \@footnotemark@gobble \@make@capt@title {#1}{#2}\par \en
 dgroup }{\global \@minipagefalse \hb@xt@ \hsize {\hfil \unhbox \@tempboxa \hfil
  }}\endgroup \vskip \belowcaptionskip .
-\c@ContinuedFloat=\count153
+\c@ContinuedFloat=\count154
 Package caption Info: float package is loaded.
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count154
-\c@subtable=\count155
+\c@subfigure=\count155
+\c@subtable=\count156
 )
-Class revtex4-1 Info: Patching LaTeX tabular. on input line 30.
+Class revtex4-1 Info: Patching LaTeX tabular. on input line 31.
 
 
 Class revtex4-1 Warning: Repair the float package.
 
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 30.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 31.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 30.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 30.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 30.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 31.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 31.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 31.
 (./phaseModulatedGravitationalWaves.aux)
 \openout1 = `phaseModulatedGravitationalWaves.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count156
-\scratchdimen=\dimen185
+\scratchcounter=\count157
+\scratchdimen=\dimen192
 \scratchbox=\box66
-\nofMPsegments=\count157
-\nofMParguments=\count158
+\nofMPsegments=\count158
+\nofMParguments=\count159
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count159
-\MPscratchDim=\dimen186
-\MPnumerator=\count160
-\makeMPintoPDFobject=\count161
+\MPscratchCnt=\count160
+\MPscratchDim=\dimen193
+\MPnumerator=\count161
+\makeMPintoPDFobject=\count162
 \everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -857,107 +877,178 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \openout3 = `phaseModulatedGravitationalWavesNotes.bib'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+
+<earthMotionModulationFigure/earthMotionModulationFigure.pdf, id=1, 346.68823pt
+ x 241.17703pt>
+File: earthMotionModulationFigure/earthMotionModulationFigure.pdf Graphic file 
+(type pdf)
+
+<use earthMotionModulationFigure/earthMotionModulationFigure.pdf>
+Package pdftex.def Info: earthMotionModulationFigure/earthMotionModulationFigur
+e.pdf used on input line 71.
+(pdftex.def)             Requested size: 375.36299pt x 261.14812pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (5.40425pt too wide) in paragraph at lines 94--94
+Overfull \hbox (5.40425pt too wide) in paragraph at lines 108--108
 [] 
  []
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 180.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 180.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 180.
+[2 <./earthMotionModulationFigure/earthMotionModulationFigure.pdf>]
+Overfull \hbox (2.49825pt too wide) in paragraph at lines 214--214
+[] 
+ []
 
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 180.
+Package natbib Warning: Citation `deanna' on page 3 undefined on input line 216
+.
 
-[2] <images/aligoNoise.png, id=23, 512.91624pt x 331.2375pt>
+[3] <images/aligoNoise.png, id=40, 512.91624pt x 331.2375pt>
 File: images/aligoNoise.png Graphic file (type png)
 
 <use images/aligoNoise.png>
-Package pdftex.def Info: images/aligoNoise.png used on input line 233.
+Package pdftex.def Info: images/aligoNoise.png used on input line 282.
 (pdftex.def)             Requested size: 180.93149pt x 116.84462pt.
- [3 <./images/aligoNoise.png>] [4]
+ [4 <./images/aligoNoise.png>]
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 358.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 358.
+Package natbib Warning: Citation `deanna' on page 5 undefined on input line 319
+.
 
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 358.
+Overfull \hbox (8.63232pt too wide) in paragraph at lines 408--408
+[] 
+ []
 
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 358.
+Overfull \hbox (48.01111pt too wide) in paragraph at lines 439--439
+[] 
+ []
+
+[5] <images/BesselBadBoundary.png, id=49, 803.0pt x 504.88625pt>
+File: images/BesselBadBoundary.png Graphic file (type png)
+
+<use images/BesselBadBoundary.png>
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 514.
+(pdftex.def)             Requested size: 225.21626pt x 141.606pt.
+
+<images/BesselGoodBoundary.png, id=50, 803.0pt x 506.89375pt>
+File: images/BesselGoodBoundary.png Graphic file (type png)
+
+<use images/BesselGoodBoundary.png>
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 519.
+(pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
+
+<images/BesselJ4.png, id=51, 501.875pt x 304.13625pt>
+File: images/BesselJ4.png Graphic file (type png)
+
+<use images/BesselJ4.png>
+Package pdftex.def Info: images/BesselJ4.png used on input line 550.
+(pdftex.def)             Requested size: 225.21626pt x 136.48413pt.
+
+<images/BesselJ40.png, id=52, 501.875pt x 300.12125pt>
+File: images/BesselJ40.png Graphic file (type png)
+
+<use images/BesselJ40.png>
+Package pdftex.def Info: images/BesselJ40.png used on input line 555.
+(pdftex.def)             Requested size: 225.21626pt x 134.68237pt.
+
+<images/BesselJ400.png, id=53, 501.875pt x 306.14375pt>
+File: images/BesselJ400.png Graphic file (type png)
+
+<use images/BesselJ400.png>
+Package pdftex.def Info: images/BesselJ400.png used on input line 560.
+(pdftex.def)             Requested size: 225.21626pt x 137.38503pt.
+
+<images/BesselJn80.png, id=54, 803.0pt x 500.87125pt>
+File: images/BesselJn80.png Graphic file (type png)
+
+<use images/BesselJn80.png>
+Package pdftex.def Info: images/BesselJn80.png used on input line 568.
+(pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
+ [6] [7 <./images/BesselBadBoundary.png (PNG copy)> <./images/BesselGoodBoundar
+y.png (PNG copy)>] [8 <./images/BesselJ4.png (PNG copy)> <./images/BesselJ40.pn
+g (PNG copy)> <./images/BesselJ400.png (PNG copy)>]
+[9 <./images/BesselJn80.png (PNG copy)>]
+<images/classicSignal.png, id=73, 488.82625pt x 290.08376pt>
+File: images/classicSignal.png Graphic file (type png)
+
+<use images/classicSignal.png>
+Package pdftex.def Info: images/classicSignal.png used on input line 652.
+(pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
+
+<images/interestingSignal.png, id=74, 488.82625pt x 290.08376pt>
+File: images/interestingSignal.png Graphic file (type png)
+
+<use images/interestingSignal.png>
+Package pdftex.def Info: images/interestingSignal.png used on input line 657.
+(pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
+
+<images/nastySignal.png, id=75, 488.82625pt x 291.0875pt>
+File: images/nastySignal.png Graphic file (type png)
+
+<use images/nastySignal.png>
+Package pdftex.def Info: images/nastySignal.png used on input line 662.
+(pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
+ (./phaseModulatedGravitationalWaves.bbl
+Overfull \vbox (21.32866pt too high) has occurred while \output is active []
 
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
+Overfull \vbox (21.32866pt too high) has occurred while \output is active []
 
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
+[10 <./images/classicSignal.png> <./images/interestingSignal.png> <./images/nas
+tySignal.png>])
+
+Package natbib Warning: There were undefined citations.
+
+[11] (./phaseModulatedGravitationalWaves.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
 
 
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
-
-
-LaTeX Font Warning: Command \Huge invalid in math mode on input line 406.
-
-[5] (./phaseModulatedGravitationalWaves.bbl) [6]
-(./phaseModulatedGravitationalWaves.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 12683 strings out of 493089
- 212866 string characters out of 6134842
- 305898 words of memory out of 5000000
- 16044 multiletter control sequences out of 15000+600000
- 8468 words of font info for 32 fonts, out of 8000000 for 9000
+ 13239 strings out of 493089
+ 223510 string characters out of 6134842
+ 315249 words of memory out of 5000000
+ 16576 multiletter control sequences out of 15000+600000
+ 11284 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,15n,38p,10383b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti9.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (6 pages, 274797 bytes).
-
+ 38i,18n,38p,10383b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on phaseModulatedGravitationalWaves.pdf (11 pages, 712744 bytes)
+.
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
