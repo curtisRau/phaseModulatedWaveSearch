@@ -1,6 +1,7 @@
 \documentclass[twocolumn, groupedaddress]{revtex4-1}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}											% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI
@@ -14,7 +15,7 @@
 \usepackage[small, bf]{caption}									%Adjust caption size of figures, tables, pictures...
 \setlength{\captionmargin}{15pt}
 										
-\graphicspath{{images/}}											% folder where images are stored in current directory
+\graphicspath{{images/}{earthMotionModulationFigure/}}			% folder where images are stored in current directory
 
 
 % --------------------------- Code for placing two figure side by side ------------------------------------------------------------------
@@ -57,11 +58,24 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \section{Introduction (Curtis Rau and Colin Gordon will be doing this)}
+-- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
 
--Sources of continuous monochromatic gravitational radation are predicted to exist.
--If they do they are apparently very low intensity as viewed from earth.
+Sources of continuous coherent monochromatic (explination of coherent and monochromatic?) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}.  If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}.  One phenomena may be (significantly??) repressing the amplitude of these signals as seen from Earth.  This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of "sidebands."  (define sidebands?)  There are two reasons to believe frequency modulation is truly occuring (reword).  
+
+Recently the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are neurton stars.  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.
+
+The first cause of frequency modulation is the motion of the Earth around the sun.  There will be a cyclic doppler shift...  
+
+\begin{figure*}[t]
+	\centering
+	\includegraphics[width=.75\linewidth]{earthMotionModulationFigure.pdf}
+	\caption{\label{fig:earthMotionModulationFigure}}
+\end{figure*}
+
 -The equivalence of the two ways of looking at it.
 -The boost is in the arbitrarly chosen x direction, and the velocity is with respect to the sun's frame of rest.
+
+-- DEFINE : K, gamma, beta, w_e, w_o, phi_e, k, theta, h_0
 
 \begin{align}
 \label{eqn: new k}
@@ -102,7 +116,7 @@ So the new instentanious frequency in the earth frame is
 phase is the time integral of frequency so the expression for the wave we are looking for is the real part of 
 
 \begin{align}
-h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)}	\\
+h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)}		\\
 \omega' &= \gamma \omega_0															\\
 \Gamma  &= \frac{\gamma \beta \omega_0 \sin \theta}{\omega_e}
 \end{align}
@@ -112,88 +126,123 @@ h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)
 -this is a frequency modulated wave
 -notice that $\Gamma$ is a function of only the azmuthal angle of the source with respect to the normal of the gallactic plane.
 
-Recently the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are neurton stars.  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.  It would be nice to have an algorithm that does the following:
+
+
+\section{The Gustafson Algorithm}
+It would be nice to have an algorithm that does the following:
 
 \begin{equation}
-G e^{i\left( \omega_c t + \Gamma \cos (\Omega t + \phi ) \right)} \to G \delta (\omega_c) \delta (\Gamma ) \delta (\Omega )
+h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} \to h_0 \delta (\omega_0) \delta (\omega_1 ) \delta (\Gamma )
 \end{equation}
 
 Previous methods have utilized, where f(t) is the data.
 
 \begin{align}
-G e^{i\left( \omega_c t + \Gamma \cos (\Omega t + \phi ) \right)} &= f(t) \\
-G e^{i\omega_c t} &= f(t) e^{-i\Gamma \cos (\Omega t + \phi)}			 \\
-F_t \left[ G e^{i\omega_c t} \right] &= F_t \left[ f(t) e^{-i\Gamma \cos (\Omega t + \phi)} \right]
+h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} &= f(t) 												\\
+h_0 e^{i\phi_0} e^{i\omega_0 t} &= f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)}															\\
+h_0 e^{i\phi_0} \mathcal{F}_t \left[ e^{i\omega_0 t} \right] &= \mathcal{F}_t \left[ f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)} \right]
 \end{align}
 
-invoking the convolution theorem
+define $F_t[f(t)](\omega) = \hat{f}(\omega)$, and invoking the convolution theorem
 
 \begin{equation}
-\frac{G}{\sqrt{2\pi}} \delta (\omega_c - \omega) = F_t \left[ f(t) \right] \star F_t \left[ e^{-i\Gamma \cos (\Omega t + \phi)} \right]
+\frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega_c - \omega) = \hat{f}(\omega) \star F_t \left[ e^{-i\Gamma \cos (\Omega t + \phi)} \right]
 \end{equation}
 
-invoking the Jacobi-Anger Expansion which has the form:
+invoking the Jacobi-Anger Expansion which has the form \cite{}:
 
 \begin{equation}
-e^{iz\cos (\theta)} = J_0(z) + 2 \sum_{n=1}^{\infty} i^n J_n(z) \cos (n\theta)
+\label{eqn:jacobiAnger}
+e^{iz\cos (\theta)} = \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(z) e^{in\theta}
 \end{equation}
 
 so equation (2) becomes
 
 \begin{align}
-&\frac{G}{\sqrt{2\pi}} \delta (\omega_c - \omega) = \nonumber
-F_t \left[ f(t) \right] \\
-&\star F_t \left[ J_0(-\Gamma) + 2 \sum_{n=1}^{\infty} i^n J_n(-\Gamma) \cos (n(\Omega t + \phi)) \right]
+\frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega - \omega_0) &= 		\\ \nonumber
+\hat{f}(\omega)
+\star \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right]
 \end{align}
 
-Bessel Functions have the property 
+Bessel Functions have the properties
 
-\begin{equation}
-J_n(-z) = (-1)^n J(z)
-\end{equation}
+\begin{align}
+	J_n(-z) &= (-1)^n J_n(z)
+\end{align}
 
 so 
 
 \begin{align}
 \begin{aligned}
-F_t \left[ J_0(-\Gamma) + 2 \sum_{n=1}^{\infty} i^n J_n(-\Gamma) \cos (n(\Omega t + \phi)) \right] \\
-= F_t \left[ J_0(\Gamma) + 2 \sum_{n=1}^{\infty} e^{-in\pi/2} J_n(\Gamma) \cos (n(\Omega t + \phi)) \right] \\
-= J_0(\Gamma) F_t \left[ 1 \right] + 2 \sum_{n=1}^{\infty} e^{-in\pi/2} J_n(\Gamma) F_t \left[ \cos (n(\Omega t + \phi)) \right]
+\mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right] \\
+= \sum_{n=-\infty}^{\infty} (-1)^n e^{in\pi/2} e^{in\phi_1} J_n(\Gamma) \mathcal{F}_t \left[e^{in\omega_1 t} \right]	 \\
+= \frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma) \delta (\omega - n\omega_1)
 \end{aligned}
 \end{align}
 
 where we have used $(-1)^n i^n = (-i)^n = e^{-in\pi/2}$, and the linearity of the Fourier Transform $F_t[f+g]=F_t[f]+F_t[g]$.  The Fourier transform of this is 
 
 \begin{align}
-&F_t \left[ \cos (n(\Omega t + \phi)) \right] \nonumber
-	\\ &= \frac{1}{2\sqrt{2\pi}} \left[ e^{in\phi} \delta (\omega - n\Omega) + e^{-in\phi} \delta (\omega + n\Omega) \right]
+h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \hat{f}(\omega) \star 			\nonumber \\
+\left[ \sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma) \delta (\omega - n\omega_1) \right]
 \end{align}
 
-so equation (4) becomes
+so performing the convolution 
 
 \begin{align}
-G \delta (\omega_c - \omega) = 
-F_t \left[ f(t) \right] \star 
-\Huge{[} J_0(\Gamma) \delta (\omega) + \sum_{n=1}^{\infty} J_n(\Gamma) 		\nonumber
-	\\ \left[ e^{in(\phi - \pi/2)} \delta (\omega - n\Omega) + e^{-in(\phi + \pi/2)} \delta (\omega + n\Omega) \right]
-\Huge{]}
+\hat{f}(\omega) \star \delta (\omega - n\omega_1) 
+&= \int \hat{f}(\omega - \widetilde{\omega}) \delta(\widetilde{\omega} - n\omega_1) d\widetilde{\omega}			\\
+&= \hat{f} (\omega - n\omega_1)
 \end{align}
 
-define $F_t[f(t)](\omega) = F(\omega)$ so performing the convolution becomes
+which brings us to the almost final answer:
 
 \begin{align}
-G \delta (\omega_c - \omega) = J_0(\Gamma) F(\omega) + \sum_{n=1}^{\infty} J_n(\Gamma) 	\nonumber
-\\ \left[ e^{in(\phi - \pi/2)} F (\omega - n\Omega) + e^{-in(\phi + \pi/2)} F (\omega + n\Omega) \right]
+h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{in(\phi_1-\pi/2)} J_n(\Gamma) \hat{f} (\omega - n\omega_1)
 \end{align}
 
-This algorithm has been implemented in the past to demodulate the carrier frequency to recover the true amplitude.  
+but for later convenience let's have $n\to -n$.  We will use the other property of the Bessel Functions: \cite{}
 
-This algorithm in its current form cannot be used on real data because it assumed a complex waveform.  This assumption allowed for a clean demodulation, which is spoiled if one takes the real of this function (explain why).
+\begin{align}
+J_{-n} (z) &= (-1)^n J_n(z)
+\end{align}
+
+Which brings us to the Gustafson Algorithm (someone should check this out before we submit the paper):
+
+\begin{align}
+\Aboxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
+\end{align}
+
+This algorithm has been implemented in the past to demodulate the carrier frequency to recover the true amplitude \citep{deanna}.  
+
+This algorithm in its current form cannot be used on real data because it assumed a complex waveform.  This assumption allowed for a clean demodulation, which is spoiled if one takes the real of this function.  This is due to the nonlinearity (is this the correct term) of the real opperator as demonstrated by
+
+\begin{align}
+\Re \{  \cdot b \} \neq \Re \{ a \} \cdot \Re \{ b \}
+\end{align}
 
 We can use this algorithm as a guess as to find the form that will work with a real valued waveform.  Upon comparison of the Fourier transforms of the complex and real waveforms (see appendix A and B) we see they are very similar.  The real looks like the complex with an additional sum of mirrored terms (explain what I mean by this).
 
 What would we have to do to get the fourier transform of the real to look exactly like the fourier transform of the complex wave?  Unsurprisingly not much because they are such similar functions.  We would only have to multiply each term by some phase factor to get the real fourier transform to look like the sum of two complex fourier transforms.  After adding in the phase factors we plug the  fourier transform of the real wave into the Gustafson Algorithm which will yeald two delta functions now instead of one (because the fourier transform of the real is the sum of two complex wave fourier transforms).  One delta function will be at $+\omega_0$, this is the one of interest, and the other will be at $-\omega_0$.  (A much more rigerous explanation of this is needed.)  If we carry the search out over only positive values of $\omega_0$ then we can throw out all terms in red of the fourier transform of the real wave because they are inconsequential to the algorithm.  Finally, the phase terms that were added to the foureier transform of the real to make it look like the complex can be encorperated into the Guatafson Algorithm.  The only remaining thing to do is multiply the Gustafson Algorithm by two (explain why).
 
+
+\subsection{Discussion of The Gustafson Algorithm}
+
+\begin{align}
+h_0 \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi_1}+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega_1})	\\
+= \frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi_1})} J_n(\widetilde{\Gamma}) J_m (\Gamma)			\nonumber \\
+e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 +(n-m)\omega_1)  															\nonumber \\
++ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 +(n-m)\omega_1)
+\end{align}
+
+\begin{align}
+\sum_{n=-\infty}^{\infty} J_n (x) J_{n+m} (x) = \delta_{m}
+\end{align}
+
+Where $\delta_{m}$ is the Kronecker Delta.  \cite{}
+
+\subsection{Consequences of Discretizing}
+-drichlet kernel
 
 \section{Carson's Rule}
 Carson's rule can be understood to say that almost all ($~98$ percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$,  defined by:
@@ -235,23 +284,17 @@ The important thing to take away from this is that it takes an infinite bandwidt
 \end{figure}
 
 \section{Possible Other Areas to Reasearch}
-1) Instead of performing a Fourier Transform on the data f(t) maybe we could expand the data in terms of some other, cleverly chosen, set of orthogonal basis functions.  Is this viable and what would be the set of functions?  Can this reduce our search to a two dimentional search instead of a three dimentional search? (Task for Fourier Analysis Class MTH 490)
-
 2) The LIGO interferometers sample the data at a finite frequency.  This introduces a maximum possible frequency of Gravitational Waves that can be detected, up to the Niquest Frequency.  This will, in tern, limit the maximum number of terms we can include in our sum (equation (9)).  What is the biggest $\omega_c$, $\Omega$, and $\Gamma$ that can be reasonably detected? (Task for Fourier Analysis Class MTH 490)
 
 3) Obviously the duration of data is finite.  This puts a limit on how finly the Fourier Transform can resolve frequencies, ie. how small frequency bins can be.  This in tern tells us how small our step size in $\omega_c$ and $\Omega$ can be.  What are they? (Task for Fourier Analysis Class MTH 490)
 
 4) Over very long periods of time $\omega_c \to 0$ because the neutron star loses energy/momentum to gravitational wave radation.  Over relatively much much shorter time periods $\Omega$ and $\Gamma$ change due to environmental reasons (not entirely sure on this).  What limitations does this put on our search, especially if the explicit nature of the time evolution of these parameters is unknown? ANSWER: it shortens the ammount of time we can take data over? (Task for Fourier Analysis Class MTH 490)
 
-5) The Bessel Functions need to be calculated in a more efficient way.  What is it?  A basic investigation with Mathematica indicates we may only need to calculate the first $\Gamma$ terms or less.  That is if $\Gamma = 25.6830583$ then we may only need to take the sum in equation (10) to ~25 or so. (Task for Computational Physics Class PHY 480)
-
-6) For any given value of $\Gamma$ there is a n such that $J_n(\Gamma)$ is maximized.  What is that n?  A basic investigation with a Mathematica script indicates $n \approx \Gamma$ is the answer.  How accurate is this approximation?  Can we show this analytically?  How many terms in equation (9) do we need to go out from n ~ $\Gamma$ do we need to go to get an accurate answer? (Task for Computational Physics Class PHY 480)
-
 7) There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
 
-8) Some of the delta function type peaks on the noise spectrum (red) are known.  For example the 60Hz noise from power lines.  The LIGO scientists have ways of monitering this noise (they know the frequency, amplitude, and phase).  Does the data we obtain have this already subtracted off?  (Probably yes)  Curtis will look into this.
 
 \section{Implementing the Gustafson Algorithm in C++ (Curtis Rau will do this for another class)}
+\subsection{Calculating Bessel Functions}
 Known problems with the algorithm include calculating large order bessel functions.  The bessel functions of natural number order are given by
 
 \begin{equation}
@@ -273,30 +316,11 @@ if we are willing to sacrafise some precision to truncation we can use a double 
 171! \approx 1.24 \cdot 10^{309}
 \end{align}
 
-it has been shown that bessel functions up 250 or higher are necessary.  This whole buiseness of wresteling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
+it has been shown that bessel functions up 250 or higher are necessary \citep{deanna}.  This whole buiseness of wresteling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
 
 \begin{equation}
 \label{eqn:Bessel's Equation}
-x^2 J_n''(x) + x J_n'(x) + (x^2 + n^2) J_n(x) = 0
-\end{equation}
-
-To solve this second-order differential equation we will need two boundary conditions.  The boundary condition at $x=0$ is simple.
-
-\begin{displaymath}
-   J_n(x) = \left\{
-     \begin{array}{lr}
-       1 & : n = 0     \\
-       0 & : n \neq 0
-     \end{array}
-   \right.
-\end{displaymath}
-
-For the other boundary condition we will use the asymtotic form of the Bessel functions.  Theorem 5.1 in \cite{folland} states:
-
-\textit{For each $n \in N$ there is a constant $C_n \in R$ such that, if $x \geq 1$, then}
-
-\begin{equation}
-\left\| J_n(x) - \sqrt{\frac{2}{\pi x}} \cos \left( x - \frac{\pi}{4} (2n+1) \right) \right\| \leq \frac{C_n}{x^{3/2}}
+x^2 J_n''(x) + x J_n'(x) + (x^2 - n^2) J_n(x) = 0
 \end{equation}
 
 The standard perscription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$.  Then use the limit definitions of the derivatives; we will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$.  Also, because there are only one order of Bessel Functions in Bessel's Equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and we will further adopt the notation $J(x_i) = J_i$.
@@ -310,7 +334,7 @@ So the discretized form of Bessel's Equation is
 
 \begin{align}
 \label{eqn:Bessel's Equation Discretized}
-x_i^2 \frac{J_{i-1} - 2J_{i} + J_{i+1}}{\delta x^2} + x \frac{J_{i+1} - J_{i-1}}{2 \delta x} + (x^2 + n^2) J_i = 0
+x_i^2 \frac{J_{i-1} - 2J_{i} + J_{i+1}}{\delta x^2} + x \frac{J_{i+1} - J_{i-1}}{2 \delta x} + (x^2 - n^2) J_i = 0
 \end{align}
 
 \begin{align}
@@ -328,6 +352,228 @@ b_i &= \left(1-\frac{2}{\delta x^2}\right)x_i^2 - n^2  	\\
 c_i &= \frac{x_i^2}{\delta x^2} + \frac{x_i}{2\delta x}
 \end{align}
 
+These coefficients can be simplified by using the definition for $x_i$, and taking $x_{min} = 0$.
+
+\begin{align}
+a_i &= i   \left( i - \frac{1}{2} \right)				\\
+b_i &= i^2 \left( \delta x^2 - 2  \right) - n^2 		 	\\
+c_i &= i   \left( i + \frac{1}{2} \right)
+\end{align}
+
+So the discretized Bessel equation with simplified coefficients is
+
+\begin{align}
+a_i J_{i-1} + b_i J_i + c_i J_{i+1} = 0
+\end{align}
+
+Wrighting out the system of equations explicitly:
+
+\begin{align}
+b_1 J_1 + c_1 J_2              = - a_1 J_0				\\
+a_2 J_1 + b_2 J_2 + c_2 J_3    = 0						\\
+a_3 J_2 + b_3 J_3 + c_3 J_4    = 0						\\
+\vdots													\\
+a_{n-1} J_{n-2} + b_{n-1} J_{n-1} + c_{n-1} J_{n} =   0	\\
+a_n J_{n-1} + b_n J_n = - c_n J_{n+1}
+\end{align}
+
+Which suggests Bessel Equation be written as a matrix equation.
+
+\begin{align}
+\left( \begin{array}{ccccc}
+	b_1 & c_1 &         &         &         \\
+	a_2 & b_2 &   c_2   &         &         \\
+	    & a_3 &   b_3   &   c_3   &         \\
+	    &     & \vdots  & \vdots  &         \\
+	    &     & a_{n-1} & b_{n-1} & c_{n-1} \\
+	    &     &         &   a_n   &   b_n
+\end{array} \right)
+\left( \begin{array}{c}
+	  J_1   \\
+	  J_2   \\
+	  J_3   \\
+	\vdots  \\
+	J_{n-1} \\
+	  J_n
+\end{array} \right)
+=
+\left( \begin{array}{c}
+	  - a_1 J_0   \\
+	      0       \\
+	      0       \\
+	   \vdots     \\
+	      0       \\
+	- c_n J_{n+1}
+\end{array} \right)
+\end{align}
+
+This is a tridiagonal matrix system that charactorized a one dimentional differential equation.  It can be easilly solved using the standard Thomas Algorithm.  To program this in C++ we need all the arrays to be indexed from 0, so 
+
+\begin{align}
+\label{eqn:finalDiscretizedBesselMatrixEqn}
+\left( \begin{array}{ccccc}
+	B_0 & C_0 &         &         &         \\
+	A_1 & B_1 &   C_1   &         &         \\
+	    & A_2 &   B_2   &   C_2   &         \\
+	    &     & \vdots  & \vdots  &         \\
+	    &     & A_{N-4} & B_{N-4} & C_{N-4} \\
+	    &     &         & A_{N-3} & B_{N-3}
+\end{array} \right)
+\left( \begin{array}{c}
+	  J_1   \\
+	  J_2   \\
+	  J_3   \\
+	\vdots  \\
+	J_{N-3} \\
+	J_{N-2}
+\end{array} \right)
+=
+\left( \begin{array}{c}
+	    - A_0 J_0     \\
+	        0         \\
+	        0         \\
+	     \vdots       \\
+	        0         \\
+	- C_{N-3} J_{N-1}
+\end{array} \right)
+\end{align}
+
+\begin{align}
+A_i = a_{i+1} &= (i+1)   \left( i + \frac{1}{2} \right)				\\
+B_i = b_{i+1} &= (i+1)^2 \left( \delta x^2 - 2  \right) - n^2			\\
+C_i = c_{i+1} &= (i+1)   \left( i + \frac{3}{2} \right)
+\end{align}
+
+\subsubsection{The Thomas Algorithm}
+The Thomas Algorithm is a lightning fast way to solve tridiagonal systems like equation \ref{eqn:finalDiscretizedBesselMatrixEqn}.  The algorithm consists of two steps.  First there is a forward substitution which eliminates the $A_i$'s.  
+
+\begin{align}
+R_i = R_i - \frac{A_i}{B_{i-1}} R_{i-1}; \qquad \forall i \in [1, N-3]
+\end{align}
+
+Then there is a backwards substitution eliminating the $C_i$'s.
+
+\begin{align}
+R_i = R_i - \frac{C_i}{B_{i+1}} R_{i+1}; \qquad \forall i \in [N-4, 0]
+\end{align}
+
+\subsubsection{Boundary Conditions \label{sec:boundaryConditions}}
+
+To solve this second-order differential equation we will need two boundary conditions.  The boundary condition at $x=0$ is simple.
+
+\begin{displaymath}
+   J_n(0) = \left\{
+     \begin{array}{lr}
+       1 & : n = 0     \\
+       0 & : n \neq 0
+     \end{array}
+   \right.
+\end{displaymath}
+
+For the other boundary condition we will use the asymtotic form of the Bessel functions.  Theorem 5.1 in \cite{folland} states:
+
+\textit{For each $n \in N$ there is a constant $C_n \in R$ such that, if $x \geq 1$, then}
+
+\begin{equation}
+\label{eqn:asymtoticBessel}
+\left| J_n(x) - \sqrt{\frac{2}{\pi x}} \cos \left( x - \frac{\pi}{4} (2n+1) \right) \right| \leq \frac{C_n}{x^{3/2}}
+\end{equation}
+
+This is an asymptotic expansion, so it is only valid for large values of x.  We can also do
+
+\begin{align}
+J_n (z) = \frac{1}{\pi} \int_{0}^{\pi} \cos \left[ z \sin \theta - n \theta \right] d \theta
+\end{align}
+
+-trapazoidal integration.
+-addaptive stepsize
+-the importance of the endpoint and how it defines the amplitude of ALL OTHER POINTS!!
+
+trapaxoidal integration:
+
+\begin{align}
+\label{eqn:numericalIntegralBessel}
+J_n (z) &= \frac{1}{N} \sum_{i=0}^{N+1} \cos \left[ z \sin(i \cdot dx) - n \cdot i \cdot dx \right]		\\
+dx &= \frac{\pi}{N}
+\end{align}
+
+The function being integrated becomes more oscillitory as $n$ increases.  Numerical analysis shows that $n$ gives the number of zeros the function has  on the interval $(0,\pi)$ for $z=0$.  For $n=0$ the number of zeros is given by $Floor (\frac{2z}{\pi})$.  We want a way to ensure the calculation is accurate regardless of how oscillatory it is, but we also want it to be as fast as possible, so we use these facts regarding the zeros to ensure there are roughly the same number of integration points between zeros.  By taking the number of (evenly spaced) integration points to be
+
+\begin{align}
+N = n \cdot Floor \left( \frac{2z}{\pi} \right)
+\end{align}
+
+we acheved excellent results (accurate consistantly to 16 decimal places) for a wide range of $z$ and $n$.  The algorithm can have problems when $J$ is extremely small.  Then the function can be off by many orders of magnitude, but because it is essentially zero, it does not seem to effect our results when used as a boundary condition for solving Bessel's Differential Equation.
+
+It turns out the accuracy of the solution to bessels equation relies heavilly on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illistrate this point quite well.  The conclusion is that the asymtotic form of the bessel functions is not accurate enough for even fairly large valuse of $z$.
+
+\begin{figure*}[t]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{BesselBadBoundary.png}
+  		\caption{\label{fig:BesselBadBoundary} Notice how the asymtotic form and the one calculated by our differential equation solver match up at the maximum value for $z$, but do not match up with the true solution.  This has far reaching consequences.  Whatever multiplicative factor the endpoint is off by seems to carry through for every other point.  In this case the multiplicative factor (asymtotic / true) is almost exactly $-2.5$.  Notice how this inverts the solution and makes it $250\%$ larger.}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{BesselGoodBoundary.png}
+  		\caption{\label{fig:BesselGoodBoundary} For much larger values of $z$ the asymtotic form is a better approximation to the true value.  In this case the multiplicative factor (asymtotic / true evaluated at $z=300$) is roughtly $1.2$ which results in the soultion being roughly $20\%$ larger than it should be.}
+	\end{subfigure}
+	\caption{The blue curve is the asymtotic form of the bessel functions as given in equation \ref{eqn:asymtoticBessel}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver.  Note, both of these solutions were calculated using 10,000 points.  Even though the solution in figure \ref{fig:BesselBadBoundary} has 10 times the point density, it is limited in accuracy by the endpoint!}
+\end{figure*}
+
+\subsubsection{Calculating Bessel Functions: Results}
+The ultimate benchmark for sucess in calculating Bessel Functions in this manner (using the Thomas Algorithm to solve Bessel's Differential Equation) is to compare it to the stardard way of calculating the value at each point using an interal (as defined in equation \ref{eqn:numericalIntegralBessel} section \ref{sec:boundaryConditions}).  So how much faster is it?
+
+\begin{table*}[t]
+	\centering
+	\begin{tabular}{l || c | c | c }
+		                  & Point by Point & Thomas Algo. Solving &  Speed	\\
+		Parameters        & Using Integral &  Bessel's Equation   & Increse	\\
+		\hline
+		\hline
+		n = 3             &   0.051786 s   &      0.00013800 s    &   375		\\
+		N = 500           &                &                      &			\\
+		$z_{max} = 20.0$  &                &                      &			\\
+		\hline
+		n = 14            &     113.33 s   &       0.003937 s     & 28,785	\\
+		N = 50,000        &                &                      &           \\
+		$z_{max} = 100.0$ &                &                      &           \\
+	\end{tabular}
+	\caption{}
+\end{table*}
+
+\begin{figure*}[t]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{BesselJ4.png}
+  		\caption{n=4, numPts=10,000, xMax=20, comptime=0.00082}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{BesselJ40.png}
+  		\caption{n=40, numPts=10,000, xMax=100, comptime=0.00092}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{BesselJ400.png}
+  		\caption{n=400, numPts=10,000, xMax=800, comptime=0.00200}
+	\end{subfigure}
+\end{figure*}
+
+
+\begin{figure*}[t]
+	\centering
+	\includegraphics[width=.75\linewidth]{BesselJn80.png}
+	\caption{This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by my code.  The two sets of data are in excelent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement.  This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a loptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma$ and n were solved for.}
+\end{figure*}
+
+
+
+\section{Conclusion}
+Recap the benifits of working in the frequency domain vs the time domain.
+It is the belief of this author that the methods outlined in this paper are unlikely to be useful for searching for gravitational waves.  
 
 
 \appendix
@@ -335,77 +581,88 @@ c_i &= \frac{x_i^2}{\delta x^2} + \frac{x_i}{2\delta x}
 \section{The Fourier Transform of The Complex Function}
 I BELIEVE I FORGOT SOME FACTORS OF 2PI HERE!!
 Use the convolution theorem
-Use the Jacobi-Anger expansion
+Use the Jacobi-Anger expansion \ref{eqn:jacobiAnger}
 Use the linearity of the Fourier Transform
 Use the linearity of the Convolution
 \begin{align}
-F_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right]
-&= h_0 e^{i\phi_0} F_t \left[ e^{i\omega_0 t} e^{i\Gamma \cos(\omega_1 t + \phi_1)} \right]													\\
-&= h_0 e^{i\phi_0} F_t \left[ e^{i\omega_0 t} \right] \star \left[ e^{i\Gamma \cos(\omega_1 t + \phi_1)} \right]								\\
-&= h_0 e^{i\phi_0} \delta(\omega - \omega_0) \star F_t \left[ \sum_{n=-\infty}^{\infty} i^n J_n(\Gamma) e^{in(\omega_1 t + \phi_1)} \right]		\\
-&= h_0 e^{i\phi_0} \delta(\omega - \omega_0) \star \sum_{n=-\infty}^{\infty} i^n e^{in\phi_1} J_n(\Gamma) F_t \left[ e^{in\omega_1 t} \right]	\\
-&= h_0 e^{i\phi_0} \delta(\omega - \omega_0) \star \sum_{n=-\infty}^{\infty} i^n e^{in\phi_1} J_n(\Gamma) \delta(\omega - n\omega_1)			\\
-&= h_0 e^{i\phi_0} \sum_{n=-\infty}^{\infty} i^n e^{in\phi_1} J_n(\Gamma)  \delta(\omega - \omega_0) \star \delta(\omega - n\omega_1)			\\
-&= h_0 e^{i\phi_0} \sum_{n=-\infty}^{\infty} i^n e^{in\phi_1} J_n(\Gamma)  \delta(\omega - \omega_0 - n\omega_1)
+\mathcal{F}_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right]
+&= h_0 e^{i\phi_0} \mathcal{F}_t \left[ e^{i\omega_0 t} e^{i\Gamma \cos(\omega_1 t + \phi_1)} \right]											\\
+&= h_0 e^{i\phi_0} \mathcal{F}_t \left[ e^{i\omega_0 t} \right] \star \mathcal{F}_t \left[ e^{i\Gamma \cos(\omega_1 t + \phi_1)} \right]		\\
+&= h_0 e^{i\phi_0} \delta(\omega - \omega_0) 
+			\star \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(\Gamma) e^{in(\omega_1 t + \phi_1)} \right]							\\
+&= h_0 e^{i\phi_0} \delta(\omega - \omega_0) \star \sum_{n=-\infty}^{\infty} e^{in\pi/2} e^{in\phi_1} J_n(\Gamma) F_t \left[ e^{in\omega_1 t} \right]	\\
+&= h_0 e^{i\phi_0} \delta(\omega - \omega_0) \star \sum_{n=-\infty}^{\infty} e^{in(\phi_1 + \pi/2)} J_n(\Gamma) \delta(\omega - n\omega_1)			\\
+&= h_0 e^{i\phi_0} \sum_{n=-\infty}^{\infty} e^{in(\phi_1 + \pi/2)} J_n(\Gamma)  \delta(\omega - \omega_0) \star \delta(\omega - n\omega_1)			\\
+&= h_0 e^{i\phi_0} \sum_{n=-\infty}^{\infty} e^{in(\phi_1 + \pi/2)} J_n(\Gamma)  \delta(\omega - \omega_0 - n\omega_1)
 \end{align}
 
-
-\begin{align}
-F_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right] 			\nonumber
-	&= \frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \Huge{[} J_0(\Gamma) \delta(\omega - \omega_0) 					\\
-	&+ \sum_{i=1}^{\infty} J_n(\Gamma) e^{-in\pi/2} 
-	\left[ e^{in\phi_1} \delta(\omega - \omega_0 - n\omega_1) + e^{-in\phi_1} \delta(\omega - \omega_0 + n\omega_1) \right] \Huge{]}
-\end{align}
 
 \section{The Fourier Transform of The Real-Valued Function}
 
 \begin{align}
-F_t \left[ \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\} \right]
-&= \frac{1}{2} F_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} 
+\mathcal{F}_t \left[ \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\} \right]
+&= \frac{1}{2} \mathcal{F}_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} 
                         + h_0 e^{-i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right]			\\
 &= \frac{h_0}{2} \left[ 
-  e^{ i\phi_0} F_t \left[ e^{i\left(  \omega_0 t + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right] 
-+ e^{-i\phi_0} F_t \left[ e^{i\left( -\omega_0 t - \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right] 
+  e^{ i\phi_0} \mathcal{F}_t \left[ e^{i\left(  \omega_0 t + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right] 
++ e^{-i\phi_0} \mathcal{F}_t \left[ e^{i\left( -\omega_0 t - \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right] 
 \right]
 \end{align}
 
 From the previous section we see that
 
 \begin{align}
-F_t \left[ e^{i(\omega_0 t + \Gamma \cos(\omega_1 t + \phi_1))} \right] 
-= \sum_{n=-\infty}^{\infty} i^n e^{in\phi_1} J_n(\Gamma)  \delta(\omega - \omega_0 - n\omega_1)
+\mathcal{F}_t \left[ e^{i(\omega_0 t + \Gamma \cos(\omega_1 t + \phi_1))} \right] 
+= \sum_{n=-\infty}^{\infty} e^{in(\phi_1 + \pi/2)} J_n(\Gamma)  \delta(\omega - \omega_0 - n\omega_1)
 \end{align}
 
 and by replacing $\omega_0$ with $-\omega_0$ and $\Gamma$ with $-\Gamma$, and using the fact that $J_n(-\Gamma) = (-1)^n J_n (\Gamma)$ we also have
 
 \begin{align}
-F_t \left[ e^{i(-\omega_0 t - \Gamma \cos(\omega_1 t + \phi_1))} \right] 
-= \sum_{n=-\infty}^{\infty} (-i)^n e^{in\phi_1} J_n(\Gamma)  \delta(\omega + \omega_0 - n\omega_1)
+\mathcal{F}_t \left[ e^{i(-\omega_0 t - \Gamma \cos(\omega_1 t + \phi_1))} \right] 
+= \sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma)  \delta(\omega + \omega_0 - n\omega_1)
 \end{align}
 
 so the Fourier Transform of the real part of our frequency/phase modulated signal is
 
 \begin{align}
-F_t \left[ \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\} \right]
-&= \frac{1}{2} F_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} 
-                        + h_0 e^{-i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right]				\\
-&= \frac{1}{2} h_0 e^{ i\phi_0} \sum_{n=-\infty}^{\infty} i^n e^{in\phi_1} J_n(\Gamma)  \delta(\omega - \omega_0 - n\omega_1)		\\
-&+ \frac{1}{2} h_0 e^{-i\phi_0} \sum_{n=-\infty}^{\infty} (-i)^n e^{in\phi_1} J_n(\Gamma)  \delta(\omega + \omega_0 - n\omega_1)
+\begin{split}
+\mathcal{F}_t \left[ \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\} \right]
+= \frac{1}{2} h_0 \left[ e^{ i\phi_0} \sum_{n=-\infty}^{\infty} e^{in(\phi_1 + \pi/2)} J_n(\Gamma)  \delta(\omega - \omega_0 - n\omega_1) \right.	\\
++ \left. e^{-i\phi_0} \sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma)  \delta(\omega + \omega_0 - n\omega_1) \right]					\\
+= \frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1) \right.	\\
++ \left. e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]
+\end{split}
 \end{align}
 
 \begin{align}
-F_t \left[ \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\} \right] 		\nonumber
-&= \frac{h_0}{2\sqrt{2\pi}} \Huge{[} 
-	  J_0(\Gamma) e^{ i\phi_0} \delta(\omega - \omega_0)	\color{red} + J_0(\Gamma) e^{-i\phi_0} \delta(\omega + \omega_0) 		\\
-&+ \sum_{i=1}^{\infty} J_n(\Gamma) \Huge{[}																					\nonumber
-     	X_n e^{ i\phi_0} e^{ in\phi_1} \delta(\omega - \omega_0 - n\omega_1) 
-	  + X_n e^{ i\phi_0} e^{-in\phi_1} \delta(\omega - \omega_0 + n\omega_1)	\\
-&+ \color{red}   Y_n e^{-i\phi_0} e^{-in\phi_1} \delta(\omega + \omega_0 + n\omega_1) 
-   \color{red} + Y_n e^{-i\phi_0} e^{ in\phi_1} \delta(\omega + \omega_0 - n\omega_1)			
-   \color{black} \Huge{]} \Huge{]}
+\Aboxed{\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
++ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]}
 \end{align}
 
-Notice that, by taking the fourier transform of just the real part of our frequency modulated function it has added the terms in red.  (Go into more detail why that is)  The other important change is that the $X_n$ and $Y_n$ terms were added (Again, go into more detail why that is).  
+Notice that, by taking the fourier transform of just the real part of our frequency modulated function it has added the terms in red.  (Go into more detail why that is)  The other important change is that the $X_n$ and $Y_n$ terms were added (Again, go into more detail why that is).
+
+\section{Selected Waveforms}
+
+
+\begin{figure*}[t]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{classicSignal.png}
+  		\caption{A "nice" signal that is what comes to mind for cyclic frequency modulated signals. $\Gamma = 9.88, \omega_0 = 3.62, \omega_1 = 0.21, \phi_1 = 3.14$ \label{fig:niceSignal}}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{interestingSignal.png}
+  		\caption{One example of the exotic signals cyclic frequency modulation can produce.  $\Gamma = 2.88, \omega_0 = 1.5, \omega_1 = 0.75, \phi_1 = 0$ \label{fig:interestingSignal}}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{nastySignal.png}
+  		\caption{A particularly nasty waveform that could be mistaken as noise by looking at it. $\Gamma = 3, \omega_0 = 0.42, \omega_1 = 0.46, \phi_1 = 0.1$ \label{fig:nastySignal}}
+	\end{subfigure}
+\end{figure*}
 
 % --------------------------- Code for the bibliography ---------------------------------------------------------------------------------
 \twocolumngrid
