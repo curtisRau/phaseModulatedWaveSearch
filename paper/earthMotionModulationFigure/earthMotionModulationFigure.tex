@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+\draw ( 0, 0) circle (0.5);							< Sun >
+\draw ( 3, 0) circle (0.2);							< Earth >
+\draw (-8, 6) circle (0.1);							< Source >
+\draw[red,thick,dashed] (0,0) ellipse (3 and 1);		< Earth Trajectory >
+\draw[dashed] (0,0) -- ( 0,6);						< z-axis >
+\draw (0,6) node[anchor = south] {$\hat{z}$};			< z-azis label >
+\draw[dashed] (0,0) -- (-8,6);						< Line to Source >
+\draw (   0,  3) arc (90:143.13:3);					< Arc for angle >
+\draw (-1.5,2.8) node[anchor = south] {$\theta$};		< Arc angle label >
+
+\draw (0, -1.5) node {Sun};		< Sun Label >
+\draw (3, -1.5) node {Earth};		< Sun Label >
+\draw (-8, 6.5) node {Source};		< Sun Label >
+
+
+\end{tikzpicture}
+\end{document}

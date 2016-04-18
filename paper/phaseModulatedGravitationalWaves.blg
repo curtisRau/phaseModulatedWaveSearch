@@ -1,9 +1,20 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: phaseModulatedGravitationalWaves.aux
+Case mismatch error between cite keys deanna and Deanna
+---line 21 of file phaseModulatedGravitationalWaves.aux
+ : \citation{deanna
+ :                 }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys deanna and Deanna
+---line 32 of file phaseModulatedGravitationalWaves.aux
+ : \citation{deanna
+ :                 }
+I'm skipping whatever remains of this command
 The style file: plain.bst
 Database file #1: phaseModulatedGravitationalWavesNotes.bib
 Database file #2: shgBibliographyCopy.bib
+Warning--I didn't find a database entry for ""
 Warning--there's a number but no volume in Deanna
 Warning--there's a number but no series in folland
 Warning--there's a number but no series in griffiths
@@ -48,4 +59,4 @@ warning$ -- 3
 while$ -- 11
 width$ -- 6
 write$ -- 57
-(There were 3 warnings)
+(There were 2 error messages)
