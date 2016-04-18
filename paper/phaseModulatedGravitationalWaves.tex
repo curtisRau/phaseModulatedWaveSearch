@@ -502,10 +502,10 @@ dx &= \frac{\pi}{N}
 The function being integrated becomes more oscillitory as $n$ increases.  Numerical analysis shows that $n$ gives the number of zeros the function has  on the interval $(0,\pi)$ for $z=0$.  For $n=0$ the number of zeros is given by $Floor (\frac{2z}{\pi})$.  We want a way to ensure the calculation is accurate regardless of how oscillatory it is, but we also want it to be as fast as possible, so we use these facts regarding the zeros to ensure there are roughly the same number of integration points between zeros.  By taking the number of (evenly spaced) integration points to be
 
 \begin{align}
-N = n \cdot Floor \left( \frac{2z}{\pi} \right)
+N = 100 \cdot (n + 1) \cdot Floor \left( \frac{2z}{\pi} + 1 \right)
 \end{align}
 
-we acheved excellent results (accurate consistantly to 16 decimal places) for a wide range of $z$ and $n$.  The algorithm can have problems when $J$ is extremely small.  Then the function can be off by many orders of magnitude, but because it is essentially zero, it does not seem to effect our results when used as a boundary condition for solving Bessel's Differential Equation.
+we acheved excellent results (accurate consistantly to 16 decimal places) for a wide range of $z$ and $n$.  The $+1$'s are to ensure accurate results when $z$ or $n$ are zero.  The algorithm can have problems when $J$ is extremely small.  Then the function can be off by many orders of magnitude, but because it is essentially zero, it does not seem to effect our results when used as a boundary condition for solving Bessel's Differential Equation.
 
 It turns out the accuracy of the solution to bessels equation relies heavilly on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illistrate this point quite well.  The conclusion is that the asymtotic form of the bessel functions is not accurate enough for even fairly large valuse of $z$.
 
