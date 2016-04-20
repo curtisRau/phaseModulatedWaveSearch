@@ -1,16 +1,16 @@
 \documentclass[onecolumn, groupedaddress]{revtex4-1}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
+%\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}											% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 \usepackage{float}												% for controlling the position of objects ie. tables
 
-\usepackage{breqn}
+%\usepackage{breqn}
 
-\usepackage{color}												% For adding color to equations ex.: "/color{red}"
+%\usepackage{color}												% For adding color to equations ex.: "/color{red}"
 
 \usepackage[small, bf]{caption}									%Adjust caption size of figures, tables, pictures...
 \setlength{\captionmargin}{15pt}
@@ -59,13 +59,14 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \section{Introduction (Curtis Rau and Colin Gordon will be doing this)}
+Sam and Curtis make a change!
 -- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
 
-Sources of continuous coherent monochromatic (explination of coherent and monochromatic?) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}.  If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}.  One phenomena may be (significantly??) repressing the amplitude of these signals as seen from Earth.  This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of "sidebands."  (define sidebands?)  There are two reasons to believe frequency modulation is truly occuring (reword).  
+Sources of continuous monochromatic (one frequency) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}.  If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}.  One phenomena may be (significantly??) repressing the amplitude of these signals as seen from Earth.  This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of sidebands which are the frequencies measured when taking Fourier Transform of the data that comes from the sinusoidal phase shift due to the Doppler effect from Earth's motion relative to the source.  There are two reasons to believe frequency modulation is truly occuring (reword).  
 
-Recently the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are neurton stars.  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.
+Recently the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are compact stars (like Black holes and Neutron Stars).  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.
 
-The first cause of frequency modulation is the motion of the Earth around the sun.  There will be a cyclic doppler shift...  
+To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and that the waves travel at the speed of light can write the wave as a lorentz invariant 4 vector.   
 
 \begin{figure*}[t]
 	\centering
@@ -74,9 +75,9 @@ The first cause of frequency modulation is the motion of the Earth around the su
 \end{figure*}
 
 -The equivalence of the two ways of looking at it.
--The boost is in the arbitrarly chosen x direction, and the velocity is with respect to the sun's frame of rest.
+-The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
 
--- DEFINE : K, gamma, beta, w_e, w_o, phi_e, k, theta, h_0
+$-- DEFINE : K, gamma, beta, w_e, w_o, phi_e, k, theta, h_0$
 
 \begin{align}
 \label{eqn: new k}
@@ -210,10 +211,16 @@ J_{-n} (z) &= (-1)^n J_n(z)
 
 Which brings us to the Gustafson Algorithm (someone should check this out before we submit the paper):
 
+%\begin{align}
+\label{eqn:gustafsonAlgorithm}
+%\Aboxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
+%\end{align}
+
 \begin{align}
 \label{eqn:gustafsonAlgorithm}
-\Aboxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
+h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)
 \end{align}
+
 
 This algorithm has been implemented in the past to demodulate the carrier frequency to recover the true amplitude \citep{deanna}.  
 
@@ -644,10 +651,17 @@ so the Fourier Transform of the real part of our frequency/phase modulated signa
 \end{split}
 \end{align}
 
+
+%\begin{align}
+%\label{eqn:realFourierTransform}
+%\Aboxed{\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
+%+ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]}
+%\end{align}
+
 \begin{align}
 \label{eqn:realFourierTransform}
-\Aboxed{\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
-+ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]}
+\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
++ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]
 \end{align}
 
 Notice that, by taking the fourier transform of just the real part of our frequency modulated function it has added the terms in red.  (Go into more detail why that is)  The other important change is that the $X_n$ and $Y_n$ terms were added (Again, go into more detail why that is).
