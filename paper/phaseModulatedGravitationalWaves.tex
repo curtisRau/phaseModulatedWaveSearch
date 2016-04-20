@@ -1,4 +1,4 @@
-\documentclass[twocolumn, groupedaddress]{revtex4-1}
+\documentclass[onecolumn, groupedaddress]{revtex4-1}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 %\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
@@ -55,6 +55,7 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 \maketitle
 
+-- Cover Page
 
 
 \section{Introduction (Curtis Rau and Colin Gordon will be doing this)}
@@ -80,14 +81,14 @@ $-- DEFINE : K, gamma, beta, w_e, w_o, phi_e, k, theta, h_0$
 
 \begin{align}
 \label{eqn: new k}
-&\mathbf{K} =
+\mathbf{K} &=
 \left( \begin{array}{cccc}
 	    \gamma   & -\gamma \beta & 0 & 0 \\
 	-\gamma \beta &    \gamma    & 0 & 0 \\
 	      0      &       0      & 1 & 0 \\
 	      0      &       0      & 0 & 1
-\end{array} \right)															\nonumber
-\\ &\left( \begin{array}{cccc}
+\end{array} \right)
+\left( \begin{array}{cccc}
 	1 &               0             &              0               & 0 \\
 	0 & -\sin (\omega_e t + \phi_e) &  \cos (\omega_e t + \phi_e)  & 0 \\
 	0 & -\cos (\omega_e t + \phi_e) &  -\sin (\omega_e t + \phi_e) & 0 \\
@@ -98,8 +99,8 @@ $-- DEFINE : K, gamma, beta, w_e, w_o, phi_e, k, theta, h_0$
 	- k \sin \theta \\
 	        0       \\
 	- k \cos \theta    
-\end{array} \right)															\nonumber
-\\ &=
+\end{array} \right)																			\\
+&=
 \left( \begin{array}{c}
 	\gamma \left(\omega_0 / c - \beta k \sin \theta \sin (\omega_e t + \phi_e)\right) \\
 	\gamma \left(-\beta \omega_0 / c + k \sin \theta \sin (\omega_e t + \phi_e)\right) \\
@@ -160,7 +161,8 @@ e^{iz\cos (\theta)} = \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(z) e^{in\theta}
 so equation (2) becomes
 
 \begin{align}
-\frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega - \omega_0) &= 		\\ \nonumber
+\frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega - \omega_0)
+&=
 \hat{f}(\omega)
 \star \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right]
 \end{align}
@@ -174,17 +176,16 @@ Bessel Functions have the properties
 so 
 
 \begin{align}
-\begin{aligned}
-\mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right] \\
-= \sum_{n=-\infty}^{\infty} (-1)^n e^{in\pi/2} e^{in\phi_1} J_n(\Gamma) \mathcal{F}_t \left[e^{in\omega_1 t} \right]	 \\
-= \frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma) \delta (\omega - n\omega_1)
-\end{aligned}
+\mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right]
+&= \sum_{n=-\infty}^{\infty} (-1)^n e^{in\pi/2} e^{in\phi_1} J_n(\Gamma) \mathcal{F}_t \left[e^{in\omega_1 t} \right]	 \\
+&= \frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma) \delta (\omega - n\omega_1)
 \end{align}
 
 where we have used $(-1)^n i^n = (-i)^n = e^{-in\pi/2}$, and the linearity of the Fourier Transform $F_t[f+g]=F_t[f]+F_t[g]$.  The Fourier transform of this is 
 
 \begin{align}
-h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \hat{f}(\omega) \star 			\nonumber \\
+h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \hat{f}(\omega)
+\star
 \left[ \sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma) \delta (\omega - n\omega_1) \right]
 \end{align}
 
@@ -211,8 +212,15 @@ J_{-n} (z) &= (-1)^n J_n(z)
 Which brings us to the Gustafson Algorithm (someone should check this out before we submit the paper):
 
 %\begin{align}
+\label{eqn:gustafsonAlgorithm}
 %\Aboxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
 %\end{align}
+
+\begin{align}
+\label{eqn:gustafsonAlgorithm}
+h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)
+\end{align}
+
 
 This algorithm has been implemented in the past to demodulate the carrier frequency to recover the true amplitude \citep{deanna}.  
 
@@ -228,12 +236,17 @@ What would we have to do to get the fourier transform of the real to look exactl
 
 
 \subsection{Discussion of The Gustafson Algorithm}
+It is not explicitly obvious how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, is able to determin the values $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do.  First we start with Eq. \ref{eqn:gustafsonAlgorithm}, and plug in the Fourier Transform of the real of the waveform \ref{eqn:realFourierTransform}.
 
 \begin{align}
-h_0 \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi_1}+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega_1})	\\
-= \frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi_1})} J_n(\widetilde{\Gamma}) J_m (\Gamma)			\nonumber \\
-e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 +(n-m)\omega_1)  															\nonumber \\
+h_0 \delta (\omega - \omega_0) 
+&= \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi_1}+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega_1})	\\
+&= \frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi_1})} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
+&\qquad \qquad
+\times \left[
+e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 +(n-m)\omega_1)
 + e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 +(n-m)\omega_1)
+\right]
 \end{align}
 
 \begin{align}
@@ -458,6 +471,8 @@ Then there is a backwards substitution eliminating the $C_i$'s.
 R_i = R_i - \frac{C_i}{B_{i+1}} R_{i+1}; \qquad \forall i \in [N-4, 0]
 \end{align}
 
+
+
 \subsubsection{Boundary Conditions \label{sec:boundaryConditions}}
 
 To solve this second-order differential equation we will need two boundary conditions.  The boundary condition at $x=0$ is simple.
@@ -501,10 +516,10 @@ dx &= \frac{\pi}{N}
 The function being integrated becomes more oscillitory as $n$ increases.  Numerical analysis shows that $n$ gives the number of zeros the function has  on the interval $(0,\pi)$ for $z=0$.  For $n=0$ the number of zeros is given by $Floor (\frac{2z}{\pi})$.  We want a way to ensure the calculation is accurate regardless of how oscillatory it is, but we also want it to be as fast as possible, so we use these facts regarding the zeros to ensure there are roughly the same number of integration points between zeros.  By taking the number of (evenly spaced) integration points to be
 
 \begin{align}
-N = n \cdot Floor \left( \frac{2z}{\pi} \right)
+N = 100 \cdot (n + 1) \cdot Floor \left( \frac{2z}{\pi} + 1 \right)
 \end{align}
 
-we acheved excellent results (accurate consistantly to 16 decimal places) for a wide range of $z$ and $n$.  The algorithm can have problems when $J$ is extremely small.  Then the function can be off by many orders of magnitude, but because it is essentially zero, it does not seem to effect our results when used as a boundary condition for solving Bessel's Differential Equation.
+we acheved excellent results (accurate consistantly to 16 decimal places) for a wide range of $z$ and $n$.  The $+1$'s are to ensure accurate results when $z$ or $n$ are zero.  The algorithm can have problems when $J$ is extremely small.  Then the function can be off by many orders of magnitude, but because it is essentially zero, it does not seem to effect our results when used as a boundary condition for solving Bessel's Differential Equation.
 
 It turns out the accuracy of the solution to bessels equation relies heavilly on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illistrate this point quite well.  The conclusion is that the asymtotic form of the bessel functions is not accurate enough for even fairly large valuse of $z$.
 
@@ -636,10 +651,18 @@ so the Fourier Transform of the real part of our frequency/phase modulated signa
 \end{split}
 \end{align}
 
+
 %\begin{align}
+%\label{eqn:realFourierTransform}
 %\Aboxed{\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
 %+ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]}
 %\end{align}
+
+\begin{align}
+\label{eqn:realFourierTransform}
+\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
++ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]
+\end{align}
 
 Notice that, by taking the fourier transform of just the real part of our frequency modulated function it has added the terms in red.  (Go into more detail why that is)  The other important change is that the $X_n$ and $Y_n$ terms were added (Again, go into more detail why that is).
 
