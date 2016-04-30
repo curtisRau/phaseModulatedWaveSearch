@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 APR 2016 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  30 APR 2016 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -628,66 +628,66 @@ File: earthMotionModulationFigure/earthMotionModulationFigure.pdf Graphic file
 
 <use earthMotionModulationFigure/earthMotionModulationFigure.pdf>
 Package pdftex.def Info: earthMotionModulationFigure/earthMotionModulationFigur
-e.pdf used on input line 72.
+e.pdf used on input line 73.
 (pdftex.def)             Requested size: 375.36299pt x 261.14812pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 79.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 79.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2 <./earthMotionModulationFigure/earthMotionModulationFigure.pdf>] [3]
 
-Package natbib Warning: Citation `deanna' on page 4 undefined on input line 226
+Package natbib Warning: Citation `deanna' on page 4 undefined on input line 227
 .
 
 [4] [5] <images/aligoNoise.png, id=46, 512.91624pt x 331.2375pt>
 File: images/aligoNoise.png Graphic file (type png)
 
 <use images/aligoNoise.png>
-Package pdftex.def Info: images/aligoNoise.png used on input line 300.
+Package pdftex.def Info: images/aligoNoise.png used on input line 301.
 (pdftex.def)             Requested size: 375.36299pt x 242.40787pt.
  [6 <./images/aligoNoise.png>]
 
-Package natbib Warning: Citation `morten' on page 7 undefined on input line 344
+Package natbib Warning: Citation `morten' on page 7 undefined on input line 345
 .
 
 [7] [8] [9] <images/BesselBadBoundary.png, id=63, 803.0pt x 504.88625pt>
 File: images/BesselBadBoundary.png Graphic file (type png)
 
 <use images/BesselBadBoundary.png>
-Package pdftex.def Info: images/BesselBadBoundary.png used on input line 535.
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 536.
 (pdftex.def)             Requested size: 225.21626pt x 141.606pt.
 
 <images/BesselGoodBoundary.png, id=64, 803.0pt x 506.89375pt>
 File: images/BesselGoodBoundary.png Graphic file (type png)
 
 <use images/BesselGoodBoundary.png>
-Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 540.
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 541.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
 
 <images/BesselJ4.png, id=65, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
 
 <use images/BesselJ4.png>
-Package pdftex.def Info: images/BesselJ4.png used on input line 573.
+Package pdftex.def Info: images/BesselJ4.png used on input line 574.
 (pdftex.def)             Requested size: 225.21626pt x 136.48413pt.
 
 <images/BesselJ40.png, id=66, 501.875pt x 300.12125pt>
 File: images/BesselJ40.png Graphic file (type png)
 
 <use images/BesselJ40.png>
-Package pdftex.def Info: images/BesselJ40.png used on input line 578.
+Package pdftex.def Info: images/BesselJ40.png used on input line 579.
 (pdftex.def)             Requested size: 225.21626pt x 134.68237pt.
 
 <images/BesselJ400.png, id=67, 501.875pt x 306.14375pt>
 File: images/BesselJ400.png Graphic file (type png)
 
 <use images/BesselJ400.png>
-Package pdftex.def Info: images/BesselJ400.png used on input line 583.
+Package pdftex.def Info: images/BesselJ400.png used on input line 584.
 (pdftex.def)             Requested size: 225.21626pt x 137.38503pt.
  [10 <./images/BesselBadBoundary.png (PNG copy)> <./images/BesselGoodBoundary.p
 ng (PNG copy)>]
@@ -695,7 +695,7 @@ ng (PNG copy)>]
 File: images/BesselJn80.png Graphic file (type png)
 
 <use images/BesselJn80.png>
-Package pdftex.def Info: images/BesselJn80.png used on input line 592.
+Package pdftex.def Info: images/BesselJn80.png used on input line 593.
 (pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
  [11 <./images/BesselJ4.png (PNG copy)> <./images/BesselJ40.png (PNG copy)> <./
 images/BesselJ400.png (PNG copy)>] [12 <./images/BesselJn80.png (PNG copy)>]
@@ -703,21 +703,21 @@ images/BesselJ400.png (PNG copy)>] [12 <./images/BesselJn80.png (PNG copy)>]
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
-Package pdftex.def Info: images/classicSignal.png used on input line 684.
+Package pdftex.def Info: images/classicSignal.png used on input line 685.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/interestingSignal.png, id=83, 488.82625pt x 290.08376pt>
 File: images/interestingSignal.png Graphic file (type png)
 
 <use images/interestingSignal.png>
-Package pdftex.def Info: images/interestingSignal.png used on input line 689.
+Package pdftex.def Info: images/interestingSignal.png used on input line 690.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/nastySignal.png, id=84, 488.82625pt x 291.0875pt>
 File: images/nastySignal.png Graphic file (type png)
 
 <use images/nastySignal.png>
-Package pdftex.def Info: images/nastySignal.png used on input line 694.
+Package pdftex.def Info: images/nastySignal.png used on input line 695.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
  (./phaseModulatedGravitationalWaves.bbl)
 
@@ -758,7 +758,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (14 pages, 717626 bytes)
+Output written on phaseModulatedGravitationalWaves.pdf (14 pages, 717976 bytes)
 .
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
