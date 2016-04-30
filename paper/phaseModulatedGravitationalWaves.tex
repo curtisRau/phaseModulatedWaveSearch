@@ -58,8 +58,7 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 -- Cover Page
 
 
-\section{Introduction (Curtis Rau and Colin Gordon will be doing this)}
-Sam and Curtis make a change!
+\section{Introduction}
 -- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
 
 Sources of continuous monochromatic (one frequency) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}.  If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}.  One phenomena may be (significantly??) repressing the amplitude of these signals as seen from Earth.  This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of sidebands which are the frequencies measured when taking Fourier Transform of the data that comes from the sinusoidal phase shift due to the Doppler effect from Earth's motion relative to the source.  There are two reasons to believe frequency modulation is truly occuring (reword).  
@@ -77,7 +76,9 @@ To calculate frequency observed for our wave we need to think about the source a
 -The equivalence of the two ways of looking at it.
 -The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
 
-$-- DEFINE : K, gamma, beta, w_e, w_o, phi_e, k, theta, h_0$
+We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
+
+$-- DEFINE : K, gamma, beta, k, theta, h_0$
 
 \begin{align}
 \label{eqn: new k}
@@ -244,16 +245,19 @@ h_0 \delta (\omega - \omega_0)
 &= \frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi_1})} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
 &\qquad \qquad
 \times \left[
-e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 +(n-m)\omega_1)
-+ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 +(n-m)\omega_1)
+e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega_1} - m\omega_1)
++ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 + n\widetilde{\omega_1} - m\omega_1)
 \right]
 \end{align}
+
+Bessel functions have the property \cite{}
 
 \begin{align}
 \sum_{n=-\infty}^{\infty} J_n (x) J_{n+m} (x) = \delta_{m}
 \end{align}
 
-Where $\delta_{m}$ is the Kronecker Delta.  \cite{}
+Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
+
 
 \subsection{Consequences of Discretizing}
 -drichlet kernel
@@ -307,7 +311,7 @@ The important thing to take away from this is that it takes an infinite bandwidt
 7) There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
 
 
-\section{Implementing the Gustafson Algorithm in C++ (Curtis Rau will do this for another class)}
+\section{Implementing the Gustafson Algorithm in C++}
 \subsection{Calculating Bessel Functions}
 Known problems with the algorithm include calculating large order bessel functions.  The bessel functions of natural number order are given by
 
@@ -325,19 +329,19 @@ so calculating the nth Bessel function involves calculating factorials greater t
 if we are willing to sacrafise some precision to truncation we can use a double precision floating point integer which allows values upto $1.797,693,134,862,315,7 \cdot 10^{308}$
 
 \begin{align}
-170! \approx 7.25 \cdot 10^{306}				\\
-< 1.797,693,134,862,315,7 \cdot 10^{308} < 	\\
+170! \approx 7.25 \cdot 10^{306}
+< 1.797,693,134,862,315,7 \cdot 10^{308} <
 171! \approx 1.24 \cdot 10^{309}
 \end{align}
 
-it has been shown that bessel functions up 250 or higher are necessary \citep{deanna}.  This whole buiseness of wresteling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
+This is not acceptable hovever, because $\left| J_n(z) \right| \leq 1$, so when performing the sum we need precision all the way down to at the very least $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impracticle, but it is by far one of the slowest ways one could calculate values of the Bessel functions.  This whole buiseness of wresteling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
 
 \begin{equation}
 \label{eqn:Bessel's Equation}
 x^2 J_n''(x) + x J_n'(x) + (x^2 - n^2) J_n(x) = 0
 \end{equation}
 
-The standard perscription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$.  Then use the limit definitions of the derivatives; we will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$.  Also, because there are only one order of Bessel Functions in Bessel's Equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and we will further adopt the notation $J(x_i) = J_i$.
+The standard perscription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$.  Then use the limit definitions of the derivatives; we will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$ \cite{morten}.  Also, because there are only one order of Bessel Functions in Bessel's Equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and we will further adopt the notation $J(x_i) = J_i$.
 
 \begin{align}
 J_i'  &= \frac{J_{i+1} - J_{i-1}}{2 \delta x} \\
@@ -352,8 +356,8 @@ x_i^2 \frac{J_{i-1} - 2J_{i} + J_{i+1}}{\delta x^2} + x \frac{J_{i+1} - J_{i-1}}
 \end{align}
 
 \begin{align}
-\left(\frac{x_i^2}{\delta x^2} - \frac{x_i}{2\delta x}\right) J_{i-1}			\nonumber
-	+ \left( \left(1-\frac{2}{\delta x^2}\right)x_i^2 - n^2 \right) J_i		\\
+\left(\frac{x_i^2}{\delta x^2} - \frac{x_i}{2\delta x}\right) J_{i-1}
+	+ \left( \left(1-\frac{2}{\delta x^2}\right)x_i^2 - n^2 \right) J_i
 	+ \left(\frac{x_i^2}{\delta x^2} + \frac{x_i}{2\delta x}\right) J_{i+1}
 	= 0
 \end{align}
@@ -383,12 +387,12 @@ a_i J_{i-1} + b_i J_i + c_i J_{i+1} = 0
 Wrighting out the system of equations explicitly:
 
 \begin{align}
-b_1 J_1 + c_1 J_2              = - a_1 J_0				\\
-a_2 J_1 + b_2 J_2 + c_2 J_3    = 0						\\
-a_3 J_2 + b_3 J_3 + c_3 J_4    = 0						\\
-\vdots													\\
-a_{n-1} J_{n-2} + b_{n-1} J_{n-1} + c_{n-1} J_{n} =   0	\\
-a_n J_{n-1} + b_n J_n = - c_n J_{n+1}
+b_1 J_1 + c_1 J_2                                 &= - a_1 J_0		\\
+a_2 J_1 + b_2 J_2 + c_2 J_3                       &= 0				\\
+a_3 J_2 + b_3 J_3 + c_3 J_4                       &= 0				\\
+                                                  &\vdots				\\
+a_{n-1} J_{n-2} + b_{n-1} J_{n-1} + c_{n-1} J_{n} &=   0				\\
+a_n J_{n-1} + b_n J_n                             &= - c_n J_{n+1}
 \end{align}
 
 Which suggests Bessel Equation be written as a matrix equation.
@@ -459,17 +463,23 @@ C_i = c_{i+1} &= (i+1)   \left( i + \frac{3}{2} \right)
 \end{align}
 
 \subsubsection{The Thomas Algorithm}
-The Thomas Algorithm is a lightning fast way to solve tridiagonal systems like equation \ref{eqn:finalDiscretizedBesselMatrixEqn}.  The algorithm consists of two steps.  First there is a forward substitution which eliminates the $A_i$'s.  
+The Thomas Algorithm is a lightning fast way to solve tridiagonal systems like equation \ref{eqn:finalDiscretizedBesselMatrixEqn}.  The algorithm consists of two steps.  First there is a forward substitution which eliminates the $A_i$'s, and modifies the $B_i$'s and the vector on the right which we will call the source vector $S_i; \quad \forall i \in [0, N-3]$.
 
 \begin{align}
-R_i = R_i - \frac{A_i}{B_{i-1}} R_{i-1}; \qquad \forall i \in [1, N-3]
+R_i &=   R_i - \frac{A_i}{B_{i-1}} R_{i-1}; 	\qquad \forall i \in [1, N-3]		\\
+B_i &\to B_i - \frac{A_i}{B_{i-1}} C_{i-1}; 	\qquad \forall i \in [1, N-3]		\\
+S_i &\to S_i - \frac{A_i}{B_{i-1}} S_{i-1}; 	\qquad \forall i \in [1, N-3]
 \end{align}
 
-Then there is a backwards substitution eliminating the $C_i$'s.
+Then there is a backwards substitution eliminating the $C_i$'s, again modifying the $S_i$'s.  Finally we solve for $J_i$.
 
 \begin{align}
-R_i = R_i - \frac{C_i}{B_{i+1}} R_{i+1}; \qquad \forall i \in [N-4, 0]
+R_i &=   R_i - \frac{C_i}{B_{i+1}} R_{i+1}; \qquad \forall i \in [N-4, 0]	\\
+S_i &\to S_i - \frac{C_i}{B_{i+1}} S_{i+1}; \qquad \forall i \in [N-4, 0]	\\
+J_i &=   \frac{S_{i-1}}{B_{i-1}};           \qquad \forall i \in [N-2, 1]
 \end{align}
+
+The time it takes to perform the Thomas Algorithm goes as $N$ \cite{}.
 
 
 
@@ -486,7 +496,7 @@ To solve this second-order differential equation we will need two boundary condi
    \right.
 \end{displaymath}
 
-For the other boundary condition we will use the asymtotic form of the Bessel functions.  Theorem 5.1 in \cite{folland} states:
+For the other boundary condition we \textit{could} use the asymtotic form of the Bessel functions.  Theorem 5.1 in \cite{folland} states:
 
 \textit{For each $n \in N$ there is a constant $C_n \in R$ such that, if $x \geq 1$, then}
 
@@ -495,33 +505,28 @@ For the other boundary condition we will use the asymtotic form of the Bessel fu
 \left| J_n(x) - \sqrt{\frac{2}{\pi x}} \cos \left( x - \frac{\pi}{4} (2n+1) \right) \right| \leq \frac{C_n}{x^{3/2}}
 \end{equation}
 
-This is an asymptotic expansion, so it is only valid for large values of x.  We can also do
+This is an asymptotic expansion, so it is only valid for large values of x.  It turns out the accuracy of the solution to bessels equation relies heavilly on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illistrate this point quite well.  The conclusion is that the asymtotic form of the bessel functions is not accurate enough for even fairly large valuse of $z$.  We can also do
 
 \begin{align}
 J_n (z) = \frac{1}{\pi} \int_{0}^{\pi} \cos \left[ z \sin \theta - n \theta \right] d \theta
 \end{align}
 
--trapazoidal integration.
--addaptive stepsize
--the importance of the endpoint and how it defines the amplitude of ALL OTHER POINTS!!
-
-trapaxoidal integration:
+Which is computed using a Riemann Sum
 
 \begin{align}
 \label{eqn:numericalIntegralBessel}
-J_n (z) &= \frac{1}{N} \sum_{i=0}^{N+1} \cos \left[ z \sin(i \cdot dx) - n \cdot i \cdot dx \right]		\\
-dx &= \frac{\pi}{N}
+J_n (z) &\approx \frac{1}{N} \sum_{i=0}^{N+1} \cos \left[ z \sin(i \cdot dx) - n \cdot i \cdot dx \right];
+\qquad dx = \frac{\pi}{N}
 \end{align}
 
 The function being integrated becomes more oscillitory as $n$ increases.  Numerical analysis shows that $n$ gives the number of zeros the function has  on the interval $(0,\pi)$ for $z=0$.  For $n=0$ the number of zeros is given by $Floor (\frac{2z}{\pi})$.  We want a way to ensure the calculation is accurate regardless of how oscillatory it is, but we also want it to be as fast as possible, so we use these facts regarding the zeros to ensure there are roughly the same number of integration points between zeros.  By taking the number of (evenly spaced) integration points to be
 
 \begin{align}
+\label{eqn:dynamicIntegrationPoints}
 N = 100 \cdot (n + 1) \cdot Floor \left( \frac{2z}{\pi} + 1 \right)
 \end{align}
 
 we acheved excellent results (accurate consistantly to 16 decimal places) for a wide range of $z$ and $n$.  The $+1$'s are to ensure accurate results when $z$ or $n$ are zero.  The algorithm can have problems when $J$ is extremely small.  Then the function can be off by many orders of magnitude, but because it is essentially zero, it does not seem to effect our results when used as a boundary condition for solving Bessel's Differential Equation.
-
-It turns out the accuracy of the solution to bessels equation relies heavilly on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illistrate this point quite well.  The conclusion is that the asymtotic form of the bessel functions is not accurate enough for even fairly large valuse of $z$.
 
 \begin{figure*}[t]
 	\centering
@@ -539,7 +544,7 @@ It turns out the accuracy of the solution to bessels equation relies heavilly on
 \end{figure*}
 
 \subsubsection{Calculating Bessel Functions: Results}
-The ultimate benchmark for sucess in calculating Bessel Functions in this manner (using the Thomas Algorithm to solve Bessel's Differential Equation) is to compare it to the stardard way of calculating the value at each point using an interal (as defined in equation \ref{eqn:numericalIntegralBessel} section \ref{sec:boundaryConditions}).  So how much faster is it?
+The ultimate benchmark for sucess in calculating Bessel Functions in this manner (using the Thomas Algorithm to solve Bessel's Differential Equation) is to compare it to the stardard way of calculating the value at each point using the Riemann Sum (as defined in equation \ref{eqn:numericalIntegralBessel} section \ref{sec:boundaryConditions}).  So how much faster is it?  This depends on the values of $n$ and $z$ because we use a dynamic number of integration points as given by eq. \ref{eqn:dynamicIntegrationPoints}. Table \ref{table:besselSpeed} gives the speed increse for various parameters.
 
 \begin{table*}[t]
 	\centering
@@ -556,8 +561,10 @@ The ultimate benchmark for sucess in calculating Bessel Functions in this manner
 		N = 50,000        &                &                      &           \\
 		$z_{max} = 100.0$ &                &                      &           \\
 	\end{tabular}
-	\caption{}
+	\caption{\label{table:besselSpeed} $N$ is the number of points returned, $n$ is the order of the bessel function, and the points calculated were for $z \in [0,z_{max}]$ }
 \end{table*}
+
+Table \ref{fig:selectBesselFunctions} gives three examples of Bessel Functions that were calculated using the Thomas Algorithm to solve Bessel's Equation.
 
 \begin{figure*}[t]
 	\centering
@@ -574,8 +581,9 @@ The ultimate benchmark for sucess in calculating Bessel Functions in this manner
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{BesselJ400.png}
-  		\caption{n=400, numPts=10,000, xMax=800, comptime=0.00200}
+  		\caption{n=400, numPts=10,000, xMax=800, comptime=0.00200;  About half the computation time went to calculating the endpoint!}
 	\end{subfigure}
+	\caption{\label{fig:selectBesselFunctions}}
 \end{figure*}
 
 
