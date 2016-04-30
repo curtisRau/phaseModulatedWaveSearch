@@ -1,4 +1,4 @@
-\documentclass[onecolumn, groupedaddress]{revtex4-1}
+\documentclass[onecolumn, groupedaddress, 10pt]{revtex4-1}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 %\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
@@ -38,7 +38,7 @@
 \title{A Novel Method for Removing the Cyclic Frequency Shift due to the Earth's Motion about the Sun from Astronomical Continuous-Wave Data}
 
 \begin{abstract}
--CURTIS MAKES A TEST CHANGE
+This senior thesis is presented to Michigan State University for partial fulfillment of the requirements for a baccalaureate degrees in Physics and Neuroscience.
 In this paper we will introduce the Gustafson Algorithm for removing frequency/phase modulation form a signal.  This method is powerful because it works in the frequency rather than time domain (explain why this is an advantage).  Here we will focus on its applications to LIGO, but there are many applications.  Some other examples are:
 -Radio wave astronomy
 -Comunications systems using FM?
@@ -56,7 +56,43 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 \maketitle
 
--- Cover Page
+% --------------------------- Code for the Cover Page ---------------------------------------------------------------------------------
+
+\pagebreak
+
+\section*{Division of Labor}
+
+\textbf{Curtis Rau}
+\begin{itemize}
+\item organized topics and problems of interest, directed group research
+\item wrote algorithm and discussion of results
+\item made figures for presentation and paper
+\item wrote rough draft and template for paper
+\item Wrote the C++ implementation
+\end{itemize}
+
+
+\textbf{Colin Gordon}
+\begin{itemize}
+\item researched and solved phase modulation of astronomical signal caused by rotation of earth using circular orbit approximation
+\item wrote introduction
+\item reviewed paper and edited
+\end{itemize}
+
+\textbf{David Witalka}
+\begin{itemize}
+\item created and organized presentation slides
+\item researched and edited sections on sampling theorem, Nyquist Frequency and aliasing, Carson’s rule
+\item reviewed paper and edited
+\end{itemize}
+
+\textbf{Samuel Akwei-Sekyere}
+\begin{itemize}
+\item reviewed and expanded paper
+\item researched and wrote sections on error and noise analysis
+\end{itemize}
+
+\pagebreak
 
 
 \section{Introduction}
@@ -214,7 +250,7 @@ J_{-n} (z) &= (-1)^n J_n(z)
 Which brings us to the Gustafson Algorithm (someone should check this out before we submit the paper):
 
 %\begin{align}
-\label{eqn:gustafsonAlgorithm}
+%\label{eqn:gustafsonAlgorithm}
 %\Aboxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
 %\end{align}
 
@@ -238,18 +274,35 @@ What would we have to do to get the fourier transform of the real to look exactl
 
 
 \subsection{Discussion of The Gustafson Algorithm}
-It is not explicitly obvious how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, is able to determin the values $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do.  First we start with Eq. \ref{eqn:gustafsonAlgorithm}, and plug in the Fourier Transform of the real of the waveform \ref{eqn:realFourierTransform}.
+It is not explicitly obvious how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, can be used as a search algorithm able to determin the values $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do.  
+
+Now let's assume that the data takes the form 
 
 \begin{align}
-h_0 \delta (\omega - \omega_0) 
-&= \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi_1}+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega_1})	\\
-&= \frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi_1})} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
+\label{eqn:realData}
+f(t) = \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\}
+\end{align}
+
+but we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determin these values we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Algorithm
+
+\begin{align}
+? = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
+\end{align}
+
+To see what this will yeald we substitute the Fourier Transform of the real of the waveform equation (\ref{eqn:realFourierTransform}), into the above equation
+
+\begin{align}
+&\frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
 &\qquad \qquad
 \times \left[
-e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega_1} - m\omega_1)
-+ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 + n\widetilde{\omega_1} - m\omega_1)
+e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
++ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
 \right]
 \end{align}
+
+- If $\widetilde{\phi}_1 = \phi_1$ then this formula does not depend on ether $\widetilde{\phi}_1$ or $\phi_1$.
+
+
 
 Bessel functions have the property \cite{}
 
@@ -260,21 +313,27 @@ Bessel functions have the property \cite{}
 Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
 
 
+\section{Carson's Rule and the Nyquist frequency}
+
+In order too fully reconstruct the carrier frequency we would need to take an infinite sum over the sidebands. As this is impractical and unnecessary as many terms are insignificant, we need to find a way to limit the number of sidebands we are summing over. The first problem is locating the sidebands' characteristic frequency. There are infinite sideband frequencies and eventually they will be higher than the Nyquist frequency which will cause aliasing of the sideband frequency. The Nyquist frequency, $\psi_N$, is defined as the maximum frequency that can be accurately reconstructed and is equal to half of the sampling frequency, $\psi_s$.
+
+\begin{equation}
+\psi_N = \frac{1}{2}\psi_s
+\end{equation}
+
+Any side band with a frequency of $\psi_0$ higher than the Nyquist frequency, but less than the sampling frequency, will be reconstructed with a frequency of ($\psi_s$ –- $\psi_0$). That is the frequency will be under-sampled and an alias frequency will be produced. When this occurs the best case scenario is that the alias frequency is unique and does not correspond to the frequency of another lower frequency sideband. In this case we can use anti-aliasing techniques to correct for the aliasing and still obtain information about the amplitude and frequency of the higher side bands. The worst case scenario is that the aliased frequency is too close to another lower frequency sideband and this will cause two problems: a systematic error will be added to the measurement of the lower side band’s amplitude, and we will be unable to determine the necessary information on what the amplitude of the higher frequency would be. To minimize the effect this might have we would like any sidebands with a frequency over the Nyquist frequency to have as low an amplitude as possible. For this we can employ Carson’s rule. Carson’s rule can be understood to say that almost all (roughly 98 percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$, defined by:
+
+\begin{equation}
+B_T = 2(\Delta\psi + \psi_m)
+\end{equation}
+
+where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to prefectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+ 
+
 \subsection{Consequences of Discretizing}
 -drichlet kernel
 
-\section{Carson's Rule}
-Carson's rule can be understood to say that almost all ($~98$ percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$,  defined by:
 
-\begin{equation}
-B_T = 2( \Delta f + f_m )
-\end{equation}
-
-where $\Delta f$ is the peak deviation of the instantaneous frequency f(t) from the center carrier frequency $f_c$, and $f_m$ is the highest frequency in the modulating signal.
-
-%IMPORTANT: This section is directly copied from Wikipedia and is, as of now, plagerized.
-
-The important thing to take away from this is that it takes an infinite bandwidth to transmit a phase/frequency modulated signal regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
 
 \section{Various Complecations that need to be dealt with (David and Colin)}
 -The LIGO data is interupted (ie. it comes in chunks--it is not a continuous streem of data).  How will this be dealt with?
@@ -296,11 +355,6 @@ The important thing to take away from this is that it takes an infinite bandwidt
 
 -Sam will provide a rigerous proof of this.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.75\linewidth]{aligoNoise.png}
-	\caption{This plot shows the theoretical noise sources, and the measured noise (red) in the interferometer.}
-\end{figure}
 
 \section{Possible Other Areas to Reasearch}
 2) The LIGO interferometers sample the data at a finite frequency.  This introduces a maximum possible frequency of Gravitational Waves that can be detected, up to the Niquest Frequency.  This will, in tern, limit the maximum number of terms we can include in our sum (equation (9)).  What is the biggest $\omega_c$, $\Omega$, and $\Gamma$ that can be reasonably detected? (Task for Fourier Analysis Class MTH 490)
@@ -669,6 +723,7 @@ so the Fourier Transform of the real part of our frequency/phase modulated signa
 
 \begin{align}
 \label{eqn:realFourierTransform}
+\hat{f}(\omega) = 
 \frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
 + e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]
 \end{align}
