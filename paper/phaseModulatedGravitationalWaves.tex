@@ -30,11 +30,11 @@
 
 \begin{document}
 
-\author{Curtis Rau}
-\author{Colin Gordon}
-\author{David Witalka}
-\author{Samuel Akwei-Sekyere}
-\affiliation{Michigan State University}
+\author{Curtis Rau$^{1,2}$}
+\author{Colin Gordon$^{1,2}$}
+\author{David Witalka$^{1,2}$}
+\author{Samuel Akwei-Sekyere$^{1,3}$}
+\affiliation{Department of Mathematics$^{1}$ \newline Department of Physics and Astronomy$^{2}$ \newline Neuroscience Program$^{3}$ \newline Michigan State University \newline}
 \title{A Novel Method for Removing the Cyclic Frequency Shift due to the Earth's Motion about the Sun from Astronomical Continuous-Wave Data}
 
 \begin{abstract}
@@ -269,14 +269,18 @@ The important thing to take away from this is that it takes an infinite bandwidt
 
 -Nyquist frequency is defined as half of the sampling frequency and it puts an effective maximum on the frequencies we can detect. Any frequency that exists above the Nyquist frequency will result in ailising. Specifically the amplitude of any frequency $\omega_0$ higher than $\omega_N$ will be "folded over" and be added to the amplitude of its symmetric counterpart $(\omega_0 - \omega_N)$. This will result in the measured amplitude of frequencies lower than $\omega_N$ having a systematic error component equal to the magnitude of the amplitude of the frequencies greater than $\omega_N$.  Assuming that the amplitude of frequenices decays fast enough this systematic error component can be made arbitrarliy small by increasing the sampling frequency. An inspection of the sampling frequency used in the experiment will allow us to estimate this systematic error component and put a maximum on its effect. 
 
-\section{Noise Sources and Dealing with them (Samuel Akwei-Sekyere will be working on this section)}
--The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
+%Sam's part!!!-------------------------------------------
+\section{Error Analysis}
+%-The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
 
--Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
+%-Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
 
--This means taking the fourier transform over more data will increase the signal to noise ratio.
+%-This means taking the fourier transform over more data will increase the signal to noise ratio.
 
--Sam will provide a rigerous proof of this.
+%-Sam will provide a rigerous proof of this.
+
+\subsection{Noise Sources}
+asdf
 
 \begin{figure}[H]
 	\centering
