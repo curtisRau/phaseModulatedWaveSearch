@@ -113,9 +113,7 @@ To calculate frequency observed for our wave we need to think about the source a
 -The equivalence of the two ways of looking at it.
 -The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
 
-We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
-
-$-- DEFINE : K, gamma, beta, k, theta, h_0$
+We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. K is the four vector of the wave's frequency and wave number.
 
 \begin{align}
 \label{eqn: new k}
@@ -300,17 +298,91 @@ e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\
 \right]
 \end{align}
 
-- If $\widetilde{\phi}_1 = \phi_1$ then this formula does not depend on ether $\widetilde{\phi}_1$ or $\phi_1$.
+%To put this equation in a more suggestive form we introduce the sideband mismatch number $l=m-n$.  This integer gives ???????
 
+%\begin{align}
+%&\frac{h_0}{2} \sum_{n,l=-\infty}^{\infty} e^{il\phi_1} e^{in(\phi_1-\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_{n+l} (\Gamma)				\nonumber \\
+%&\qquad \qquad
+%\times \left[
+%e^{i\phi_0} e^{il\pi/2} \delta(\omega - \omega_0 + n(\widetilde{\omega}_1 - \omega_1) - l \omega_1)
+%+ e^{-i\phi_0} e^{-il\pi/2} e^{-in\pi} \delta(\omega + \omega_0 + n(\widetilde{\omega}_1 - \omega_1) - l \omega_1)
+%\right]
+%\end{align}
 
+%-------------------- w != w0 & w1 != w1~ --------------------
 
-Bessel functions have the property \cite{}
+This needs to be treated in cases.  
+
+\textbf{Case 1:}  Let's consider the most likely case when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  Let's examin the term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ in the above equation in detail.  This delta function appears in the double sum and is a function of both $m$ and $n$, so the $n\widetilde{\omega}_1 - m\omega_1$ is changing over the sums whereas the value $\omega - \omega_0$ is constant (not a function of $m$ or $n$).  This delta is non-zero only if
 
 \begin{align}
-\sum_{n=-\infty}^{\infty} J_n (x) J_{n+m} (x) = \delta_{m}
+                0 &= \omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1		\\
+\omega_0 - \omega &= n\widetilde{\omega}_1 - m\omega_1
 \end{align}
 
-Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
+This can happen twice or never.  By the Euclidean Algorithm, the delta will only be non-zero if
+
+\begin{align}
+\gcd \left( \widetilde{\omega}_1, \omega_1 \right) = \omega_0 - \omega
+\end{align}
+
+If this is false then the sum is zero.  If it is true then call the values for $m$ and $n$ that make it true $\pm m_o$ and $\mp n_o$.  So then the sum is 
+
+
+~~~ Placeholder for equation ~~~
+
+
+%-------------------- w = w0 & w1 != w1~ --------------------
+\textbf{Case 2:}  Now consider the case when $\omega = \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if
+
+\begin{align}
+\widetilde{\omega}_1 = \frac{m}{n} \omega_1
+\end{align}
+
+Again this can happen twice or never.  If this is false then the sum is zero.
+
+
+~~~ Placeholder for equation ~~~
+
+
+%-------------------- w != w0 & w1 = w1~ --------------------
+\textbf{Case 3:}  Now consider the case when $\omega \neq \omega_0$ and $\omega_1 = \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if
+
+\begin{align}
+\omega - \omega_0 = (n-m)\widetilde{\omega}_1
+\end{align}
+
+Again this can happen twice or never.  If this is false then the sum is zero.
+
+
+\textbf{Cases 1-3:}  In all of these cases
+
+%-------------------- w != w0 & w1 = w1~ --------------------
+\textbf{Case 4:}  Now consider the case when $\omega = \omega_0$ and $\omega_1 = \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if $m=n$ which will happen an infinite number of times.  The sum becomes
+
+%This treatment does not include the \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1) term of the fourier transform.
+\begin{align}
+\frac{h_0}{2} e^{i\phi_0} \delta(0) \sum_{n=-\infty}^{\infty} e^{in(\phi_1-\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_n (\Gamma)
+\end{align}
+
+\textbf{Case 4a:} Now if we let $\Gamma = \widetilde{\Gamma}$ and $\phi_1 = \widetilde{\phi}_1$ then the sum becomes
+
+\begin{align}
+\frac{h_0}{2} e^{i\phi_0} \delta(0) \sum_{n=-\infty}^{\infty} J_n^2 (\Gamma) = \frac{h_0}{2} e^{i\phi_0} \delta(0)
+\end{align}
+
+So if we guess every search parameter correctly, $\omega = \omega_0$, $\omega_1 = \widetilde{\omega}_1$, $\Gamma = \widetilde{\Gamma}$, and $\phi_1 = \widetilde{\phi}_1$, then we recover the 
+
+%call $l$ the sideband mismatch number.
+
+
+%- Bessel functions have the property \cite{}
+
+%\begin{align}
+%\sum_{n=-\infty}^{\infty} J_n (x) J_{n+m} (x) = \delta_{m}
+%\end{align}
+
+%Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
 
 
 \section{Carson's Rule and the Nyquist frequency}
