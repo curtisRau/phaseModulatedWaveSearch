@@ -30,12 +30,14 @@
 
 \begin{document}
 
-\author{Curtis Rau}
-\author{Colin Gordon}
-\author{David Witalka}
-\author{Samuel Akwei-Sekyere}
-\affiliation{Michigan State University}
+\author{Curtis Rau$^{1,2}$}
+\author{Colin Gordon$^{1,2}$}
+\author{David Witalka$^{1,2}$}
+\author{Samuel Akwei-Sekyere$^{1,3}$}
+\affiliation{Department of Mathematics$^{1}$ \newline Department of Physics and Astronomy$^{2}$ \newline Neuroscience Program$^{3}$ \newline Michigan State University \newline}
+
 \title{A Novel Method for Removing the Cyclic Frequency Shift due to the Earth's Motion about the Sun from Astronomical Continuous-Wave Data}
+
 
 \begin{abstract}
 This senior thesis is presented to Michigan State University for partial fulfillment of the requirements for a baccalaureate degrees in Physics and Neuroscience.
@@ -61,7 +63,6 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 \pagebreak
 
 \section*{Division of Labor}
-
 \textbf{Curtis Rau}
 \begin{itemize}
 \item organized topics and problems of interest, directed group research
@@ -75,7 +76,7 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 \textbf{Colin Gordon}
 \begin{itemize}
 \item researched and solved phase modulation of astronomical signal caused by rotation of earth using circular orbit approximation
-\item wrote introduction
+\item wrote parts of the introduction
 \item reviewed paper and edited
 \end{itemize}
 
@@ -88,14 +89,15 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 \textbf{Samuel Akwei-Sekyere}
 \begin{itemize}
-\item reviewed and expanded paper
-\item researched and wrote sections on error and noise analysis
+\item reviewed and expanded paper (all sections)
+\item researched and wrote sections on error analysis, wrote parts of the introduction
 \end{itemize}
 
 \pagebreak
 
 
 \section{Introduction}
+<<<<<<< HEAD
 Einstein published his theory of general relativity in 1915. A consequence of his theory was that space time could stretch and contract when acted upon by a gravitational source. It didn't take long then to realize that under the right conditions this stretching and contracting could cause waves through the very fabric of spacetime. Go forward nearly 100 years and the very first evidence for these waves existing is discovered by the LIGO detector. They measured the ripples in space due to two massive black holes inspiralling and finally colliding together in an event that consumed 30 solar masses. This confirmed Einstein's theory and now the field of gravitational astronomy has been born. It is believed that gravitional wave sources are actually fairly common in our universe and sources of continuous monochromatic (one frequency) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}. If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}. There is one phenomena in particular that may be significantly repressing the amplitude of these signals as seen from Earth. This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of sidebands which are the frequencies measured when taking Fourier Transform of the data that comes from the sinusoidal phase shift due to the Doppler effect from Earth's motion relative to the source. To calculate frequency observed for a gravitationl wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and that the waves travel at the speed of light can write the wave as a lorentz invariant 4 vector.
 
 
@@ -108,15 +110,31 @@ Einstein published his theory of general relativity in 1915. A consequence of hi
 %To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and that the waves travel at the speed of light can write the wave as a lorentz invariant 4 vector.   
 
 \begin{figure*}[b]
+=======
+As a consequence of Einstein's Theory of General Relativity \cite{}, it has been postulated that information about the spatial distribution of matter in the universe is transmitted via a gravitational field. From a theoretical standpoint, gravitational waves are manifested in the form of detectable ripples within the fabric of space and time, by changes in gravitational field and as a function of the movement of masses.
+
+
+Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) confirmed the first experimental evidence of gravitational waves. The discovered ripples in space-time by LIGO was a function of the inspiral of two black holes that eventually merged --- an even that consumed approximately 30 solar masses. It is believed that gravitational wave sources are actually fairly common in the universe and sources of continuous monochromatic (single frequency) gravitational radiation are predicted to exist --- at least sources with frequencies that persist over many periods \cite{}. Neutron stars have also been implicated as one of the prime sources of gravitational waves. These stars are expected to emit single frequency waves over long periods of time. Additionally, it has also been proposed that an appreciable fraction of detectable gravitational waves are binary neutron star systems --- two neutron starts orbiting around each other.
+
+A fundamental challenge to efficient detection of gravitational waves is that orbiting binary neutron star systems invoke frequency modulations which reduce the power of the carrier frequency and distributes it to higher and lower harmonics. In essence, the power of the signal is dispersed over a range of side-band frequencies; this phenomenon is due to the Doppler effect arising from the Earth's motion relative to the source of the wave. Since the noise observed in the LIGO data is approximately Gaussian and of low signal-to-noise ratio, the extraction of reliable information about gravitational waves is arduous.
+
+In order to calculate the carrier frequency of the wave, consider the wave as one emitted from a source that is megaparsecs away (potentially in other galaxies). By virtue of its distance, the spherical coordinates will not change significantly and the source will move relative to the sun with nearly constant velocity over the time we collect data. By the same token, the sun will experience the monochromatic wave produced by the source as truly monochromatic, while its detection on the Earth will be in the form of a frequency modulated signal.
+
+\begin{figure*}[ht]
+>>>>>>> master
 	\centering
 	\includegraphics[width=.75\linewidth]{earthMotionModulationFigure.pdf}
 	\caption{\label{fig:earthMotionModulationFigure}}
 \end{figure*}
 
+<<<<<<< HEAD
 %-The equivalence of the two ways of looking at it.
 %-The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
 
 We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. $\mathbf{K}$ is the four vector of the wave's frequency and wave number.
+=======
+By assuming that the wave travels at the speed of light, we can capture it as a Lorentz invariant 4-vector with the carrier frequency being the first entry and the second through fourth entries is the wave number. In order to transform it in the Earth's frame we apply an instantaneous Lorentz boost on the 4-vector; the instantaneous boost takes the direction of the motion of the Earth and the velocity of the the Earth in orbit into consideration. Without loss of generality, the Earth's orbit is captured in the $xy$ plane. The 4-vector is written in the perspective that assumes the wave is a plane wave which travels towards the Sun on a trajectory that is on the $xz$ plane. The matrix with the trigonometric functions projects that 4-vector on a new basis and effectively forcing the second component of the 4-vector to be in the direction of motion of Earth. The matrix with the Betas and gammas is a lorentz transformation that applies on 1st and 2nd component. now the 4 vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes.
+>>>>>>> master
 
 \begin{align}
 \label{eqn: new k}
@@ -145,16 +163,18 @@ We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the
 	\gamma \left(-\beta \omega_0 / c + k \sin \theta \sin (\omega_e t + \phi_e)\right) \\
 	           \gamma k \sin \theta \cos (\omega_e t + \phi_e)           \\
 	                           - k \cos \theta
-\end{array} \right)   
+\end{array} \right)   ,
 \end{align}
 
-So the new instentanious frequency in the earth frame is
+where $\theta$ is the polar angle from the axis perpendicular to the orbit of Earth, $\gamma$ is the Lorentz factor from special relativity, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $c$ is the speed of light and $\beta$ is the velocity of Earth's orbit divided by the speed of light.
+
+From this formulation we can infer that the new instantaneous frequency in the Earth's frame can be given by:
 
 \begin{equation}
-\omega (t) = \omega_0 \gamma \left( 1 - \beta \sin \theta \sin (\omega_e t + \phi_e) \right) 
+\omega (t) = \omega_0 \gamma \left( 1 - \beta \sin \theta \sin (\omega_e t + \phi_e) \right). 
 \end{equation}
 
-phase is the time integral of frequency so the expression for the wave we are looking for is the real part of 
+Since the phase refers to the time integral of the frequency, the expression for the wave being sought after is the real part of the following: 
 
 \begin{align}
 h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)}		\\
@@ -162,17 +182,24 @@ h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)
 \Gamma  &= \frac{\gamma \beta \omega_0 \sin \theta}{\omega_e}
 \end{align}
 
+<<<<<<< HEAD
 An important note is that $\Gamma$ is a function of only the azmuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced in a matter similiar to the above detections. In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using FM (Frequency Modulated) signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
+=======
+where $h_0$ is the amplitude of the wave, $\Gamma$ is the modulation index, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
+
+>>>>>>> master
 
 
 \section{The Gustafson Algorithm}
-It would be nice to have an algorithm that does the following:
+Since the approach is not restricted to gravitational waves and could be detected on another planet other than the Earth, we shall consider a generalized form of the problem. The goal of this paper is to design an algorithm that extracts $\omega_0$, $\omega_1$, $\Gamma$, $h_0$ and $\phi_1$ by providing a delta-function as an output if all of the parameters of $f(t)$ being searched for are correct:
 
 \begin{equation}
-h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} \to h_0 \delta (\omega_0) \delta (\omega_1 ) \delta (\Gamma )
+h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} \to h_0 \delta (\omega_0) \delta (\omega_1 ) \delta (\Gamma ) \delta(\phi_1),
 \end{equation}
 
-Previous methods have utilized, where f(t) is the data.
+where $f(t)$ is the data recorded (as shown below), $\omega_0$ is the frequency of the wave, $\omega_1$ is the angular frequency of the recording site about the Sun, $\phi_0$ is the phase of the wave, $\phi_1$ is the relative phase difference between the recording site's rotation about the Sun and the wave, $\Gamma$ is the modulation index and $h_0$ is the amplitude of the wave.
+
+Previous methods have utilized, asdf.
 
 \begin{align}
 h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} &= f(t) 												\\
@@ -297,6 +324,31 @@ e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\
 \right]
 \end{align}
 
+- If $\widetilde{\phi}_1 = \phi_1$ then this formula does not depend on ether $\widetilde{\phi}_1$ or $\phi_1$.
+
+
+
+Bessel functions have the property \cite{}
+
+\begin{align}
+? = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
+\end{align}
+
+Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
+
+
+\section{Carson's Rule and the Nyquist frequency}
+To see what this will yeald we substitute the Fourier Transform of the real of the waveform equation (\ref{eqn:realFourierTransform}), into the above equation
+
+\begin{align}
+&\frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
+&\qquad \qquad
+\times \left[
+e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
++ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
+\right]
+\end{align}
+
 %To put this equation in a more suggestive form we introduce the sideband mismatch number $l=m-n$.  This integer gives ???????
 
 %\begin{align}
@@ -385,7 +437,6 @@ So if we guess every search parameter correctly, $\omega = \omega_0$, $\omega_1 
 
 
 \section{Carson's Rule and the Nyquist frequency}
-
 In order too fully reconstruct the carrier frequency we would need to take an infinite sum over the sidebands. As this is impractical and unnecessary as many terms are insignificant, we need to find a way to limit the number of sidebands we are summing over. The first problem is locating the sidebands' characteristic frequency. There are infinite sideband frequencies and eventually they will be higher than the Nyquist frequency which will cause aliasing of the sideband frequency. The Nyquist frequency, $\psi_N$, is defined as the maximum frequency that can be accurately reconstructed and is equal to half of the sampling frequency, $\psi_s$.
 
 \begin{equation}
@@ -399,13 +450,37 @@ B_T = 2(\Delta\psi + \psi_m)
 \end{equation}
 
 where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to prefectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+
+\begin{equation}
+B_T = 2(\Delta\psi + \psi_m)
+\end{equation}
+
+where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to prefectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
  
 
-\subsection{Consequences of Discretizing}
--drichlet kernel
+\section{Error Analysis}
+While the search for monochromatic gravitational waves via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detected by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated \citep{abramovici1996improved} \citep{aasi2013enhanced}.
 
+\subsection{Noise Sources}
+Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
 
+\subsection{Noise Elimination}
+As mentioned previously, quantum noise --- in particular, thermal noise --- has been implicated as a limiting factor in the sensitivity of gravitational wave inteferometers and hence a prime factor in the degradation of the signal quality \citep{Saulson}. Following from this, it can be inferred that the distribution of the noise is approximately Gaussian.
 
+By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to find segments with pure noise.
+
+In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. This method utilizes the following principle: the nature of the noise is not known but the nature of the signal is known. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of intrinsic mode functions and assumes the noise is correlated across different channels.
+
+\subsubsection{Proposed denoising algorithm}
+In an effort to reduce the noise, we shall consider data from two channels. By the assumption that the noise observed is additive (and correlated), we yield the following:
+\begin{equation}
+\xi^{(1)}(t) = f^{(1)}(t) + \epsilon^{(1)}(t)
+\end{equation}
+\begin{equation}
+\xi^{(2)}(t) = f^{(2)}(t) + \epsilon^{(2)}(t)
+\end{equation}
+
+<<<<<<< HEAD
 %\section{Various Complecations that need to be dealt with}
 %-The LIGO data is interupted (ie. it comes in chunks--it is not a continuous streem of data).  How will this be dealt with?
 %-Estimating the likelyhood that any signal we see is truly a discovery and not noise. (Error Analysis)
@@ -419,6 +494,85 @@ where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequenc
 %-Obviously the duration of data is finite.  This puts a limit on how finly the Fourier Transform can resolve frequencies, ie. how small frequency bins can be.  This in tern tells us how small our step size in $\omega_c$ and $\Omega$ can be.  What are they? (Task for Fourier Analysis Class MTH 490)
 %-Over very long periods of time $\omega_c \to 0$ because the neutron star loses energy/momentum to gravitational wave radation.  Over relatively much much shorter time periods $\Omega$ and $\Gamma$ change due to environmental reasons (not entirely sure on this).  What limitations does this put on our search, especially if the explicit nature of the time evolution of these parameters is unknown? ANSWER: it shortens the ammount of time we can take data over? (Task for Fourier Analysis Class MTH 490)
 %-There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
+=======
+where $\xi^{(n)}(t)$ is the data observed, $f^{(n)}(t)$ is the true signal and $\epsilon^{(n)}(t)$ is the noise obtained from the n-th channel (or gravitational wave interferometer) with $\epsilon^{(n)}(t) \sim \mathcal{N}(0,\sigma^2)$.
+
+First, we disintegrate each observed signal into $\alpha$ intrinsic mode functions via empirical mode decomposition and arrange them into a $2 \alpha \times T$ matrix $\mathbf{L}$:
+
+\begin{equation}
+\mathbf{L} = \left( \begin{array}{cccc}
+l_{1,t_1}^{(1)} & l_{1,t_2}^{(1)} & \cdots & l_{1,t_T}^{(1)} \\
+l_{2,t_2}^{(1)} & l_{2,t_2}^{(1)} & \cdots & l_{2,t_T}^{(1)} \\
+\vdots & \vdots & \vdots & \vdots \\
+l_{\alpha,t_1}^{(1)} & l_{\alpha ,t_2}^{(1)} & \cdots & l_{\alpha,t_T}^{(1)} \\
+l_{\alpha+1,t_1}^{(2)} & l_{\alpha+1,t_2}^{(2)} & \cdots & l_{\alpha+1,t_T}^{(2)} \\
+l_{\alpha+2,t_2}^{(2)} & l_{\alpha+2,t_2}^{(2)} & \cdots & l_{\alpha+2,t_T}^{(2)} \\
+\vdots & \vdots & \vdots & \vdots \\
+l_{2\alpha,t_1}^{(2)} & l_{2\alpha,t_2}^{(2)} & \cdots & l_{2\alpha,t_T}^{(2)}
+\end{array} \right)
+\end{equation}
+
+where $l_{p,t_q}^{(n)}$ is the $\left[ \bigg( (p-1) \textnormal{mod } \alpha \bigg) + 1\right]$-th intrinsic mode function at time $t_q$ of $\xi^{(n)}(t)$, and with $T$ being the total number of data points observed.
+
+Thereafter, the fast Fourier transform of each intrinsic mode function in $\mathbf{L}$ is computed to obtain a matrix $\mathcal{F} \left( \mathbf{L} \right)$. Singular value decomposition of the variance-covariance matrix obtained from $\mathcal{F}{ \left( \mathbf{L} \right) }$ is then computed to result in the following:
+\begin{equation}
+\Sigma = \mathbf{USV}
+\end{equation}
+ 
+where $\Sigma = T^{-1} \left[ \mathcal{F}(\mathbf{L}) ^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}(\mathbf{L})^{\mathbf{T}} T^{-1} \right]^{ \dagger } \left[ \mathcal{F}(\mathbf{L})^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}( \mathbf{L})^{\mathbf{T}} T^{-1} \right] $with $(\cdot)^\mathbf{T}$ being the transpose, the conjugate transpose $(\cdot)^\dagger$ and $\mathbf{1}$ a $T \times 1$ column matrix.
+
+
+The fast Fourier transforms are de-correlated to form a matrix $\mathbf{R}$ by employing the following:
+\begin{equation}
+\mathbf{R} = \mathbf{U}^{\mathbf{T}}\mathbf{L}
+\end{equation}
+
+After the de-correlation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following procedure:
+
+\begin{equation}
+y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
+\end{equation}
+where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$.
+
+To apply the threshold, the projections with eigenvalues whose indices are less than $y$ are retained and the rest are replaced with zero row vectors:
+
+\begin{displaymath}
+   \mathbf{R}_r = \left\{
+     \begin{array}{lr}
+        \mathbf{R}_r & , r < y     \\
+       \mathbf{0} & , r \geq y
+     \end{array}
+   \right.
+\end{displaymath}
+where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$.
+
+The fast Fourier transforms are then re-correlated to obtain denoised intrinsic mode functions in the following manner:
+\begin{equation}
+\tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}
+\end{equation}
+
+The real component of the inverse fast Fourier transform of each row of $\mathbf{\tilde{L}}$ is then computed to obtain a matrix $\mathbf{D}$ of similar architecture with denoised intrinsic mode functions. Thereafter, the reconstructed signals $\hat{\xi^{(n)}}(t)$ are obtained as follows:
+\begin{equation}
+\hat{\xi^{(n)}}(t_{q}) = \sum_{u = (n-1)\alpha + 1}^{n\alpha} \mathbf{d}_{u,q}
+\end{equation}
+where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\textnormal{th}$ column of $\textbf{D}$.
+
+\subsubsection{Discussion}
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{denoise_1.jpg}
+  		\caption{\label{fig:denoise_1} jkl;.}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{denoise_2.jpg}
+  		\caption{\label{fig:denoise_2} JKL}
+	\end{subfigure}
+	\caption{asdf}
+\end{figure*}
+>>>>>>> master
 
 
 \section{Implementing the Gustafson Algorithm in C++}
