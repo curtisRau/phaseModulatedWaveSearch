@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAY 2016 12:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAY 2016 14:07
 entering extended mode
 **phaseModulatedGravitationalWaves.tex
 
@@ -624,137 +624,155 @@ t line 436.
 File: images/denoise_1.jpg Graphic file (type jpg)
 
 <use images/denoise_1.jpg>
-Package pdftex.def Info: images/denoise_1.jpg used on input line 524.
+Package pdftex.def Info: images/denoise_1.jpg used on input line 528.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
  <images/denoise_2.jpg, id=60, 3613.5pt x 3613.5pt>
 File: images/denoise_2.jpg Graphic file (type jpg)
 
 <use images/denoise_2.jpg>
-Package pdftex.def Info: images/denoise_2.jpg used on input line 529.
+Package pdftex.def Info: images/denoise_2.jpg used on input line 533.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
- [10]
+ <images/denoise_3.jpg, id=61, 3613.5pt x 3613.5pt>
+File: images/denoise_3.jpg Graphic file (type jpg)
 
-Package natbib Warning: Citation `morten' on page 11 undefined on input line 56
-6.
+<use images/denoise_3.jpg>
+Package pdftex.def Info: images/denoise_3.jpg used on input line 540.
+(pdftex.def)             Requested size: 250.24199pt x 250.21397pt.
+ [10] [11 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/imag
+es/denoise_1.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/pa
+per/images/denoise_2.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveS
+earch/paper/images/denoise_3.jpg>]
 
-[11 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/den
-oise_1.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/im
-ages/denoise_2.jpg>] [12] [13]
-<images/BesselBadBoundary.png, id=76, 803.0pt x 504.88625pt>
+Package natbib Warning: Citation `morten' on page 12 undefined on input line 57
+5.
+
+[12] [13] <images/BesselBadBoundary.png, id=76, 803.0pt x 504.88625pt>
 File: images/BesselBadBoundary.png Graphic file (type png)
 
 <use images/BesselBadBoundary.png>
-Package pdftex.def Info: images/BesselBadBoundary.png used on input line 757.
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 766.
 (pdftex.def)             Requested size: 225.21626pt x 141.606pt.
 
 <images/BesselGoodBoundary.png, id=77, 803.0pt x 506.89375pt>
 File: images/BesselGoodBoundary.png Graphic file (type png)
 
 <use images/BesselGoodBoundary.png>
-Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 762.
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 771.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
-
-<images/BesselJ4.png, id=78, 501.875pt x 304.13625pt>
+ [14]
+<images/BesselJ4.png, id=82, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
 
 <use images/BesselJ4.png>
-Package pdftex.def Info: images/BesselJ4.png used on input line 795.
+Package pdftex.def Info: images/BesselJ4.png used on input line 804.
 (pdftex.def)             Requested size: 225.21626pt x 136.48413pt.
 
-<images/BesselJ40.png, id=79, 501.875pt x 300.12125pt>
+<images/BesselJ40.png, id=83, 501.875pt x 300.12125pt>
 File: images/BesselJ40.png Graphic file (type png)
 
 <use images/BesselJ40.png>
-Package pdftex.def Info: images/BesselJ40.png used on input line 800.
+Package pdftex.def Info: images/BesselJ40.png used on input line 809.
 (pdftex.def)             Requested size: 225.21626pt x 134.68237pt.
 
-<images/BesselJ400.png, id=80, 501.875pt x 306.14375pt>
+<images/BesselJ400.png, id=84, 501.875pt x 306.14375pt>
 File: images/BesselJ400.png Graphic file (type png)
 
 <use images/BesselJ400.png>
-Package pdftex.def Info: images/BesselJ400.png used on input line 805.
+Package pdftex.def Info: images/BesselJ400.png used on input line 814.
 (pdftex.def)             Requested size: 225.21626pt x 137.38503pt.
- [14 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/Be
-sselBadBoundary.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulate
-dWaveSearch/paper/images/BesselGoodBoundary.png (PNG copy)>] <images/BesselJn80
-.png, id=86, 803.0pt x 500.87125pt>
+
+<images/BesselJn80.png, id=85, 803.0pt x 500.87125pt>
 File: images/BesselJn80.png Graphic file (type png)
 
 <use images/BesselJn80.png>
-Package pdftex.def Info: images/BesselJn80.png used on input line 814.
+Package pdftex.def Info: images/BesselJn80.png used on input line 823.
 (pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
  [15 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/Be
-sselJ4.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSear
-ch/paper/images/BesselJ40.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/pha
-seModulatedWaveSearch/paper/images/BesselJ400.png (PNG copy)>] [16 <C:/Users/Sa
-muel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/BesselJn80.png (PNG
- copy)>]
-<images/classicSignal.png, id=94, 488.82625pt x 290.08376pt>
+sselBadBoundary.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulate
+dWaveSearch/paper/images/BesselGoodBoundary.png (PNG copy)>] [16 <C:/Users/Samu
+el/Documents/GitHub/phaseModulatedWaveSearch/paper/images/BesselJ4.png (PNG cop
+y)> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/Bes
+selJ40.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSear
+ch/paper/images/BesselJ400.png (PNG copy)>] [17 <C:/Users/Samuel/Documents/GitH
+ub/phaseModulatedWaveSearch/paper/images/BesselJn80.png (PNG copy)>] <images/cl
+assicSignal.png, id=98, 488.82625pt x 290.08376pt>
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
-Package pdftex.def Info: images/classicSignal.png used on input line 907.
+Package pdftex.def Info: images/classicSignal.png used on input line 916.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
-<images/interestingSignal.png, id=96, 488.82625pt x 290.08376pt>
+<images/interestingSignal.png, id=100, 488.82625pt x 290.08376pt>
 File: images/interestingSignal.png Graphic file (type png)
 
 <use images/interestingSignal.png>
-Package pdftex.def Info: images/interestingSignal.png used on input line 912.
+Package pdftex.def Info: images/interestingSignal.png used on input line 921.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
-<images/nastySignal.png, id=97, 488.82625pt x 291.0875pt>
+<images/nastySignal.png, id=101, 488.82625pt x 291.0875pt>
 File: images/nastySignal.png Graphic file (type png)
 
 <use images/nastySignal.png>
-Package pdftex.def Info: images/nastySignal.png used on input line 917.
+Package pdftex.def Info: images/nastySignal.png used on input line 926.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
 
 (C:\Users\Samuel\Documents\GitHub\phaseModulatedWaveSearch\paper\phaseModulated
-GravitationalWaves.bbl)
+GravitationalWaves.bbl
+Overfull \vbox (10.52867pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (10.52867pt too high) has occurred while \output is active []
+
+
+[18 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/cla
+ssicSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/pape
+r/images/interestingSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseModulate
+dWaveSearch/paper/images/nastySignal.png>])
 
 Package natbib Warning: There were undefined citations.
 
-[17] [18 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/image
-s/classicSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch
-/paper/images/interestingSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseMod
-ulatedWaveSearch/paper/images/nastySignal.png>]
+[19]
 (C:\Users\Samuel\Documents\GitHub\phaseModulatedWaveSearch\paper\phaseModulated
-GravitationalWaves.aux) ) 
+GravitationalWaves.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
+ ) 
 Here is how much of TeX's memory you used:
- 5961 strings out of 493921
- 84169 string characters out of 3144874
- 184486 words of memory out of 3000000
- 9169 multiletter control sequences out of 15000+200000
+ 5968 strings out of 493921
+ 84306 string characters out of 3144874
+ 182486 words of memory out of 3000000
+ 9175 multiletter control sequences out of 15000+200000
  11284 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,18n,38p,1365b,527s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmbx7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cme
-xtra/cmex7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (18 pages, 2180595 bytes
+ 36i,18n,38p,1365b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmti9.pfb>
+Output written on phaseModulatedGravitationalWaves.pdf (19 pages, 2892970 bytes
 ).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
+ 178 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

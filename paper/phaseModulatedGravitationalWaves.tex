@@ -517,19 +517,28 @@ The real component of the inverse fast Fourier transform of each row of $\mathbf
 where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\textnormal{th}$ column of $\textbf{D}$.
 
 \subsubsection{Discussion}
+In contrast with denoising techniques such as low-pass filtering, this approach does not require the knowledge of the highest frequency of the signal being recorded. However, the knowledge of how much variance of the data to keep is integral to successful denoising --- this is usually unknown and techniques have been proposed to solve this non-trivial problem \cite{}.
+
+
+
 \begin{figure*}[ht]
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{denoise_1.jpg}
-  		\caption{\label{fig:denoise_1} jkl;.}
+  		\caption{\label{fig:denoise_1} Fourier transform of the proposed denoising approach on channel 1.}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{denoise_2.jpg}
-  		\caption{\label{fig:denoise_2} JKL}
+  		\caption{\label{fig:denoise_2} Fourier transform of the proposed denoising approach on channel 2.}
 	\end{subfigure}
-	\caption{asdf}
+	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
+\end{figure*}
+
+\begin{figure*}[ht]
+\includegraphics[width = 0.5\linewidth]{denoise_3.jpg}
+\caption{\label{fig:denoise_3} Denoising results}
 \end{figure*}
 
 
