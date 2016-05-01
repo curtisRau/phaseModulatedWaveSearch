@@ -94,12 +94,13 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \section{Introduction}
-As a consequence of Einstein's Theory of General Relativity \cite{}, it has been postulated that information about the spatial distribution of matter in the universe is transmitted via a gravitational field. From a theoretical standpoint, gravitational waves are manifested in the form of detectable ripples within the fabric of space and time, by changes in gravitational field and as a function of the movement of masses.
+General Relativity postulates that information about the spatial distribution of matter in the universe is transmitted via a gravitational field.  Information regarding changes in mass distrobution of the universe propigate out through spacetime away from the location of that change at the speed of light.  Special events, where the quadrapole moment of the mass distrobution changes, emmit gravitational radation.  Extremely violent events in the universe can release enough gravitational radation to be detectable from Earth.
 
 
-Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) confirmed the first experimental evidence of gravitational waves. The discovered ripples in space-time by LIGO was a function of the inspiral of two black holes that eventually merged --- an event that consumed approximately 30 solar masses. It is believed that gravitational wave sources are common in the universe and sources of continuous monochromatic (single frequency) gravitational radiation are predicted to exist --- at least sources with frequencies that persist over many periods \cite{}. Neutron stars have also been implicated as one of the prime sources of gravitational waves. These stars are expected to emit single frequency waves over long periods of time. Additionally, it has also been proposed that an appreciable fraction of detectable gravitational waves are binary neutron star systems --- two neutron starts orbiting around each other.
 
-A fundamental challenge to efficient detection of gravitational waves is that orbiting binary neutron star systems invoke frequency modulations which reduce the power of the carrier frequency and distributes it to higher and lower harmonics. In essence, the power of the signal is dispersed over a range of side-band frequencies; this phenomenon is due to the Doppler effect arising from the Earth's motion relative to the source of the wave. Since the noise observed in the LIGO data is approximately Gaussian and of low signal-to-noise ratio, the extraction of reliable information about gravitational waves is arduous.
+Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) obtained the first emperical evidence of gravitational waves. The discovered ripples in space-time by LIGO was a function of the inspiral of two black holes that eventually merged --- an event that consumed approximately 3 solar masses \citep{abbott}.  It is believed that gravitational wave sources are common in the universe and sources of continuous monochromatic (single frequency) gravitational radiation are predicted to exist --- at least sources with frequencies that persist over many periods \cite{}. Neutron stars have also been implicated as one of the prime sources of gravitational waves.  These stars are expected to emit single frequency waves over long periods of time.  Additionally, it has also been proposed that an appreciable fraction of detectable gravitational waves emmitters are binary neutron star systems --- two neutron starts orbiting around each other.
+
+A fundamental challenge to efficient detection of gravitational waves is that orbiting binary neutron star systems invoke frequency modulations which reduce the power of the carrier frequency and distributes it to higher and lower harmonics.  In essence, the power of the signal is dispersed over a range of side-band frequencies; this phenomenon is due to the Doppler effect arising from the Earth's motion relative to the source of the wave. Since the noise observed in the LIGO data is approximately Gaussian and of low signal-to-noise ratio, the extraction of reliable information about gravitational waves is arduous.
 
 In order to calculate the carrier frequency of the wave, consider the wave as one emitted from a source that is megaparsecs away (potentially in other galaxies). By virtue of its distance, the spherical coordinates will not change significantly and the source will move relative to the sun with nearly constant velocity over the time we collect data. By the same token, the sun will experience the monochromatic wave produced by the source as truly monochromatic, while its detection on the Earth will be in the form of a frequency modulated signal.
 
@@ -163,7 +164,24 @@ where $h_0$ is the amplitude of the wave, $\Gamma$ is the modulation index, $\om
 An important note is that $\Gamma$ is a function of only the azmuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced in a matter similiar to the above detections. In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
 
 \section{The Gustafson Algorithm}
-Since the approach is not restricted to gravitational waves and could be detected on another planet other than the Earth, we shall consider a generalized form of the problem. The goal of this paper is to design an algorithm that extracts $\omega_0$, $\omega_1$, $\Gamma$, $h_0$ and $\phi_1$ by providing a delta-function as an output if all of the parameters of $f(t)$ being searched for are correct:
+The goal of this paper is to propose a search algorithm that can detect the presence of frequency modulated waves.  A brute force way to acomplish this is to take the inner product of 
+
+\begin{equation}
+h(t) = h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)}
+\end{equation}
+
+with the data for different values of $\omega_0$, $\omega_1$, $\phi_0$, $\phi_1$, and $\Gamma$.  This is effectively a Fourier Transform as a function of the the 4 search parameters
+
+\begin{align}
+\hat{f}(\omega_0, \omega_1, \phi_1, \Gamma) = \int f(t) e^{-i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} dt
+\end{align}
+
+The ammount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$.  Physically this means the frequency resolution of the DFT is proportional to the duration of the time series.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.
+
+ 
+Of particular interest is the case when the signal is buarried deep within non-coherent noise.  A conventional way to improve the signal to noise ratio (SNR) is to simply take more data.
+
+$\omega_0$, $\omega_1$, $\Gamma$, $h_0$ and $\phi_1$ by providing a delta-function as an output if all of the parameters of $f(t)$ being searched for are correct:
 
 \begin{equation}
 h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} \to h_0 \delta (\omega_0) \delta (\omega_1 ) \delta (\Gamma ) \delta(\phi_1),
@@ -443,7 +461,7 @@ By low-pass filtering or spectral subtraction, it is possible to derive signals 
 
 In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. This method utilizes the following principle: the nature of the noise is not known but the nature of the signal is known. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of intrinsic mode functions and assumes the noise is correlated across different channels.
 
-\subsubsection{Proposed denoising algorithm}
+\subsubsection{Proposed Denoising Algorithm}
 In an effort to reduce the noise, we shall consider data from two channels. By the assumption that the noise observed is additive (and correlated), we yield the following:
 \begin{equation}
 \xi^{(1)}(t) = f^{(1)}(t) + \epsilon^{(1)}(t)
