@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAY 2016 18:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAY 2016 18:51
 entering extended mode
 **phaseModulatedGravitationalWaves.tex
 
@@ -641,17 +641,17 @@ Package pdftex.def Info: images/denoise_2.jpg used on input line 561.
 File: images/denoise_3.jpg Graphic file (type jpg)
 
 <use images/denoise_3.jpg>
-Package pdftex.def Info: images/denoise_3.jpg used on input line 572.
+Package pdftex.def Info: images/denoise_3.jpg used on input line 573.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
 
 <images/denoise_4.jpg, id=66, 4109.3525pt x 3613.5pt>
 File: images/denoise_4.jpg Graphic file (type jpg)
 
 <use images/denoise_4.jpg>
-Package pdftex.def Info: images/denoise_4.jpg used on input line 577.
+Package pdftex.def Info: images/denoise_4.jpg used on input line 578.
 (pdftex.def)             Requested size: 287.77675pt x 253.02599pt.
 
-Overfull \hbox (37.53476pt too wide) in paragraph at lines 577--578
+Overfull \hbox (37.53476pt too wide) in paragraph at lines 578--579
  [][] 
  []
 
@@ -660,7 +660,7 @@ oise_1.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/im
 ages/denoise_2.jpg>]
 
 Package natbib Warning: Citation `morten' on page 12 undefined on input line 61
-4.
+5.
 
 [12 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/den
 oise_3.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/im
@@ -669,70 +669,70 @@ ages/denoise_4.jpg>] [13] [14]
 File: images/BesselBadBoundary.png Graphic file (type png)
 
 <use images/BesselBadBoundary.png>
-Package pdftex.def Info: images/BesselBadBoundary.png used on input line 805.
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 806.
 (pdftex.def)             Requested size: 225.21626pt x 141.606pt.
 
 <images/BesselGoodBoundary.png, id=82, 803.0pt x 506.89375pt>
 File: images/BesselGoodBoundary.png Graphic file (type png)
 
 <use images/BesselGoodBoundary.png>
-Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 810.
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 811.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
-
-<images/BesselJ4.png, id=83, 501.875pt x 304.13625pt>
+ [15 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/Be
+sselBadBoundary.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulate
+dWaveSearch/paper/images/BesselGoodBoundary.png (PNG copy)>] <images/BesselJ4.p
+ng, id=88, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
 
 <use images/BesselJ4.png>
-Package pdftex.def Info: images/BesselJ4.png used on input line 843.
+Package pdftex.def Info: images/BesselJ4.png used on input line 844.
 (pdftex.def)             Requested size: 225.21626pt x 136.48413pt.
 
-<images/BesselJ40.png, id=84, 501.875pt x 300.12125pt>
+<images/BesselJ40.png, id=89, 501.875pt x 300.12125pt>
 File: images/BesselJ40.png Graphic file (type png)
 
 <use images/BesselJ40.png>
-Package pdftex.def Info: images/BesselJ40.png used on input line 848.
+Package pdftex.def Info: images/BesselJ40.png used on input line 849.
 (pdftex.def)             Requested size: 225.21626pt x 134.68237pt.
 
-<images/BesselJ400.png, id=85, 501.875pt x 306.14375pt>
+<images/BesselJ400.png, id=90, 501.875pt x 306.14375pt>
 File: images/BesselJ400.png Graphic file (type png)
 
 <use images/BesselJ400.png>
-Package pdftex.def Info: images/BesselJ400.png used on input line 853.
+Package pdftex.def Info: images/BesselJ400.png used on input line 854.
 (pdftex.def)             Requested size: 225.21626pt x 137.38503pt.
 
-<images/BesselJn80.png, id=86, 803.0pt x 500.87125pt>
+<images/BesselJn80.png, id=91, 803.0pt x 500.87125pt>
 File: images/BesselJn80.png Graphic file (type png)
 
 <use images/BesselJn80.png>
-Package pdftex.def Info: images/BesselJn80.png used on input line 862.
+Package pdftex.def Info: images/BesselJn80.png used on input line 863.
 (pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
- [15 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/Be
-sselBadBoundary.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulate
-dWaveSearch/paper/images/BesselGoodBoundary.png (PNG copy)>] [16 <C:/Users/Samu
-el/Documents/GitHub/phaseModulatedWaveSearch/paper/images/BesselJ4.png (PNG cop
-y)> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/Bes
-selJ40.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSear
-ch/paper/images/BesselJ400.png (PNG copy)>] [17 <C:/Users/Samuel/Documents/GitH
-ub/phaseModulatedWaveSearch/paper/images/BesselJn80.png (PNG copy)>] <images/cl
-assicSignal.png, id=99, 488.82625pt x 290.08376pt>
+ [16 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/Be
+sselJ4.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSear
+ch/paper/images/BesselJ40.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/pha
+seModulatedWaveSearch/paper/images/BesselJ400.png (PNG copy)>] [17 <C:/Users/Sa
+muel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/BesselJn80.png (PNG
+ copy)>]
+<images/classicSignal.png, id=99, 488.82625pt x 290.08376pt>
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
-Package pdftex.def Info: images/classicSignal.png used on input line 955.
+Package pdftex.def Info: images/classicSignal.png used on input line 956.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/interestingSignal.png, id=101, 488.82625pt x 290.08376pt>
 File: images/interestingSignal.png Graphic file (type png)
 
 <use images/interestingSignal.png>
-Package pdftex.def Info: images/interestingSignal.png used on input line 960.
+Package pdftex.def Info: images/interestingSignal.png used on input line 961.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/nastySignal.png, id=102, 488.82625pt x 291.0875pt>
 File: images/nastySignal.png Graphic file (type png)
 
 <use images/nastySignal.png>
-Package pdftex.def Info: images/nastySignal.png used on input line 965.
+Package pdftex.def Info: images/nastySignal.png used on input line 966.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
  [18]
 (C:\Users\Samuel\Documents\GitHub\phaseModulatedWaveSearch\paper\phaseModulated
@@ -749,11 +749,11 @@ GravitationalWaves.aux) )
 Here is how much of TeX's memory you used:
  5976 strings out of 493921
  84468 string characters out of 3144874
- 183486 words of memory out of 3000000
+ 180486 words of memory out of 3000000
  9182 multiletter control sequences out of 15000+200000
  11284 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,18n,38p,1365b,530s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,18n,38p,1365b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
@@ -776,7 +776,7 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (19 pages, 3402788 bytes
+Output written on phaseModulatedGravitationalWaves.pdf (19 pages, 3402764 bytes
 ).
 PDF statistics:
  179 PDF objects out of 1000 (max. 8388607)

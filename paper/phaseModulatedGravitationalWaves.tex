@@ -547,24 +547,25 @@ where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\tex
 \subsubsection{Discussion}
 In contrast with denoising techniques such as low-pass filtering, this approach does not require the knowledge of the highest frequency of the signal being recorded. However, the knowledge of how much variance of the data to keep is integral to successful denoising --- this is usually unknown and techniques have been proposed to solve this non-trivial problem \cite{}.
 
-
+To demonstrate the potential of this procedure in removing correlated Gaussian noise, two frequency modulated signals that are phase shifted from each other are adulterated with correlated Gaussian noise. The original signals are then reconstructed using the proposed denoising algorithm with a threshold of $99$ percent --- that is, eigenvectors that account for closest to (but, less than) $99$ percent of the variation of the data obtained from the set of multichannel intrinsic mode functions are retained. In Figure \ref{fig:denoise_1}, it can be easily observed that the algorithm extinguished an appreciable amount of the high frequency component that was not previously present in the data and selectively reduced the magnitude of the Fourier transform of the noise components with low frequency. Figure \ref{fig:denoise_2} was no different in terms of its denoising performance. It is worth noting that both results do have some discrepancy --- and their discrepancies are not the same. This feature is due to the fact that, although the noise sources are correlated, the noises are different.
 
 \begin{figure*}[ht]
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{denoise_1.jpg}
-  		\caption{\label{fig:denoise_1} Fourier transform of the proposed denoising approach on channel 1.}
+  		\caption{\label{fig:denoise_1} Fourier transform of the proposed denoising approach for channel 1.}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{denoise_2.jpg}
-  		\caption{\label{fig:denoise_2} Fourier transform of the proposed denoising approach on channel 2.}
+  		\caption{\label{fig:denoise_2} Fourier transform of the proposed denoising approach for channel 2.}
 	\end{subfigure}
 	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
 \end{figure*}
 
-details
+A fundamental inquiry that needs a resolution is about how the proposed algorithm responds to different SNRs.
+
 \begin{figure*}[ht]
 	\centering
 	\begin{subfigure}{.5\textwidth}
