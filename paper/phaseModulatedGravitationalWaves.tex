@@ -96,24 +96,27 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \section{Introduction}
--- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
+Einstein published his theory of general relativity in 1915. A consequence of his theory was that space time could stretch and contract when acted upon by a gravitational source. It didn't take long then to realize that under the right conditions this stretching and contracting could cause waves through the very fabric of spacetime. Go forward nearly 100 years and the very first evidence for these waves existing is discovered by the LIGO detector. They measured the ripples in space due to two massive black holes inspiralling and finally colliding together in an event that consumed 30 solar masses. This confirmed Einstein's theory and now the field of gravitational astronomy has been born. It is believed that gravitional wave sources are actually fairly common in our universe and sources of continuous monochromatic (one frequency) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}. If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}. There is one phenomena in particular that may be significantly repressing the amplitude of these signals as seen from Earth. This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of sidebands which are the frequencies measured when taking Fourier Transform of the data that comes from the sinusoidal phase shift due to the Doppler effect from Earth's motion relative to the source. To calculate frequency observed for a gravitationl wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and that the waves travel at the speed of light can write the wave as a lorentz invariant 4 vector.
 
-Sources of continuous monochromatic (one frequency) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}.  If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}.  One phenomena may be (significantly??) repressing the amplitude of these signals as seen from Earth.  This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of sidebands which are the frequencies measured when taking Fourier Transform of the data that comes from the sinusoidal phase shift due to the Doppler effect from Earth's motion relative to the source.  There are two reasons to believe frequency modulation is truly occuring (reword).  
 
-Recently the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are compact stars (like Black holes and Neutron Stars).  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.
+%-- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
 
-To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and that the waves travel at the speed of light can write the wave as a lorentz invariant 4 vector.   
+%Sources of continuous monochromatic (one frequency) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}.  If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}.  One phenomena may be (significantly??) repressing the amplitude of these signals as seen from Earth.  This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of sidebands which are the frequencies measured when taking Fourier Transform of the data that comes from the sinusoidal phase shift due to the Doppler effect from Earth's motion relative to the source.  There are two reasons to believe frequency modulation is truly occuring (reword).  
 
-\begin{figure*}[t]
+%Recently the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are compact stars (like Black holes and Neutron Stars).  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.
+
+%To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and that the waves travel at the speed of light can write the wave as a lorentz invariant 4 vector.   
+
+\begin{figure*}[b]
 	\centering
 	\includegraphics[width=.75\linewidth]{earthMotionModulationFigure.pdf}
 	\caption{\label{fig:earthMotionModulationFigure}}
 \end{figure*}
 
--The equivalence of the two ways of looking at it.
--The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
+%-The equivalence of the two ways of looking at it.
+%-The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
 
-We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. K is the four vector of the wave's frequency and wave number.
+We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. $\mathbf{K}$ is the four vector of the wave's frequency and wave number.
 
 \begin{align}
 \label{eqn: new k}
@@ -159,11 +162,7 @@ h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)
 \Gamma  &= \frac{\gamma \beta \omega_0 \sin \theta}{\omega_e}
 \end{align}
 
--An important question to ask is what range of values could $\Gamma$ take on?
-
--this is a frequency modulated wave
--notice that $\Gamma$ is a function of only the azmuthal angle of the source with respect to the normal of the gallactic plane.
-
+An important note is that $\Gamma$ is a function of only the azmuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced in a matter similiar to the above detections. In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using FM (Frequency Modulated) signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
 
 
 \section{The Gustafson Algorithm}
@@ -407,35 +406,19 @@ where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequenc
 
 
 
-\section{Various Complecations that need to be dealt with (David and Colin)}
--The LIGO data is interupted (ie. it comes in chunks--it is not a continuous streem of data).  How will this be dealt with?
-
--Estimating the likelyhood that any signal we see is truly a discovery and not noise. (Error Analysis)
-
--Negative frequencies imply the wave is traveling backwards in time.  This is not physically realistic.  How can we deal with this?  The wave we see is real, so in order for the fourier series to be real we need negative frequencies to cancel the imaginary terms.
-
--Real data obays the law of causality.  That means the signal starts at t=0 and f(t)=0 for t<0.  Putting this restriction on our waveform adds an infinite number of higher frequencies to the fourier transform, even though our waveform doesn't truly contain those frequencies.  How should this be dealt with?  Hardy functions?  (Colin)
-
--Nyquist frequency is defined as half of the sampling frequency and it puts an effective maximum on the frequencies we can detect. Any frequency that exists above the Nyquist frequency will result in ailising. Specifically the amplitude of any frequency $\omega_0$ higher than $\omega_N$ will be "folded over" and be added to the amplitude of its symmetric counterpart $(\omega_0 - \omega_N)$. This will result in the measured amplitude of frequencies lower than $\omega_N$ having a systematic error component equal to the magnitude of the amplitude of the frequencies greater than $\omega_N$.  Assuming that the amplitude of frequenices decays fast enough this systematic error component can be made arbitrarliy small by increasing the sampling frequency. An inspection of the sampling frequency used in the experiment will allow us to estimate this systematic error component and put a maximum on its effect. 
-
-\section{Noise Sources and Dealing with them (Samuel Akwei-Sekyere will be working on this section)}
--The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
-
--Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
-
--This means taking the fourier transform over more data will increase the signal to noise ratio.
-
--Sam will provide a rigerous proof of this.
-
-
-\section{Possible Other Areas to Reasearch}
-2) The LIGO interferometers sample the data at a finite frequency.  This introduces a maximum possible frequency of Gravitational Waves that can be detected, up to the Niquest Frequency.  This will, in tern, limit the maximum number of terms we can include in our sum (equation (9)).  What is the biggest $\omega_c$, $\Omega$, and $\Gamma$ that can be reasonably detected? (Task for Fourier Analysis Class MTH 490)
-
-3) Obviously the duration of data is finite.  This puts a limit on how finly the Fourier Transform can resolve frequencies, ie. how small frequency bins can be.  This in tern tells us how small our step size in $\omega_c$ and $\Omega$ can be.  What are they? (Task for Fourier Analysis Class MTH 490)
-
-4) Over very long periods of time $\omega_c \to 0$ because the neutron star loses energy/momentum to gravitational wave radation.  Over relatively much much shorter time periods $\Omega$ and $\Gamma$ change due to environmental reasons (not entirely sure on this).  What limitations does this put on our search, especially if the explicit nature of the time evolution of these parameters is unknown? ANSWER: it shortens the ammount of time we can take data over? (Task for Fourier Analysis Class MTH 490)
-
-7) There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
+%\section{Various Complecations that need to be dealt with}
+%-The LIGO data is interupted (ie. it comes in chunks--it is not a continuous streem of data).  How will this be dealt with?
+%-Estimating the likelyhood that any signal we see is truly a discovery and not noise. (Error Analysis)
+%-Negative frequencies imply the wave is traveling backwards in time.  This is not physically realistic.  How can we deal with this?  The wave we see is real, so in order for the fourier series to be real we need negative frequencies to cancel the imaginary terms.
+%-Real data obays the law of causality.  That means the signal starts at t=0 and f(t)=0 for t<0.  Putting this restriction on our waveform adds an infinite number of higher frequencies to the fourier transform, even though our waveform doesn't truly contain those frequencies.  How should this be dealt with?  Hardy functions?  (Colin)
+%-Nyquist frequency is defined as half of the sampling frequency and it puts an effective maximum on the frequencies we can detect. Any frequency that exists above the Nyquist frequency will result in ailising. Specifically the amplitude of any frequency $\omega_0$ higher than $\omega_N$ will be "folded over" and be added to the amplitude of its symmetric counterpart $(\omega_0 - \omega_N)$. This will result in the measured amplitude of frequencies lower than $\omega_N$ having a systematic error component equal to the magnitude of the amplitude of the frequencies greater than $\omega_N$.  Assuming that the amplitude of frequenices decays fast enough this systematic error component can be made arbitrarliy small by increasing the sampling frequency. An inspection of the sampling frequency used in the experiment will allow us to estimate this systematic error component and put a maximum on its effect. 
+%-The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
+%-Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
+%-This means taking the fourier transform over more data will increase the signal to noise ratio.
+%-The LIGO interferometers sample the data at a finite frequency.  This introduces a maximum possible frequency of Gravitational Waves that can be detected, up to the Niquest Frequency.  This will, in tern, limit the maximum number of terms we can include in our sum (equation (9)).  What is the biggest $\omega_c$, $\Omega$, and $\Gamma$ that can be reasonably detected? (Task for Fourier Analysis Class MTH 490)
+%-Obviously the duration of data is finite.  This puts a limit on how finly the Fourier Transform can resolve frequencies, ie. how small frequency bins can be.  This in tern tells us how small our step size in $\omega_c$ and $\Omega$ can be.  What are they? (Task for Fourier Analysis Class MTH 490)
+%-Over very long periods of time $\omega_c \to 0$ because the neutron star loses energy/momentum to gravitational wave radation.  Over relatively much much shorter time periods $\Omega$ and $\Gamma$ change due to environmental reasons (not entirely sure on this).  What limitations does this put on our search, especially if the explicit nature of the time evolution of these parameters is unknown? ANSWER: it shortens the ammount of time we can take data over? (Task for Fourier Analysis Class MTH 490)
+%-There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
 
 
 \section{Implementing the Gustafson Algorithm in C++}
@@ -805,7 +788,7 @@ Notice that, by taking the fourier transform of just the real part of our freque
 \section{Selected Waveforms}
 
 
-\begin{figure*}[t]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
@@ -822,10 +805,9 @@ Notice that, by taking the fourier transform of just the real part of our freque
   		\includegraphics[width=.9\linewidth]{nastySignal.png}
   		\caption{A particularly nasty waveform that could be mistaken as noise by looking at it. $\Gamma = 3, \omega_0 = 0.42, \omega_1 = 0.46, \phi_1 = 0.1$ \label{fig:nastySignal}}
 	\end{subfigure}
-\end{figure*}
+\end{figure}
 
 % --------------------------- Code for the bibliography ---------------------------------------------------------------------------------
-\twocolumngrid
 \bibliography{shgBibliographyCopy}
 
 
