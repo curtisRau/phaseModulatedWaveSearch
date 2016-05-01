@@ -60,6 +60,10 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 \pagebreak
 
 \section*{Division of Labor}
+<<<<<<< HEAD
+ajpakdkaelfoooeraofiwaoirf
+=======
+>>>>>>> refs/remotes/origin/master
 \textbf{Curtis Rau}
 \begin{itemize}
 \item organized topics and problems of interest, directed group research
@@ -94,12 +98,21 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \section{Introduction}
+<<<<<<< HEAD
+sdfg;oerjsgpomierjtpiorjetklaglrjtoirsgl;dkfgjkwr
+-- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
+=======
 As a consequence of Einstein's Theory of General Relativity \cite{}, it has been postulated that information about the spatial distribution of matter in the universe is transmitted via a gravitational field. From a theoretical standpoint, gravitational waves are manifested in the form of detectable ripples within the fabric of space and time, by changes in gravitational field and as a function of the movement of masses.
+>>>>>>> refs/remotes/origin/master
 
 
 Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) confirmed the first experimental evidence of gravitational waves. The discovered ripples in space-time by LIGO was a function of the inspiral of two black holes that eventually merged --- an event that consumed approximately 30 solar masses. It is believed that gravitational wave sources are common in the universe and sources of continuous monochromatic (single frequency) gravitational radiation are predicted to exist --- at least sources with frequencies that persist over many periods \cite{}. Neutron stars have also been implicated as one of the prime sources of gravitational waves. These stars are expected to emit single frequency waves over long periods of time. Additionally, it has also been proposed that an appreciable fraction of detectable gravitational waves are binary neutron star systems --- two neutron starts orbiting around each other.
 
+<<<<<<< HEAD
+To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and the waves travel at the speed of light, we can write the wave as a lorentz invariant 4 vector with the frequency being the first entry and the second through fourth entries is the wave number. now to transform it in the Earth's frame we apply an instantaneous lorentz boost on the 4 vector. the instantaneous boost has to take into account the direction of the motion of the earth and the velocity of the Earth in orbit. in the equation below I made the Earth's orbit in the xy plane. the 4 vector is written in the perspective that the wave is a plane wave that is traveling towards the sun on a trajectory that is on the xz plane. the matrix with the trig functions projects that 4 vector on a new basis effectively making 2nd component of the 4 vector be in the direction of motion of Earth. The matrix with the Betas and gammas is a lorentz transformation that applies on 1st and 2nd component. now the 4 vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes. So this new frequency is the instantaneous frequency measured in the Earth's frame.      
+=======
 A fundamental challenge to efficient detection of gravitational waves is that orbiting binary neutron star systems invoke frequency modulations which reduce the power of the carrier frequency and distributes it to higher and lower harmonics. In essence, the power of the signal is dispersed over a range of side-band frequencies; this phenomenon is due to the Doppler effect arising from the Earth's motion relative to the source of the wave. Since the noise observed in the LIGO data is approximately Gaussian and of low signal-to-noise ratio, the extraction of reliable information about gravitational waves is arduous.
+>>>>>>> refs/remotes/origin/master
 
 In order to calculate the carrier frequency of the wave, consider the wave as one emitted from a source that is megaparsecs away (potentially in other galaxies). By virtue of its distance, the spherical coordinates will not change significantly and the source will move relative to the sun with nearly constant velocity over the time we collect data. By the same token, the sun will experience the monochromatic wave produced by the source as truly monochromatic, while its detection on the Earth will be in the form of a frequency modulated signal.
 
@@ -109,7 +122,20 @@ In order to calculate the carrier frequency of the wave, consider the wave as on
 	\caption{\label{fig:earthMotionModulationFigure}}
 \end{figure*}
 
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. 
+
+
+
+$-- DEFINE : K, gamma, beta, k, theta, h_0$
+=======
+We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. K is the four vector of the wave's frequency and wave number.
+>>>>>>> refs/remotes/origin/master
+=======
 By assuming that the wave travels at the speed of light, we can capture it as a Lorentz invariant 4-vector with the carrier frequency being the first entry and the second through fourth entries is the wave number. In order to transform it in the Earth's frame we apply an instantaneous Lorentz boost on the 4-vector; the instantaneous boost takes the direction of the motion of the Earth and the velocity of the the Earth in orbit into consideration. Without loss of generality, the Earth's orbit is captured in the $xy$ plane. The 4-vector is written in the perspective that assumes the wave is a plane wave which travels towards the Sun on a trajectory that is on the $xz$ plane. The matrix with the trigonometric functions projects that 4-vector on a new basis and effectively forcing the second component of the 4-vector to be in the direction of motion of Earth. The matrix with the Betas and gammas is a lorentz transformation that applies on 1st and 2nd component. now the 4 vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes.
+>>>>>>> refs/remotes/origin/master
 
 \begin{align}
 \label{eqn: new k}
@@ -160,7 +186,7 @@ h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)
 
 where $h_0$ is the amplitude of the wave, $\Gamma$ is the modulation index, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
 
-An important note is that $\Gamma$ is a function of only the azmuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced in a matter similiar to the above detections. In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
+An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above detections. One likely case scenario is when the compact stars are in a binary system so one or both objects produce waves but the stars rotate around each other causing an analogues phase modulation.  In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
 
 \section{The Gustafson Algorithm}
 Since the approach is not restricted to gravitational waves and could be detected on another planet other than the Earth, we shall consider a generalized form of the problem. The goal of this paper is to design an algorithm that extracts $\omega_0$, $\omega_1$, $\Gamma$, $h_0$ and $\phi_1$ by providing a delta-function as an output if all of the parameters of $f(t)$ being searched for are correct:
