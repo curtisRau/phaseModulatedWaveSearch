@@ -550,9 +550,20 @@ In contrast with denoising techniques such as low-pass filtering, this approach 
 	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
 \end{figure*}
 
+details
 \begin{figure*}[ht]
-\includegraphics[width = 0.5\linewidth]{denoise_3.jpg}
-\caption{\label{fig:denoise_3} Denoising results}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{denoise_3.jpg}
+  		\caption{\label{fig:denoise_3} Ouput wrt mse and snr}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=1.15\linewidth]{denoise_4.jpg}
+  		\caption{\label{fig:denoise_4} Behaviour of the proposed algorithm under different correlations and SNRs}
+	\end{subfigure}
+	\caption{Behavior of outputs}
 \end{figure*}
 
 
