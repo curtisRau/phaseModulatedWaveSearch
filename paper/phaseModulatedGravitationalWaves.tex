@@ -63,6 +63,45 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 \pagebreak
 
 \section*{Division of Labor}
+<<<<<<< HEAD
+=======
+
+\textbf{Curtis Rau}
+\begin{itemize}
+\item organized topics and problems of interest, directed group research
+\item wrote algorithm and discussion of results
+\item made figures for presentation and paper
+\item wrote rough draft and template for paper
+\item Wrote the C++ implementation
+\end{itemize}
+
+
+\textbf{Colin Gordon}
+\begin{itemize}
+\item researched and solved phase modulation of astronomical signal caused by rotation of earth using circular orbit approximation
+\item wrote introduction
+\item reviewed paper and edited
+\end{itemize}
+
+\textbf{David Witalka}
+\begin{itemize}
+\item created and organized presentation slides
+\item researched and edited sections on sampling theorem, Nyquist Frequency and aliasing, Carson’s rule
+\item reviewed paper and edited
+\end{itemize}
+
+\textbf{Samuel Akwei-Sekyere}
+\begin{itemize}
+\item reviewed and expanded paper
+\item researched and wrote sections on error and noise analysis
+\end{itemize}
+
+\pagebreak
+
+
+\section{Introduction}
+-- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
+>>>>>>> refs/remotes/origin/master
 
 \textbf{Curtis Rau}
 \begin{itemize}
@@ -113,7 +152,14 @@ In order to calculate the carrier frequency of the wave, consider the wave as on
 	\caption{\label{fig:earthMotionModulationFigure}}
 \end{figure*}
 
+<<<<<<< HEAD
 By assuming that the wave travels at the speed of light, we can capture it as a Lorentz invariant 4-vector with the carrier frequency being the first entry and the second through fourth entries is the wave number. In order to transform it in the Earth's frame we apply an instantaneous Lorentz boost on the 4-vector; the instantaneous boost takes the direction of the motion of the Earth and the velocity of the the Earth in orbit into consideration. Without loss of generality, the Earth's orbit is captured in the $xy$ plane. The 4-vector is written in the perspective that assumes the wave is a plane wave which travels towards the Sun on a trajectory that is on the $xz$ plane. The matrix with the trigonometric functions projects that 4-vector on a new basis and effectively forcing the second component of the 4-vector to be in the direction of motion of Earth. The matrix with the Betas and gammas is a lorentz transformation that applies on 1st and 2nd component. now the 4 vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes.
+=======
+-The equivalence of the two ways of looking at it.
+-The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
+
+We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. K is the four vector of the wave's frequency and wave number.
+>>>>>>> refs/remotes/origin/master
 
 \begin{align}
 \label{eqn: new k}
@@ -284,6 +330,7 @@ f(t) = \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t 
 
 but we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determin these values we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Algorithm
 
+<<<<<<< HEAD
 \begin{align}
 ? = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
 \end{align}
@@ -305,15 +352,120 @@ e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\
 
 Bessel functions have the property \cite{}
 
+=======
+>>>>>>> refs/remotes/origin/master
 \begin{align}
-\sum_{n=-\infty}^{\infty} J_n (x) J_{n+m} (x) = \delta_{m}
+? = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
 \end{align}
 
+<<<<<<< HEAD
 Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
 
 
 \section{Carson's Rule and the Nyquist frequency}
 
+=======
+To see what this will yeald we substitute the Fourier Transform of the real of the waveform equation (\ref{eqn:realFourierTransform}), into the above equation
+
+\begin{align}
+&\frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
+&\qquad \qquad
+\times \left[
+e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
++ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
+\right]
+\end{align}
+
+%To put this equation in a more suggestive form we introduce the sideband mismatch number $l=m-n$.  This integer gives ???????
+
+%\begin{align}
+%&\frac{h_0}{2} \sum_{n,l=-\infty}^{\infty} e^{il\phi_1} e^{in(\phi_1-\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_{n+l} (\Gamma)				\nonumber \\
+%&\qquad \qquad
+%\times \left[
+%e^{i\phi_0} e^{il\pi/2} \delta(\omega - \omega_0 + n(\widetilde{\omega}_1 - \omega_1) - l \omega_1)
+%+ e^{-i\phi_0} e^{-il\pi/2} e^{-in\pi} \delta(\omega + \omega_0 + n(\widetilde{\omega}_1 - \omega_1) - l \omega_1)
+%\right]
+%\end{align}
+
+%-------------------- w != w0 & w1 != w1~ --------------------
+
+This needs to be treated in cases.  
+
+\textbf{Case 1:}  Let's consider the most likely case when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  Let's examin the term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ in the above equation in detail.  This delta function appears in the double sum and is a function of both $m$ and $n$, so the $n\widetilde{\omega}_1 - m\omega_1$ is changing over the sums whereas the value $\omega - \omega_0$ is constant (not a function of $m$ or $n$).  This delta is non-zero only if
+
+\begin{align}
+                0 &= \omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1		\\
+\omega_0 - \omega &= n\widetilde{\omega}_1 - m\omega_1
+\end{align}
+
+This can happen twice or never.  By the Euclidean Algorithm, the delta will only be non-zero if
+
+\begin{align}
+\gcd \left( \widetilde{\omega}_1, \omega_1 \right) = \omega_0 - \omega
+\end{align}
+
+If this is false then the sum is zero.  If it is true then call the values for $m$ and $n$ that make it true $\pm m_o$ and $\mp n_o$.  So then the sum is 
+
+
+~~~ Placeholder for equation ~~~
+
+
+%-------------------- w = w0 & w1 != w1~ --------------------
+\textbf{Case 2:}  Now consider the case when $\omega = \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if
+
+\begin{align}
+\widetilde{\omega}_1 = \frac{m}{n} \omega_1
+\end{align}
+
+Again this can happen twice or never.  If this is false then the sum is zero.
+
+
+~~~ Placeholder for equation ~~~
+
+
+%-------------------- w != w0 & w1 = w1~ --------------------
+\textbf{Case 3:}  Now consider the case when $\omega \neq \omega_0$ and $\omega_1 = \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if
+
+\begin{align}
+\omega - \omega_0 = (n-m)\widetilde{\omega}_1
+\end{align}
+
+Again this can happen twice or never.  If this is false then the sum is zero.
+
+
+\textbf{Cases 1-3:}  In all of these cases
+
+%-------------------- w != w0 & w1 = w1~ --------------------
+\textbf{Case 4:}  Now consider the case when $\omega = \omega_0$ and $\omega_1 = \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if $m=n$ which will happen an infinite number of times.  The sum becomes
+
+%This treatment does not include the \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1) term of the fourier transform.
+\begin{align}
+\frac{h_0}{2} e^{i\phi_0} \delta(0) \sum_{n=-\infty}^{\infty} e^{in(\phi_1-\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_n (\Gamma)
+\end{align}
+
+\textbf{Case 4a:} Now if we let $\Gamma = \widetilde{\Gamma}$ and $\phi_1 = \widetilde{\phi}_1$ then the sum becomes
+
+\begin{align}
+\frac{h_0}{2} e^{i\phi_0} \delta(0) \sum_{n=-\infty}^{\infty} J_n^2 (\Gamma) = \frac{h_0}{2} e^{i\phi_0} \delta(0)
+\end{align}
+
+So if we guess every search parameter correctly, $\omega = \omega_0$, $\omega_1 = \widetilde{\omega}_1$, $\Gamma = \widetilde{\Gamma}$, and $\phi_1 = \widetilde{\phi}_1$, then we recover the 
+
+%call $l$ the sideband mismatch number.
+
+
+%- Bessel functions have the property \cite{}
+
+%\begin{align}
+%\sum_{n=-\infty}^{\infty} J_n (x) J_{n+m} (x) = \delta_{m}
+%\end{align}
+
+%Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
+
+
+\section{Carson's Rule and the Nyquist frequency}
+
+>>>>>>> refs/remotes/origin/master
 In order too fully reconstruct the carrier frequency we would need to take an infinite sum over the sidebands. As this is impractical and unnecessary as many terms are insignificant, we need to find a way to limit the number of sidebands we are summing over. The first problem is locating the sidebands' characteristic frequency. There are infinite sideband frequencies and eventually they will be higher than the Nyquist frequency which will cause aliasing of the sideband frequency. The Nyquist frequency, $\psi_N$, is defined as the maximum frequency that can be accurately reconstructed and is equal to half of the sampling frequency, $\psi_s$.
 
 \begin{equation}
@@ -321,12 +473,27 @@ In order too fully reconstruct the carrier frequency we would need to take an in
 \end{equation}
 
 Any side band with a frequency of $\psi_0$ higher than the Nyquist frequency, but less than the sampling frequency, will be reconstructed with a frequency of ($\psi_s$ –- $\psi_0$). That is the frequency will be under-sampled and an alias frequency will be produced. When this occurs the best case scenario is that the alias frequency is unique and does not correspond to the frequency of another lower frequency sideband. In this case we can use anti-aliasing techniques to correct for the aliasing and still obtain information about the amplitude and frequency of the higher side bands. The worst case scenario is that the aliased frequency is too close to another lower frequency sideband and this will cause two problems: a systematic error will be added to the measurement of the lower side band’s amplitude, and we will be unable to determine the necessary information on what the amplitude of the higher frequency would be. To minimize the effect this might have we would like any sidebands with a frequency over the Nyquist frequency to have as low an amplitude as possible. For this we can employ Carson’s rule. Carson’s rule can be understood to say that almost all (roughly 98 percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$, defined by:
+<<<<<<< HEAD
 
 \begin{equation}
 B_T = 2(\Delta\psi + \psi_m)
 \end{equation}
 
 where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to prefectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+=======
+
+\begin{equation}
+B_T = 2(\Delta\psi + \psi_m)
+\end{equation}
+
+where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to prefectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+ 
+
+\subsection{Consequences of Discretizing}
+-drichlet kernel
+
+
+>>>>>>> refs/remotes/origin/master
 
 
 
@@ -353,7 +520,10 @@ In an effort to reduce the noise, we shall consider data from two channels. By t
 \xi^{(2)}(t) = f^{(2)}(t) + \epsilon^{(2)}(t)
 \end{equation}
 
+<<<<<<< HEAD
 where $\xi^{(n)}(t)$ is the data observed, $f^{(n)}(t)$ is the true signal and $\epsilon^{(n)}(t)$ is the noise obtained from the n-th channel (or gravitational wave interferometer) with $\epsilon^{(n)}(t) \sim \mathcal{N}(0,\sigma^2)$.
+=======
+>>>>>>> refs/remotes/origin/master
 
 First, we disintegrate each observed signal into $\alpha$ intrinsic mode functions via empirical mode decomposition and arrange them into a $2 \alpha \times T$ matrix $\mathbf{L}$:
 
