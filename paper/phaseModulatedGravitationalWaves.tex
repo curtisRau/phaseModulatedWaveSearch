@@ -96,13 +96,14 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \section{Introduction}
+sdfg;oerjsgpomierjtpiorjetklaglrjtoirsgl;dkfgjkwr
 -- INTRODUCTION TO LIGO AND GRAVITATIONAL RADATION HERE --
 
 Sources of continuous monochromatic (one frequency) gravitational radation are predicted to exist; at least sources whose frequency wonders over many periods \cite{}.  If they do exist they are apparently very low intensity as viewed from earth because none have been observed to date \cite{}.  One phenomena may be (significantly??) repressing the amplitude of these signals as seen from Earth.  This would be frequency modulation.  When a wave is frequency modulated, its power is distrbuted amongst an infinite number of sidebands which are the frequencies measured when taking Fourier Transform of the data that comes from the sinusoidal phase shift due to the Doppler effect from Earth's motion relative to the source.  There are two reasons to believe frequency modulation is truly occuring (reword).  
 
 Recently the discovery of gravitational waves was announced.  We have reason to believe the most numerous sources of gravitational waves in the universe are compact stars (like Black holes and Neutron Stars).  These stars are expected to emmit single frequency waves over very long periods of time.  It is also believed that roughly half of all neutron stars are in binary systems, ie. two of them orbiting around eachother.  This phase modulates the signal which has the effect of reducing the power in the carrier frequency and distributes it into higher and lower harmonics.  This spreads out the power of the signal over a range of frequencies which makes it harder to detect these waves.  Especially because there is a high noise to signal ratio in the LIGO data.
 
-To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and that the waves travel at the speed of light can write the wave as a lorentz invariant 4 vector.   
+To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies). they are so far that their Sphereical coordinate will not change significantly and the object will move relative to the sun with nearly constant velocity over the time we collect data. This means that the sun will see the monochromatic wave produced by the source as monochromatic. Based on this and the waves travel at the speed of light, we can write the wave as a lorentz invariant 4 vector with the frequency being the first entry and the second through fourth entries is the wave number. now to transform it in the Earth's frame we apply an instantaneous lorentz boost on the 4 vector. the instantaneous boost has to take into account the direction of the motion of the earth and the velocity of the Earth in orbit. in the equation below I made the Earth's orbit in the xy plane. the 4 vector is written in the perspective that the wave is a plane wave that is traveling towards the sun on a trajectory that is on the xz plane. the matrix with the trig functions projects that 4 vector on a new basis effectively making 2nd component of the 4 vector be in the direction of motion of Earth. The matrix with the Betas and gammas is a lorentz transformation that applies on 1st and 2nd component. now the 4 vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes. So this new frequency is the instantaneous frequency measured in the Earth's frame.      
 
 \begin{figure*}[t]
 	\centering
@@ -110,10 +111,10 @@ To calculate frequency observed for our wave we need to think about the source a
 	\caption{\label{fig:earthMotionModulationFigure}}
 \end{figure*}
 
--The equivalence of the two ways of looking at it.
--The boost is in the arbitrarily chosen x direction, and the velocity is with respect to the sun's frame of rest.
 
-We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
+We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. 
+
+
 
 $-- DEFINE : K, gamma, beta, k, theta, h_0$
 
