@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 MAY 2016 13:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 MAY 2016 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,6 +631,11 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
  [2]
+
+Package natbib Warning: Citation `abbott' on page 3 undefined on input line 99.
+
+
+
 <earthMotionModulationFigure/earthMotionModulationFigure.pdf, id=19, 346.68823p
 t x 241.17703pt>
 File: earthMotionModulationFigure/earthMotionModulationFigure.pdf Graphic file 
@@ -638,150 +643,146 @@ File: earthMotionModulationFigure/earthMotionModulationFigure.pdf Graphic file
 
 <use earthMotionModulationFigure/earthMotionModulationFigure.pdf>
 Package pdftex.def Info: earthMotionModulationFigure/earthMotionModulationFigur
-e.pdf used on input line 108.
+e.pdf used on input line 107.
 (pdftex.def)             Requested size: 375.36299pt x 261.14812pt.
- [3 <./earthMotionModulationFigure/earthMotionModulationFigure.pdf>] [4] [5]
+ [3] [4 <./earthMotionModulationFigure/earthMotionModulationFigure.pdf>] [5]
 
-Package natbib Warning: Citation `deanna' on page 6 undefined on input line 259
+Package natbib Warning: Citation `deanna' on page 6 undefined on input line 277
 .
 
-[6] [7]
+[6] [7] [8]
 
-Package natbib Warning: Citation `abramovici1996improved' on page 8 undefined o
-n input line 434.
+Package natbib Warning: Citation `abramovici1996improved' on page 9 undefined o
+n input line 452.
 
 
-Package natbib Warning: Citation `aasi2013enhanced' on page 8 undefined on inpu
-t line 434.
+Package natbib Warning: Citation `aasi2013enhanced' on page 9 undefined on inpu
+t line 452.
 
-[8] [9] <images/denoise_1.jpg, id=60, 3613.5pt x 3613.5pt>
+[9] [10] <images/denoise_1.jpg, id=64, 3613.5pt x 3613.5pt>
 File: images/denoise_1.jpg Graphic file (type jpg)
 
 <use images/denoise_1.jpg>
-Package pdftex.def Info: images/denoise_1.jpg used on input line 536.
+Package pdftex.def Info: images/denoise_1.jpg used on input line 554.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
- <images/denoise_2.jpg, id=61, 3613.5pt x 3613.5pt>
+ <images/denoise_2.jpg, id=65, 3613.5pt x 3613.5pt>
 File: images/denoise_2.jpg Graphic file (type jpg)
 
 <use images/denoise_2.jpg>
-Package pdftex.def Info: images/denoise_2.jpg used on input line 541.
+Package pdftex.def Info: images/denoise_2.jpg used on input line 559.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
- [10]
+ [11 <./images/denoise_1.jpg> <./images/denoise_2.jpg>]
 
-Package natbib Warning: Citation `morten' on page 11 undefined on input line 57
-9.
+Package natbib Warning: Citation `morten' on page 12 undefined on input line 59
+7.
 
-[11 <./images/denoise_1.jpg> <./images/denoise_2.jpg>] [12] [13]
-<images/BesselBadBoundary.png, id=77, 803.0pt x 504.88625pt>
+[12] [13] [14] <images/BesselBadBoundary.png, id=80, 803.0pt x 504.88625pt>
 File: images/BesselBadBoundary.png Graphic file (type png)
 
 <use images/BesselBadBoundary.png>
-Package pdftex.def Info: images/BesselBadBoundary.png used on input line 770.
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 788.
 (pdftex.def)             Requested size: 225.21626pt x 141.606pt.
 
-<images/BesselGoodBoundary.png, id=78, 803.0pt x 506.89375pt>
+<images/BesselGoodBoundary.png, id=81, 803.0pt x 506.89375pt>
 File: images/BesselGoodBoundary.png Graphic file (type png)
 
 <use images/BesselGoodBoundary.png>
-Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 775.
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 793.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
 
-<images/BesselJ4.png, id=79, 501.875pt x 304.13625pt>
+<images/BesselJ4.png, id=82, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
 
 <use images/BesselJ4.png>
-Package pdftex.def Info: images/BesselJ4.png used on input line 808.
+Package pdftex.def Info: images/BesselJ4.png used on input line 826.
 (pdftex.def)             Requested size: 225.21626pt x 136.48413pt.
 
-<images/BesselJ40.png, id=80, 501.875pt x 300.12125pt>
+<images/BesselJ40.png, id=83, 501.875pt x 300.12125pt>
 File: images/BesselJ40.png Graphic file (type png)
 
 <use images/BesselJ40.png>
-Package pdftex.def Info: images/BesselJ40.png used on input line 813.
+Package pdftex.def Info: images/BesselJ40.png used on input line 831.
 (pdftex.def)             Requested size: 225.21626pt x 134.68237pt.
 
-<images/BesselJ400.png, id=81, 501.875pt x 306.14375pt>
+<images/BesselJ400.png, id=84, 501.875pt x 306.14375pt>
 File: images/BesselJ400.png Graphic file (type png)
 
 <use images/BesselJ400.png>
-Package pdftex.def Info: images/BesselJ400.png used on input line 818.
+Package pdftex.def Info: images/BesselJ400.png used on input line 836.
 (pdftex.def)             Requested size: 225.21626pt x 137.38503pt.
- [14 <./images/BesselBadBoundary.png (PNG copy)> <./images/BesselGoodBoundary.p
-ng (PNG copy)>]
-<images/BesselJn80.png, id=87, 803.0pt x 500.87125pt>
+
+<images/BesselJn80.png, id=85, 803.0pt x 500.87125pt>
 File: images/BesselJn80.png Graphic file (type png)
 
 <use images/BesselJn80.png>
-Package pdftex.def Info: images/BesselJn80.png used on input line 827.
+Package pdftex.def Info: images/BesselJn80.png used on input line 845.
 (pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
- [15 <./images/BesselJ4.png (PNG copy)> <./images/BesselJ40.png (PNG copy)> <./
-images/BesselJ400.png (PNG copy)>] [16 <./images/BesselJn80.png (PNG copy)>]
-<images/classicSignal.png, id=95, 488.82625pt x 290.08376pt>
+ [15 <./images/BesselBadBoundary.png (PNG copy)> <./images/BesselGoodBoundary.p
+ng (PNG copy)>] [16 <./images/BesselJ4.png (PNG copy)> <./images/BesselJ40.png 
+(PNG copy)> <./images/BesselJ400.png (PNG copy)>]
+[17 <./images/BesselJn80.png (PNG copy)>]
+<images/classicSignal.png, id=98, 488.82625pt x 290.08376pt>
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
-Package pdftex.def Info: images/classicSignal.png used on input line 920.
+Package pdftex.def Info: images/classicSignal.png used on input line 938.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
-<images/interestingSignal.png, id=97, 488.82625pt x 290.08376pt>
+<images/interestingSignal.png, id=100, 488.82625pt x 290.08376pt>
 File: images/interestingSignal.png Graphic file (type png)
 
 <use images/interestingSignal.png>
-Package pdftex.def Info: images/interestingSignal.png used on input line 925.
+Package pdftex.def Info: images/interestingSignal.png used on input line 943.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
-<images/nastySignal.png, id=98, 488.82625pt x 291.0875pt>
+<images/nastySignal.png, id=101, 488.82625pt x 291.0875pt>
 File: images/nastySignal.png Graphic file (type png)
 
 <use images/nastySignal.png>
-Package pdftex.def Info: images/nastySignal.png used on input line 930.
+Package pdftex.def Info: images/nastySignal.png used on input line 948.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
- [17] (./phaseModulatedGravitationalWaves.bbl)
+ [18] (./phaseModulatedGravitationalWaves.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[18 <./images/classicSignal.png> <./images/interestingSignal.png> <./images/nas
-tySignal.png>] (./phaseModulatedGravitationalWaves.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
- ) 
+[19 <./images/classicSignal.png> <./images/interestingSignal.png> <./images/nas
+tySignal.png>] (./phaseModulatedGravitationalWaves.aux) ) 
 Here is how much of TeX's memory you used:
- 6297 strings out of 493089
- 89930 string characters out of 6134842
- 195800 words of memory out of 5000000
- 9671 multiletter control sequences out of 15000+600000
+ 6298 strings out of 493089
+ 89938 string characters out of 6134842
+ 192800 words of memory out of 5000000
+ 9672 multiletter control sequences out of 15000+600000
  11284 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,18n,38p,1365b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (18 pages, 2158406 bytes
+ 38i,18n,38p,1807b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti9.pfb>
+Output written on phaseModulatedGravitationalWaves.pdf (19 pages, 2161594 bytes
 ).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 180 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
