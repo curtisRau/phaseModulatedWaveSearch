@@ -1,4 +1,30 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{aasi2013enhanced}
+Junaid Aasi, J~Abadie, BP~Abbott, Richard Abbott, TD~Abbott, MR~Abernathy, Carl
+  Adams, Thomas Adams, Paolo Addesso, RX~Adhikari, et~al.
+\newblock Enhanced sensitivity of the ligo gravitational wave detector by using
+  squeezed states of light.
+\newblock {\em Nature Photonics}, 7(8):613--619, 2013.
+
+\bibitem{abramovici1996improved}
+A~Abramovici, W~Althouse, J~Camp, D~Durance, JA~Giaime, A~Gillespie,
+  S~Kawamura, A~Kuhnert, T~Lyons, FJ~Raab, et~al.
+\newblock Improved sensitivity in a gravitational wave interferometer and
+  implications for ligo.
+\newblock {\em Physics Letters A}, 218(3):157--163, 1996.
+
+\bibitem{aminghafari2006multivariate}
+Mina Aminghafari, Nathalie Cheze, and Jean-Michel Poggi.
+\newblock Multivariate denoising using wavelets and principal component
+  analysis.
+\newblock {\em Computational Statistics \& Data Analysis}, 50(9):2381--2398,
+  2006.
+
+\bibitem{einstein1990gravitational}
+Albert Einstein.
+\newblock {\em On gravitational waves}.
+\newblock Springer, 1990.
 
 \bibitem{Deanna}
 Deanna Emery.
@@ -16,10 +42,38 @@ Gerald~B. Folland.
 \newblock {\em Fourier Analysis and its Applications}.
 \newblock Number ISBN 0-534-17097-3. Brooks and Cole Publishing Company, 1992.
 
-\bibitem{griffiths}
-David~J. Griffiths.
-\newblock {\em Introduction to Quantum Mechanics}.
-\newblock Number ISBN 0-13-111892-7. Pearson, second edition edition, 2005.
+\bibitem{huang1998empirical}
+Norden~E Huang, Zheng Shen, Steven~R Long, Manli~C Wu, Hsing~H Shih, Quanan
+  Zheng, Nai-Chyuan Yen, Chi~Chao Tung, and Henry~H Liu.
+\newblock The empirical mode decomposition and the hilbert spectrum for
+  nonlinear and non-stationary time series analysis.
+\newblock In {\em Proceedings of the Royal Society of London A: Mathematical,
+  Physical and Engineering Sciences}, volume 454, pages 903--995. The Royal
+  Society, 1998.
+
+\bibitem{magalhaes1995determination}
+Nadja~S Magalh{\~a}es, Warren~W Johnson, Carlos Frajuca, and Odylio~D Aguiar.
+\newblock Determination of astrophysical parameters from the spherical
+  gravitational wave detector data.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  274(3):670--678, 1995.
+
+\bibitem{oweiss2001noise}
+Karim~G Oweiss and David~J Anderson.
+\newblock Noise reduction in multichannel neural recordings using a new array
+  wavelet denoising algorithm.
+\newblock {\em Neurocomputing}, 38:1687--1693, 2001.
+
+\bibitem{poisson1998gravitational}
+Eric Poisson.
+\newblock Gravitational waves from inspiraling compact binaries: The
+  quadrupole-moment term.
+\newblock {\em Physical Review D}, 57(8):5287, 1998.
+
+\bibitem{rader1968discrete}
+Charles Rader.
+\newblock Discrete fourier transforms when the number of data samples is prime.
+\newblock {\em Proceedings of the IEEE}, 56(6):1107--1108, 1968.
 
 \bibitem{kreh}
 Martin Kreh.

@@ -1,16 +1,11 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: phaseModulatedGravitationalWaves.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: phaseModulatedGravitationalWaves.aux
 The style file: plain.bst
 Database file #1: phaseModulatedGravitationalWavesNotes.bib
 Database file #2: shgBibliographyCopy.bib
-Warning--I didn't find a database entry for "LSCall"
-Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "abramovici1996improved"
-Warning--I didn't find a database entry for "aasi2013enhanced"
 Warning--I didn't find a database entry for "morten"
 Warning--there's a number but no volume in Deanna
 Warning--there's a number but no series in folland
+<<<<<<< HEAD
 Warning--there's a number but no series in griffiths
 You've used 6 entries,
             2118 wiz_defined-function locations,
@@ -54,3 +49,7 @@ while$ -- 13
 width$ -- 7
 write$ -- 66
 (There were 8 warnings)
+=======
+Warning--can't use both volume and number fields in huang1998empirical
+(There were 4 warnings)
+>>>>>>> master
