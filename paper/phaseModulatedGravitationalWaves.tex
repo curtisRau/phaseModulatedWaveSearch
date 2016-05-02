@@ -84,10 +84,10 @@ David researched and wrote the sections concerning the Nyquist frequency and Car
 \end{itemize}
 
 \textbf{Samuel Akwei-Sekyere}
-Same researched and wrote the large section on noise and error analysis. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam placed a major role in reviewing and editing other's sections. He presented his work in class.
+Same researched and wrote the section on noise and error analysis, and wrote the results. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam played a major role in reviewing and editing others' sections. He presented his work in class.
 \begin{itemize}
 \item reviewed and expanded paper (all sections)
-\item researched and wrote sections on error analysis, wrote parts of the introduction
+\item researched and wrote sections on error analysis,  wrote the results-discussion and conclusion, wrote parts of the introduction
 \end{itemize}
 
 \pagebreak
@@ -738,7 +738,7 @@ In an effort to reduce the noise, we shall consider data from two channels. By t
 
 where $\xi^{(n)}(t)$ is the data observed, $f^{(n)}(t)$ is the true signal and $\epsilon^{(n)}(t)$ is the noise obtained from the n-th channel (or gravitational wave interferometer) with $\epsilon^{(n)}(t) \sim \mathcal{N}(0,\sigma^2)$.
 
-First, we disintegrate each observed signal into $\alpha$ intrinsic mode functions via empirical mode decomposition and arrange them into a $2 \alpha \times T$ matrix $\mathbf{L}$:
+First, we disintegrate each observed signal into $\alpha$ intrinsic mode functions via empirical mode decomposition (see appendix) and arrange them into a $2 \alpha \times T$ matrix $\mathbf{L}$:
 
 \begin{equation}
 \mathbf{L} = \left( \begin{array}{cccc}
@@ -845,33 +845,44 @@ Since a fundamental assumption the proposed algorithm makes is that the noise so
 The potential of this approach has been outlined above. With a few modifications, this denoising algorithm may improve its capability and, to some extent (depending on the structure of the data and the noise), could be modified to deal with uncorrelated noise. In the spirit of demonstrating the robustness of the Gustafson algorithm against noise, the results from the search algorithm will be analyzed with no attempt to remove noise.
 
 \section{Results and Discussion}
+Since frequency modulated signals may sometimes look like noise in the time domain (see appendix), it is imperative to ascertain that the Gustafson algorithm provides accurate information about the carrier frequency. For this purpose, the Gustafson algorithm was designed to be implemented in Fourier space.
 
--Step size in omega0 and omega1 must be small because they are deltas.
--Step size in phi1 can be larger because it is less sharply peaked.
--Step size in Gamma can be even larger because it is relatively smooth.
+By observing Figures \ref{fig:results_1} and \ref{fig:results2}, we can see that noise added to the frequency modulated signal makes it almost impossible to visually characterize. In practice, most frequency modulated signals encountered --- especially those of astronomical sources and signal susceptible to environmental noise --- are of this form. A simple approach to identifying relevant features of the frequency modulated signal adulterated with noise will be to search for patterns therein. However, since the noise is sampled randomly it is nearly impossible to extract patterns without some form of transformation. The most obvious transform to employ that allows us access the frequencies that compose the noisy signal is its Fourier transform.
+
+In Figures \ref{fig:results3} and \ref{fig:results4} the Fourier transform of the frequency modulated signal and that of the signal adulterated with noise are shown respectively. In the space of the Fourier transform, the frequencies that compose the original signal can be clearly observed. However, this task gets challenging when observing the Fourier transform of the noisy signal. Note that although a high degree of noise has been added, major peaks can still be seen. This is a function of the SNR; with a high enough noise amplitude, the Fourier transform will fail in providing useful information. This suggests that although the Fourier transform is a powerful technique when it comes to ignoring noise within a continuous signal, it is limited by the power of the noise.
 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{timeSeries.pdf}
-  		\caption{}
+  		\caption{\label{fig:results_1}Frequency modulated signal.}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{timeSeriesNoise.pdf}
-  		\caption{}
+  		\caption{\label{fig:results2}Frequency modulated signal with noise.}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{fourierSeries.pdf}
-  		\caption{}
+  		\caption{\label{fig:results3} Fourier transform of the frequency modulated signal}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{fourierSeriesNoise.pdf}
-  		\caption{}
+  		\caption{\label{fig:results4} Fourier transform of (b) above}
 	\end{subfigure}
+	\caption{\label{fig:} Frequency modulated signal and its noisy version in the time series and Fourier space.  The sampling rate for these traces was 300Hz. The carrier frequency was 20Hz, while the modulaton frequency was 6Hz. It is worth noting that these represent 10 seconds of recording with a modulation index of 10.}
+\end{figure}	
+
+
+
+-Step size in omega0 and omega1 must be small because they are deltas.
+-Step size in phi1 can be larger because it is less sharply peaked.
+-Step size in Gamma can be even larger because it is relatively smooth.
+\begin{figure}[H]
+	\centering	
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInCarrier.pdf}
@@ -892,9 +903,8 @@ The potential of this approach has been outlined above. With a few modifications
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInGamma.pdf}
   		\caption{}
 	\end{subfigure}
-	\caption{\label{fig:} Sampeling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s}
+	\caption{\label{fig:} Sampling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s}
 \end{figure}
-
 
 \section{Conclusion}
 Recap the benifits of working in the frequency domain vs the time domain.
