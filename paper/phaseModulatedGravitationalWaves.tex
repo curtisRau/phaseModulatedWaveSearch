@@ -36,8 +36,7 @@
 \author{Samuel Akwei-Sekyere$^{1,3}$}
 \affiliation{Department of Mathematics$^{1}$ \newline Department of Physics and Astronomy$^{2}$ \newline Neuroscience Program$^{3}$ \newline Michigan State University \newline}
 
-\title{A Novel Method for Removing Cyclic
-Frequency Modulation in Fourier Space}
+\title{A Novel Method for Removing Cyclic Frequency Modulation in Fourier Space}
 
 
 \begin{abstract}
@@ -53,38 +52,17 @@ By building on the method established in \citep{Deanna}, this paper primarily se
 
 \section*{Division of Labor}
 \textbf{Curtis Rau}
-Curtis was the most familiar with the topic and therefore performed the role of group leader identifying topics and problems of interest to be researched. He was also in charge of writing the algorithm section and the following discussion of the results. The c++ implementation of the algorithm was also done by him. He presented his part in the class presentation.
-\begin{itemize}
-\item organized topics and problems of interest, directed group research
-\item wrote algorithm and discussion of results
-\item made figures for presentation and paper
-\item wrote rough draft and template for paper
-\item Wrote the C++ implementation
-\end{itemize}
+Curtis was the most familiar with the topic and therefore performed the role of group leader identifying topics and problems of interest to be researched. He was also in charge of writing sections: "The Gustafson Algorithm", and "The Gustafson Algorithm as a Search Algorithm".  He also wrote the section "Implementation of the Gustafson Algorithm in C++" for another class.  He presented his part in the class presentation.
 
 
 \textbf{Colin Gordon}
-Colin contributed greatly in his research and solving of the phase moulation problem for astronomical signals cause by rotation of the earth using circular orbit approximation. He wrote the introduction to the paper, advised Sam on his section for noise and error analysis, and helped review and edit the paper as a whole. He presented his work in class.
-\begin{itemize}
-\item researched and solved phase modulation of astronomical signal caused by rotation of earth using circular orbit approximation
-\item wrote parts of the introduction
-\item reviewed paper and edited
-\end{itemize}
+Colin contributed greatly in his research and solving of the phase modulation problem for astronomical signals cause by rotation of the earth using circular orbit approximation. He wrote the introduction to the paper, advised Sam on his section for noise and error analysis, and helped review and edit the paper as a whole. He presented his work in class.
 
 \textbf{David Witalka}
 David researched and wrote the sections concerning the Nyquist frequency and Carson's rule. He also added the section pertaining to the speed of the Gustafson Algorithm. David edited and reworded the introduction and helped review and edit the paper as a whole. He also created and organized the slides presented in class.
-\begin{itemize}
-\item created and organized presentation slides
-\item researched and edited sections on sampling theorem, Nyquist Frequency and aliasing, Carson’s rule
-\item reviewed paper and edited
-\end{itemize}
 
 \textbf{Samuel Akwei-Sekyere}
-Same researched and wrote the section on noise and error analysis, and wrote the results. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam played a major role in reviewing and editing others' sections. He presented his work in class.
-\begin{itemize}
-\item reviewed and expanded paper (all sections)
-\item researched and wrote sections on error analysis,  wrote the results-discussion and conclusion, wrote parts of the introduction, MATLAB code for noise section
-\end{itemize}
+Sam researched and wrote the section on noise and error analysis, and wrote the results. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics.  Sam played a major role in reviewing and editing others' sections.  He presented his work in class.  Sam also wrote the Matlab code for the noise removal.
 
 \pagebreak
 
@@ -155,7 +133,8 @@ h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)
 
 where $h_0$ is the amplitude of the wave, $\Gamma$ is the modulation index, $\omega_0$ is the frequency of the wave to be detected, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
 
-An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above. One likely case scenario is that when the compact stars are in a binary system, one or both objects produce waves but the stars rotate around each other causing an analogous phase modulation.  Withal, there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
+
+An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above. One likely scenario is that when the compact stars are in a binary system, one or both objects produce waves but the stars rotate around each other causing an analogous phase modulation.  Withal, there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
 
 \section{The Gustafson Algorithm}
 The goal of this paper is to propose a search algorithm that can efficiently detect the presence of frequency modulated waves, while being robust against noise.  A brute force approach to accomplish this is to take the inner product of 
@@ -170,7 +149,7 @@ with the data for different values of $\omega_0$, $\omega_1$, $\phi_0$, $\phi_1$
 \hat{f}(\omega_0, \omega_1, \phi_1, \Gamma) = \int f(t) e^{-i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} dt.
 \end{align}
 
-It is expected that this approach results in a something like a delta function, or at least a Dirchlet kernel because of discretization.  The amount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite{rader1968discrete}.  Physically, this infers that the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
+It is expected that this approach results in a something like a delta function, or at least a Dirchlet kernel because of discretization.  The amount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite{rader1968discrete} \cite[P. 251]{folland}.  Physically, this infers that the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
 
 The case when the signal is buried deep within non-coherent noise is of particular interest.  A conventional method to improve the signal to noise ratio (SNR) is by increasing the number of data points;  this assumes the signal is more periodic than noise. The problem with taking more data however is that computational time of the brute force method is proportional to $N_t^3$.  We will now introduce the Gustafson Algorithm which is roughly a factor of $N_t$ faster than the brute force method.
 
@@ -182,14 +161,14 @@ h_0 e^{i\phi_0} e^{i\omega_0 t} &= f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)}	
 h_0 e^{i\phi_0} \mathcal{F}_t \left[ e^{i\omega_0 t} \right] &= \mathcal{F}_t \left[ f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)} \right].
 \end{align}
 
-Define $\mathcal{F}_t[f(t)](\omega) = \hat{f}(\omega)$. By invoking the convolution theorem we yield,
+Define $\mathcal{F}_t[f(t)](\omega) = \hat{f}(\omega)$. By invoking the convolution theorem yields,
 
 \begin{equation}
 \label{eqn:derivation:convolutionThmStep}
 \frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega_c - \omega) = \hat{f}(\omega) \star \mathcal{F}_t \left[ e^{-i\Gamma \cos (\Omega t + \phi)} \right].
 \end{equation}
 
-The Jacobi-Anger Expansion, which comes up often in this paper, has the form:
+The Jacobi-Anger Expansion, which comes up often in this paper, has the form \cite{}:
 
 \begin{equation}
 \label{eqn:jacobiAnger}
@@ -206,13 +185,13 @@ By invoking the previously mentioned expansion, equation \ref{eqn:derivation:con
 \star \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right].
 \end{align}
 
-Even order Bessel functions are even, and odd order Bessel functions are odd. Concretely,
+Even order Bessel Functions are even, and odd order Bessel Functions are odd \cite{kreh}.  Explicitly
 
 \begin{align}
-	J_n(-z) &= (-1)^n J_n(z).
+J_n(-z) &= (-1)^n J_n(z)
 \end{align}
 
-By employing this fact we can observe that
+By employing this fact we observe that
 
 \begin{align}
 \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right]
@@ -236,13 +215,13 @@ By performing the convolution,
 &= \hat{f} (\omega - n\omega_1)
 \end{align}
 
-brings us to
+brings us to the almost final answer
 
 \begin{align}
 h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{in(\phi_1-\pi/2)} J_n(\Gamma) \hat{f} (\omega - n\omega_1).
 \end{align}
 
-For clarity and later convenience let us have $n\to -n$.  Let us employ a property of the Bessel functions:
+For clarity and later convenience let's have $n\to -n$.  Let us employ a property of the Bessel functions: \cite{kreh}
 
 \begin{align}
 J_{-n} (z) &= (-1)^n J_n(z).
@@ -255,7 +234,6 @@ This results in the Gustafson Algorithm:
 \boxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = 2 \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
 \end{align}
 
-
 An erroneous factor of two has been added to the algorithm which, as we will see, makes it suitable for use with real data.  It is not obvious whether or not this algorithm in its current form can be used on real data because it assumed a complex waveform.  This assumption allowed for a clean demodulation, which is marred if one takes the real of this function.  This is due to the nonlinearity of the real operator as demonstrated by
 
 \begin{align}
@@ -264,14 +242,15 @@ An erroneous factor of two has been added to the algorithm which, as we will see
 
 We can use equation (\ref{eqn:gustafsonAlgorithm}) as a guess as to find the form that will work with a real valued waveform.  Upon comparison of the Fourier transforms of the complex and real waveforms (see appendices A and B) we see they are very similar.  The real looks like the complex with the addition of terms that are mirrored about $\omega=0$.
 
-What would we have to do to get the Fourier transform of the real to look exactly like the Fourier transform of the complex wave?  Unsurprisingly, not much because they are such similar functions.  All we would have to do is drop the extra mirrored terms.
+What would we have to do to get the fourier transform of the complex wave to look exactly like the fourier transform of the real wave?  Unsurprisingly not much because they are such similar functions.  All we would have to do is 
+
+Notice that the Fourier Transform of the real wave looks very similar to the Fourier Transform of the complex wave.  The difference being that the Fourier Transform of the real is symmetric about $\omega=0$ up to a phase factor.  The vectors corresponding to the positive carrier frequency rotate counterclockwise, whereas the vectors corresponding to the negative carrier frequency rotate clockwise (neglecting the rotation due to $\phi_1$ which is the same for both).  \textbf{This phase factor is the reason why the Gustafson Algorithm only picks out the positive value of $\omega_0$.}  If it is unclear what this means refer to figure (\ref{fig:gustafsonAlgoResults}e).
+
+We would only have to multiply each term by some phase factor to get the real fourier transform to look like the sum of two complex fourier transforms.  After adding in the phase factors we plug the  fourier transform of the real wave into the Gustafson Algorithm which will yield two delta functions now instead of one (because the fourier transform of the real is the sum of two complex wave fourier transforms).  One delta function will be at $+\omega_0$, this is the one of interest, and the other will be at $-\omega_0$.  (A much more rigorous explanation of this is needed.)  If we carry the search out over only positive values of $\omega_0$ then we can throw out all terms in red of the fourier transform of the real wave because they are inconsequential to the algorithm.  Finally, the phase terms that were added to the fourier transform of the real to make it look like the complex can be incorporated into the Guatafson Algorithm.  The only remaining thing to do is multiply the Gustafson Algorithm by two (explain why).
 
 
-We would only have to multiply each term by some phase factor to get the real Fourier transform to look like the sum of two complex Fourier transforms.  After adding in the phase factors we plug the Fourier transform of the real wave into the Gustafson Algorithm which will yield two delta functions instead of one (because the Fourier transform of the real is the sum of two complex wave Fourier transforms).  One delta function will be at $+\omega_0$, this is the one of interest, and the other will be at $-\omega_0$. If we carry the search out over only positive values of $\omega_0$ then we can throw out all terms in red of the Fourier transform of the real wave because they are inconsequential to the algorithm.  Finally, the phase terms that were added to the Fourier transform of the real to take on the morphology of the complex can be incorporated into the Gustafson Algorithm.
-
-
-\subsection{Discussion}
-It is not explicit how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, can be used as a search algorithm capable of determining the values $h_0, \omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do.  
+\subsection{The Gustafson Algorithm as a Search Algorithm}
+It is not explicitly obvious how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, can be used as a search algorithm capable of determining the values $h_0, \omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do. 
 
 Assume the data takes on the real form of a frequency modulated wave.
 
@@ -280,14 +259,14 @@ Assume the data takes on the real form of a frequency modulated wave.
 f(t) = \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\}
 \end{align}
 
-Initially we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determine these values, we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Algorithm.
+Initially we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determine these values we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Search Algorithm.
 
 \begin{align}
 G_{\widetilde{\omega}_0,\widetilde{\omega}_1,\widetilde{\phi}_1,\widetilde{\Gamma}} \left[ \hat{f}(\omega) \right] 
 = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
 \end{align}
 
-To see what this will yield we substitute the Fourier transform of the real of the waveform, equation (\ref{eqn:realFourierTransform}), into the above equation
+To see what this will yield we substitute the Fourier Transform of the real of the waveform, equation (\ref{eqn:realFourierTransform}), into the above equation
 
 \begin{align}
 G_{\omega_0,\omega_1,\phi_1,\Gamma} \left[ \hat{f}(\omega) \right] = 
@@ -298,8 +277,7 @@ e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\
 \right]
 \end{align}
 
-
-
+Notice that the erroneous factor of two in front of the Gustafson Algorithm (Eq. \ref{eqn:gustafsonAlgorithm}) has canceled with the factor of one half in front of the Fourier Transform of the real waveform (Eq. \ref{eqn:realFourierTransform}).  This equation is far to complicated to see what is going on, so we will treat it in cases.
 
 
 
@@ -319,7 +297,7 @@ e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\
 
 We shall treat this in cases.  
 
-\textbf{Case 1:}  Let us consider the most likely case when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  Let us examine the term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ in the above equation.  This delta function appears in the double sum and is a function of both $m$ and $n$, so the $n\widetilde{\omega}_1 - m\omega_1$ is changing over the sums whereas the value $\omega - \omega_0$ is constant (not a function of $m$ or $n$).  This delta is non-zero only if
+\textbf{Case 1:}  Let us consider the most likely case when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  Let us examine the term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ in the above equation in detail.  This delta function appears in the double sum and is a function of both $m$ and $n$, so the $n\widetilde{\omega}_1 - m\omega_1$ is changing over the sums whereas the value $\omega - \omega_0$ is constant (not a function of $m$ or $n$).  This delta is non-zero only if
 
 \begin{align}
                 0 &= \omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1		\\
@@ -334,8 +312,19 @@ This can happen twice or never.  By the Euclidean Algorithm, the delta will only
 
 If this is false, then the sum is zero.  If it is true then call the values for $m$ and $n$ that make it true $\pm m_o$ and $\mp n_o$.  So then the sum is 
 
+%Believe I forgot a factor of two out front.
+\begin{align}
+G_{\widetilde{\omega}_0,\widetilde{\omega}_1,\widetilde{\phi}_1,\widetilde{\Gamma}} \left[ \hat{f}(\omega) \right] = 
+h_0 e^{i\phi_0} \delta (0) J_n(\widetilde{\Gamma})J_m(\Gamma) \cos (m\phi_1-n\widetilde{\phi}_1) \times
+\left\{
+     \begin{array}{lr}
+        (-1)^{(m-n)/2} & , m+n $ is even$    \\
+		i (-1)^{m-n}   & , m+n $ is odd $
+     \end{array}
+   \right.
+\end{align}
 
-~~~ Placeholder for equation ~~~
+Note that the only way this could give us the true amplitude $h_0 e^{i\phi_0}$ is if $\widetilde{\Gamma} = \Gamma = 0$, $\widetilde{\phi}_1 = \phi_1$, and $m=n=0$.  This is because the Bessel Functions are always less than or equal to one.  The only time equality holds is for $J_0(0)=1$.  Moreover if $m=n=0$ then $\widetilde{\omega}_0 = \omega_0$ which violates our assumption.  Therefore in this case, when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$, the amplitude of the greatest peak will always be less than the true amplitude of the wave.
 
 
 %-------------------- w = w0 & w1 != w1~ --------------------
@@ -391,9 +380,165 @@ So if we guess every search parameter correctly, $\omega = \omega_0$, $\omega_1 
 %Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
 
 
+\section{Carson's Rule and the Nyquist frequency}
+In order too fully reconstruct the carrier frequency we would need to take an infinite sum over the sidebands. As this is impractical and unnecessary as many terms are insignificant, we need to find a way to limit the number of sidebands we are summing over. The first problem is locating the sidebands' characteristic frequency. There are infinite sideband frequencies and eventually they will be higher than the Nyquist frequency which will cause aliasing of the sideband frequency. The Nyquist frequency, $\psi_N$, is defined as the maximum frequency that can be accurately reconstructed and is equal to half of the sampling frequency, $\psi_s$.
+
+\begin{equation}
+\psi_N = \frac{1}{2}\psi_s
+\end{equation}
+
+Any side band with a frequency of $\psi_0$ higher than the Nyquist frequency, but less than the sampling frequency, will be reconstructed with a frequency of ($\psi_s$ –- $\psi_0$). That is the frequency will be under-sampled and an alias frequency will be produced. When this occurs the best case scenario is that the alias frequency is unique and does not correspond to the frequency of another lower frequency sideband. In this case we can use anti-aliasing techniques to correct for the aliasing and still obtain information about the amplitude and frequency of the higher side bands. The worst case scenario is that the aliased frequency is too close to another lower frequency sideband and this will cause two problems: a systematic error will be added to the measurement of the lower side band’s amplitude, and we will be unable to determine the necessary information on what the amplitude of the higher frequency would be. To minimize the effect this might have we would like any sidebands with a frequency over the Nyquist frequency to have as low an amplitude as possible. For this we can employ Carson’s rule. Carson’s rule can be understood to say that almost all (roughly 98 percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$, defined by:
+
+\begin{equation}
+B_T = 2(\Delta\psi + \psi_m)
+\end{equation}
+
+where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to perfectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+
+\begin{equation}
+B_T = 2(\Delta\psi + \psi_m)
+\end{equation}
+
+where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to perfectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+ 
+
+\section{Error Analysis}
+While the search for monochromatic gravitational waves via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detected by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated \citep{abramovici1996improved} \citep{aasi2013enhanced}.
+
+\subsection{Noise Sources}
+Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
+
+\subsection{Noise Elimination}
+As mentioned previously, quantum noise --- in particular, thermal noise --- has been implicated as a limiting factor in the sensitivity of gravitational wave interferometers and hence a prime factor in the degradation of the signal quality \citep{Saulson}. Following from this, it can be inferred that the distribution of the noise is approximately Gaussian.
+
+By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to find segments with pure noise.
+
+In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. This method utilizes the following principle: the nature of the noise is not known but the nature of the signal is known. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of intrinsic mode functions and assumes the noise is correlated across different channels.
+
+\subsubsection{Proposed Denoising Algorithm}
+In an effort to reduce the noise, we shall consider data from two channels. By the assumption that the noise observed is additive (and correlated), we yield the following:
+\begin{equation}
+\xi^{(1)}(t) = f^{(1)}(t) + \epsilon^{(1)}(t)
+\end{equation}
+\begin{equation}
+\xi^{(2)}(t) = f^{(2)}(t) + \epsilon^{(2)}(t)
+\end{equation}
+
+%\section{Various Complecations that need to be dealt with}
+%-The LIGO data is interupted (ie. it comes in chunks--it is not a continuous streem of data).  How will this be dealt with?
+%-Estimating the likelyhood that any signal we see is truly a discovery and not noise. (Error Analysis)
+%-Negative frequencies imply the wave is traveling backwards in time.  This is not physically realistic.  How can we deal with this?  The wave we see is real, so in order for the fourier series to be real we need negative frequencies to cancel the imaginary terms.
+%-Real data obays the law of causality.  That means the signal starts at t=0 and f(t)=0 for t<0.  Putting this restriction on our waveform adds an infinite number of higher frequencies to the fourier transform, even though our waveform doesn't truly contain those frequencies.  How should this be dealt with?  Hardy functions?  (Colin)
+%-Nyquist frequency is defined as half of the sampling frequency and it puts an effective maximum on the frequencies we can detect. Any frequency that exists above the Nyquist frequency will result in ailising. Specifically the amplitude of any frequency $\omega_0$ higher than $\omega_N$ will be "folded over" and be added to the amplitude of its symmetric counterpart $(\omega_0 - \omega_N)$. This will result in the measured amplitude of frequencies lower than $\omega_N$ having a systematic error component equal to the magnitude of the amplitude of the frequencies greater than $\omega_N$.  Assuming that the amplitude of frequenices decays fast enough this systematic error component can be made arbitrarliy small by increasing the sampling frequency. An inspection of the sampling frequency used in the experiment will allow us to estimate this systematic error component and put a maximum on its effect. 
+%-The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
+%-Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
+%-This means taking the fourier transform over more data will increase the signal to noise ratio.
+%-The LIGO interferometers sample the data at a finite frequency.  This introduces a maximum possible frequency of Gravitational Waves that can be detected, up to the Niquest Frequency.  This will, in tern, limit the maximum number of terms we can include in our sum (equation (9)).  What is the biggest $\omega_c$, $\Omega$, and $\Gamma$ that can be reasonably detected? (Task for Fourier Analysis Class MTH 490)
+%-Obviously the duration of data is finite.  This puts a limit on how finly the Fourier Transform can resolve frequencies, ie. how small frequency bins can be.  This in tern tells us how small our step size in $\omega_c$ and $\Omega$ can be.  What are they? (Task for Fourier Analysis Class MTH 490)
+%-Over very long periods of time $\omega_c \to 0$ because the neutron star loses energy/momentum to gravitational wave radation.  Over relatively much much shorter time periods $\Omega$ and $\Gamma$ change due to environmental reasons (not entirely sure on this).  What limitations does this put on our search, especially if the explicit nature of the time evolution of these parameters is unknown? ANSWER: it shortens the ammount of time we can take data over? (Task for Fourier Analysis Class MTH 490)
+%-There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
+
+where $\xi^{(n)}(t)$ is the data observed, $f^{(n)}(t)$ is the true signal and $\epsilon^{(n)}(t)$ is the noise obtained from the n-th channel (or gravitational wave interferometer) with $\epsilon^{(n)}(t) \sim \mathcal{N}(0,\sigma^2)$.
+
+First, we disintegrate each observed signal into $\alpha$ intrinsic mode functions via empirical mode decomposition and arrange them into a $2 \alpha \times T$ matrix $\mathbf{L}$:
+
+\begin{equation}
+\mathbf{L} = \left( \begin{array}{cccc}
+l_{1,t_1}^{(1)} & l_{1,t_2}^{(1)} & \cdots & l_{1,t_T}^{(1)} \\
+l_{2,t_2}^{(1)} & l_{2,t_2}^{(1)} & \cdots & l_{2,t_T}^{(1)} \\
+\vdots & \vdots & \vdots & \vdots \\
+l_{\alpha,t_1}^{(1)} & l_{\alpha ,t_2}^{(1)} & \cdots & l_{\alpha,t_T}^{(1)} \\
+l_{\alpha+1,t_1}^{(2)} & l_{\alpha+1,t_2}^{(2)} & \cdots & l_{\alpha+1,t_T}^{(2)} \\
+l_{\alpha+2,t_2}^{(2)} & l_{\alpha+2,t_2}^{(2)} & \cdots & l_{\alpha+2,t_T}^{(2)} \\
+\vdots & \vdots & \vdots & \vdots \\
+l_{2\alpha,t_1}^{(2)} & l_{2\alpha,t_2}^{(2)} & \cdots & l_{2\alpha,t_T}^{(2)}
+\end{array} \right)
+\end{equation}
+
+where $l_{p,t_q}^{(n)}$ is the $\left[ \bigg( (p-1) \textnormal{mod } \alpha \bigg) + 1\right]$-th intrinsic mode function at time $t_q$ of $\xi^{(n)}(t)$, and with $T$ being the total number of data points observed.
+
+Thereafter, the fast Fourier transform of each intrinsic mode function in $\mathbf{L}$ is computed to obtain a matrix $\mathcal{F} \left( \mathbf{L} \right)$. Singular value decomposition of the variance-covariance matrix obtained from $\mathcal{F}{ \left( \mathbf{L} \right) }$ is then computed to result in the following:
+\begin{equation}
+\Sigma = \mathbf{USV}
+\end{equation}
+ 
+where $\Sigma = T^{-1} \left[ \mathcal{F}(\mathbf{L}) ^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}(\mathbf{L})^{\mathbf{T}} T^{-1} \right]^{ \dagger } \left[ \mathcal{F}(\mathbf{L})^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}( \mathbf{L})^{\mathbf{T}} T^{-1} \right] $with $(\cdot)^\mathbf{T}$ being the transpose, the conjugate transpose $(\cdot)^\dagger$ and $\mathbf{1}$ a $T \times 1$ column matrix.
 
 
-\section{Implementation of the Gustafson Algorithm}
+The fast Fourier transforms are de-correlated to form a matrix $\mathbf{R}$ by employing the following:
+\begin{equation}
+\mathbf{R} = \mathbf{U}^{\mathbf{T}}\mathbf{L}
+\end{equation}
+
+After the decorrelation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following procedure:
+
+\begin{equation}
+y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
+\end{equation}
+where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$.
+
+To apply the threshold, the projections with eigenvalues whose indices are less than $y$ are retained and the rest are replaced with zero row vectors:
+
+\begin{displaymath}
+   \mathbf{R}_r = \left\{
+     \begin{array}{lr}
+        \mathbf{R}_r & , r < y     \\
+       \mathbf{0} & , r \geq y
+     \end{array}
+   \right.
+\end{displaymath}
+where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$.
+
+The fast Fourier transforms are then re-correlated to obtain denoised intrinsic mode functions in the following manner:
+\begin{equation}
+\tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}
+\end{equation}
+
+The real component of the inverse fast Fourier transform of each row of $\mathbf{\tilde{L}}$ is then computed to obtain a matrix $\mathbf{D}$ of similar architecture with denoised intrinsic mode functions. Thereafter, the reconstructed signals $\hat{\xi^{(n)}}(t)$ are obtained as follows:
+\begin{equation}
+\hat{\xi^{(n)}}(t_{q}) = \sum_{u = (n-1)\alpha + 1}^{n\alpha} \mathbf{d}_{u,q}
+\end{equation}
+where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\textnormal{th}$ column of $\textbf{D}$.
+
+\subsubsection{Discussion}
+In contrast with denoising techniques such as low-pass filtering, this approach does not require the knowledge of the highest frequency of the signal being recorded. However, the knowledge of how much variance of the data to keep is integral to successful denoising --- this is usually unknown and techniques have been proposed to solve this non-trivial problem \cite{}.
+
+To demonstrate the potential of this procedure in removing correlated Gaussian noise, two frequency modulated signals that are phase shifted from each other are adulterated with correlated Gaussian noise. The original signals are then reconstructed using the proposed denoising algorithm with a threshold of $99$ percent --- that is, eigenvectors that account for closest to (but, less than) $99$ percent of the variation of the data obtained from the set of multichannel intrinsic mode functions are retained. In Figure \ref{fig:denoise_1}, it can be easily observed that the algorithm extinguished an appreciable amount of the high frequency component that was not previously present in the data and selectively reduced the magnitude of the Fourier transform of the noise components with low frequency. Figure \ref{fig:denoise_2} was no different in terms of its denoising performance. It is worth noting that both results do have some discrepancy --- and their discrepancies are not the same. This feature is due to the fact that, although the noise sources are correlated, the noises are different.
+
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{denoise_1.jpg}
+  		\caption{\label{fig:denoise_1} Fourier transform of the proposed denoising approach for channel 1.}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{denoise_2.jpg}
+  		\caption{\label{fig:denoise_2} Fourier transform of the proposed denoising approach for channel 2.}
+	\end{subfigure}
+	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
+\end{figure*}
+
+A fundamental inquiry that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean-square errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible th
+
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{denoise_3.jpg}
+  		\caption{\label{fig:denoise_3} Output wrt MSE and SNR}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=1.15\linewidth]{denoise_4.jpg}
+  		\caption{\label{fig:denoise_4} Behavior of the proposed algorithm under different correlations and SNRs}
+	\end{subfigure}
+	\caption{Behavior of outputs}
+\end{figure*}
+
+
+\section{Implementing the Gustafson Algorithm in C++}
 \subsection{Calculating Bessel Functions}
 Known problems with the algorithm include calculating large order Bessel functions.  The Bessel functions of natural number order are given by
 
@@ -416,14 +561,14 @@ If we are willing to sacrifice some precision to truncation, we can use a double
 171! \approx 1.24 \cdot 10^{309}
 \end{align}
 
-This is not acceptable because $\left| J_n(z) \right| \leq 1$. Therefore, when performing the sum we need precision all the way down to --- at the very least --- $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impractical, but it is by far one of the slowest ways one could calculate values of the Bessel functions. This can be avoided by calculating the Bessel functions using Bessel's equation \ref{eqn:Bessel's Equation} \citep{folland}.
+This is not acceptable however, because $\left| J_n(z) \right| \leq 1$.  Therefore, when performing the sum we need precision all the way down to at the very least $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impractical, but it is by far one of the slowest ways one could calculate values of the Bessel functions.  This whole business of wrestling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
 
 \begin{equation}
 \label{eqn:Bessel's Equation}
 x^2 J_n''(x) + x J_n'(x) + (x^2 - n^2) J_n(x) = 0
 \end{equation}
 
-The standard prescription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$, and then employ the limit definitions of the derivatives. We will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$ \cite{morten}.  Further, because there are only one order of Bessel functions in Bessel's equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and adopt the notation $J(x_i) = J_i$.
+The standard prescription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$, and then employ the limit definitions of the derivatives. We will use the three point definitions because their error goes as $\mathcal{O}(\delta x^2)$ rather than using the two point definition with an error that goes as $\mathcal{O}(\delta x)$ \cite{morten}.  Further, because there are only one order of Bessel functions in Bessel's equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and adopt the notation $J(x_i) = J_i$.
 
 \begin{align}
 J_i'  &= \frac{J_{i+1} - J_{i-1}}{2 \delta x} \\
@@ -508,7 +653,7 @@ This suggests Bessel's equation can be written as a matrix equation:
 \end{array} \right).
 \end{align}
 
-This is a tridiagonal matrix system that characterized a one dimensional differential equation.  It can be easily solved using the standard Thomas Algorithm. In order to make it easily programmable, this implementation assumes all the arrays are indexed from 0. By virtue of this indexing system, we yield:
+This is a tridiagonal matrix system that characterizes a one dimensional differential equation.  It can be easily solved using the standard Thomas Algorithm.  To program this in C++ we need all the arrays to be indexed from 0.  By virtue of this indexing system, we yield:
 
 \begin{align}
 \label{eqn:finalDiscretizedBesselMatrixEqn}
@@ -562,7 +707,7 @@ S_i &\to S_i - \frac{C_i}{B_{i+1}} S_{i+1}; \qquad \forall i \in [N-4, 0]	\\
 J_i &=   \frac{S_{i-1}}{B_{i-1}};           \qquad \forall i \in [N-2, 1]
 \end{align}
 
-%The time it takes to perform the Thomas Algorithm goes as $N$ \cite{}.
+The time it takes to perform the Thomas Algorithm goes as $N$ \cite{}.
 
 
 
@@ -588,7 +733,7 @@ For the other boundary condition we \textit{could} use the asymptotic form of th
 \left| J_n(x) - \sqrt{\frac{2}{\pi x}} \cos \left( x - \frac{\pi}{4} (2n+1) \right) \right| \leq \frac{C_n}{x^{3/2}}.
 \end{equation}
 
-This is an asymptotic expansion, so it is only valid for large values of $x$.  It turns out the accuracy of the solution to Bessel's equation relies heavily on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illustrate this point quite well.  The conclusion is that the asymptotic form of the Bessel functions is not accurate enough for even fairly large values of $z$.  We can also do
+This is an asymptotic expansion, so it is only valid for large values of $x$.  It turns out the accuracy of the solution to Bessel's Equation relies heavily on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illustrate this point quite well.  The conclusion is that the asymptotic form of the Bessel functions is not accurate enough for even fairly large values of $z$.  We can also do
 
 \begin{align}
 J_n (z) = \frac{1}{\pi} \int_{0}^{\pi} \cos \left[ z \sin \theta - n \theta \right] d \theta.
@@ -623,17 +768,17 @@ we achieved excellent results (accurate consistently to 16 decimal places) for a
   		\includegraphics[width=.9\linewidth]{BesselGoodBoundary.png}
   		\caption{\label{fig:BesselGoodBoundary} For much larger values of $z$ the asymptotic form is a better approximation to the true value.  In this case the multiplicative factor (asymptotic / true evaluated at $z=300$) is roughly $1.2$ which results in the solution being roughly $20\%$ larger than it should be.}
 	\end{subfigure}
-	\caption{The blue curve is the asymptotic form of the Bessel functions as given in equation \ref{eqn:asymtoticBessel}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver.  Note, both of these solutions were calculated using 10,000 points.  Even though the solution in figure \ref{fig:BesselBadBoundary} has 10 times the point density, it is limited in accuracy by the endpoint!}
+	\caption{The blue curve is the asymptotic form of the bessel functions as given in equation \ref{eqn:asymtoticBessel}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver.  Note, both of these solutions were calculated using 10,000 points.  Even though the solution in figure \ref{fig:BesselBadBoundary} has 10 times the point density, it is limited in accuracy by the endpoint!}
 \end{figure*}
 
 \subsubsection{Calculating Bessel Functions: Results}
-The ultimate benchmark for success in calculating Bessel functions in this manner (using the Thomas Algorithm to solve Bessel's Differential Equation) is to compare it to the standard way of calculating the value at each point using the Riemann Sum (as defined in equation \ref{eqn:numericalIntegralBessel}).  So how much faster is it?  This depends on the values of $n$ and $z$ because we use a dynamic number of integration points as given by eq. \ref{eqn:dynamicIntegrationPoints}. Table \ref{table:besselSpeed} gives a typical speed increase for various parameters.
+The ultimate benchmark for success in calculating Bessel Functions in this manner (using the Thomas Algorithm to solve Bessel's Differential Equation) is to compare it to the standard way of calculating the value at each point using the Riemann Sum (as defined in equation \ref{eqn:numericalIntegralBessel} section \ref{sec:boundaryConditions}).  So how much faster is it?  This depends on the values of $n$ and $z$ because we use a dynamic number of integration points as given by eq. \ref{eqn:dynamicIntegrationPoints}. Table \ref{table:besselSpeed} gives the speed increase for various parameters.
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l || c | c | c }
 		                  & Point by Point & Thomas Algo. Solving &  Speed	\\
-		Parameters        & Using Integral &  Bessel's Equation   & Increse	\\
+		Parameters        & Using Integral &  Bessel's Equation   & Increase	\\
 		\hline
 		\hline
 		n = 3             &   0.051786 s   &      0.00013800 s    &   375		\\
@@ -670,10 +815,11 @@ Figure \ref{fig:selectBesselFunctions} provides three examples of Bessel Functio
 \end{figure}
 
 In Figure \ref{fig:TA_bessel}, it can be observed that the standard approach and the suggested approach are in agreement except at $n=0,85$.  This is a small subset of the $400,000$ data points generated in $0.33$ seconds (on 5 year old a laptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saved the output, and moved on to solve Bessel's equation for the next value of n until all values of $\Gamma$ and n were solved for.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.75\linewidth]{BesselJn80.png}
-	\caption{\label{fig:TA_bessel}Plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by the suggested approach.}
+	\caption{This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by our code.  The two sets of data are in excellent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement.  This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a laptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma$ and n were solved for.}
 \end{figure}
 
 
@@ -897,7 +1043,7 @@ To test the  robustness of the Gustafson algorithm against noise, we searched fo
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInGamma.pdf}
   		\caption{\label{fig:result8} Search over modulation index}
 	\end{subfigure}
-	\caption{\label{fig:} Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. \ref{fig:results2}}
+	\caption{\label{fig:gustafsonAlgoResults} Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. \ref{fig:results2}.  Sampling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s, SNR = 0.1}
 \end{figure}
 
 \section{Conclusion}
@@ -906,8 +1052,7 @@ In this paper, the Gustafson algorithm has been introduced as well as a novel ap
 
 \appendix
 \section{The Fourier Transform of The Complex Function}
-%The results this and the following section are quite surprising.  Looking at the instentanious frequency of a frequency modulated wave, it takes on every value between $\omega_0 \pm \omega_1$.  There are an uncountably infinite number of frequencies in this band, but essentially every frequency in this band does not appear in the Fourier Transform!  In fact, there are only two or three of these frequencies present in the Fourier Transform.  Moreover the bandwidth for a frequency modulated wave is infinite.  A countably infinite number of frequencies called \textit{sidebands} are evenly sapced at integer multiples of $\omega_1$ from the \textit{carrier frequency} $\omega_0$.  Interestingly for particular values of the \textit{modulation index} $\Gamma$ it is possible for the carrier frequency to not be present in the Fourier Transform!  This occurs at the zeros of the zeroth Bessel Function.
-
+The results this and the following section are quite surprising.  Looking at the instantaneous frequency of a frequency modulated wave, it takes on every value between $\omega_0 \pm \omega_1$.  There are an uncountable infinite number of frequencies in this band, but essentially every frequency in this band does not appear in the Fourier Transform!  In fact, there are only two or three of these frequencies present in the Fourier Transform.  Moreover the bandwidth for a frequency modulated wave is infinite.  A countably infinite number of frequencies called \textit{sidebands} are evenly spaced at integer multiples of $\omega_1$ from the \textit{carrier frequency} $\omega_0$.  Interestingly for particular values of the \textit{modulation index} $\Gamma$ it is possible for the carrier frequency to not be present in the Fourier Transform!  This occurs at the zeros of the zeroth Bessel Function.
 
 \begin{align}
 \mathcal{F}_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right]
@@ -964,9 +1109,11 @@ so the Fourier transform of the real part of our frequency/phase modulated signa
 
 %\begin{align}
 %\label{eqn:realFourierTransform}
-%\Aboxed{\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
+%\Aboxed{\hat{f}(\omega) = 
+%\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
 %+ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]}
 %\end{align}
+
 
 \begin{align}
 \label{eqn:realFourierTransform}
@@ -975,7 +1122,11 @@ so the Fourier transform of the real part of our frequency/phase modulated signa
 + e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]
 \end{align}
 
+<<<<<<< HEAD
+Notice that the Fourier Transform of the real wave looks very similar to the Fourier Transform of the complex wave.  The difference being that the Fourier Transform of the real is symmetric about $\omega=0$ up to a phase factor.  The vectors corresponding to the positive carrier frequency rotate counterclockwise, whereas the vectors corresponding to the negative carrier frequency rotate clockwise (neglecting the rotation due to $\phi_1$ which is the same for both).  \textbf{This phase factor is the reason why the Gustafson Algorithm only picks out the positive value of $\omega_0$.}  If it is unclear what this means refer to figure (\ref{fig:gustafsonAlgoResults}e).
+=======
 %Notice that, by taking the fourier transform of just the real part of our frequency modulated function it has added the terms in red.  (Go into more detail why that is)  The other important change is that the $X_n$ and $Y_n$ terms were added (Again, go into more detail why that is).
+>>>>>>> master
 
 \section{Intrinsic Mode Functions}
 Intrinsic mode functions are functions that are obtained by decomposing a signal. In general, intrinsic mode functions add up to the signal that was decomposed and are usually extracted by empirical mode decomposition \cite{huang1998empirical}.
