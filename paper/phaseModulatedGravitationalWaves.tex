@@ -36,8 +36,7 @@
 \author{Samuel Akwei-Sekyere$^{1,3}$}
 \affiliation{Department of Mathematics$^{1}$ \newline Department of Physics and Astronomy$^{2}$ \newline Neuroscience Program$^{3}$ \newline Michigan State University \newline}
 
-\title{A Novel Method for Removing Cyclic
-Frequency Modulation in Fourier Space}
+\title{A Novel Method for Removing Cyclic Frequency Modulation in Fourier Space}
 
 
 \begin{abstract}
@@ -80,7 +79,7 @@ David researched and wrote the sections concerning the Nyquist frequency and Car
 \end{itemize}
 
 \textbf{Samuel Akwei-Sekyere}
-Same researched and wrote the section on noise and error analysis, and wrote the results. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam played a major role in reviewing and editing others' sections. He presented his work in class.
+Sam researched and wrote the section on noise and error analysis, and wrote the results. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam played a major role in reviewing and editing others' sections. He presented his work in class.
 \begin{itemize}
 \item reviewed and expanded paper (all sections)
 \item researched and wrote sections on error analysis,  wrote the results-discussion and conclusion, wrote parts of the introduction, MATLAB code for noise section
@@ -92,11 +91,7 @@ Same researched and wrote the section on noise and error analysis, and wrote the
 \section{Introduction}
 General Relativity postulates that information about the spatial distribution of matter in the universe is transmitted via a gravitational field \cite{einstein1990gravitational}. Information regarding changes in mass distribution of the universe propagate through space-time away from the location of that change at the speed of light.  Special events, where the quadrupole moment of the mass distribution changes, emit gravitational radiation \cite{poisson1998gravitational}.  Extremely violent events in the universe can release enough gravitational radiation to be detectable from Earth.
 
-<<<<<<< HEAD
-Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) obtained the first empirical evidence of gravitational waves. The discovered ripples in space-time by LIGO was a function of the inspiral of two black holes that eventually merged --- an event that consumed approximately 3 solar masses \citep{abbott}.  It is believed that gravitational wave sources are common in the universe and sources of continuous monochromatic (single frequency) gravitational radiation are predicted to exist --- at least sources with frequencies that persist over many periods \cite{}. Neutron stars have also been implicated as one of the prime sources of gravitational waves.  These stars are expected to emit single frequency waves over long periods of time.  Additionally, it has also been proposed that an appreciable fraction of detectable gravitational waves emitters are binary neutron star systems --- two neutron starts orbiting around each other.
-=======
 Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) obtained the first emperical evidence of gravitational waves. The discovered ripples in space-time by LIGO was a function of the inspiral of two black holes that eventually merged --- an event that consumed approximately three solar masses \citep{abbott}.  It is believed that gravitational wave sources are common in the universe and sources of continuous monochromatic (single frequency) gravitational radiation are predicted to exist --- at least sources with frequencies that persist over many periods \cite{magalhaes1995determination}. Neutron stars have also been implicated as one of the prime sources of gravitational waves.  These stars are expected to emit single frequency waves over long periods of time.  Additionally, it has also been proposed that an appreciable fraction of detectable gravitational wave emitters are binary neutron star systems --- two neutron starts orbiting around each other.
->>>>>>> master
 
 A fundamental challenge to efficient detection of gravitational waves is that orbiting binary neutron star systems invoke frequency modulations which reduce the power of the carrier frequency and distributes it to higher and lower harmonics.  In essence, the power of the signal is dispersed over a range of side-band frequencies; this phenomenon is due to the Doppler effect arising from the Earth's motion relative to the source of the wave. Since the noise observed in the LIGO data is approximately Gaussian and of low signal-to-noise ratio, the extraction of reliable information about gravitational waves is arduous.
 
@@ -159,11 +154,8 @@ h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)
 
 where $h_0$ is the amplitude of the wave, $\Gamma$ is the modulation index, $\omega_0$ is the frequency of the wave to be detected, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
 
-<<<<<<< HEAD
-An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the galactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above. One likely case scenario is when the compact stars are in a binary system so one or both objects produce waves but the stars rotate around each other causing an analogues phase modulation.  In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
-=======
-An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above. One likely case scenario is that when the compact stars are in a binary system, one or both objects produce waves but the stars rotate around each other causing an analogous phase modulation.  Withal, there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
->>>>>>> master
+
+An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above. One likely scenario is that when the compact stars are in a binary system, one or both objects produce waves but the stars rotate around each other causing an analogous phase modulation.  Withal, there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
 
 \section{The Gustafson Algorithm}
 The goal of this paper is to propose a search algorithm that can efficiently detect the presence of frequency modulated waves, while being robust against noise.  A brute force approach to accomplish this is to take the inner product of 
@@ -178,19 +170,11 @@ with the data for different values of $\omega_0$, $\omega_1$, $\phi_0$, $\phi_1$
 \hat{f}(\omega_0, \omega_1, \phi_1, \Gamma) = \int f(t) e^{-i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} dt.
 \end{align}
 
-<<<<<<< HEAD
-We would expect this to produce a something like a delta function, or at least a Dirichlet Kernel because of discretization.  The amount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite[P. 251]{folland}.  Physically this means the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
-
-Of particular interest is the case when the signal is buried deep within non-coherent noise.  A conventional way to improve the signal to noise ratio (SNR) is to simply take more data.  This assumes the signal is more periodic than noise.  A simple explanation for this is that the signal is more periodic than the noise.  The problem with taking more data however is that the brute force method computational time is proportional to $N_t^3$.  We will now introduce the Gustafson Algorithm which is roughly a factor of $N_t$ faster than the brute force method.
-
-To derive the Gustafson Algorithm we start by assuming the data $f(t)$ takes on the form of a complex frequency modulated wave.  The actual data will be real, but this complication makes the derivation almost impossible.  Later it will be shown that starting with the complex wave is perfectly valid.  We demodulate the wave and take the Fourier Transform of both sides.
-=======
-It is expected that this approach results in a something like a delta function, or at least a Dirchlet kernel because of discretization.  The amount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite{rader1968discrete}.  Physically, this infers that the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
+It is expected that this approach results in a something like a delta function, or at least a Dirchlet kernel because of discretization.  The amount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite{rader1968discrete} \cite[P. 251]{folland}.  Physically, this infers that the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
 
 The case when the signal is buried deep within non-coherent noise is of particular interest.  A conventional method to improve the signal to noise ratio (SNR) is by increasing the number of data points;  this assumes the signal is more periodic than noise. The problem with taking more data however is that computational time of the brute force method is proportional to $N_t^3$.  We will now introduce the Gustafson Algorithm which is roughly a factor of $N_t$ faster than the brute force method.
 
 To derive the Gustafson Algorithm we start by assuming the data $f(t)$ takes on the form of a complex frequency modulated wave. Although the recorded data is real, it will be shown later that starting with the complex wave is perfectly valid.  First, we demodulate the wave and take the Fourier transform of both sides:
->>>>>>> master
 
 \begin{align}
 h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} &= f(t) 												\\
@@ -198,14 +182,14 @@ h_0 e^{i\phi_0} e^{i\omega_0 t} &= f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)}	
 h_0 e^{i\phi_0} \mathcal{F}_t \left[ e^{i\omega_0 t} \right] &= \mathcal{F}_t \left[ f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)} \right].
 \end{align}
 
-Define $\mathcal{F}_t[f(t)](\omega) = \hat{f}(\omega)$. By invoking the convolution theorem we yield,
+Define $\mathcal{F}_t[f(t)](\omega) = \hat{f}(\omega)$. By invoking the convolution theorem yields,
 
 \begin{equation}
 \label{eqn:derivation:convolutionThmStep}
 \frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega_c - \omega) = \hat{f}(\omega) \star \mathcal{F}_t \left[ e^{-i\Gamma \cos (\Omega t + \phi)} \right].
 \end{equation}
 
-The Jacobi-Anger Expansion, which comes up often in this paper, has the form:
+The Jacobi-Anger Expansion, which comes up often in this paper, has the form \cite{}:
 
 \begin{equation}
 \label{eqn:jacobiAnger}
@@ -222,20 +206,13 @@ By invoking the previously mentioned expansion, equation \ref{eqn:derivation:con
 \star \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right].
 \end{align}
 
-<<<<<<< HEAD
 Even order Bessel Functions are even, and odd order Bessel Functions are odd \cite{kreh}.  Explicitly
 
 \begin{align}
 J_n(-z) &= (-1)^n J_n(z)
-=======
-Even order Bessel functions are even, and odd order Bessel functions are odd. Concretely,
-
-\begin{align}
-	J_n(-z) &= (-1)^n J_n(z).
->>>>>>> master
 \end{align}
 
-By employing this fact we can observe that
+By employing this fact we observe that
 
 \begin{align}
 \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right]
@@ -259,17 +236,13 @@ By performing the convolution,
 &= \hat{f} (\omega - n\omega_1)
 \end{align}
 
-brings us to
+brings us to the almost final answer
 
 \begin{align}
 h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{in(\phi_1-\pi/2)} J_n(\Gamma) \hat{f} (\omega - n\omega_1).
 \end{align}
 
-<<<<<<< HEAD
-For clarity and later convenience let's have $n\to -n$.  We will use the other property of the Bessel Functions: \cite{kreh}
-=======
-For clarity and later convenience let us have $n\to -n$.  Let us employ a property of the Bessel functions:
->>>>>>> master
+For clarity and later convenience let's have $n\to -n$.  Let us employ a property of the Bessel functions: \cite{kreh}
 
 \begin{align}
 J_{-n} (z) &= (-1)^n J_n(z).
@@ -282,12 +255,7 @@ This results in the Gustafson Algorithm:
 \boxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = 2 \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
 \end{align}
 
-
-<<<<<<< HEAD
-An erroneous factor of two has been added to the algorithm which, as we will see, makes it suitable for use with real data.  It is not obvious weather or not this algorithm in its current form can be used on real data because it assumed a complex waveform.  This assumption allowed for a clean demodulation, which is spoiled if one takes the real of this function.  This is due to the nonlinearity of the real operator as demonstrated by
-=======
 An erroneous factor of two has been added to the algorithm which, as we will see, makes it suitable for use with real data.  It is not obvious whether or not this algorithm in its current form can be used on real data because it assumed a complex waveform.  This assumption allowed for a clean demodulation, which is marred if one takes the real of this function.  This is due to the nonlinearity of the real operator as demonstrated by
->>>>>>> master
 
 \begin{align}
 \Re \{ a \cdot b \} \neq \Re \{ a \} \cdot \Re \{ b \}; \qquad a,b \in \mathds{C}.
@@ -295,24 +263,15 @@ An erroneous factor of two has been added to the algorithm which, as we will see
 
 We can use equation (\ref{eqn:gustafsonAlgorithm}) as a guess as to find the form that will work with a real valued waveform.  Upon comparison of the Fourier transforms of the complex and real waveforms (see appendices A and B) we see they are very similar.  The real looks like the complex with the addition of terms that are mirrored about $\omega=0$.
 
-<<<<<<< HEAD
 What would we have to do to get the fourier transform of the complex wave to look exactly like the fourier transform of the real wave?  Unsurprisingly not much because they are such similar functions.  All we would have to do is 
-=======
-What would we have to do to get the Fourier transform of the real to look exactly like the Fourier transform of the complex wave?  Unsurprisingly, not much because they are such similar functions.  All we would have to do is drop the extra mirrored terms.
->>>>>>> master
 
 Notice that the Fourier Transform of the real wave looks very similar to the Fourier Transform of the complex wave.  The difference being that the Fourier Transform of the real is symmetric about $\omega=0$ up to a phase factor.  The vectors corresponding to the positive carrier frequency rotate counterclockwise, whereas the vectors corresponding to the negative carrier frequency rotate clockwise (neglecting the rotation due to $\phi_1$ which is the same for both).  \textbf{This phase factor is the reason why the Gustafson Algorithm only picks out the positive value of $\omega_0$.}  If it is unclear what this means refer to figure (\ref{fig:gustafsonAlgoResults}e).
 
-<<<<<<< HEAD
-
 We would only have to multiply each term by some phase factor to get the real fourier transform to look like the sum of two complex fourier transforms.  After adding in the phase factors we plug the  fourier transform of the real wave into the Gustafson Algorithm which will yield two delta functions now instead of one (because the fourier transform of the real is the sum of two complex wave fourier transforms).  One delta function will be at $+\omega_0$, this is the one of interest, and the other will be at $-\omega_0$.  (A much more rigorous explanation of this is needed.)  If we carry the search out over only positive values of $\omega_0$ then we can throw out all terms in red of the fourier transform of the real wave because they are inconsequential to the algorithm.  Finally, the phase terms that were added to the fourier transform of the real to make it look like the complex can be incorporated into the Guatafson Algorithm.  The only remaining thing to do is multiply the Gustafson Algorithm by two (explain why).
-=======
-We would only have to multiply each term by some phase factor to get the real Fourier transform to look like the sum of two complex Fourier transforms.  After adding in the phase factors we plug the Fourier transform of the real wave into the Gustafson Algorithm which will yield two delta functions instead of one (because the Fourier transform of the real is the sum of two complex wave Fourier transforms).  One delta function will be at $+\omega_0$, this is the one of interest, and the other will be at $-\omega_0$. If we carry the search out over only positive values of $\omega_0$ then we can throw out all terms in red of the Fourier transform of the real wave because they are inconsequential to the algorithm.  Finally, the phase terms that were added to the Fourier transform of the real to take on the morphology of the complex can be incorporated into the Gustafson Algorithm.
->>>>>>> master
 
 
-\subsection{Discussion}
-It is not explicit how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, can be used as a search algorithm capable of determining the values $h_0, \omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do.  
+\subsection{The Gustafson Algorithm as a Search Algorithm}
+It is not explicitly obvious how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, can be used as a search algorithm capable of determining the values $h_0, \omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do. 
 
 Assume the data takes on the real form of a frequency modulated wave.
 
@@ -321,22 +280,14 @@ Assume the data takes on the real form of a frequency modulated wave.
 f(t) = \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\}
 \end{align}
 
-<<<<<<< HEAD
 Initially we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determine these values we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Search Algorithm.
-=======
-Initially we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determine these values, we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Algorithm.
->>>>>>> master
 
 \begin{align}
 G_{\widetilde{\omega}_0,\widetilde{\omega}_1,\widetilde{\phi}_1,\widetilde{\Gamma}} \left[ \hat{f}(\omega) \right] 
 = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
 \end{align}
 
-<<<<<<< HEAD
 To see what this will yield we substitute the Fourier Transform of the real of the waveform, equation (\ref{eqn:realFourierTransform}), into the above equation
-=======
-To see what this will yield we substitute the Fourier transform of the real of the waveform, equation (\ref{eqn:realFourierTransform}), into the above equation
->>>>>>> master
 
 \begin{align}
 G_{\omega_0,\omega_1,\phi_1,\Gamma} \left[ \hat{f}(\omega) \right] = 
@@ -347,12 +298,7 @@ e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\
 \right]
 \end{align}
 
-<<<<<<< HEAD
 Notice that the erroneous factor of two in front of the Gustafson Algorithm (Eq. \ref{eqn:gustafsonAlgorithm}) has canceled with the factor of one half in front of the Fourier Transform of the real waveform (Eq. \ref{eqn:realFourierTransform}).  This equation is far to complicated to see what is going on, so we will treat it in cases.
-=======
-
-
->>>>>>> master
 
 
 
@@ -372,11 +318,7 @@ Notice that the erroneous factor of two in front of the Gustafson Algorithm (Eq.
 
 We shall treat this in cases.  
 
-<<<<<<< HEAD
-\textbf{Case 1:}  Let's consider the most likely case when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  Let's examen the term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ in the above equation in detail.  This delta function appears in the double sum and is a function of both $m$ and $n$, so the $n\widetilde{\omega}_1 - m\omega_1$ is changing over the sums whereas the value $\omega - \omega_0$ is constant (not a function of $m$ or $n$).  This delta is non-zero only if
-=======
-\textbf{Case 1:}  Let us consider the most likely case when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  Let us examine the term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ in the above equation.  This delta function appears in the double sum and is a function of both $m$ and $n$, so the $n\widetilde{\omega}_1 - m\omega_1$ is changing over the sums whereas the value $\omega - \omega_0$ is constant (not a function of $m$ or $n$).  This delta is non-zero only if
->>>>>>> master
+\textbf{Case 1:}  Let us consider the most likely case when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$.  Let us examine the term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ in the above equation in detail.  This delta function appears in the double sum and is a function of both $m$ and $n$, so the $n\widetilde{\omega}_1 - m\omega_1$ is changing over the sums whereas the value $\omega - \omega_0$ is constant (not a function of $m$ or $n$).  This delta is non-zero only if
 
 \begin{align}
                 0 &= \omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1		\\
@@ -391,8 +333,19 @@ This can happen twice or never.  By the Euclidean Algorithm, the delta will only
 
 If this is false, then the sum is zero.  If it is true then call the values for $m$ and $n$ that make it true $\pm m_o$ and $\mp n_o$.  So then the sum is 
 
+%Believe I forgot a factor of two out front.
+\begin{align}
+G_{\widetilde{\omega}_0,\widetilde{\omega}_1,\widetilde{\phi}_1,\widetilde{\Gamma}} \left[ \hat{f}(\omega) \right] = 
+h_0 e^{i\phi_0} \delta (0) J_n(\widetilde{\Gamma})J_m(\Gamma) \cos (m\phi_1-n\widetilde{\phi}_1) \times
+\left\{
+     \begin{array}{lr}
+        (-1)^{(m-n)/2} & , m+n $ is even$    \\
+		i (-1)^{m-n}   & , m+n $ is odd $
+     \end{array}
+   \right.
+\end{align}
 
-~~~ Placeholder for equation ~~~
+Note that the only way this could give us the true amplitude $h_0 e^{i\phi_0}$ is if $\widetilde{\Gamma} = \Gamma = 0$, $\widetilde{\phi}_1 = \phi_1$, and $m=n=0$.  This is because the Bessel Functions are always less than or equal to one.  The only time equality holds is for $J_0(0)=1$.  Moreover if $m=n=0$ then $\widetilde{\omega}_0 = \omega_0$ which violates our assumption.  Therefore in this case, when $\omega \neq \omega_0$ and $\omega_1 \neq \widetilde{\omega}_1$, the amplitude of the greatest peak will always be less than the true amplitude of the wave.
 
 
 %-------------------- w = w0 & w1 != w1~ --------------------
@@ -448,7 +401,6 @@ So if we guess every search parameter correctly, $\omega = \omega_0$, $\omega_1 
 %Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
 
 
-<<<<<<< HEAD
 \section{Carson's Rule and the Nyquist frequency}
 In order too fully reconstruct the carrier frequency we would need to take an infinite sum over the sidebands. As this is impractical and unnecessary as many terms are insignificant, we need to find a way to limit the number of sidebands we are summing over. The first problem is locating the sidebands' characteristic frequency. There are infinite sideband frequencies and eventually they will be higher than the Nyquist frequency which will cause aliasing of the sideband frequency. The Nyquist frequency, $\psi_N$, is defined as the maximum frequency that can be accurately reconstructed and is equal to half of the sampling frequency, $\psi_s$.
 
@@ -608,11 +560,6 @@ A fundamental inquiry that needs a resolution is about how the proposed algorith
 
 
 \section{Implementing the Gustafson Algorithm in C++}
-=======
-
-
-\section{Implementation of the Gustafson Algorithm}
->>>>>>> master
 \subsection{Calculating Bessel Functions}
 Known problems with the algorithm include calculating large order Bessel functions.  The Bessel functions of natural number order are given by
 
@@ -627,11 +574,7 @@ Hence, calculating the $n$-th Bessel function involves calculating factorials gr
 < 21! = 51,090,942,171,709,440,000.
 \end{align}
 
-<<<<<<< HEAD
-if we are willing to sacrifice some precision to truncation we can use a double precision floating point integer which allows values up to $1.797,693,134,862,315,7 \cdot 10^{308}$
-=======
 If we are willing to sacrifice some precision to truncation, we can use a double precision floating point integer which allows values upto $1.797,693,134,862,315,7 \cdot 10^{308}$
->>>>>>> master
 
 \begin{align}
 170! \approx 7.25 \cdot 10^{306}
@@ -639,22 +582,14 @@ If we are willing to sacrifice some precision to truncation, we can use a double
 171! \approx 1.24 \cdot 10^{309}
 \end{align}
 
-<<<<<<< HEAD
-This is not acceptable however, because $\left| J_n(z) \right| \leq 1$, so when performing the sum we need precision all the way down to at the very least $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impractical, but it is by far one of the slowest ways one could calculate values of the Bessel functions.  This whole business of wrestling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
-=======
-This is not acceptable because $\left| J_n(z) \right| \leq 1$. Therefore, when performing the sum we need precision all the way down to --- at the very least --- $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impractical, but it is by far one of the slowest ways one could calculate values of the Bessel functions. This can be avoided by calculating the Bessel functions using Bessel's equation \ref{eqn:Bessel's Equation} \citep{folland}.
->>>>>>> master
+This is not acceptable however, because $\left| J_n(z) \right| \leq 1$.  Therefore, when performing the sum we need precision all the way down to at the very least $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impractical, but it is by far one of the slowest ways one could calculate values of the Bessel functions.  This whole business of wrestling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
 
 \begin{equation}
 \label{eqn:Bessel's Equation}
 x^2 J_n''(x) + x J_n'(x) + (x^2 - n^2) J_n(x) = 0
 \end{equation}
 
-<<<<<<< HEAD
-The standard prescription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$.  Then use the limit definitions of the derivatives; we will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$ \cite{morten}.  Also, because there are only one order of Bessel Functions in Bessel's Equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and we will further adopt the notation $J(x_i) = J_i$.
-=======
-The standard prescription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$, and then employ the limit definitions of the derivatives. We will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$ \cite{morten}.  Further, because there are only one order of Bessel functions in Bessel's equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and adopt the notation $J(x_i) = J_i$.
->>>>>>> master
+The standard prescription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$, and then employ the limit definitions of the derivatives. We will use the three point definitions because their error goes as $\mathcal{O}(\delta x^2)$ rather than using the two point definition with an error that goes as $\mathcal{O}(\delta x)$ \cite{morten}.  Further, because there are only one order of Bessel functions in Bessel's equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and adopt the notation $J(x_i) = J_i$.
 
 \begin{align}
 J_i'  &= \frac{J_{i+1} - J_{i-1}}{2 \delta x} \\
@@ -698,11 +633,7 @@ In effect, the discretized Bessel's equation with simplified coefficients is
 a_i J_{i-1} + b_i J_i + c_i J_{i+1} = 0
 \end{align}
 
-<<<<<<< HEAD
-Writing out the system of equations explicitly:
-=======
 By writing out the system of equations explicitly, we have:
->>>>>>> master
 
 \begin{align}
 b_1 J_1 + c_1 J_2                                 &= - a_1 J_0		\\
@@ -743,11 +674,7 @@ This suggests Bessel's equation can be written as a matrix equation:
 \end{array} \right).
 \end{align}
 
-<<<<<<< HEAD
-This is a tridiagonal matrix system that characterizes a one dimensional differential equation.  It can be easily solved using the standard Thomas Algorithm.  To program this in C++ we need all the arrays to be indexed from 0, so 
-=======
-This is a tridiagonal matrix system that characterized a one dimensional differential equation.  It can be easily solved using the standard Thomas Algorithm. In order to make it easily programmable, this implementation assumes all the arrays are indexed from 0. By virtue of this indexing system, we yield:
->>>>>>> master
+This is a tridiagonal matrix system that characterizes a one dimensional differential equation.  It can be easily solved using the standard Thomas Algorithm.  To program this in C++ we need all the arrays to be indexed from 0.  By virtue of this indexing system, we yield:
 
 \begin{align}
 \label{eqn:finalDiscretizedBesselMatrixEqn}
@@ -801,7 +728,7 @@ S_i &\to S_i - \frac{C_i}{B_{i+1}} S_{i+1}; \qquad \forall i \in [N-4, 0]	\\
 J_i &=   \frac{S_{i-1}}{B_{i-1}};           \qquad \forall i \in [N-2, 1]
 \end{align}
 
-%The time it takes to perform the Thomas Algorithm goes as $N$ \cite{}.
+The time it takes to perform the Thomas Algorithm goes as $N$ \cite{}.
 
 
 
@@ -827,11 +754,7 @@ For the other boundary condition we \textit{could} use the asymptotic form of th
 \left| J_n(x) - \sqrt{\frac{2}{\pi x}} \cos \left( x - \frac{\pi}{4} (2n+1) \right) \right| \leq \frac{C_n}{x^{3/2}}.
 \end{equation}
 
-<<<<<<< HEAD
-This is an asymptotic expansion, so it is only valid for large values of x.  It turns out the accuracy of the solution to Bessel equation relies heavily on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illustrate this point quite well.  The conclusion is that the asymptotic form of the bessel functions is not accurate enough for even fairly large values of $z$.  We can also do
-=======
-This is an asymptotic expansion, so it is only valid for large values of $x$.  It turns out the accuracy of the solution to Bessel's equation relies heavily on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illustrate this point quite well.  The conclusion is that the asymptotic form of the Bessel functions is not accurate enough for even fairly large values of $z$.  We can also do
->>>>>>> master
+This is an asymptotic expansion, so it is only valid for large values of $x$.  It turns out the accuracy of the solution to Bessel's Equation relies heavily on the accuracy of the endpoint at $x \neq 0$.  Figures \ref{fig:BesselBadBoundary} and \ref{fig:BesselGoodBoundary} illustrate this point quite well.  The conclusion is that the asymptotic form of the Bessel functions is not accurate enough for even fairly large values of $z$.  We can also do
 
 \begin{align}
 J_n (z) = \frac{1}{\pi} \int_{0}^{\pi} \cos \left[ z \sin \theta - n \theta \right] d \theta.
@@ -845,11 +768,7 @@ J_n (z) &\approx \frac{1}{N} \sum_{i=0}^{N+1} \cos \left[ z \sin(i \cdot dx) - n
 \qquad dx = \frac{\pi}{N}
 \end{align}
 
-<<<<<<< HEAD
-The function being integrated becomes more oscillatory as $n$ increases.  Numerical analysis shows that $n$ gives the number of zeros the function has  on the interval $(0,\pi)$ for $z=0$.  For $n=0$ the number of zeros is given by $Floor (\frac{2z}{\pi})$.  We want a way to ensure the calculation is accurate regardless of how oscillatory it is, but we also want it to be as fast as possible, so we use these facts regarding the zeros to ensure there are roughly the same number of integration points between zeros.  By taking the number of (evenly spaced) integration points to be
-=======
 The function being integrated becomes more oscillatory as $n$ increases.  Numerical analysis shows that $n$ gives the number of zeros the function has  on the interval $(0,\pi)$ for $z=0$.  For $n=0$ the number of zeros is given by $\lfloor \frac{2z}{\pi} \rfloor$.  We want a way to ensure the calculation is accurate regardless of how oscillatory it is, but we also want it to be as fast as possible. So, we use these facts regarding the zeros to ensure there are roughly the same number of integration points between zeros.  By taking the number of (evenly spaced) integration points to be
->>>>>>> master
 
 \begin{align}
 \label{eqn:dynamicIntegrationPoints}
@@ -863,30 +782,18 @@ we achieved excellent results (accurate consistently to 16 decimal places) for a
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{BesselBadBoundary.png}
-<<<<<<< HEAD
-  		\caption{\label{fig:BesselBadBoundary} Notice how the asymptotic form and the one calculated by our differential equation solver match up at the maximum value for $z$, but do not match up with the true solution.  This has far reaching consequences.  Whatever multiplicative factor the endpoint is off by seems to carry through for every other point.  In this case the multiplicative factor (asymptotic / true) is almost exactly $-2.5$.  Notice how this inverts the solution and makes it $250\%$ larger.}
-=======
   		\caption{\label{fig:BesselBadBoundary} Notice how the asymtotic form and the one calculated by our differential equation solver match up at the maximum value for $z$, but do not match up with the true solution.  This has far reaching consequences.  Whatever multiplicative factor the endpoint is off by seems to carry through for every other point.  In this case the multiplicative factor (asymptotic / true) is almost exactly $-2.5$.  Notice how this inverts the solution and makes it $250\%$ larger.}
->>>>>>> master
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{BesselGoodBoundary.png}
   		\caption{\label{fig:BesselGoodBoundary} For much larger values of $z$ the asymptotic form is a better approximation to the true value.  In this case the multiplicative factor (asymptotic / true evaluated at $z=300$) is roughly $1.2$ which results in the solution being roughly $20\%$ larger than it should be.}
 	\end{subfigure}
-<<<<<<< HEAD
 	\caption{The blue curve is the asymptotic form of the bessel functions as given in equation \ref{eqn:asymtoticBessel}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver.  Note, both of these solutions were calculated using 10,000 points.  Even though the solution in figure \ref{fig:BesselBadBoundary} has 10 times the point density, it is limited in accuracy by the endpoint!}
 \end{figure*}
 
 \subsubsection{Calculating Bessel Functions: Results}
 The ultimate benchmark for success in calculating Bessel Functions in this manner (using the Thomas Algorithm to solve Bessel's Differential Equation) is to compare it to the standard way of calculating the value at each point using the Riemann Sum (as defined in equation \ref{eqn:numericalIntegralBessel} section \ref{sec:boundaryConditions}).  So how much faster is it?  This depends on the values of $n$ and $z$ because we use a dynamic number of integration points as given by eq. \ref{eqn:dynamicIntegrationPoints}. Table \ref{table:besselSpeed} gives the speed increase for various parameters.
-=======
-	\caption{The blue curve is the asymptotic form of the Bessel functions as given in equation \ref{eqn:asymtoticBessel}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver.  Note, both of these solutions were calculated using 10,000 points.  Even though the solution in figure \ref{fig:BesselBadBoundary} has 10 times the point density, it is limited in accuracy by the endpoint!}
-\end{figure*}
-
-\subsubsection{Calculating Bessel Functions: Results}
-The ultimate benchmark for success in calculating Bessel functions in this manner (using the Thomas Algorithm to solve Bessel's Differential Equation) is to compare it to the standard way of calculating the value at each point using the Riemann Sum (as defined in equation \ref{eqn:numericalIntegralBessel}).  So how much faster is it?  This depends on the values of $n$ and $z$ because we use a dynamic number of integration points as given by eq. \ref{eqn:dynamicIntegrationPoints}. Table \ref{table:besselSpeed} gives a typical speed increase for various parameters.
->>>>>>> master
 
 \begin{table}[H]
 	\centering
@@ -929,16 +836,12 @@ Figure \ref{fig:selectBesselFunctions} provides three examples of Bessel Functio
 \end{figure}
 
 In Figure \ref{fig:TA_bessel}, it can be observed that the standard approach and the suggested approach are in agreement except at $n=0,85$.  This is a small subset of the $400,000$ data points generated in $0.33$ seconds (on 5 year old a laptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saved the output, and moved on to solve Bessel's equation for the next value of n until all values of $\Gamma$ and n were solved for.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.75\linewidth]{BesselJn80.png}
-<<<<<<< HEAD
-	\caption{This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by my code.  The two sets of data are in excellent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement.  This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a laptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma$ and n were solved for.}
-\end{figure*}
-=======
-	\caption{\label{fig:TA_bessel}Plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by the suggested approach.}
+	\caption{This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by our code.  The two sets of data are in excellent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement.  This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a laptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma$ and n were solved for.}
 \end{figure}
->>>>>>> master
 
 
 
@@ -1161,31 +1064,16 @@ To test the  robustness of the Gustafson algorithm against noise, we searched fo
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInGamma.pdf}
   		\caption{\label{fig:result8} Search over modulation index}
 	\end{subfigure}
-<<<<<<< HEAD
-	\caption{\label{fig:gustafsonAlgoResults} Sampling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s, SNR = 0.1}
-\end{figure*}
-
-
-\section{Conclusion}
-Recap the benefits of working in the frequency domain vs the time domain.
-It is the belief of this author that the methods outlined in this paper are unlikely to be useful for searching for gravitational waves.  
-=======
-	\caption{\label{fig:} Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. \ref{fig:results2}}
+	\caption{\label{fig:gustafsonAlgoResults} Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. \ref{fig:results2}.  Sampling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s, SNR = 0.1}
 \end{figure}
 
 \section{Conclusion}
 In this paper, the Gustafson algorithm has been introduced as well as a novel approach to noise reduction. Although both algorithms presented have been shown to be effective, they may require substantial modifications to be useful in practice. One major draw back of the Gustafson algorithm is the selection of a range of parameters to search over. An investigation of how one can introduce learning procedures such as stochastic gradient descent might be able to provide a steady solution to this issue.
->>>>>>> master
 
 
 \appendix
 \section{The Fourier Transform of The Complex Function}
-<<<<<<< HEAD
 The results this and the following section are quite surprising.  Looking at the instantaneous frequency of a frequency modulated wave, it takes on every value between $\omega_0 \pm \omega_1$.  There are an uncountable infinite number of frequencies in this band, but essentially every frequency in this band does not appear in the Fourier Transform!  In fact, there are only two or three of these frequencies present in the Fourier Transform.  Moreover the bandwidth for a frequency modulated wave is infinite.  A countably infinite number of frequencies called \textit{sidebands} are evenly spaced at integer multiples of $\omega_1$ from the \textit{carrier frequency} $\omega_0$.  Interestingly for particular values of the \textit{modulation index} $\Gamma$ it is possible for the carrier frequency to not be present in the Fourier Transform!  This occurs at the zeros of the zeroth Bessel Function.
-=======
-%The results this and the following section are quite surprising.  Looking at the instentanious frequency of a frequency modulated wave, it takes on every value between $\omega_0 \pm \omega_1$.  There are an uncountably infinite number of frequencies in this band, but essentially every frequency in this band does not appear in the Fourier Transform!  In fact, there are only two or three of these frequencies present in the Fourier Transform.  Moreover the bandwidth for a frequency modulated wave is infinite.  A countably infinite number of frequencies called \textit{sidebands} are evenly sapced at integer multiples of $\omega_1$ from the \textit{carrier frequency} $\omega_0$.  Interestingly for particular values of the \textit{modulation index} $\Gamma$ it is possible for the carrier frequency to not be present in the Fourier Transform!  This occurs at the zeros of the zeroth Bessel Function.
-
->>>>>>> master
 
 \begin{align}
 \mathcal{F}_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right]
@@ -1240,11 +1128,19 @@ so the Fourier transform of the real part of our frequency/phase modulated signa
 \end{align}
 
 
+%\begin{align}
+%\label{eqn:realFourierTransform}
+%\Aboxed{\hat{f}(\omega) = 
+%\frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
+%+ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]}
+%\end{align}
+
+
 \begin{align}
 \label{eqn:realFourierTransform}
-\Aboxed{\hat{f}(\omega) = 
+\hat{f}(\omega) = 
 \frac{1}{2} h_0 \sum_{n=-\infty}^{\infty} e^{in\phi_1} J_n (\Gamma) \left[ e^{i(\phi_0 + n\pi/2)} \delta(\omega - \omega_0 - n\omega_1)
-+ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]}
++ e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]
 \end{align}
 
 <<<<<<< HEAD

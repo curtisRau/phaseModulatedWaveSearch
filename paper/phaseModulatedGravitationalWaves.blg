@@ -1,55 +1,53 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: phaseModulatedGravitationalWaves.aux
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: phaseModulatedGravitationalWaves.aux
 The style file: plain.bst
 Database file #1: phaseModulatedGravitationalWavesNotes.bib
 Database file #2: shgBibliographyCopy.bib
+Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "morten"
 Warning--there's a number but no volume in Deanna
 Warning--there's a number but no series in folland
-<<<<<<< HEAD
-Warning--there's a number but no series in griffiths
-You've used 6 entries,
+Warning--can't use both volume and number fields in huang1998empirical
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            541 strings with 4966 characters,
-and the built_in function-call counts, 1402 in all, are:
-= -- 137
-> -- 48
-< -- 2
-+ -- 21
-- -- 14
-* -- 78
-:= -- 257
-add.period$ -- 20
-call.type$ -- 6
-change.case$ -- 23
+            600 strings with 6915 characters,
+and the built_in function-call counts, 4987 in all, are:
+= -- 477
+> -- 280
+< -- 3
++ -- 114
+- -- 98
+* -- 391
+:= -- 863
+add.period$ -- 44
+call.type$ -- 14
+change.case$ -- 86
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 63
-empty$ -- 120
-format.name$ -- 14
-if$ -- 290
+cite$ -- 17
+duplicate$ -- 163
+empty$ -- 352
+format.name$ -- 98
+if$ -- 1000
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 8
-newline$ -- 33
-num.names$ -- 12
-pop$ -- 28
+int.to.str$ -- 14
+missing$ -- 16
+newline$ -- 73
+num.names$ -- 28
+pop$ -- 82
 preamble$ -- 1
-purify$ -- 19
+purify$ -- 75
 quote$ -- 0
-skip$ -- 34
+skip$ -- 105
 stack$ -- 0
-substring$ -- 43
-swap$ -- 7
-text.length$ -- 2
+substring$ -- 296
+swap$ -- 26
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
+type$ -- 50
 warning$ -- 3
-while$ -- 13
-width$ -- 7
-write$ -- 66
-(There were 8 warnings)
-=======
-Warning--can't use both volume and number fields in huang1998empirical
-(There were 4 warnings)
->>>>>>> master
+while$ -- 45
+width$ -- 16
+write$ -- 154
+(There were 5 warnings)
