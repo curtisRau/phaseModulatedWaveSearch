@@ -12,45 +12,45 @@ Warning--I didn't find a database entry for "morten"
 Warning--there's a number but no volume in Deanna
 Warning--there's a number but no series in folland
 Warning--there's a number but no series in griffiths
-You've used 5 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            537 strings with 4862 characters,
-and the built_in function-call counts, 1232 in all, are:
-= -- 119
-> -- 41
+            541 strings with 4966 characters,
+and the built_in function-call counts, 1402 in all, are:
+= -- 137
+> -- 48
 < -- 2
-+ -- 18
-- -- 12
-* -- 73
-:= -- 221
-add.period$ -- 17
-call.type$ -- 5
-change.case$ -- 19
++ -- 21
+- -- 14
+* -- 78
+:= -- 257
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 23
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 57
-empty$ -- 109
-format.name$ -- 12
-if$ -- 258
+cite$ -- 9
+duplicate$ -- 63
+empty$ -- 120
+format.name$ -- 14
+if$ -- 290
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 6
 missing$ -- 8
-newline$ -- 28
-num.names$ -- 10
-pop$ -- 25
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 28
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 19
 quote$ -- 0
-skip$ -- 30
+skip$ -- 34
 stack$ -- 0
-substring$ -- 38
+substring$ -- 43
 swap$ -- 7
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 18
 warning$ -- 3
-while$ -- 11
-width$ -- 6
-write$ -- 57
+while$ -- 13
+width$ -- 7
+write$ -- 66
 (There were 8 warnings)
