@@ -6,13 +6,16 @@
 \usepackage{amssymb}
 \usepackage{graphicx}											% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI
 \usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{dsfont}												% For using C,R,Q,I,N symbols for Rings.
 \usepackage{float}												% for controlling the position of objects ie. tables
 %\usepackage{breqn}												% For splitting equations using \left and \right across lines
 %\usepackage{color}												% For adding color to equations ex.: "/color{red}"
 \usepackage[small, bf]{caption}									%Adjust caption size of figures, tables, pictures...
 \setlength{\captionmargin}{15pt}
 										
-\graphicspath{{images/}{earthMotionModulationFigure/}}			% folder where images are stored in current directory
+\graphicspath{{images/}
+              {earthMotionModulationFigure/}
+              {images/trial1Results/}}									% folder where images are stored in current directory
 
 
 % --------------------------- Code for placing two figure side by side ------------------------------------------------------------------
@@ -37,15 +40,8 @@
 
 
 \begin{abstract}
-This senior thesis is presented to Michigan State University for partial fulfillment of the requirements for a baccalaureate degrees in Physics and Neuroscience.
-In this paper we will introduce the Gustafson Algorithm for removing frequency/phase modulation form a signal.  This method is powerful because it works in the frequency rather than time domain (explain why this is an advantage).  Here we will focus on its applications to LIGO, but there are many applications.  Some other examples are:
--Radio wave astronomy
--Comunications systems using FM?
--What are some other possible applications??
+In this paper we will introduce the Gustafson Algorithm for removing frequency/phase modulation from a signal.  It takes as input time series data and outputs the original single tone carrier frequency. This method is powerful because it works in the frequency rather than time domain which more easily allows for filtering of the signal and the desired carrier frequency is close to constant over time. Here we will focus on the Gustafson Algorithm's applications to LIGO and the search for gravity waves, but there are many other possible applications for the algorithm such as radio wave astronomy and communications systems using frequency-modulated signals.
 
--we are given time series data.
--we are looking for phase modulated gravitational waves.
--form of phase modulation depends on the nature of the binary orbit.
 \citep{Saulson}
 \citep{LSCall}
 \citep{Deanna}
@@ -61,6 +57,7 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 \section*{Division of Labor}
 \textbf{Curtis Rau}
+Curtis was the most familiar with the topic and therefore performed the role of group leader identifying topics and problems of interest to be researched. He was alos in charge of writing the algorithm section and the following discussion of the results. The c++ implementation of the algorithm was also done by him. He presented his part in the class presentation.
 \begin{itemize}
 \item organized topics and problems of interest, directed group research
 \item wrote algorithm and discussion of results
@@ -71,6 +68,7 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \textbf{Colin Gordon}
+Colin contributed greatly in his research and solving of the phase moulation problem for astronomical signals cause by rotation of the earth using circular orbit approximation. He wrote the introduction to the paper, advised Sam on his section for noise and error analysis, and helped review and edit the paper as a whole. He presented his work in class.
 \begin{itemize}
 \item researched and solved phase modulation of astronomical signal caused by rotation of earth using circular orbit approximation
 \item wrote parts of the introduction
@@ -78,6 +76,7 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 \end{itemize}
 
 \textbf{David Witalka}
+David researched and wrote the sections concerning the Nyquist frequency and Carson's rule. He also added the section pertaining to the speed of the Gustafson Algorithm. David edited and reworded the introduction and helped review and edit the paper as a whole. He also created and organized the slides presented in class.
 \begin{itemize}
 \item created and organized presentation slides
 \item researched and edited sections on sampling theorem, Nyquist Frequency and aliasing, Carson’s rule
@@ -85,6 +84,7 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 \end{itemize}
 
 \textbf{Samuel Akwei-Sekyere}
+Same researched and wrote the large section on noise and error analysis. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam placed a major role in reviewing and editing other's sections. He presented his work in class.
 \begin{itemize}
 \item reviewed and expanded paper (all sections)
 \item researched and wrote sections on error analysis, wrote parts of the introduction
@@ -94,13 +94,13 @@ In this paper we will introduce the Gustafson Algorithm for removing frequency/p
 
 
 \section{Introduction}
-General Relativity postulates that information about the spatial distribution of matter in the universe is transmitted via a gravitational field.  Information regarding changes in mass distrobution of the universe propigate out through spacetime away from the location of that change at the speed of light.  Special events, where the quadrapole moment of the mass distrobution changes, emmit gravitational radation.  Extremely violent events in the universe can release enough gravitational radation to be detectable from Earth.
+General Relativity postulates that information about the spatial distribution of matter in the universe is transmitted via a gravitational field.  Information regarding changes in mass distribution of the universe propagate out through space-time away from the location of that change at the speed of light.  Special events, where the quadrupole moment of the mass distribution changes, emit gravitational radiation.  Extremely violent events in the universe can release enough gravitational radiation to be detectable from Earth.
 
 Recently, the Laser Interferometer Gravitational-Wave Observatory (LIGO) obtained the first emperical evidence of gravitational waves. The discovered ripples in space-time by LIGO was a function of the inspiral of two black holes that eventually merged --- an event that consumed approximately 3 solar masses \citep{abbott}.  It is believed that gravitational wave sources are common in the universe and sources of continuous monochromatic (single frequency) gravitational radiation are predicted to exist --- at least sources with frequencies that persist over many periods \cite{}. Neutron stars have also been implicated as one of the prime sources of gravitational waves.  These stars are expected to emit single frequency waves over long periods of time.  Additionally, it has also been proposed that an appreciable fraction of detectable gravitational waves emmitters are binary neutron star systems --- two neutron starts orbiting around each other.
 
 A fundamental challenge to efficient detection of gravitational waves is that orbiting binary neutron star systems invoke frequency modulations which reduce the power of the carrier frequency and distributes it to higher and lower harmonics.  In essence, the power of the signal is dispersed over a range of side-band frequencies; this phenomenon is due to the Doppler effect arising from the Earth's motion relative to the source of the wave. Since the noise observed in the LIGO data is approximately Gaussian and of low signal-to-noise ratio, the extraction of reliable information about gravitational waves is arduous.
 
-To calculate frequency observed for our wave we need to think about the source as an object that is Megaparsecs away (potentially in other galaxies).  By virtue of its distance, the spherical coordinates will not change significantly and the source will move relative to the sun with nearly constant velocity over the time we collect data. By the same token, the sun will experience the monochromatic wave produced by the source as truly monochromatic, while its detection on the Earth will be in the form of a frequency modulated signal.  Based on this and the waves travel at the speed of light, we can write the wave as a lorentz invariant 4 vector with the frequency being the first entry and the second through fourth entries is the wave number. now to transform it in the Earth's frame we apply an instantaneous lorentz boost on the 4 vector.  The instantaneous boost has to take into account the direction of the motion of the earth and the velocity of the Earth in orbit. in the equation below I made the Earth's orbit in the xy plane. the 4 vector is written in the perspective that the wave is a plane wave that is traveling towards the sun on a trajectory that is on the xz plane. the matrix with the trig functions projects that 4 vector on a new basis effectively making 2nd component of the 4 vector be in the direction of motion of Earth. The matrix with the Betas and gammas is a lorentz transformation that applies on 1st and 2nd component. now the 4 vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes. So this new frequency is the instantaneous frequency measured in the Earth's frame.
+In order to calculate the carrier frequency of the wave, consider the wave as one emitted from a source that is megaparsecs away (potentially in other galaxies). By virtue of its distance, the spherical coordinates will not change significantly and the source will move relative to the sun with nearly constant velocity over the time we collect data. By the same token, the sun will experience the monochromatic wave produced by the source as truly monochromatic, while its detection on the Earth will be in the form of a frequency modulated signal.
 
 \begin{figure*}[ht]
 	\centering
@@ -108,9 +108,7 @@ To calculate frequency observed for our wave we need to think about the source a
 	\caption{\label{fig:earthMotionModulationFigure}}
 \end{figure*}
 
-We introduce some variables: $\Gamma$ is the modulation index, $\omega_e$ is the angular frequency of the Earth's rotation about the Sun, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected. in the equation below we use theta as the polar angle from the axis perpendicular to the orbit of Earth, gamma is the lorentz factor from special relativity. beta is the velocity of Earth's orbit divided by the speed of light. K is the four vector of the wave's frequency and wave number.
-
-By assuming that the wave travels at the speed of light, we can capture it as a Lorentz invariant 4-vector with the carrier frequency being the first entry and the second through fourth entries is the wave number. In order to transform it in the Earth's frame we apply an instantaneous Lorentz boost on the 4-vector; the instantaneous boost takes the direction of the motion of the Earth and the velocity of the the Earth in orbit into consideration. Without loss of generality, the Earth's orbit is captured in the $xy$ plane. The 4-vector is written in the perspective that assumes the wave is a plane wave which travels towards the Sun on a trajectory that is on the $xz$ plane. The matrix with the trigonometric functions projects that 4-vector on a new basis and effectively forcing the second component of the 4-vector to be in the direction of motion of Earth. The matrix with the Betas and gammas is a lorentz transformation that applies on 1st and 2nd component. now the 4 vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes.
+By assuming that the wave travels at the speed of light, we can capture it as a Lorentz invariant 4-vector with the carrier frequency being the first entry and the second through fourth entries is the wave number. In order to transform it in the Earth's frame we apply an instantaneous Lorentz boost on the 4-vector; the instantaneous boost takes the direction of the motion of the Earth and the velocity of the the Earth in orbit into consideration. Without loss of generality, the Earth's orbit is captured in the $xy$ plane. The 4-vector is written in the perspective that assumes the wave is a plane wave which travels towards the Sun on a trajectory that is on the $xz$ plane. The matrix with the trigonometric functions projects that 4-vector on a new basis and effectively forcing the second component of the 4-vector to be in the direction of motion of Earth. The matrix with the Betas and gammas is a Lorentz transformation that applies on 1st and 2nd component. now the 4-vector is in the frame of the Earth. After all of this, we could apply rotations or whatever to change the spatial coordinate system but we only care about the frequency which is invariant under any of those changes.
 
 \begin{align}
 \label{eqn: new k}
@@ -161,10 +159,10 @@ h(t)    &= h_0 e^{i \left( \omega' t + \Gamma \cos (\omega_e t + \phi_e) \right)
 
 where $h_0$ is the amplitude of the wave, $\Gamma$ is the modulation index, $\omega_0$ is the frequency of the wave to be detected, $\phi_0$ is the phase of the wave to be detected at $t=0$, $\phi_e$ is the relative phase difference between the Earth's rotation about the Sun and the wave to be detected.
 
-An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above detections. One likely case scenario is when the compact stars are in a binary system so one or both objects produce waves but the stars rotate around each other causing an analogues phase modulation.  In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
+An important note is that $\Gamma$ is a function of only the azimuthal angle of the source with respect to the normal of the gallactic plane. This algorithm will also work perfectly well with any frequency modulated wave produced similar to the above. One likely case scenario is when the compact stars are in a binary system so one or both objects produce waves but the stars rotate around each other causing an analogues phase modulation.  In this way there could be applications for the Gustafson algorithm in areas outside of gravitational waves in areas such as radio wave astronomy and communications using frequency modulated signals. We attempt to keep the discussion of the algorithm and the results as general as possible for this reason.
 
 \section{The Gustafson Algorithm}
-The goal of this paper is to propose a search algorithm that can detect the presence of frequency modulated waves.  A brute force way to acomplish this is to take the inner product of 
+The goal of this paper is to propose a search algorithm that can efficiently detect the presence of frequency modulated waves, while being robust against noise.  A brute force way to accomplish this is to take the inner product of 
 
 \begin{equation}
 h(t) = h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)}
@@ -176,20 +174,11 @@ with the data for different values of $\omega_0$, $\omega_1$, $\phi_0$, $\phi_1$
 \hat{f}(\omega_0, \omega_1, \phi_1, \Gamma) = \int f(t) e^{-i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} dt
 \end{align}
 
-The ammount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$.  Physically this means the frequency resolution of the DFT is proportional to the duration of the time series.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.
+We would expect this to produce a something like a delta function, or at least a Dirchlet Kernel because of discretization.  The ammount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite{}.  Physically this means the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
 
- 
-Of particular interest is the case when the signal is buarried deep within non-coherent noise.  A conventional way to improve the signal to noise ratio (SNR) is to simply take more data.
+Of particular interest is the case when the signal is buarried deep within non-coherent noise.  A conventional way to improve the signal to noise ratio (SNR) is to simply take more data.  This assumes the signal is more periodic than noise.  (why does this yeald a better snr??????)  The problem with taking more data however is that the brute force method computational time is proportional to $N_t^3$.  We will now introduce the Gustafson Algorithm which is roughly a factor of $N_t$ faster than the brute force method.
 
-$\omega_0$, $\omega_1$, $\Gamma$, $h_0$ and $\phi_1$ by providing a delta-function as an output if all of the parameters of $f(t)$ being searched for are correct:
-
-\begin{equation}
-h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} \to h_0 \delta (\omega_0) \delta (\omega_1 ) \delta (\Gamma ) \delta(\phi_1),
-\end{equation}
-
-where $f(t)$ is the data recorded (as shown below), $\omega_0$ is the frequency of the wave, $\omega_1$ is the angular frequency of the recording site about the Sun, $\phi_0$ is the phase of the wave, $\phi_1$ is the relative phase difference between the recording site's rotation about the Sun and the wave, $\Gamma$ is the modulation index and $h_0$ is the amplitude of the wave.
-
-Previous methods have utilized, asdf.
+To derive the Gustafson Algorithm we start by assuming the data $f(t)$ takes on the form of a complex frequency modulated wave.  The actual data will be real, but this complecation makes the derivation almost impossible.  Later it will be shown that starting with the complex wave is perfectly valid.  We demodulate the wave and take the Fourier Transform of both sides.
 
 \begin{align}
 h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} &= f(t) 												\\
@@ -197,35 +186,37 @@ h_0 e^{i\phi_0} e^{i\omega_0 t} &= f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)}	
 h_0 e^{i\phi_0} \mathcal{F}_t \left[ e^{i\omega_0 t} \right] &= \mathcal{F}_t \left[ f(t) e^{-i\Gamma \cos (\omega_1 t + \phi_1)} \right]
 \end{align}
 
-define $F_t[f(t)](\omega) = \hat{f}(\omega)$, and invoking the convolution theorem
+Define $F_t[f(t)](\omega) = \hat{f}(\omega)$, and invoking the convolution theorem
 
 \begin{equation}
+\label{eqn:derivation:convolutionThmStep}
 \frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega_c - \omega) = \hat{f}(\omega) \star F_t \left[ e^{-i\Gamma \cos (\Omega t + \phi)} \right]
 \end{equation}
 
-invoking the Jacobi-Anger Expansion which has the form \cite{}:
+The Jacobi-Anger Expansion, which comes up often in this paper, has the form \cite{}:
 
 \begin{equation}
 \label{eqn:jacobiAnger}
 e^{iz\cos (\theta)} = \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(z) e^{in\theta}
 \end{equation}
 
-so equation (2) becomes
+so equation \ref{eqn:derivation:convolutionThmStep} becomes
 
 \begin{align}
+\label{eqn:derivation:jacobiAngerInsertion}
 \frac{h_0 e^{i\phi_0}}{\sqrt{2\pi}} \delta (\omega - \omega_0)
 &=
 \hat{f}(\omega)
 \star \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right]
 \end{align}
 
-Bessel Functions have the properties
+Even order Bessel Functions are even, and odd order Bessel Functions are odd \cite{}.  Explicitly
 
 \begin{align}
 	J_n(-z) &= (-1)^n J_n(z)
 \end{align}
 
-so 
+Using this fact
 
 \begin{align}
 \mathcal{F}_t \left[ \sum_{n=-\infty}^{\infty} e^{in\pi/2} J_n(-\Gamma) e^{in(\omega_1 t + \phi_1)} \right]
@@ -233,7 +224,7 @@ so
 &= \frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma) \delta (\omega - n\omega_1)
 \end{align}
 
-where we have used $(-1)^n i^n = (-i)^n = e^{-in\pi/2}$, and the linearity of the Fourier Transform $F_t[f+g]=F_t[f]+F_t[g]$.  The Fourier transform of this is 
+In the previous step we used the linearity of the Fourier Transform $F_t[c \cdot f(t)] = c \cdot F_t[f]$.  Equation \ref{eqn:derivation:jacobiAngerInsertion} becomes
 
 \begin{align}
 h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \hat{f}(\omega)
@@ -241,7 +232,7 @@ h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \hat{f}(\omega)
 \left[ \sum_{n=-\infty}^{\infty} e^{in(\phi_1 - \pi/2)} J_n(\Gamma) \delta (\omega - n\omega_1) \right]
 \end{align}
 
-so performing the convolution 
+Performing the convolution 
 
 \begin{align}
 \hat{f}(\omega) \star \delta (\omega - n\omega_1) 
@@ -249,96 +240,74 @@ so performing the convolution
 &= \hat{f} (\omega - n\omega_1)
 \end{align}
 
-which brings us to the almost final answer:
+brings us to the almost final answer:
 
 \begin{align}
 h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{in(\phi_1-\pi/2)} J_n(\Gamma) \hat{f} (\omega - n\omega_1)
 \end{align}
 
-but for later convenience let's have $n\to -n$.  We will use the other property of the Bessel Functions: \cite{}
+For clarity and later convenience let's have $n\to -n$.  We will use the other property of the Bessel Functions: \cite{}
 
 \begin{align}
 J_{-n} (z) &= (-1)^n J_n(z)
 \end{align}
 
-Which brings us to the Gustafson Algorithm (someone should check this out before we submit the paper):
-
-%\begin{align}
-%\label{eqn:gustafsonAlgorithm}
-%\Aboxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
-%\end{align}
+Which brings us to the Gustafson Algorithm:
 
 \begin{align}
 \label{eqn:gustafsonAlgorithm}
-h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)
+\boxed{h_0 e^{i\phi_0} \delta (\omega - \omega_0) = 2 \sum_{n=-\infty}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)}
 \end{align}
 
 
-This algorithm has been implemented in the past to demodulate the carrier frequency to recover the true amplitude \citep{deanna}.  
-
-This algorithm in its current form cannot be used on real data because it assumed a complex waveform.  This assumption allowed for a clean demodulation, which is spoiled if one takes the real of this function.  This is due to the nonlinearity (is this the correct term) of the real opperator as demonstrated by
+An erroneous factor of two has been added to the algorithm which, as we will see, makes it suitable for use with real data.  It is not obvious weather or not this algorithm in its current form can be used on real data because it assumed a complex waveform.  This assumption allowed for a clean demodulation, which is spoiled if one takes the real of this function.  This is due to the nonlinearity of the real opperator as demonstrated by
 
 \begin{align}
-\Re \{  \cdot b \} \neq \Re \{ a \} \cdot \Re \{ b \}
+\Re \{ a \cdot b \} \neq \Re \{ a \} \cdot \Re \{ b \}; \qquad a,b \in \mathds{C}
 \end{align}
 
-We can use this algorithm as a guess as to find the form that will work with a real valued waveform.  Upon comparison of the Fourier transforms of the complex and real waveforms (see appendix A and B) we see they are very similar.  The real looks like the complex with an additional sum of mirrored terms (explain what I mean by this).
+We can use equation (\ref{eqn:gustafsonAlgorithm}) as a guess as to find the form that will work with a real valued waveform.  Upon comparison of the Fourier transforms of the complex and real waveforms (see appendices A and B) we see they are very similar.  The real looks like the complex with the addition of terms that are mirrored about $\omega=0$.
 
-What would we have to do to get the fourier transform of the real to look exactly like the fourier transform of the complex wave?  Unsurprisingly not much because they are such similar functions.  We would only have to multiply each term by some phase factor to get the real fourier transform to look like the sum of two complex fourier transforms.  After adding in the phase factors we plug the  fourier transform of the real wave into the Gustafson Algorithm which will yeald two delta functions now instead of one (because the fourier transform of the real is the sum of two complex wave fourier transforms).  One delta function will be at $+\omega_0$, this is the one of interest, and the other will be at $-\omega_0$.  (A much more rigerous explanation of this is needed.)  If we carry the search out over only positive values of $\omega_0$ then we can throw out all terms in red of the fourier transform of the real wave because they are inconsequential to the algorithm.  Finally, the phase terms that were added to the foureier transform of the real to make it look like the complex can be encorperated into the Guatafson Algorithm.  The only remaining thing to do is multiply the Gustafson Algorithm by two (explain why).
+What would we have to do to get the fourier transform of the real to look exactly like the fourier transform of the complex wave?  Unsurprisingly not much because they are such similar functions.  All we would have to do is drop the extra mirrored terms.
+
+
+We would only have to multiply each term by some phase factor to get the real fourier transform to look like the sum of two complex fourier transforms.  After adding in the phase factors we plug the  fourier transform of the real wave into the Gustafson Algorithm which will yeald two delta functions now instead of one (because the fourier transform of the real is the sum of two complex wave fourier transforms).  One delta function will be at $+\omega_0$, this is the one of interest, and the other will be at $-\omega_0$.  (A much more rigerous explanation of this is needed.)  If we carry the search out over only positive values of $\omega_0$ then we can throw out all terms in red of the fourier transform of the real wave because they are inconsequential to the algorithm.  Finally, the phase terms that were added to the foureier transform of the real to make it look like the complex can be encorperated into the Guatafson Algorithm.  The only remaining thing to do is multiply the Gustafson Algorithm by two (explain why).
 
 
 \subsection{Discussion of The Gustafson Algorithm}
-It is not explicitly obvious how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, can be used as a search algorithm able to determin the values $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do.  
+It is not explicitly obvious how The Gustafson Algorithm, Eq. \ref{eqn:gustafsonAlgorithm}, can be used as a search algorithm capable of determining the values $h_0, \omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  In this section we seek to make obvious what Eq. \ref{eqn:gustafsonAlgorithm} can do.  
 
-Now let's assume that the data takes the form 
+Assume the data takes on the real form of a frequency modulated wave.
 
 \begin{align}
 \label{eqn:realData}
 f(t) = \Re \left\{ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right\}
 \end{align}
 
-but we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determin these values we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Algorithm
+Initially we do not know the values of $\omega_0, \omega_1, \phi_0, \phi_1, \Gamma$.  To determin these values we will try the values $\widetilde{\omega}_0, \widetilde{\omega}_1, \widetilde{\phi}_1, \widetilde{\Gamma}$ in the Gustafson Algorithm.
 
 \begin{align}
-? = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
+G_{\widetilde{\omega}_0,\widetilde{\omega}_1,\widetilde{\phi}_1,\widetilde{\Gamma}} \left[ \hat{f}(\omega) \right] 
+= \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
 \end{align}
 
-To see what this will yeald we substitute the Fourier Transform of the real of the waveform equation (\ref{eqn:realFourierTransform}), into the above equation
+To see what this will yeald we substitute the Fourier Transform of the real of the waveform, equation (\ref{eqn:realFourierTransform}), into the above equation
 
 \begin{align}
+G_{\omega_0,\omega_1,\phi_1,\Gamma} \left[ \hat{f}(\omega) \right] = 
 &\frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
-&\qquad \qquad
-\times \left[
+&\times \left[
 e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
 + e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
 \right]
 \end{align}
 
-- If $\widetilde{\phi}_1 = \phi_1$ then this formula does not depend on ether $\widetilde{\phi}_1$ or $\phi_1$.
 
 
 
-Bessel functions have the property \cite{}
-
-\begin{align}
-? = \sum_{n=-\infty}^{\infty} e^{-in(\widetilde{\phi}_1+\pi/2)} J_n(\widetilde{\Gamma}) \hat{f} (\omega + n\widetilde{\omega}_1)
-\end{align}
-
-Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
 
 
-\section{Carson's Rule and the Nyquist frequency}
-To see what this will yeald we substitute the Fourier Transform of the real of the waveform equation (\ref{eqn:realFourierTransform}), into the above equation
-
-\begin{align}
-&\frac{h_0}{2} \sum_{m,n=-\infty}^{\infty} e^{i(m\phi_1-n\widetilde{\phi}_1)} J_n(\widetilde{\Gamma}) J_m (\Gamma)				\nonumber \\
-&\qquad \qquad
-\times \left[
-e^{i(\phi_0 + (m-n)\pi/2)} \delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
-+ e^{-i(\phi_0 + (m+n)\pi/2)} \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1)
-\right]
-\end{align}
-
+%Where $\delta_{m}$ is the Kronecker Delta.  \cite{}  
 %To put this equation in a more suggestive form we introduce the sideband mismatch number $l=m-n$.  This integer gives ???????
 
 %\begin{align}
@@ -516,7 +485,7 @@ The fast Fourier transforms are de-correlated to form a matrix $\mathbf{R}$ by e
 \mathbf{R} = \mathbf{U}^{\mathbf{T}}\mathbf{L}
 \end{equation}
 
-After the de-correlation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following procedure:
+After the decorrelation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following procedure:
 
 \begin{equation}
 y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
@@ -547,21 +516,41 @@ The real component of the inverse fast Fourier transform of each row of $\mathbf
 where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\textnormal{th}$ column of $\textbf{D}$.
 
 \subsubsection{Discussion}
+In contrast with denoising techniques such as low-pass filtering, this approach does not require the knowledge of the highest frequency of the signal being recorded. However, the knowledge of how much variance of the data to keep is integral to successful denoising --- this is usually unknown and techniques have been proposed to solve this non-trivial problem \cite{}.
+
+To demonstrate the potential of this procedure in removing correlated Gaussian noise, two frequency modulated signals that are phase shifted from each other are adulterated with correlated Gaussian noise. The original signals are then reconstructed using the proposed denoising algorithm with a threshold of $99$ percent --- that is, eigenvectors that account for closest to (but, less than) $99$ percent of the variation of the data obtained from the set of multichannel intrinsic mode functions are retained. In Figure \ref{fig:denoise_1}, it can be easily observed that the algorithm extinguished an appreciable amount of the high frequency component that was not previously present in the data and selectively reduced the magnitude of the Fourier transform of the noise components with low frequency. Figure \ref{fig:denoise_2} was no different in terms of its denoising performance. It is worth noting that both results do have some discrepancy --- and their discrepancies are not the same. This feature is due to the fact that, although the noise sources are correlated, the noises are different.
+
 \begin{figure*}[ht]
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{denoise_1.jpg}
-  		\caption{\label{fig:denoise_1} jkl;.}
+  		\caption{\label{fig:denoise_1} Fourier transform of the proposed denoising approach for channel 1.}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{denoise_2.jpg}
-  		\caption{\label{fig:denoise_2} JKL}
+  		\caption{\label{fig:denoise_2} Fourier transform of the proposed denoising approach for channel 2.}
 	\end{subfigure}
-	\caption{asdf}
+	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
 \end{figure*}
->>>>>>> master
+
+A fundamental inquiry that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean-square errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible th
+
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{denoise_3.jpg}
+  		\caption{\label{fig:denoise_3} Ouput wrt mse and snr}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=1.15\linewidth]{denoise_4.jpg}
+  		\caption{\label{fig:denoise_4} Behaviour of the proposed algorithm under different correlations and SNRs}
+	\end{subfigure}
+	\caption{Behavior of outputs}
+\end{figure*}
 
 
 \section{Implementing the Gustafson Algorithm in C++}
@@ -847,6 +836,56 @@ Table \ref{fig:selectBesselFunctions} gives three examples of Bessel Functions t
 \end{figure*}
 
 
+\section{C++ Implementation of the Gustafson Algorithm: Results}
+-Step size in omega0 and omega1 must be small because they are deltas.
+-Step size in phi1 can be larger because it is less sharply peaked.
+-Step size in Gamma can be even larger because it is relatively smooth.
+
+\begin{figure*}[t]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{timeSeries.pdf}
+  		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{timeSeriesNoise.pdf}
+  		\caption{}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{fourierSeries.pdf}
+  		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{fourierSeriesNoise.pdf}
+  		\caption{}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInCarrier.pdf}
+  		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInModFreq.pdf}
+  		\caption{}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInPhi1.pdf}
+  		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInGamma.pdf}
+  		\caption{}
+	\end{subfigure}
+	\caption{\label{fig:} Sampeling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s}
+\end{figure*}
+
 
 \section{Conclusion}
 Recap the benifits of working in the frequency domain vs the time domain.
@@ -854,13 +893,10 @@ It is the belief of this author that the methods outlined in this paper are unli
 
 
 \appendix
-\onecolumngrid
 \section{The Fourier Transform of The Complex Function}
-I BELIEVE I FORGOT SOME FACTORS OF 2PI HERE!!
-Use the convolution theorem
-Use the Jacobi-Anger expansion \ref{eqn:jacobiAnger}
-Use the linearity of the Fourier Transform
-Use the linearity of the Convolution
+The results this and the following section are quite surprising.  Looking at the instentanious frequency of a frequency modulated wave, it takes on every value between $\omega_0 \pm \omega_1$.  There are an uncountably infinite number of frequencies in this band, but essentially every frequency in this band does not appear in the Fourier Transform!  In fact, there are only two or three of these frequencies present in the Fourier Transform.  Moreover the bandwidth for a frequency modulated wave is infinite.  A countably infinite number of frequencies called \textit{sidebands} are evenly sapced at integer multiples of $\omega_1$ from the \textit{carrier frequency} $\omega_0$.  Interestingly for particular values of the \textit{modulation index} $\Gamma$ it is possible for the carrier frequency to not be present in the Fourier Transform!  This occures at the zeros of the zeroth Bessel Function.
+
+%I BELIEVE I FORGOT SOME FACTORS OF 2PI HERE!!
 \begin{align}
 \mathcal{F}_t \left[ h_0 e^{i\left( \omega_0 t + \phi_0 + \Gamma \cos( \omega_1 t + \phi_1 ) \right)} \right]
 &= h_0 e^{i\phi_0} \mathcal{F}_t \left[ e^{i\omega_0 t} e^{i\Gamma \cos(\omega_1 t + \phi_1)} \right]											\\
@@ -873,6 +909,7 @@ Use the linearity of the Convolution
 &= h_0 e^{i\phi_0} \sum_{n=-\infty}^{\infty} e^{in(\phi_1 + \pi/2)} J_n(\Gamma)  \delta(\omega - \omega_0 - n\omega_1)
 \end{align}
 
+In this derivation we start by using the linearity of the Fourier Transform, then we invoke the Convolution Theorem, use the Jacobi-Anger Expansion, again use the linearity of the Fourier Transform, and the last few steps are simple Dirac Delta Function manipulations.
 
 \section{The Fourier Transform of The Real-Valued Function}
 
@@ -928,6 +965,8 @@ so the Fourier Transform of the real part of our frequency/phase modulated signa
 
 Notice that, by taking the fourier transform of just the real part of our frequency modulated function it has added the terms in red.  (Go into more detail why that is)  The other important change is that the $X_n$ and $Y_n$ terms were added (Again, go into more detail why that is).
 
+\pagebreak
+
 \section{Selected Waveforms}
 
 
@@ -936,17 +975,17 @@ Notice that, by taking the fourier transform of just the real part of our freque
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{classicSignal.png}
-  		\caption{A "nice" signal that is what comes to mind for cyclic frequency modulated signals. $\Gamma = 9.88, \omega_0 = 3.62, \omega_1 = 0.21, \phi_1 = 3.14$ \label{fig:niceSignal}}
+  		\caption{When the carrier frequency is much higher than the modulation frequency the frequency modulated wave is "nice". $\Gamma = 9.88, \omega_0 = 3.62, \omega_1 = 0.21, \phi_1 = 3.14$ \label{fig:niceSignal}}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{interestingSignal.png}
-  		\caption{One example of the exotic signals cyclic frequency modulation can produce.  $\Gamma = 2.88, \omega_0 = 1.5, \omega_1 = 0.75, \phi_1 = 0$ \label{fig:interestingSignal}}
+  		\caption{When the carrier frequency is a multiple of the modulation frequency one can get exotic waveforms.  One example of the exotic signals cyclic frequency modulation can produce.  $\Gamma = 2.88, \omega_0 = 1.5, \omega_1 = 0.75, \phi_1 = 0$ \label{fig:interestingSignal}}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{nastySignal.png}
-  		\caption{A particularly nasty waveform that could be mistaken as noise by looking at it. $\Gamma = 3, \omega_0 = 0.42, \omega_1 = 0.46, \phi_1 = 0.1$ \label{fig:nastySignal}}
+  		\caption{When the carrier and modulation frequencies are almost equal the resulting FM wave is not so nice.  This is a particularly nasty waveform that could be mistaken as noise by looking at it. $\Gamma = 3, \omega_0 = 0.42, \omega_1 = 0.46, \phi_1 = 0.1$ \label{fig:nastySignal}}
 	\end{subfigure}
 \end{figure}
 
