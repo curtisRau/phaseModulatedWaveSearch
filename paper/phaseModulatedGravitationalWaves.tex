@@ -1,7 +1,7 @@
 \documentclass[onecolumn, groupedaddress, 10pt]{revtex4-1}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-%\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
+\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}											% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI
@@ -84,7 +84,7 @@ David researched and wrote the sections concerning the Nyquist frequency and Car
 \end{itemize}
 
 \textbf{Samuel Akwei-Sekyere}
-Same researched and wrote the large section on noise and error analysis. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam placed a major role in reviewing and editing other's sections. He presented his work in class.
+Sam researched and wrote the large section on noise and error analysis. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam placed a major role in reviewing and editing other's sections. He presented his work in class.
 \begin{itemize}
 \item reviewed and expanded paper (all sections)
 \item researched and wrote sections on error analysis, wrote parts of the introduction
@@ -174,7 +174,7 @@ with the data for different values of $\omega_0$, $\omega_1$, $\phi_0$, $\phi_1$
 \hat{f}(\omega_0, \omega_1, \phi_1, \Gamma) = \int f(t) e^{-i\left( \omega_0 t + \phi_0 + \Gamma \cos (\omega_1 t + \phi_1 ) \right)} dt
 \end{align}
 
-We would expect this to produce a something like a delta function, or at least a Dirchlet Kernel because of discretization.  The ammount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite{}.  Physically this means the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
+We would expect this to produce a something like a delta function, or at least a Dirchlet Kernel because of discretization.  The ammount of time it will take to perform this computation is $\mathcal{O} (N_tN_{\omega_0}N_{\omega_1}N_{\phi_1}N_\Gamma)$, where $N_t$ denotes the number of data points, and the other $N_x$ is the number of steps in $x$ that the search will take.  Typically for a Discrete Fourier Transform (DFT) the number of steps in frequency is equal to the number of data points: $N_t=N_{\omega_0}=N_{\omega_1}$ \cite[P. 251]{folland}.  Physically this means the frequency resolution of the DFT is proportional to the duration of the time series over which the DFT is taken.  Thus the computation time for the brute force method goes as $\mathcal{O} (N_t^3N_{\phi_1}N_\Gamma)$.  
 
 Of particular interest is the case when the signal is buarried deep within non-coherent noise.  A conventional way to improve the signal to noise ratio (SNR) is to simply take more data.  This assumes the signal is more periodic than noise.  (why does this yeald a better snr??????)  The problem with taking more data however is that the brute force method computational time is proportional to $N_t^3$.  We will now introduce the Gustafson Algorithm which is roughly a factor of $N_t$ faster than the brute force method.
 
