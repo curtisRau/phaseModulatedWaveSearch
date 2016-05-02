@@ -14,84 +14,87 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax }}{3}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:earthMotionModulationFigure}{{1}{3}{}{}{}}
+\citation{}
 \newlabel{eqn: new k}{{1}{4}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}The Gustafson Algorithm}{4}{}}
 \citation{}
-\newlabel{eqn:jacobiAnger}{{14}{5}{}{}{}}
 \citation{}
-\citation{deanna}
-\newlabel{eqn:gustafsonAlgorithm}{{24}{6}{}{}{}}
+\newlabel{eqn:derivation:convolutionThmStep}{{12}{5}{}{}{}}
+\newlabel{eqn:jacobiAnger}{{13}{5}{}{}{}}
+\newlabel{eqn:derivation:jacobiAngerInsertion}{{14}{5}{}{}{}}
+\citation{}
+\newlabel{eqn:gustafsonAlgorithm}{{23}{6}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}Discussion of The Gustafson Algorithm}{6}{}}
-\citation{}
-\citation{}
-\newlabel{eqn:realData}{{26}{7}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Carson's Rule and the Nyquist frequency}{7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Carson's Rule and the Nyquist frequency}{8}{}}
+\newlabel{eqn:realData}{{25}{6}{}{}{}}
 \citation{abramovici1996improved}
 \citation{aasi2013enhanced}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Carson's Rule and the Nyquist frequency}{8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Error Analysis}{8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Noise Sources}{8}{}}
 \citation{Saulson}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Error Analysis}{9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}Noise Sources}{9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {B}Noise Elimination}{9}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Proposed Denoising Algorithm}{9}{}}
 \citation{}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Discussion}{11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Discussion}{10}{}}
+\citation{folland}
+\citation{morten}
 \newlabel{fig:denoise_1}{{2a}{11}{}{}{}}
 \newlabel{sub@fig:denoise_1}{{a}{11}{}{}{}}
 \newlabel{fig:denoise_2}{{2b}{11}{}{}{}}
 \newlabel{sub@fig:denoise_2}{{b}{11}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.\relax }}{11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Implementing the Gustafson Algorithm in C++}{11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Implementing the Gustafson Algorithm in C++}{11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}Calculating Bessel Functions}{11}{}}
-\citation{folland}
-\citation{morten}
+\newlabel{eqn:Bessel's Equation}{{50}{11}{}{}{}}
 \newlabel{fig:denoise_3}{{3a}{12}{}{}{}}
 \newlabel{sub@fig:denoise_3}{{a}{12}{}{}{}}
 \newlabel{fig:denoise_4}{{3b}{12}{}{}{}}
 \newlabel{sub@fig:denoise_4}{{b}{12}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Behavior of outputs\relax }}{12}{}}
-\newlabel{eqn:Bessel's Equation}{{53}{12}{}{}{}}
-\newlabel{eqn:Bessel's Equation Discretized}{{56}{13}{}{}{}}
+\newlabel{eqn:Bessel's Equation Discretized}{{53}{12}{}{}{}}
+\newlabel{eqn:finalDiscretizedBesselMatrixEqn}{{69}{13}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}The Thomas Algorithm}{13}{}}
 \citation{}
 \citation{folland}
-\newlabel{eqn:finalDiscretizedBesselMatrixEqn}{{72}{14}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}The Thomas Algorithm}{14}{}}
-\newlabel{sec:boundaryConditions}{{VI\tmspace  +\thinmuskip {.1667em}A\tmspace  +\thinmuskip {.1667em}2}{14}{}{}{}}
+\newlabel{sec:boundaryConditions}{{V\tmspace  +\thinmuskip {.1667em}A\tmspace  +\thinmuskip {.1667em}2}{14}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Boundary Conditions }{14}{}}
-\newlabel{eqn:asymtoticBessel}{{82}{14}{}{}{}}
+\newlabel{eqn:asymtoticBessel}{{79}{14}{}{}{}}
+\newlabel{eqn:numericalIntegralBessel}{{81}{14}{}{}{}}
 \newlabel{fig:BesselBadBoundary}{{4a}{15}{}{}{}}
 \newlabel{sub@fig:BesselBadBoundary}{{a}{15}{}{}{}}
 \newlabel{fig:BesselGoodBoundary}{{4b}{15}{}{}{}}
 \newlabel{sub@fig:BesselGoodBoundary}{{b}{15}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The blue curve is the asymtotic form of the bessel functions as given in equation 82{}{}{}\hbox {}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver. Note, both of these solutions were calculated using 10,000 points. Even though the solution in figure 4a{}{}{}\hbox {} has 10 times the point density, it is limited in accuracy by the endpoint!\relax }}{15}{}}
-\newlabel{eqn:numericalIntegralBessel}{{84}{15}{}{}{}}
-\newlabel{eqn:dynamicIntegrationPoints}{{85}{15}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The blue curve is the asymtotic form of the bessel functions as given in equation 79{}{}{}\hbox {}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver. Note, both of these solutions were calculated using 10,000 points. Even though the solution in figure 4a{}{}{}\hbox {} has 10 times the point density, it is limited in accuracy by the endpoint!\relax }}{15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces  $N$ is the number of points returned, $n$ is the order of the bessel function, and the points calculated were for $z \in [0,z_{max}]$ \relax }}{15}{}}
+\newlabel{table:besselSpeed}{{I}{15}{}{}{}}
+\newlabel{eqn:dynamicIntegrationPoints}{{82}{15}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Calculating Bessel Functions: Results}{15}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces  $N$ is the number of points returned, $n$ is the order of the bessel function, and the points calculated were for $z \in [0,z_{max}]$ \relax }}{16}{}}
-\newlabel{table:besselSpeed}{{I}{16}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax }}{16}{}}
 \newlabel{fig:selectBesselFunctions}{{5}{16}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}C++ Implementation of the Gustafson Algorithm: Results}{16}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{16}{}}
 \@writefile{toc}{\appendix }
+\@writefile{toc}{\contentsline {section}{\numberline {A}The Fourier Transform of The Complex Function}{16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$. The blue curve was generated by the BesselJ function of Mathematica. The red dots were calculated by my code. The two sets of data are in excelent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement. This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a loptop). It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma $ and n were solved for.\relax }}{17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}The Fourier Transform of The Complex Function}{17}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {B}The Fourier Transform of The Real-Valued Function}{18}{}}
 \newlabel{eqn:realFourierTransform}{{B6}{18}{}{}{}}
 \bibdata{phaseModulatedGravitationalWavesNotes,shgBibliographyCopy}
 \bibcite{Deanna}{{1}{}{{}}{{}}}
-\bibcite{LSCall}{{2}{}{{}}{{}}}
+\bibcite{abbott}{{2}{}{{}}{{}}}
 \bibcite{folland}{{3}{}{{}}{{}}}
 \bibcite{griffiths}{{4}{}{{}}{{}}}
 \bibcite{Saulson}{{5}{}{{}}{{}}}
 \bibstyle{plain}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \@writefile{toc}{\contentsline {section}{\numberline {C}Selected Waveforms}{19}{}}
-\newlabel{fig:niceSignal}{{7a}{19}{}{}{}}
+\newlabel{fig:niceSignal}{{8a}{19}{}{}{}}
 \newlabel{sub@fig:niceSignal}{{a}{19}{}{}{}}
-\newlabel{fig:interestingSignal}{{7b}{19}{}{}{}}
+\newlabel{fig:interestingSignal}{{8b}{19}{}{}{}}
 \newlabel{sub@fig:interestingSignal}{{b}{19}{}{}{}}
-\newlabel{fig:nastySignal}{{7c}{19}{}{}{}}
+\newlabel{fig:nastySignal}{{8c}{19}{}{}{}}
 \newlabel{sub@fig:nastySignal}{{c}{19}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {}References}{19}{}}
 \newlabel{LastBibItem}{{5}{19}{}{}{}}
-\newlabel{LastPage}{{}{19}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Sampeling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s\relax }}{20}{}}
+\newlabel{fig:}{{7}{20}{}{}{}}
+\newlabel{LastPage}{{}{20}{}{}{}}
