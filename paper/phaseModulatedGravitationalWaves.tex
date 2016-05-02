@@ -504,7 +504,7 @@ To apply the threshold, the projections with eigenvalues whose indices are less 
 \end{displaymath}
 where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$.
 
-The fast Fourier transforms are then re-correlated to obtain denoised intrinsic mode functions in the following manner:
+The fast Fourier transforms are then recorrelated to obtain denoised intrinsic mode functions in the following manner:
 \begin{equation}
 \tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}
 \end{equation}
@@ -535,23 +535,33 @@ To demonstrate the potential of this procedure in removing correlated Gaussian n
 	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
 \end{figure*}
 
-A fundamental inquiry that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean-square errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible th
+A fundamental inquiry that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean squared errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible that parts of the original data may have been erased. This infers that an adaptive threshold that depends on the structure of the data and the structure of the noise to be extinguished may be most appropriate for this algorithm.
+
+\begin{figure*}[ht]
+	\centering
+  		\includegraphics[width=.5\linewidth]{denoise_3.jpg}
+  		\caption{\label{fig:denoise_3} The algorithm performs better with increasing SNR; however, this performance plateaus at high SNRs. The correlation coefficient $r^2 = -0.6543$ with $p < 0.05$.}
+\end{figure*}
+
+
+Since a fundamental assumption the proposed algorithm makes is that the noise sources are correlated, it is important to investigate how the correlation affects its performance. To this end, a procedure similar to that of Figure \ref{fig:denoise_3} was implemented; nevertheless, a second independent variable was added --- the correlation between the noise sources. Further, the performance for denoising in each channel was not analyzed jointly. From Figure \ref{fig:denoise_4}, it can be noticed --- as insinuated before --- that the algorithm's performance plateaus at high SNRs and progressively worsens as the same threshold is more likely to remove parts of the original data. Interestingly, the proposed approach works well with noise sources of tolerably high correlation; however, it fails to produce quality results when the correlation is really high.
 
 \begin{figure*}[ht]
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
-  		\includegraphics[width=.9\linewidth]{denoise_3.jpg}
-  		\caption{\label{fig:denoise_3} Ouput wrt mse and snr}
+  		\includegraphics[width=.9\linewidth]{denoise_4.jpg}
+  		\caption{\label{fig:denoise_4} Response of the algorithm with changing noise correlations and SNRs for channel 1.}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
-  		\includegraphics[width=1.15\linewidth]{denoise_4.jpg}
-  		\caption{\label{fig:denoise_4} Behaviour of the proposed algorithm under different correlations and SNRs}
+  		\includegraphics[width=0.9\linewidth]{denoise_5.jpg}
+  		\caption{\label{fig:denoise_5} Response of the algorithm with changing noise correlations and SNRs for channel 2.}
 	\end{subfigure}
-	\caption{Behavior of outputs}
+	\caption{Behavior of the proposed algorithm with respect to differing SNRs and noise correlations. This figure provides an insight to the performance of the proposed denoising algorithm (via the mean squared error) under the outlined conditions.}
 \end{figure*}
 
+The potential of this approach has been outlined above. With a few modifications, this denoising algorithm may improve its capability and, to some extent, (depending on the structure of the data and the noise) could be modified to deal with uncorrelated noise. In the spirit of demonstrating the robustness of the Gustafson algorithm to noise, the results from the search algorithm will be analyzed without no attempt to remove of noise.
 
 \section{Implementing the Gustafson Algorithm in C++}
 \subsection{Calculating Bessel Functions}

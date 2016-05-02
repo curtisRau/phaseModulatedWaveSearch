@@ -36,48 +36,50 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Proposed Denoising Algorithm}{9}{}}
 \citation{}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Discussion}{10}{}}
-\citation{folland}
-\citation{morten}
 \newlabel{fig:denoise_1}{{2a}{11}{}{}{}}
 \newlabel{sub@fig:denoise_1}{{a}{11}{}{}{}}
 \newlabel{fig:denoise_2}{{2b}{11}{}{}{}}
 \newlabel{sub@fig:denoise_2}{{b}{11}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.\relax }}{11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Implementing the Gustafson Algorithm in C++}{11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}Calculating Bessel Functions}{11}{}}
-\newlabel{eqn:Bessel's Equation}{{50}{11}{}{}{}}
-\newlabel{fig:denoise_3}{{3a}{12}{}{}{}}
-\newlabel{sub@fig:denoise_3}{{a}{12}{}{}{}}
-\newlabel{fig:denoise_4}{{3b}{12}{}{}{}}
-\newlabel{sub@fig:denoise_4}{{b}{12}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Behavior of outputs\relax }}{12}{}}
-\newlabel{eqn:Bessel's Equation Discretized}{{53}{12}{}{}{}}
-\newlabel{eqn:finalDiscretizedBesselMatrixEqn}{{69}{13}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}The Thomas Algorithm}{13}{}}
-\citation{}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  The algorithm performs better with increasing SNR; however, this performance plateaus at high SNRs. The correlation coefficient $r^2 = -0.6543$ with $p < 0.05$.\relax }}{11}{}}
+\newlabel{fig:denoise_3}{{3}{11}{}{}{}}
 \citation{folland}
-\newlabel{sec:boundaryConditions}{{V\tmspace  +\thinmuskip {.1667em}A\tmspace  +\thinmuskip {.1667em}2}{14}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Boundary Conditions }{14}{}}
-\newlabel{eqn:asymtoticBessel}{{79}{14}{}{}{}}
-\newlabel{eqn:numericalIntegralBessel}{{81}{14}{}{}{}}
-\newlabel{fig:BesselBadBoundary}{{4a}{15}{}{}{}}
-\newlabel{sub@fig:BesselBadBoundary}{{a}{15}{}{}{}}
-\newlabel{fig:BesselGoodBoundary}{{4b}{15}{}{}{}}
-\newlabel{sub@fig:BesselGoodBoundary}{{b}{15}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The blue curve is the asymtotic form of the bessel functions as given in equation 79{}{}{}\hbox {}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver. Note, both of these solutions were calculated using 10,000 points. Even though the solution in figure 4a{}{}{}\hbox {} has 10 times the point density, it is limited in accuracy by the endpoint!\relax }}{15}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces  $N$ is the number of points returned, $n$ is the order of the bessel function, and the points calculated were for $z \in [0,z_{max}]$ \relax }}{15}{}}
-\newlabel{table:besselSpeed}{{I}{15}{}{}{}}
+\newlabel{fig:denoise_4}{{4a}{12}{}{}{}}
+\newlabel{sub@fig:denoise_4}{{a}{12}{}{}{}}
+\newlabel{fig:denoise_5}{{4b}{12}{}{}{}}
+\newlabel{sub@fig:denoise_5}{{b}{12}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Behavior of the proposed algorithm with respect to differing SNRs and noise correlations. This figure provides an insight to the performance of the proposed denoising algorithm (via the mean squared error) under the outlined conditions.\relax }}{12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Implementing the Gustafson Algorithm in C++}{12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Calculating Bessel Functions}{12}{}}
+\citation{morten}
+\newlabel{eqn:Bessel's Equation}{{50}{13}{}{}{}}
+\newlabel{eqn:Bessel's Equation Discretized}{{53}{13}{}{}{}}
+\citation{}
+\newlabel{eqn:finalDiscretizedBesselMatrixEqn}{{69}{14}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}The Thomas Algorithm}{14}{}}
+\citation{folland}
+\newlabel{sec:boundaryConditions}{{V\tmspace  +\thinmuskip {.1667em}A\tmspace  +\thinmuskip {.1667em}2}{15}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Boundary Conditions }{15}{}}
+\newlabel{eqn:asymtoticBessel}{{79}{15}{}{}{}}
+\newlabel{eqn:numericalIntegralBessel}{{81}{15}{}{}{}}
 \newlabel{eqn:dynamicIntegrationPoints}{{82}{15}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Calculating Bessel Functions: Results}{15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax }}{16}{}}
-\newlabel{fig:selectBesselFunctions}{{5}{16}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}C++ Implementation of the Gustafson Algorithm: Results}{16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}C++ Implementation of the Gustafson Algorithm: Results}{15}{}}
+\newlabel{fig:BesselBadBoundary}{{5a}{16}{}{}{}}
+\newlabel{sub@fig:BesselBadBoundary}{{a}{16}{}{}{}}
+\newlabel{fig:BesselGoodBoundary}{{5b}{16}{}{}{}}
+\newlabel{sub@fig:BesselGoodBoundary}{{b}{16}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The blue curve is the asymtotic form of the bessel functions as given in equation 79{}{}{}\hbox {}, the black curve is $J_{10} (x)$ as given by Mathematica, and the red curve is the one calculated by our differential equation solver. Note, both of these solutions were calculated using 10,000 points. Even though the solution in figure 5a{}{}{}\hbox {} has 10 times the point density, it is limited in accuracy by the endpoint!\relax }}{16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces  $N$ is the number of points returned, $n$ is the order of the bessel function, and the points calculated were for $z \in [0,z_{max}]$ \relax }}{16}{}}
+\newlabel{table:besselSpeed}{{I}{16}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{16}{}}
 \@writefile{toc}{\appendix }
 \@writefile{toc}{\contentsline {section}{\numberline {A}The Fourier Transform of The Complex Function}{16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$. The blue curve was generated by the BesselJ function of Mathematica. The red dots were calculated by my code. The two sets of data are in excelent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement. This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a loptop). It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma $ and n were solved for.\relax }}{17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax }}{17}{}}
+\newlabel{fig:selectBesselFunctions}{{6}{17}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$. The blue curve was generated by the BesselJ function of Mathematica. The red dots were calculated by my code. The two sets of data are in excelent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement. This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a loptop). It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma $ and n were solved for.\relax }}{18}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {B}The Fourier Transform of The Real-Valued Function}{18}{}}
-\newlabel{eqn:realFourierTransform}{{B6}{18}{}{}{}}
+\newlabel{eqn:realFourierTransform}{{B6}{19}{}{}{}}
 \bibdata{phaseModulatedGravitationalWavesNotes,shgBibliographyCopy}
 \bibcite{Deanna}{{1}{}{{}}{{}}}
 \bibcite{abbott}{{2}{}{{}}{{}}}
@@ -86,15 +88,15 @@
 \bibcite{Saulson}{{5}{}{{}}{{}}}
 \bibstyle{plain}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{toc}{\contentsline {section}{\numberline {C}Selected Waveforms}{19}{}}
-\newlabel{fig:niceSignal}{{8a}{19}{}{}{}}
-\newlabel{sub@fig:niceSignal}{{a}{19}{}{}{}}
-\newlabel{fig:interestingSignal}{{8b}{19}{}{}{}}
-\newlabel{sub@fig:interestingSignal}{{b}{19}{}{}{}}
-\newlabel{fig:nastySignal}{{8c}{19}{}{}{}}
-\newlabel{sub@fig:nastySignal}{{c}{19}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{19}{}}
-\newlabel{LastBibItem}{{5}{19}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Sampeling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s\relax }}{20}{}}
-\newlabel{fig:}{{7}{20}{}{}{}}
-\newlabel{LastPage}{{}{20}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Selected Waveforms}{20}{}}
+\newlabel{fig:niceSignal}{{9a}{20}{}{}{}}
+\newlabel{sub@fig:niceSignal}{{a}{20}{}{}{}}
+\newlabel{fig:interestingSignal}{{9b}{20}{}{}{}}
+\newlabel{sub@fig:interestingSignal}{{b}{20}{}{}{}}
+\newlabel{fig:nastySignal}{{9c}{20}{}{}{}}
+\newlabel{sub@fig:nastySignal}{{c}{20}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{20}{}}
+\newlabel{LastBibItem}{{5}{20}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  Sampeling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s\relax }}{21}{}}
+\newlabel{fig:}{{8}{21}{}{}{}}
+\newlabel{LastPage}{{}{21}{}{}{}}
