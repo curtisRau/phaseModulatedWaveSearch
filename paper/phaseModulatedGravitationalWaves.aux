@@ -16,7 +16,7 @@
 \citation{folland}
 \newlabel{eqn: new k}{{1}{4}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}The Gustafson Algorithm}{4}{}}
-\citation{}
+\citation{deanna}
 \citation{kreh}
 \newlabel{eqn:derivation:convolutionThmStep}{{12}{5}{}{}{}}
 \newlabel{eqn:jacobiAnger}{{13}{5}{}{}{}}
@@ -24,6 +24,8 @@
 \citation{kreh}
 \newlabel{eqn:gustafsonAlgorithm}{{23}{6}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}The Gustafson Algorithm as a Search Algorithm}{6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  The 3D representation of the Fourier Transform of the complex waveform.\relax }}{7}{}}
+\newlabel{fig:3dFourierTransform}{{2}{7}{}{}{}}
 \newlabel{eqn:realData}{{25}{7}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Carson's Rule and the Nyquist frequency}{8}{}}
 \citation{abramovici1996improved}
@@ -32,85 +34,85 @@
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Error Analysis}{9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A}Noise Sources}{9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {B}Noise Elimination}{9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Proposed Denoising Algorithm}{9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Proposed Denoising Algorithm}{10}{}}
 \citation{}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Discussion}{11}{}}
-\newlabel{fig:denoise_1}{{2a}{11}{}{}{}}
+\newlabel{fig:denoise_1}{{3a}{11}{}{}{}}
 \newlabel{sub@fig:denoise_1}{{a}{11}{}{}{}}
-\newlabel{fig:denoise_2}{{2b}{11}{}{}{}}
+\newlabel{fig:denoise_2}{{3b}{11}{}{}{}}
 \newlabel{sub@fig:denoise_2}{{b}{11}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.\relax }}{11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Implementing the Gustafson Algorithm in C++}{11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}Calculating Bessel Functions}{11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.\relax }}{11}{}}
 \citation{folland}
-\citation{morten}
-\newlabel{fig:denoise_3}{{3a}{12}{}{}{}}
+\newlabel{fig:denoise_3}{{4a}{12}{}{}{}}
 \newlabel{sub@fig:denoise_3}{{a}{12}{}{}{}}
-\newlabel{fig:denoise_4}{{3b}{12}{}{}{}}
+\newlabel{fig:denoise_4}{{4b}{12}{}{}{}}
 \newlabel{sub@fig:denoise_4}{{b}{12}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Behavior of outputs\relax }}{12}{}}
-\newlabel{eqn:Bessel's Equation}{{51}{12}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Behavior of outputs\relax }}{12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Implementing the Gustafson Algorithm in C++}{12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Calculating Bessel Functions}{12}{}}
+\citation{morten}
+\newlabel{eqn:Bessel's Equation}{{51}{13}{}{}{}}
 \newlabel{eqn:Bessel's Equation Discretized}{{54}{13}{}{}{}}
 \citation{}
-\citation{folland}
 \newlabel{eqn:finalDiscretizedBesselMatrixEqn}{{70}{14}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}The Thomas Algorithm}{14}{}}
-\newlabel{sec:boundaryConditions}{{V\tmspace  +\thinmuskip {.1667em}A\tmspace  +\thinmuskip {.1667em}2}{14}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Boundary Conditions }{14}{}}
-\newlabel{eqn:asymtoticBessel}{{80}{14}{}{}{}}
+\citation{folland}
+\newlabel{sec:boundaryConditions}{{V\tmspace  +\thinmuskip {.1667em}A\tmspace  +\thinmuskip {.1667em}2}{15}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Boundary Conditions }{15}{}}
+\newlabel{eqn:asymtoticBessel}{{80}{15}{}{}{}}
 \newlabel{eqn:numericalIntegralBessel}{{82}{15}{}{}{}}
 \newlabel{eqn:dynamicIntegrationPoints}{{83}{15}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3}Calculating Bessel Functions: Results}{15}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces  $N$ is the number of points returned, $n$ is the order of the Bessel function, and the points calculated were for $z \in [0,z_{max}]$ \relax }}{15}{}}
-\newlabel{table:besselSpeed}{{I}{15}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax }}{16}{}}
-\newlabel{fig:selectBesselFunctions}{{5}{16}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$. The blue curve was generated by the BesselJ function of Mathematica. The red dots were calculated by our code. The two sets of data are in excellent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement. This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a laptop). It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma $ and n were solved for.\relax }}{16}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Carson's Rule and the Nyquist frequency}{16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces  $N$ is the number of points returned, $n$ is the order of the Bessel function, and the points calculated were for $z \in [0,z_{max}]$ \relax }}{16}{}}
+\newlabel{table:besselSpeed}{{I}{16}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax }}{16}{}}
+\newlabel{fig:selectBesselFunctions}{{6}{16}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$. The blue curve was generated by the BesselJ function of Mathematica. The red dots were calculated by our code. The two sets of data are in excellent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement. This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a laptop). It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma $ and n were solved for.\relax }}{17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Carson's Rule and the Nyquist frequency}{17}{}}
 \citation{abramovici1996improved}
 \citation{aasi2013enhanced}
 \citation{Saulson}
 \citation{Saulson}
 \citation{oweiss2001noise}
 \citation{aminghafari2006multivariate}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Error Analysis}{17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A}Noise Sources}{17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B}Noise Elimination}{17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Error Analysis}{18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A}Noise Sources}{18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B}Noise Elimination}{18}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1}Proposed Denoising Algorithm}{18}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Discussion}{19}{}}
-\newlabel{fig:denoise_1}{{7a}{20}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2}Discussion}{20}{}}
+\newlabel{fig:denoise_1}{{8a}{20}{}{}{}}
 \newlabel{sub@fig:denoise_1}{{a}{20}{}{}{}}
-\newlabel{fig:denoise_2}{{7b}{20}{}{}{}}
+\newlabel{fig:denoise_2}{{8b}{20}{}{}{}}
 \newlabel{sub@fig:denoise_2}{{b}{20}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.\relax }}{20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  The algorithm performs better with increasing SNR; however, this performance plateaus at high SNRs. The correlation coefficient $r^2 = -0.6543$ with $p < 0.05$.\relax }}{20}{}}
-\newlabel{fig:denoise_3}{{8}{20}{}{}{}}
-\newlabel{fig:denoise_4}{{9a}{21}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.\relax }}{20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces  The algorithm performs better with increasing SNR; however, this performance plateaus at high SNRs. The correlation coefficient $r^2 = -0.6543$ with $p < 0.05$.\relax }}{21}{}}
+\newlabel{fig:denoise_3}{{9}{21}{}{}{}}
+\newlabel{fig:denoise_4}{{10a}{21}{}{}{}}
 \newlabel{sub@fig:denoise_4}{{a}{21}{}{}{}}
-\newlabel{fig:denoise_5}{{9b}{21}{}{}{}}
+\newlabel{fig:denoise_5}{{10b}{21}{}{}{}}
 \newlabel{sub@fig:denoise_5}{{b}{21}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Behavior of the proposed algorithm with respect to differing SNRs and noise correlations. This figure provides an insight to the performance of the proposed denoising algorithm (via the mean squared error) under the outlined conditions.\relax }}{21}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}Results and Discussion}{21}{}}
-\newlabel{fig:results_1}{{10a}{22}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Behavior of the proposed algorithm with respect to differing SNRs and noise correlations. This figure provides an insight to the performance of the proposed denoising algorithm (via the mean squared error) under the outlined conditions.\relax }}{21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Results and Discussion}{22}{}}
+\newlabel{fig:results_1}{{11a}{22}{}{}{}}
 \newlabel{sub@fig:results_1}{{a}{22}{}{}{}}
-\newlabel{fig:results2}{{10b}{22}{}{}{}}
+\newlabel{fig:results2}{{11b}{22}{}{}{}}
 \newlabel{sub@fig:results2}{{b}{22}{}{}{}}
-\newlabel{fig:results3}{{10c}{22}{}{}{}}
+\newlabel{fig:results3}{{11c}{22}{}{}{}}
 \newlabel{sub@fig:results3}{{c}{22}{}{}{}}
-\newlabel{fig:results4}{{10d}{22}{}{}{}}
+\newlabel{fig:results4}{{11d}{22}{}{}{}}
 \newlabel{sub@fig:results4}{{d}{22}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces  Frequency modulated signal and its noisy version in the time series and Fourier space. The sampling rate for these traces was 300Hz. The carrier frequency was 20Hz, while the modulaton frequency was 6Hz. It is worth noting that these represent 10 seconds of recording with a modulation index of 10.\relax }}{22}{}}
-\newlabel{fig:}{{10}{22}{}{}{}}
-\newlabel{fig:results5}{{11a}{23}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces  Frequency modulated signal and its noisy version in the time series and Fourier space. The sampling rate for these traces was 300Hz. The carrier frequency was 20Hz, while the modulaton frequency was 6Hz. It is worth noting that these represent 10 seconds of recording with a modulation index of 10.\relax }}{22}{}}
+\newlabel{fig:}{{11}{22}{}{}{}}
+\newlabel{fig:results5}{{12a}{23}{}{}{}}
 \newlabel{sub@fig:results5}{{a}{23}{}{}{}}
-\newlabel{fig:results6}{{11b}{23}{}{}{}}
+\newlabel{fig:results6}{{12b}{23}{}{}{}}
 \newlabel{sub@fig:results6}{{b}{23}{}{}{}}
-\newlabel{fig:result7}{{11c}{23}{}{}{}}
+\newlabel{fig:result7}{{12c}{23}{}{}{}}
 \newlabel{sub@fig:result7}{{c}{23}{}{}{}}
-\newlabel{fig:result8}{{11d}{23}{}{}{}}
+\newlabel{fig:result8}{{12d}{23}{}{}{}}
 \newlabel{sub@fig:result8}{{d}{23}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces  Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. 10b{}{}{}\hbox {}. Sampling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s, SNR = 0.1\relax }}{23}{}}
-\newlabel{fig:gustafsonAlgoResults}{{11}{23}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces  Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. 11b{}{}{}\hbox {}. Sampling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s, SNR = 0.1\relax }}{23}{}}
+\newlabel{fig:gustafsonAlgoResults}{{12}{23}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {IX}Conclusion}{23}{}}
 \@writefile{toc}{\appendix }
 \@writefile{toc}{\contentsline {section}{\numberline {A}The Fourier Transform of The Complex Function}{23}{}}
@@ -130,11 +132,11 @@
 \bibcite{kreh}{{9}{}{{}}{{}}}
 \bibcite{magalhaes1995determination}{{10}{}{{}}{{}}}
 \@writefile{toc}{\contentsline {section}{\numberline {D}Selected Waveforms}{26}{}}
-\newlabel{fig:niceSignal}{{12a}{26}{}{}{}}
+\newlabel{fig:niceSignal}{{13a}{26}{}{}{}}
 \newlabel{sub@fig:niceSignal}{{a}{26}{}{}{}}
-\newlabel{fig:interestingSignal}{{12b}{26}{}{}{}}
+\newlabel{fig:interestingSignal}{{13b}{26}{}{}{}}
 \newlabel{sub@fig:interestingSignal}{{b}{26}{}{}{}}
-\newlabel{fig:nastySignal}{{12c}{26}{}{}{}}
+\newlabel{fig:nastySignal}{{13c}{26}{}{}{}}
 \newlabel{sub@fig:nastySignal}{{c}{26}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {}References}{26}{}}
 \bibcite{oweiss2001noise}{{11}{}{{}}{{}}}

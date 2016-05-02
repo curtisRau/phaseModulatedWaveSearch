@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 MAY 2016 10:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 MAY 2016 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,205 +657,181 @@ File: earthMotionModulationFigure/earthMotionModulationFigure.pdf Graphic file
 Package pdftex.def Info: earthMotionModulationFigure/earthMotionModulationFigur
 e.pdf used on input line 81.
 (pdftex.def)             Requested size: 375.36299pt x 261.14812pt.
- [3 <./earthMotionModulationFigure/earthMotionModulationFigure.pdf>] [4] [5]
+ [3 <./earthMotionModulationFigure/earthMotionModulationFigure.pdf>] [4]
+
+Package natbib Warning: Citation `deanna' on page 5 undefined on input line 171
+.
+
+[5]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 241.
 
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [6]
-[7] [8] [9] [10] <images/denoise_1.jpg, id=65, 3613.5pt x 3613.5pt>
+)
+<images/3dFourierTransform.pdf, id=46, 752.8125pt x 386.44376pt>
+File: images/3dFourierTransform.pdf Graphic file (type pdf)
+
+<use images/3dFourierTransform.pdf>
+Package pdftex.def Info: images/3dFourierTransform.pdf used on input line 249.
+(pdftex.def)             Requested size: 375.36299pt x 192.6907pt.
+ [6] [7 <./images/3dFourierTransform.pdf>]
+[8] [9] [10] <images/denoise_1.jpg, id=70, 3613.5pt x 3613.5pt>
 File: images/denoise_1.jpg Graphic file (type jpg)
 
 <use images/denoise_1.jpg>
-Package pdftex.def Info: images/denoise_1.jpg used on input line 512.
+Package pdftex.def Info: images/denoise_1.jpg used on input line 485.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
- <images/denoise_2.jpg, id=66, 3613.5pt x 3613.5pt>
+ <images/denoise_2.jpg, id=71, 3613.5pt x 3613.5pt>
 File: images/denoise_2.jpg Graphic file (type jpg)
 
 <use images/denoise_2.jpg>
-Package pdftex.def Info: images/denoise_2.jpg used on input line 517.
+Package pdftex.def Info: images/denoise_2.jpg used on input line 490.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
- <images/denoise_3.jpg, id=67, 3613.5pt x 3613.5pt>
+ [11 <./images/denoise_1.jpg> <./images/denoise_2.jpg>] <images/denoise_3.jpg, 
+id=75, 3613.5pt x 3613.5pt>
 File: images/denoise_3.jpg Graphic file (type jpg)
 
 <use images/denoise_3.jpg>
-Package pdftex.def Info: images/denoise_3.jpg used on input line 529.
+Package pdftex.def Info: images/denoise_3.jpg used on input line 502.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
- <images/denoise_4.jpg, id=68, 4818.0pt x 3613.5pt>
+ <images/denoise_4.jpg, id=76, 4818.0pt x 3613.5pt>
 File: images/denoise_4.jpg Graphic file (type jpg)
 
 <use images/denoise_4.jpg>
-Package pdftex.def Info: images/denoise_4.jpg used on input line 534.
+Package pdftex.def Info: images/denoise_4.jpg used on input line 507.
 (pdftex.def)             Requested size: 287.77675pt x 215.80817pt.
 
-Overfull \hbox (37.53476pt too wide) in paragraph at lines 534--535
+Overfull \hbox (37.53476pt too wide) in paragraph at lines 507--508
  [][] 
  []
 
-[11 <./images/denoise_1.jpg> <./images/denoise_2.jpg>]
+[12 <./images/denoise_3.jpg> <./images/denoise_4.jpg>]
 
-Package natbib Warning: Citation `morten' on page 12 undefined on input line 57
-1.
+Package natbib Warning: Citation `morten' on page 13 undefined on input line 54
+4.
 
-[12 <./images/denoise_3.jpg> <./images/denoise_4.jpg>] [13]
+[13] [14]
 
-LaTeX Warning: Reference `fig:BesselBadBoundary' on page 14 undefined on input 
-line 736.
+LaTeX Warning: Reference `fig:BesselBadBoundary' on page 15 undefined on input 
+line 709.
 
 
-LaTeX Warning: Reference `fig:BesselGoodBoundary' on page 14 undefined on input
- line 736.
+LaTeX Warning: Reference `fig:BesselGoodBoundary' on page 15 undefined on input
+ line 709.
 
-[14] <images/BesselBadBoundary.png, id=83, 803.0pt x 504.88625pt>
+<images/BesselBadBoundary.png, id=87, 803.0pt x 504.88625pt>
 File: images/BesselBadBoundary.png Graphic file (type png)
 
 <use images/BesselBadBoundary.png>
-Package pdftex.def Info: images/BesselBadBoundary.png used on input line 763.
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 736.
 (pdftex.def)             Requested size: 225.21626pt x 141.606pt.
 
-<images/BesselGoodBoundary.png, id=84, 803.0pt x 506.89375pt>
+<images/BesselGoodBoundary.png, id=88, 803.0pt x 506.89375pt>
 File: images/BesselGoodBoundary.png Graphic file (type png)
 
 <use images/BesselGoodBoundary.png>
-Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 768.
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 741.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
 
 
 LaTeX Warning: Reference `fig:BesselBadBoundary' on page 15 undefined on input 
-line 771.
+line 744.
 
 
 LaTeX Warning: Reference `fig:BesselBadBoundary' on page 15 undefined on input 
-line 771.
+line 744.
 
-<images/BesselJ4.png, id=85, 501.875pt x 304.13625pt>
+[15] <images/BesselJ4.png, id=93, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
 
 <use images/BesselJ4.png>
-Package pdftex.def Info: images/BesselJ4.png used on input line 801.
+Package pdftex.def Info: images/BesselJ4.png used on input line 774.
 (pdftex.def)             Requested size: 125.12099pt x 75.82039pt.
 
-<images/BesselJ40.png, id=86, 501.875pt x 300.12125pt>
+<images/BesselJ40.png, id=94, 501.875pt x 300.12125pt>
 File: images/BesselJ40.png Graphic file (type png)
 
 <use images/BesselJ40.png>
-Package pdftex.def Info: images/BesselJ40.png used on input line 806.
+Package pdftex.def Info: images/BesselJ40.png used on input line 779.
 (pdftex.def)             Requested size: 125.12099pt x 74.81946pt.
 
-<images/BesselJ400.png, id=87, 501.875pt x 306.14375pt>
+<images/BesselJ400.png, id=95, 501.875pt x 306.14375pt>
 File: images/BesselJ400.png Graphic file (type png)
 
 <use images/BesselJ400.png>
-Package pdftex.def Info: images/BesselJ400.png used on input line 811.
+Package pdftex.def Info: images/BesselJ400.png used on input line 784.
 (pdftex.def)             Requested size: 125.12099pt x 76.32086pt.
- [15]
 
-LaTeX Warning: Reference `fig:TA_bessel' on page 16 undefined on input line 817
+
+LaTeX Warning: Reference `fig:TA_bessel' on page 16 undefined on input line 790
 .
 
-<images/BesselJn80.png, id=94, 803.0pt x 500.87125pt>
+<images/BesselJn80.png, id=96, 803.0pt x 500.87125pt>
 File: images/BesselJn80.png Graphic file (type png)
 
 <use images/BesselJn80.png>
-Package pdftex.def Info: images/BesselJn80.png used on input line 821.
+Package pdftex.def Info: images/BesselJn80.png used on input line 794.
 (pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
  [16 <./images/BesselJ4.png (PNG copy)> <./images/BesselJ40.png (PNG copy)> <./
-images/BesselJ400.png (PNG copy)> <./images/BesselJn80.png (PNG copy)>] [17] [1
-8]
+images/BesselJ400.png (PNG copy)>] [17 <./images/BesselJn80.png (PNG copy)>] [1
+8] [19]
 File: images/denoise_1.jpg Graphic file (type jpg)
  <use images/denoise_1.jpg>
-Package pdftex.def Info: images/denoise_1.jpg used on input line 950.
+Package pdftex.def Info: images/denoise_1.jpg used on input line 923.
 (pdftex.def)             Requested size: 216.80064pt x 216.80064pt.
 File: images/denoise_2.jpg Graphic file (type jpg)
 
 <use images/denoise_2.jpg>
-Package pdftex.def Info: images/denoise_2.jpg used on input line 955.
+Package pdftex.def Info: images/denoise_2.jpg used on input line 928.
 (pdftex.def)             Requested size: 216.80064pt x 216.80064pt.
- [19]
 File: images/denoise_3.jpg Graphic file (type jpg)
  <use images/denoise_3.jpg>
-Package pdftex.def Info: images/denoise_3.jpg used on input line 965.
+Package pdftex.def Info: images/denoise_3.jpg used on input line 938.
 (pdftex.def)             Requested size: 180.68558pt x 180.68558pt.
  [20]
 File: images/denoise_4.jpg Graphic file (type jpg)
 
 <use images/denoise_4.jpg>
-Package pdftex.def Info: images/denoise_4.jpg used on input line 976.
+Package pdftex.def Info: images/denoise_4.jpg used on input line 949.
 (pdftex.def)             Requested size: 240.91411pt x 180.68558pt.
- <images/denoise_5.jpg, id=111, 4818.0pt x 3613.5pt>
+ <images/denoise_5.jpg, id=116, 4818.0pt x 3613.5pt>
 File: images/denoise_5.jpg Graphic file (type jpg)
 
 <use images/denoise_5.jpg>
-Package pdftex.def Info: images/denoise_5.jpg used on input line 981.
+Package pdftex.def Info: images/denoise_5.jpg used on input line 954.
 (pdftex.def)             Requested size: 240.91411pt x 180.68558pt.
-
-<images/trial1Results/timeSeries.pdf, id=112, 501.875pt x 327.2225pt>
+ [21 <./images/denoise_5.jpg>]
+<images/trial1Results/timeSeries.pdf, id=120, 501.875pt x 327.2225pt>
 File: images/trial1Results/timeSeries.pdf Graphic file (type pdf)
 
 <use images/trial1Results/timeSeries.pdf>
 Package pdftex.def Info: images/trial1Results/timeSeries.pdf used on input line
- 1000.
+ 973.
 (pdftex.def)             Requested size: 225.21626pt x 146.84433pt.
 
-<images/trial1Results/timeSeriesNoise.pdf, id=113, 501.875pt x 313.17pt>
+<images/trial1Results/timeSeriesNoise.pdf, id=121, 501.875pt x 313.17pt>
 File: images/trial1Results/timeSeriesNoise.pdf Graphic file (type pdf)
 
 <use images/trial1Results/timeSeriesNoise.pdf>
 Package pdftex.def Info: images/trial1Results/timeSeriesNoise.pdf used on input
- line 1005.
+ line 978.
 (pdftex.def)             Requested size: 225.21626pt x 140.53812pt.
 
-<images/trial1Results/fourierSeries.pdf, id=114, 501.875pt x 338.26375pt>
+<images/trial1Results/fourierSeries.pdf, id=122, 501.875pt x 338.26375pt>
 File: images/trial1Results/fourierSeries.pdf Graphic file (type pdf)
 
 <use images/trial1Results/fourierSeries.pdf>
 Package pdftex.def Info: images/trial1Results/fourierSeries.pdf used on input l
-ine 1010.
+ine 983.
 (pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
 
-<images/trial1Results/fourierSeriesNoise.pdf, id=115, 501.875pt x 338.26375pt>
+<images/trial1Results/fourierSeriesNoise.pdf, id=123, 501.875pt x 338.26375pt>
 File: images/trial1Results/fourierSeriesNoise.pdf Graphic file (type pdf)
 
 <use images/trial1Results/fourierSeriesNoise.pdf>
 Package pdftex.def Info: images/trial1Results/fourierSeriesNoise.pdf used on in
-put line 1015.
+put line 988.
 (pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
- [21 <./images/denoise_5.jpg>]
-<images/trial1Results/gustafsonAlgoStepInCarrier.pdf, id=119, 501.875pt x 338.2
-6375pt>
-File: images/trial1Results/gustafsonAlgoStepInCarrier.pdf Graphic file (type pd
-f)
- <use images/trial1Results/gustafsonAlgoStepInCarrier.pdf>
-Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInCarrier.pdf us
-ed on input line 1028.
-(pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
-
-<images/trial1Results/gustafsonAlgoStepInModFreq.pdf, id=120, 501.875pt x 336.2
-5626pt>
-File: images/trial1Results/gustafsonAlgoStepInModFreq.pdf Graphic file (type pd
-f)
- <use images/trial1Results/gustafsonAlgoStepInModFreq.pdf>
-Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInModFreq.pdf us
-ed on input line 1033.
-(pdftex.def)             Requested size: 225.21626pt x 150.89832pt.
-
-<images/trial1Results/gustafsonAlgoStepInPhi1.pdf, id=121, 501.875pt x 340.2712
-6pt>
-File: images/trial1Results/gustafsonAlgoStepInPhi1.pdf Graphic file (type pdf)
- <use images/trial1Results/gustafsonAlgoStepInPhi1.pdf>
-Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInPhi1.pdf used 
-on input line 1038.
-(pdftex.def)             Requested size: 225.21626pt x 152.70007pt.
-
-<images/trial1Results/gustafsonAlgoStepInGamma.pdf, id=122, 501.875pt x 336.256
-26pt>
-File: images/trial1Results/gustafsonAlgoStepInGamma.pdf Graphic file (type pdf)
-
- <use images/trial1Results/gustafsonAlgoStepInGamma.pdf>
-Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInGamma.pdf used
- on input line 1043.
-(pdftex.def)             Requested size: 225.21626pt x 150.89832pt.
  [22 <./images/trial1Results/timeSeries.pdf> <./images/trial1Results/timeSeries
 Noise.pdf
 
@@ -872,8 +848,43 @@ e page
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/trial1Results/fouri
 erSeriesNoise.pdf): PDF inclusion: multiple pdfs with page group included in a 
 single page
->] [23 <./images/trial1Results/gustafsonAlgoStepInCarrier.pdf> <./images/trial1
-Results/gustafsonAlgoStepInModFreq.pdf
+>]
+<images/trial1Results/gustafsonAlgoStepInCarrier.pdf, id=205, 501.875pt x 338.2
+6375pt>
+File: images/trial1Results/gustafsonAlgoStepInCarrier.pdf Graphic file (type pd
+f)
+ <use images/trial1Results/gustafsonAlgoStepInCarrier.pdf>
+Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInCarrier.pdf us
+ed on input line 1001.
+(pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
+
+<images/trial1Results/gustafsonAlgoStepInModFreq.pdf, id=206, 501.875pt x 336.2
+5626pt>
+File: images/trial1Results/gustafsonAlgoStepInModFreq.pdf Graphic file (type pd
+f)
+ <use images/trial1Results/gustafsonAlgoStepInModFreq.pdf>
+Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInModFreq.pdf us
+ed on input line 1006.
+(pdftex.def)             Requested size: 225.21626pt x 150.89832pt.
+
+<images/trial1Results/gustafsonAlgoStepInPhi1.pdf, id=207, 501.875pt x 340.2712
+6pt>
+File: images/trial1Results/gustafsonAlgoStepInPhi1.pdf Graphic file (type pdf)
+ <use images/trial1Results/gustafsonAlgoStepInPhi1.pdf>
+Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInPhi1.pdf used 
+on input line 1011.
+(pdftex.def)             Requested size: 225.21626pt x 152.70007pt.
+
+<images/trial1Results/gustafsonAlgoStepInGamma.pdf, id=208, 501.875pt x 336.256
+26pt>
+File: images/trial1Results/gustafsonAlgoStepInGamma.pdf Graphic file (type pdf)
+
+ <use images/trial1Results/gustafsonAlgoStepInGamma.pdf>
+Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInGamma.pdf used
+ on input line 1016.
+(pdftex.def)             Requested size: 225.21626pt x 150.89832pt.
+ [23 <./images/trial1Results/gustafsonAlgoStepInCarrier.pdf> <./images/trial1Re
+sults/gustafsonAlgoStepInModFreq.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/trial1Results/gusta
 fsonAlgoStepInModFreq.pdf): PDF inclusion: multiple pdfs with page group includ
@@ -888,25 +899,25 @@ in a single page
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images/trial1Results/gusta
 fsonAlgoStepInGamma.pdf): PDF inclusion: multiple pdfs with page group included
  in a single page
->] [24] <images/classicSignal.png, id=303, 488.82625pt x 290.08376pt>
+>] [24] <images/classicSignal.png, id=308, 488.82625pt x 290.08376pt>
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
-Package pdftex.def Info: images/classicSignal.png used on input line 1141.
+Package pdftex.def Info: images/classicSignal.png used on input line 1114.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
-<images/interestingSignal.png, id=305, 488.82625pt x 290.08376pt>
+<images/interestingSignal.png, id=310, 488.82625pt x 290.08376pt>
 File: images/interestingSignal.png Graphic file (type png)
 
 <use images/interestingSignal.png>
-Package pdftex.def Info: images/interestingSignal.png used on input line 1146.
+Package pdftex.def Info: images/interestingSignal.png used on input line 1119.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
-<images/nastySignal.png, id=306, 488.82625pt x 291.0875pt>
+<images/nastySignal.png, id=311, 488.82625pt x 291.0875pt>
 File: images/nastySignal.png Graphic file (type png)
 
 <use images/nastySignal.png>
-Package pdftex.def Info: images/nastySignal.png used on input line 1151.
+Package pdftex.def Info: images/nastySignal.png used on input line 1124.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
  [25] (./phaseModulatedGravitationalWaves.bbl
 [26 <./images/classicSignal.png> <./images/interestingSignal.png> <./images/nas
@@ -923,10 +934,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6423 strings out of 493089
- 93719 string characters out of 6134842
- 193448 words of memory out of 5000000
- 9778 multiletter control sequences out of 15000+600000
+ 6430 strings out of 493089
+ 93908 string characters out of 6134842
+ 191464 words of memory out of 5000000
+ 9784 multiletter control sequences out of 15000+600000
  11764 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,18n,38p,1503b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -953,11 +964,11 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
 ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/doublestroke/dsrom10.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (27 pages, 4720209 bytes
+Output written on phaseModulatedGravitationalWaves.pdf (27 pages, 4776380 bytes
 ).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
+ 396 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: phaseModulatedGravitationalWaves.aux
+Case mismatch error between cite keys deanna and Deanna
+---line 19 of file phaseModulatedGravitationalWaves.aux
+ : \citation{deanna
+ :                 }
+I'm skipping whatever remains of this command
 The style file: plain.bst
 Database file #1: phaseModulatedGravitationalWavesNotes.bib
 Database file #2: shgBibliographyCopy.bib
@@ -50,4 +55,4 @@ warning$ -- 3
 while$ -- 45
 width$ -- 16
 write$ -- 154
-(There were 5 warnings)
+(There was 1 error message)
