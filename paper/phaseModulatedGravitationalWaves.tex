@@ -36,7 +36,8 @@
 \author{Samuel Akwei-Sekyere$^{1,3}$}
 \affiliation{Department of Mathematics$^{1}$ \newline Department of Physics and Astronomy$^{2}$ \newline Neuroscience Program$^{3}$ \newline Michigan State University \newline}
 
-\title{A Novel Method for Removing the Cyclic Frequency Shift due to the Earth's Motion about the Sun from Astronomical Continuous-Wave Data}
+\title{A Novel Method for Removing Cyclic
+Frequency Modulation in Fourier Space}
 
 
 \begin{abstract}
@@ -696,17 +697,17 @@ where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequenc
 
 
 \section{Error Analysis}
-While the search for monochromatic gravitational waves via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detector by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated vigorously \citep{abramovici1996improved} \citep{aasi2013enhanced}.
+While the search for monochromatic gravitational waves obtained via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detector by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated vigorously \citep{abramovici1996improved} \citep{aasi2013enhanced}.
 
 \subsection{Noise Sources}
-Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
+Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration \citep{Saulson}. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
 
 \subsection{Noise Elimination}
 As mentioned previously, quantum noise --- in particular, thermal noise --- has been implicated as a limiting factor in the sensitivity of gravitational wave inteferometers and hence a prime factor in the degradation of the signal quality; this noise source is generally modeled as Gaussian \citep{Saulson}.
 
-By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering may result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to find segments with pure noise.
+By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering may result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to search for segments with pure noise.
 
-In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. This method utilizes the following principle: the nature of the noise is not known but the nature of the signal is known. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of the Fourier transform of intrinsic mode functions (see appendix) and assumes the noise is correlated across different channels. A significant part of this approach is motivated by \cite{oweiss2001noise} and \cite{aminghafari2006multivariate}. It is worth noting that because correlated Gaussian noise is prevalent, this approach may be used for a host of other signals.
+In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of the Fourier transform of intrinsic mode functions (see appendix) and assumes the noise is correlated across different channels. A significant part of this approach is motivated by \cite{oweiss2001noise} and \cite{aminghafari2006multivariate}. It is worth noting that because correlated Gaussian noise is prevalent, this approach may be used for a host of other signals.
 
 \subsubsection{Proposed Denoising Algorithm}
 In an effort to reduce the noise, we shall consider data from two channels. By the assumption that the noise observed is additive (and correlated), we yield the following:
@@ -750,7 +751,7 @@ l_{2\alpha,t_1}^{(2)} & l_{2\alpha,t_2}^{(2)} & \cdots & l_{2\alpha,t_T}^{(2)}
 
 where $l_{p,t_q}^{(n)}$ is the $\left[ \bigg( (p-1) \textnormal{mod } \alpha \bigg) + 1\right]$-th intrinsic mode function at time $t_q$ of $\xi^{(n)}(t)$, and with $T$ being the total number of data points observed.
 
-Thereafter, the fast Fourier transform of each intrinsic mode function in $\mathbf{L}$ is computed to obtain a matrix $\mathcal{F} \left( \mathbf{L} \right)$. Singular value decomposition of the variance-covariance matrix obtained from $\mathcal{F}{ \left( \mathbf{L} \right) }$ is then computed to result in the following:
+Thereafter, the fast Fourier transform of each intrinsic mode function in $\mathbf{L}$ is computed to obtain a matrix $\mathcal{F} \left( \mathbf{L} \right)$. Singular value decomposition of the variance-covariance matrix $\Sigma$ obtained from $\mathcal{F}{ \left( \mathbf{L} \right) }$ is then computed to result in the following:
 \begin{equation}
 \Sigma = \mathbf{USV}
 \end{equation}
@@ -768,7 +769,7 @@ After the decorrelation procedure above, we seek to apply a threshold $\Delta$ w
 \begin{equation}
 y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
 \end{equation}
-where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$. It is essential to note that the eigenvalues are ordered from the highest to the lowest; the eigenvectors are also ordered by the position of their corresponding.
+where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$. It is essential to note that the eigenvalues are ordered from the highest to the lowest; the eigenvectors are also ordered by the position of their corresponding eigenvalues.
 
 To apply the threshold, the projections with eigenvalues whose indices are less than $y$ are retained and the rest are replaced with zero row vectors:
 
@@ -782,7 +783,7 @@ To apply the threshold, the projections with eigenvalues whose indices are less 
 \end{displaymath}
 where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$. This preserves the vectors that explain closest to, but less than, $\Delta$ percent of the total variance.
 
-The fast Fourier transforms are then recorrelated to obtain denoised intrinsic mode functions in the following manner:
+The fast Fourier transforms are then recorrelated to obtain denoised Fourier transforms of intrinsic mode functions in the following manner:
 \begin{equation}
 \tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}.
 \end{equation}
@@ -896,7 +897,7 @@ To test the  robustness of the Gustafson algorithm against noise, we searched fo
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInGamma.pdf}
   		\caption{\label{fig:result8} Search over modulation index}
 	\end{subfigure}
-	\caption{\label{fig:} Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. \ref{denoise_2}}
+	\caption{\label{fig:} Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. \ref{fig:results2}}
 \end{figure}
 
 \section{Conclusion}
