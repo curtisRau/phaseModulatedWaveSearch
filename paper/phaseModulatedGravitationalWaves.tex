@@ -362,13 +362,13 @@ Again, this can happen twice or never.  If this is false, then the sum is zero.
 \omega - \omega_0 = (n-m)\widetilde{\omega}_1
 \end{align}
 
-Again this can happen twice or never.  If this is false then the sum is zero.
+This too can happen twice or never.  If this is false then the sum is zero.
 
 
 \textbf{Cases 1-3:}  In all of these cases
 
 %-------------------- w != w0 & w1 = w1~ --------------------
-\textbf{Case 4:}  Now consider the case when $\omega = \omega_0$ and $\omega_1 = \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if $m=n$ which will happen an infinite number of times.  The sum becomes
+\textbf{Case 4:}  Now consider the case when $\omega = \omega_0$ and $\omega_1 = \widetilde{\omega}_1$.  The term $\delta(\omega - \omega_0 + n\widetilde{\omega}_1 - m\omega_1)$ will only be non-zero if $m=n$ which will happen an infinite number of times.  Thus, the sum becomes
 
 %This treatment does not include the \delta(\omega + \omega_0 + n\widetilde{\omega}_1 - m\omega_1) term of the fourier transform.
 \begin{align}
@@ -402,33 +402,27 @@ In order too fully reconstruct the carrier frequency we would need to take an in
 \psi_N = \frac{1}{2}\psi_s
 \end{equation}
 
-Any side band with a frequency of $\psi_0$ higher than the Nyquist frequency, but less than the sampling frequency, will be reconstructed with a frequency of ($\psi_s$ –- $\psi_0$). That is the frequency will be under-sampled and an alias frequency will be produced. When this occurs the best case scenario is that the alias frequency is unique and does not correspond to the frequency of another lower frequency sideband. In this case we can use anti-aliasing techniques to correct for the aliasing and still obtain information about the amplitude and frequency of the higher side bands. The worst case scenario is that the aliased frequency is too close to another lower frequency sideband and this will cause two problems: a systematic error will be added to the measurement of the lower side band’s amplitude, and we will be unable to determine the necessary information on what the amplitude of the higher frequency would be. To minimize the effect this might have we would like any sidebands with a frequency over the Nyquist frequency to have as low an amplitude as possible. For this we can employ Carson’s rule. Carson’s rule can be understood to say that almost all (roughly 98 percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$, defined by:
+Any side band with a frequency of $\psi_0$ higher than the Nyquist frequency, but less than the sampling frequency, will be reconstructed with a frequency of ($\psi_s$ –- $\psi_0$). That is the frequency will be under-sampled and an alias frequency will be produced. When this occurs the best case scenario is that the alias frequency is unique and does not correspond to the frequency of another lower frequency sideband. In this case we can use anti-aliasing techniques to correct for the aliasing and still obtain information about the amplitude and frequency of the higher side bands. The worst case scenario is that the aliased frequency is too close to another lower frequency sideband and this will cause two problems: a systematic error will be added to the measurement of the lower side band’s amplitude, and we will be unable to determine the necessary information on what the amplitude of the higher frequency would be. To minimize the effect this might have, we would like any sidebands with a frequency over the Nyquist frequency to have as low an amplitude as possible. For this we can employ Carson’s rule. Carson’s rule can be understood to say that almost all (roughly 98 percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$, defined by:
 
 \begin{equation}
 B_T = 2(\Delta\psi + \psi_m)
 \end{equation}
 
-where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to prefectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
-
-\begin{equation}
-B_T = 2(\Delta\psi + \psi_m)
-\end{equation}
-
-where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to prefectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to perfectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
  
 
 \section{Error Analysis}
-While the search for monochromatic gravitational waves via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detected by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated \citep{abramovici1996improved} \citep{aasi2013enhanced}.
+While the search for monochromatic gravitational waves via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detector by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated vigorously \citep{abramovici1996improved} \citep{aasi2013enhanced}.
 
 \subsection{Noise Sources}
 Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
 
 \subsection{Noise Elimination}
-As mentioned previously, quantum noise --- in particular, thermal noise --- has been implicated as a limiting factor in the sensitivity of gravitational wave inteferometers and hence a prime factor in the degradation of the signal quality \citep{Saulson}. Following from this, it can be inferred that the distribution of the noise is approximately Gaussian.
+As mentioned previously, quantum noise --- in particular, thermal noise --- has been implicated as a limiting factor in the sensitivity of gravitational wave inteferometers and hence a prime factor in the degradation of the signal quality; this noise source is generally modeled as Gaussian \citep{Saulson}.
 
-By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to find segments with pure noise.
+By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering may result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to find segments with pure noise.
 
-In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. This method utilizes the following principle: the nature of the noise is not known but the nature of the signal is known. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of intrinsic mode functions and assumes the noise is correlated across different channels.
+In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. This method utilizes the following principle: the nature of the noise is not known but the nature of the signal is known. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of the Fourier transform of intrinsic mode functions (see appendix) and assumes the noise is correlated across different channels. A significant part of this approach is motivated by \cite{} and \cite{}. It is worth noting that because correlated Gaussian noise is prevalent, this approach may be used for a host of other signals.
 
 \subsubsection{Proposed Denoising Algorithm}
 In an effort to reduce the noise, we shall consider data from two channels. By the assumption that the noise observed is additive (and correlated), we yield the following:
@@ -480,12 +474,12 @@ Thereafter, the fast Fourier transform of each intrinsic mode function in $\math
 where $\Sigma = T^{-1} \left[ \mathcal{F}(\mathbf{L}) ^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}(\mathbf{L})^{\mathbf{T}} T^{-1} \right]^{ \dagger } \left[ \mathcal{F}(\mathbf{L})^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}( \mathbf{L})^{\mathbf{T}} T^{-1} \right] $with $(\cdot)^\mathbf{T}$ being the transpose, the conjugate transpose $(\cdot)^\dagger$ and $\mathbf{1}$ a $T \times 1$ column matrix.
 
 
-The fast Fourier transforms are de-correlated to form a matrix $\mathbf{R}$ by employing the following:
+The fast Fourier transforms are then decorrelated to form a matrix $\mathbf{R}$ by employing the following:
 \begin{equation}
-\mathbf{R} = \mathbf{U}^{\mathbf{T}}\mathbf{L}
+\mathbf{R} = \mathbf{U}^{\mathbf{T}}\mathbf{L}.
 \end{equation}
 
-After the decorrelation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following procedure:
+After the decorrelation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following formulation:
 
 \begin{equation}
 y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
@@ -502,11 +496,11 @@ To apply the threshold, the projections with eigenvalues whose indices are less 
      \end{array}
    \right.
 \end{displaymath}
-where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$.
+where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$. This preserves the vectors that explain closest to, but less than, $\Delta$ percent of the total variance.
 
 The fast Fourier transforms are then recorrelated to obtain denoised intrinsic mode functions in the following manner:
 \begin{equation}
-\tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}
+\tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}.
 \end{equation}
 
 The real component of the inverse fast Fourier transform of each row of $\mathbf{\tilde{L}}$ is then computed to obtain a matrix $\mathbf{D}$ of similar architecture with denoised intrinsic mode functions. Thereafter, the reconstructed signals $\hat{\xi^{(n)}}(t)$ are obtained as follows:

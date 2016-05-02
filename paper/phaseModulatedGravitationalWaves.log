@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAY 2016 22:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  1 MAY 2016 22:58
 entering extended mode
 **phaseModulatedGravitationalWaves.tex
 
@@ -622,164 +622,164 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ) [6] [7]
 
 Package natbib Warning: Citation `abramovici1996improved' on page 8 undefined o
-n input line 421.
+n input line 415.
 
 
 Package natbib Warning: Citation `aasi2013enhanced' on page 8 undefined on inpu
-t line 421.
+t line 415.
 
 [8] [9] <images/denoise_1.jpg, id=61, 3613.5pt x 3613.5pt>
 File: images/denoise_1.jpg Graphic file (type jpg)
 
 <use images/denoise_1.jpg>
-Package pdftex.def Info: images/denoise_1.jpg used on input line 527.
+Package pdftex.def Info: images/denoise_1.jpg used on input line 521.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
  <images/denoise_2.jpg, id=62, 3613.5pt x 3613.5pt>
 File: images/denoise_2.jpg Graphic file (type jpg)
 
 <use images/denoise_2.jpg>
-Package pdftex.def Info: images/denoise_2.jpg used on input line 532.
+Package pdftex.def Info: images/denoise_2.jpg used on input line 526.
 (pdftex.def)             Requested size: 225.21626pt x 225.18155pt.
  <images/denoise_3.jpg, id=63, 3613.5pt x 3613.5pt>
 File: images/denoise_3.jpg Graphic file (type jpg)
 
 <use images/denoise_3.jpg>
-Package pdftex.def Info: images/denoise_3.jpg used on input line 542.
+Package pdftex.def Info: images/denoise_3.jpg used on input line 536.
 (pdftex.def)             Requested size: 250.24199pt x 250.21397pt.
+ <images/denoise_4.jpg, id=64, 4818.0pt x 3613.5pt>
+File: images/denoise_4.jpg Graphic file (type jpg)
+
+<use images/denoise_4.jpg>
+Package pdftex.def Info: images/denoise_4.jpg used on input line 547.
+(pdftex.def)             Requested size: 225.21626pt x 168.88615pt.
+ <images/denoise_5.jpg, id=65, 4818.0pt x 3613.5pt>
+File: images/denoise_5.jpg Graphic file (type jpg)
+
+<use images/denoise_5.jpg>
+Package pdftex.def Info: images/denoise_5.jpg used on input line 552.
+(pdftex.def)             Requested size: 225.21626pt x 168.88615pt.
  [10] [11 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/imag
 es/denoise_1.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/pa
 per/images/denoise_2.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveS
 earch/paper/images/denoise_3.jpg>]
-<images/denoise_4.jpg, id=72, 4818.0pt x 3613.5pt>
-File: images/denoise_4.jpg Graphic file (type jpg)
- <use images/denoise_4.jpg>
-Package pdftex.def Info: images/denoise_4.jpg used on input line 553.
-(pdftex.def)             Requested size: 225.21626pt x 168.88615pt.
 
-<images/denoise_5.jpg, id=73, 4818.0pt x 3613.5pt>
-File: images/denoise_5.jpg Graphic file (type jpg)
- <use images/denoise_5.jpg>
-Package pdftex.def Info: images/denoise_5.jpg used on input line 558.
-(pdftex.def)             Requested size: 225.21626pt x 168.88615pt.
+Package natbib Warning: Citation `morten' on page 12 undefined on input line 59
+0.
 
 [12 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/den
 oise_4.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/im
-ages/denoise_5.jpg>]
-
-Package natbib Warning: Citation `morten' on page 13 undefined on input line 59
-6.
-
-[13] [14] <images/BesselBadBoundary.png, id=84, 803.0pt x 504.88625pt>
+ages/denoise_5.jpg>] [13] [14]
+<images/BesselBadBoundary.png, id=85, 803.0pt x 504.88625pt>
 File: images/BesselBadBoundary.png Graphic file (type png)
 
 <use images/BesselBadBoundary.png>
-Package pdftex.def Info: images/BesselBadBoundary.png used on input line 787.
+Package pdftex.def Info: images/BesselBadBoundary.png used on input line 781.
 (pdftex.def)             Requested size: 225.21626pt x 141.606pt.
 
-<images/BesselGoodBoundary.png, id=85, 803.0pt x 506.89375pt>
+<images/BesselGoodBoundary.png, id=86, 803.0pt x 506.89375pt>
 File: images/BesselGoodBoundary.png Graphic file (type png)
 
 <use images/BesselGoodBoundary.png>
-Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 792.
+Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 786.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
 
-<images/BesselJ4.png, id=86, 501.875pt x 304.13625pt>
+<images/BesselJ4.png, id=87, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
 
 <use images/BesselJ4.png>
-Package pdftex.def Info: images/BesselJ4.png used on input line 825.
+Package pdftex.def Info: images/BesselJ4.png used on input line 819.
 (pdftex.def)             Requested size: 225.21626pt x 136.48413pt.
 
-<images/BesselJ40.png, id=87, 501.875pt x 300.12125pt>
+<images/BesselJ40.png, id=88, 501.875pt x 300.12125pt>
 File: images/BesselJ40.png Graphic file (type png)
 
 <use images/BesselJ40.png>
-Package pdftex.def Info: images/BesselJ40.png used on input line 830.
+Package pdftex.def Info: images/BesselJ40.png used on input line 824.
 (pdftex.def)             Requested size: 225.21626pt x 134.68237pt.
 
-<images/BesselJ400.png, id=88, 501.875pt x 306.14375pt>
+<images/BesselJ400.png, id=89, 501.875pt x 306.14375pt>
 File: images/BesselJ400.png Graphic file (type png)
 
 <use images/BesselJ400.png>
-Package pdftex.def Info: images/BesselJ400.png used on input line 835.
+Package pdftex.def Info: images/BesselJ400.png used on input line 829.
 (pdftex.def)             Requested size: 225.21626pt x 137.38503pt.
 
-<images/BesselJn80.png, id=89, 803.0pt x 500.87125pt>
+<images/BesselJn80.png, id=90, 803.0pt x 500.87125pt>
 File: images/BesselJn80.png Graphic file (type png)
 
 <use images/BesselJn80.png>
-Package pdftex.def Info: images/BesselJn80.png used on input line 844.
+Package pdftex.def Info: images/BesselJn80.png used on input line 838.
 (pdftex.def)             Requested size: 375.36299pt x 234.14082pt.
 
-<images/trial1Results/timeSeries.pdf, id=90, 501.875pt x 327.2225pt>
+<images/trial1Results/timeSeries.pdf, id=91, 501.875pt x 327.2225pt>
 File: images/trial1Results/timeSeries.pdf Graphic file (type pdf)
 
 <use images/trial1Results/timeSeries.pdf>
 Package pdftex.def Info: images/trial1Results/timeSeries.pdf used on input line
- 858.
+ 852.
 (pdftex.def)             Requested size: 225.21626pt x 146.84433pt.
 
-<images/trial1Results/timeSeriesNoise.pdf, id=91, 501.875pt x 313.17pt>
+<images/trial1Results/timeSeriesNoise.pdf, id=92, 501.875pt x 313.17pt>
 File: images/trial1Results/timeSeriesNoise.pdf Graphic file (type pdf)
 
 <use images/trial1Results/timeSeriesNoise.pdf>
 Package pdftex.def Info: images/trial1Results/timeSeriesNoise.pdf used on input
- line 863.
+ line 857.
 (pdftex.def)             Requested size: 225.21626pt x 140.53812pt.
 
-<images/trial1Results/fourierSeries.pdf, id=92, 501.875pt x 338.26375pt>
+<images/trial1Results/fourierSeries.pdf, id=93, 501.875pt x 338.26375pt>
 File: images/trial1Results/fourierSeries.pdf Graphic file (type pdf)
 
 <use images/trial1Results/fourierSeries.pdf>
 Package pdftex.def Info: images/trial1Results/fourierSeries.pdf used on input l
-ine 868.
+ine 862.
 (pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
 
-<images/trial1Results/fourierSeriesNoise.pdf, id=93, 501.875pt x 338.26375pt>
+<images/trial1Results/fourierSeriesNoise.pdf, id=94, 501.875pt x 338.26375pt>
 File: images/trial1Results/fourierSeriesNoise.pdf Graphic file (type pdf)
 
 <use images/trial1Results/fourierSeriesNoise.pdf>
 Package pdftex.def Info: images/trial1Results/fourierSeriesNoise.pdf used on in
-put line 873.
+put line 867.
 (pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
 
-<images/trial1Results/gustafsonAlgoStepInCarrier.pdf, id=94, 501.875pt x 338.26
+<images/trial1Results/gustafsonAlgoStepInCarrier.pdf, id=95, 501.875pt x 338.26
 375pt>
 File: images/trial1Results/gustafsonAlgoStepInCarrier.pdf Graphic file (type pd
 f)
  <use images/trial1Results/gustafsonAlgoStepInCarrier.pdf>
 Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInCarrier.pdf us
-ed on input line 878.
+ed on input line 872.
 (pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
 
-<images/trial1Results/gustafsonAlgoStepInModFreq.pdf, id=95, 501.875pt x 336.25
+<images/trial1Results/gustafsonAlgoStepInModFreq.pdf, id=96, 501.875pt x 336.25
 626pt>
 File: images/trial1Results/gustafsonAlgoStepInModFreq.pdf Graphic file (type pd
 f)
  <use images/trial1Results/gustafsonAlgoStepInModFreq.pdf>
 Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInModFreq.pdf us
-ed on input line 883.
+ed on input line 877.
 (pdftex.def)             Requested size: 225.21626pt x 150.89832pt.
 
-<images/trial1Results/gustafsonAlgoStepInPhi1.pdf, id=96, 501.875pt x 340.27126
+<images/trial1Results/gustafsonAlgoStepInPhi1.pdf, id=97, 501.875pt x 340.27126
 pt>
 File: images/trial1Results/gustafsonAlgoStepInPhi1.pdf Graphic file (type pdf)
  <use images/trial1Results/gustafsonAlgoStepInPhi1.pdf>
 Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInPhi1.pdf used 
-on input line 888.
+on input line 882.
 (pdftex.def)             Requested size: 225.21626pt x 152.70007pt.
 
-<images/trial1Results/gustafsonAlgoStepInGamma.pdf, id=97, 501.875pt x 336.2562
+<images/trial1Results/gustafsonAlgoStepInGamma.pdf, id=98, 501.875pt x 336.2562
 6pt>
 File: images/trial1Results/gustafsonAlgoStepInGamma.pdf Graphic file (type pdf)
 
  <use images/trial1Results/gustafsonAlgoStepInGamma.pdf>
 Package pdftex.def Info: images/trial1Results/gustafsonAlgoStepInGamma.pdf used
- on input line 893.
+ on input line 887.
 (pdftex.def)             Requested size: 225.21626pt x 150.89832pt.
 
 
-LaTeX Warning: Float too large for page by 23.98373pt on input line 897.
+LaTeX Warning: Float too large for page by 23.98373pt on input line 891.
 
 [15] [16 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/image
 s/BesselBadBoundary.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModu
@@ -791,32 +791,32 @@ Search/paper/images/BesselJ400.png (PNG copy)>] [18 <C:/Users/Samuel/Documents/
 GitHub/phaseModulatedWaveSearch/paper/images/BesselJn80.png (PNG copy)>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 960.
+ on input line 954.
 
 [19]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 979.
+ on input line 973.
 
 <images/classicSignal.png, id=116, 488.82625pt x 290.08376pt>
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
-Package pdftex.def Info: images/classicSignal.png used on input line 987.
+Package pdftex.def Info: images/classicSignal.png used on input line 981.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/interestingSignal.png, id=118, 488.82625pt x 290.08376pt>
 File: images/interestingSignal.png Graphic file (type png)
 
 <use images/interestingSignal.png>
-Package pdftex.def Info: images/interestingSignal.png used on input line 992.
+Package pdftex.def Info: images/interestingSignal.png used on input line 986.
 (pdftex.def)             Requested size: 225.21626pt x 133.6526pt.
 
 <images/nastySignal.png, id=119, 488.82625pt x 291.0875pt>
 File: images/nastySignal.png Graphic file (type png)
 
 <use images/nastySignal.png>
-Package pdftex.def Info: images/nastySignal.png used on input line 997.
+Package pdftex.def Info: images/nastySignal.png used on input line 991.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
 
 (C:\Users\Samuel\Documents\GitHub\phaseModulatedWaveSearch\paper\phaseModulated
@@ -830,7 +830,7 @@ r/images/interestingSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseModulate
 dWaveSearch/paper/images/nastySignal.png>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 1007.
+ on input line 1001.
 
 [21 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/tri
 al1Results/timeSeries.pdf> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWave
@@ -885,7 +885,7 @@ Here is how much of TeX's memory you used:
  9237 multiletter control sequences out of 15000+200000
  11764 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,18n,38p,1365b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,18n,38p,1366b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
@@ -909,7 +909,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/dstroke/dsrom10.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (21 pages, 4897798 bytes
+Output written on phaseModulatedGravitationalWaves.pdf (21 pages, 4896911 bytes
 ).
 PDF statistics:
  367 PDF objects out of 1000 (max. 8388607)
