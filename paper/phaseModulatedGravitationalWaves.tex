@@ -594,7 +594,7 @@ J_i'  &= \frac{J_{i+1} - J_{i-1}}{2 \delta x} \\
 J_i'' &= \frac{J_{i-1} - 2J_{i} + J_{i+1}}{\delta x^2}.
 \end{align}
 
-Therefore the discretized form of Bessel's Equation is
+Therefore the discretized form of Bessel's equation is
 
 \begin{align}
 \label{eqn:Bessel's Equation Discretized}
@@ -625,13 +625,13 @@ b_i &= i^2 \left( \delta x^2 - 2  \right) - n^2 		 	\\
 c_i &= i   \left( i + \frac{1}{2} \right)
 \end{align}
 
-In effect, the discretized Bessel equation with simplified coefficients is
+In effect, the discretized Bessel's equation with simplified coefficients is
 
 \begin{align}
 a_i J_{i-1} + b_i J_i + c_i J_{i+1} = 0
 \end{align}
 
-Writing out the system of equations explicitly:
+By writing out the system of equations explicitly, we have:
 
 \begin{align}
 b_1 J_1 + c_1 J_2                                 &= - a_1 J_0		\\
@@ -642,7 +642,7 @@ a_{n-1} J_{n-2} + b_{n-1} J_{n-1} + c_{n-1} J_{n} &=   0				\\
 a_n J_{n-1} + b_n J_n                             &= - c_n J_{n+1}
 \end{align}
 
-Which suggests Bessel Equation be written as a matrix equation.
+This suggests Bessel's equation can be written as a matrix equation:
 
 \begin{align}
 \left( \begin{array}{ccccc}
@@ -669,10 +669,10 @@ Which suggests Bessel Equation be written as a matrix equation.
 	   \vdots     \\
 	      0       \\
 	- c_n J_{n+1}
-\end{array} \right)
+\end{array} \right).
 \end{align}
 
-This is a tridiagonal matrix system that charactorized a one dimentional differential equation.  It can be easilly solved using the standard Thomas Algorithm.  To program this in C++ we need all the arrays to be indexed from 0, so 
+This is a tridiagonal matrix system that characterized a one dimensional differential equation.  It can be easily solved using the standard Thomas Algorithm. In order to make it easily programmable, this implementation assumes all the arrays are indexed from 0. By virtue of this indexing system, we yield:
 
 \begin{align}
 \label{eqn:finalDiscretizedBesselMatrixEqn}
