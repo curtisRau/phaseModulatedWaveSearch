@@ -877,26 +877,24 @@ In Figures \ref{fig:results3} and \ref{fig:results4} the Fourier transform of th
 \end{figure}	
 
 
+To test the  robustness of the Gustafson algorithm against noise, we searched for the carrier frequency, modulation frequency, modulation index and the recipient's angular frequency for they noisy signal provided in Figure \ref{fig:denoise_2}. From Figure \ref{fig:results5} we can see that the Gustafson algorithm appropriately separated out the signal (carrier frequency) from the noise even though it was noise obvious in the corresponding Fourier transform. It is worth noting that the search results in a transform that is asymmetric in frequency; this is a function of the fact that the Gustafson algorithm includes a rotation in Fourier space that is opposite to that of the Fourier transform. With Figure \ref{fig:results6}, it can be observed that the Gustafson algorithm accurately obtained modulation frequency of the noisy signal. Since the search for the carrier frequency and modulation frequency is sensitive, it is important to use small steps; this will aid in preventing one from accidentally skipping over the correct solution. Like the previous results, the Gustafson algorithm was able to extract the correct recipient's angular frequency (Fig. \ref{fig:results6}) and the modulation index (Fig. \ref{fig:result7}) of the frequency modulated signal. Since the search for the modulation index and recipient's angular frequency is relatively smooth, one may take tolerably larger step sizes and still converge to the right solution.
 
--Step size in omega0 and omega1 must be small because they are deltas.
--Step size in phi1 can be larger because it is less sharply peaked.
--Step size in Gamma can be even larger because it is relatively smooth.
 \begin{figure}[H]
 	\centering	
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInCarrier.pdf}
-  		\caption{}
+  		\caption{\label{fig:results5} Extraction of carrier frequency in noisy frequency modulated signal}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInModFreq.pdf}
-  		\caption{}
+  		\caption{\label{fig:results6} Detection of the modulation frequency}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInPhi1.pdf}
-  		\caption{}
+  		\caption{\label{fig:result7} Search over the recipient's angular frequency}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
@@ -907,8 +905,7 @@ In Figures \ref{fig:results3} and \ref{fig:results4} the Fourier transform of th
 \end{figure}
 
 \section{Conclusion}
-Recap the benifits of working in the frequency domain vs the time domain.
-It is the belief of this author that the methods outlined in this paper are unlikely to be useful for searching for gravitational waves.  
+In this paper, the Gustafson algorithm has been introduced as well as a novel approach to noise reduction. Although both algorithms presented have been shown to be effective, they may require substantial modifications to be useful in practice. One major draw back of the Gustafson algorithm is the selection of a range of parameters to search over. An investigation of how one can introduce learning procedures such as stochastic gradient descent might be able to provide a steady solution to this issue.
 
 
 \appendix
