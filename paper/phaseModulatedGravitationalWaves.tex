@@ -484,7 +484,7 @@ After the decorrelation procedure above, we seek to apply a threshold $\Delta$ w
 \begin{equation}
 y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
 \end{equation}
-where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$.
+where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$. It is essential to note that the eigenvalues are ordered from the highest to the lowest; the eigenvectors are also ordered by the position of their corresponding.
 
 To apply the threshold, the projections with eigenvalues whose indices are less than $y$ are retained and the rest are replaced with zero row vectors:
 
@@ -510,7 +510,7 @@ The real component of the inverse fast Fourier transform of each row of $\mathbf
 where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\textnormal{th}$ column of $\textbf{D}$.
 
 \subsubsection{Discussion}
-In contrast with denoising techniques such as low-pass filtering, this approach does not require the knowledge of the highest frequency of the signal being recorded. However, the knowledge of how much variance of the data to keep is integral to successful denoising --- this is usually unknown and techniques have been proposed to solve this non-trivial problem \cite{}.
+From the above description of the proposed denoising technique, the knowledge of how much variance of the data to keep is integral to successful denoising --- this is usually unknown and techniques have been proposed to solve this non-trivial problem \cite{}.
 
 To demonstrate the potential of this procedure in removing correlated Gaussian noise, two frequency modulated signals that are phase shifted from each other are adulterated with correlated Gaussian noise. The original signals are then reconstructed using the proposed denoising algorithm with a threshold of $99$ percent --- that is, eigenvectors that account for closest to (but, less than) $99$ percent of the variation of the data obtained from the set of multichannel intrinsic mode functions are retained. In Figure \ref{fig:denoise_1}, it can be easily observed that the algorithm extinguished an appreciable amount of the high frequency component that was not previously present in the data and selectively reduced the magnitude of the Fourier transform of the noise components with low frequency. Figure \ref{fig:denoise_2} was no different in terms of its denoising performance. It is worth noting that both results do have some discrepancy --- and their discrepancies are not the same. This feature is due to the fact that, although the noise sources are correlated, the noises are different.
 
@@ -529,7 +529,7 @@ To demonstrate the potential of this procedure in removing correlated Gaussian n
 	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
 \end{figure*}
 
-A fundamental inquiry that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean squared errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible that parts of the original data may have been erased. This infers that an adaptive threshold that depends on the structure of the data and the structure of the noise to be extinguished may be most appropriate for this algorithm.
+A fundamental question that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean squared errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible that parts of the original data may have been erased. This suggests that an adaptive threshold that depends on the structure of the data and the structure of the noise to be extinguished may be most appropriate for this algorithm.
 
 \begin{figure*}[ht]
 	\centering
@@ -538,7 +538,7 @@ A fundamental inquiry that needs a resolution is about how the proposed algorith
 \end{figure*}
 
 
-Since a fundamental assumption the proposed algorithm makes is that the noise sources are correlated, it is important to investigate how the correlation affects its performance. To this end, a procedure similar to that of Figure \ref{fig:denoise_3} was implemented; nevertheless, a second independent variable was added --- the correlation between the noise sources. Further, the performance for denoising in each channel was not analyzed jointly. From Figure \ref{fig:denoise_4}, it can be noticed --- as insinuated before --- that the algorithm's performance plateaus at high SNRs and progressively worsens as the same threshold is more likely to remove parts of the original data. Interestingly, the proposed approach works well with noise sources of tolerably high correlation; however, it fails to produce quality results when the correlation is really high.
+Since a fundamental assumption the proposed algorithm makes is that the noise sources are correlated, it is important to investigate how the correlation affects its performance. To this end, a procedure similar to that of Figure \ref{fig:denoise_3} was implemented; nevertheless, a second independent variable was added --- the correlation between the noise sources. The performance for denoising in each channel was not analyzed jointly. From Figure \ref{fig:denoise_4}, it can be noticed --- as insinuated before --- that the algorithm's performance plateaus at high SNRs and progressively worsens as the same threshold is more likely to remove parts of the original data. Interestingly, the proposed approach works well with noise sources of tolerably high correlation; however, it fails to produce quality results when the correlation is really high.
 
 \begin{figure*}[ht]
 	\centering
@@ -555,24 +555,24 @@ Since a fundamental assumption the proposed algorithm makes is that the noise so
 	\caption{Behavior of the proposed algorithm with respect to differing SNRs and noise correlations. This figure provides an insight to the performance of the proposed denoising algorithm (via the mean squared error) under the outlined conditions.}
 \end{figure*}
 
-The potential of this approach has been outlined above. With a few modifications, this denoising algorithm may improve its capability and, to some extent, (depending on the structure of the data and the noise) could be modified to deal with uncorrelated noise. In the spirit of demonstrating the robustness of the Gustafson algorithm against noise, the results from the search algorithm will be analyzed without no attempt to remove of noise.
+The potential of this approach has been outlined above. With a few modifications, this denoising algorithm may improve its capability and, to some extent (depending on the structure of the data and the noise), could be modified to deal with uncorrelated noise. In the spirit of demonstrating the robustness of the Gustafson algorithm against noise, the results from the search algorithm will be analyzed with no attempt to remove noise.
 
-\section{Implementing the Gustafson Algorithm in C++}
+\section{Implementation the Gustafson Algorithm}
 \subsection{Calculating Bessel Functions}
-Known problems with the algorithm include calculating large order bessel functions.  The bessel functions of natural number order are given by
+Known problems with the algorithm include calculating large order Bessel functions.  The Bessel functions of natural number order are given by
 
 \begin{equation}
-J_n(z) = \sum_{m=0}^{\infty} \frac{(-1)^n}{m!(m+n)!} \left( \frac{z}{2} \right)^{2m+n}
+J_n(z) = \sum_{m=0}^{\infty} \frac{(-1)^n}{m!(m+n)!} \left( \frac{z}{2} \right)^{2m+n}.
 \end{equation}
 
-so calculating the nth Bessel function involves calculating factorials greater than n!.  The highest n for which we can store n! in an unsigned long integer type, the largest positive integer type, is 20:
+Hence, calculating the $n$-th Bessel function involves calculating factorials greater than $n!$.  The highest $n$ for which we can store $n!$ in an unsigned long integer type is 20:
 
 \begin{align}
 2^{64}-1 = 18,446,744,073,709,551,615 \\
-< 21! = 51,090,942,171,709,440,000
+< 21! = 51,090,942,171,709,440,000.
 \end{align}
 
-if we are willing to sacrafise some precision to truncation we can use a double precision floating point integer which allows values upto $1.797,693,134,862,315,7 \cdot 10^{308}$
+If we are willing to sacrifice some precision to truncation we can use a double precision floating point integer which allows values upto $1.797,693,134,862,315,7 \cdot 10^{308}$
 
 \begin{align}
 170! \approx 7.25 \cdot 10^{306}
@@ -580,21 +580,21 @@ if we are willing to sacrafise some precision to truncation we can use a double 
 171! \approx 1.24 \cdot 10^{309}
 \end{align}
 
-This is not acceptable hovever, because $\left| J_n(z) \right| \leq 1$, so when performing the sum we need precision all the way down to at the very least $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impracticle, but it is by far one of the slowest ways one could calculate values of the Bessel functions.  This whole buiseness of wresteling with factorials can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
+This is not acceptable because $\left| J_n(z) \right| \leq 1$. Therefore, when performing the sum we need precision all the way down to --- at the very least --- $0.1$, which would require a mantissa with roughly $308$ digits.  This is not only impractical, but it is by far one of the slowest ways one could calculate values of the Bessel functions. This can be avoided by calculating the Bessel Functions using Bessel's Equation \ref{eqn:Bessel's Equation} \citep{folland}.
 
 \begin{equation}
 \label{eqn:Bessel's Equation}
 x^2 J_n''(x) + x J_n'(x) + (x^2 - n^2) J_n(x) = 0
 \end{equation}
 
-The standard perscription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$.  Then use the limit definitions of the derivatives; we will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$ \cite{morten}.  Also, because there are only one order of Bessel Functions in Bessel's Equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and we will further adopt the notation $J(x_i) = J_i$.
+The standard prescription for numerically solving differential equations is first to discretize the independent variable $x \to x_i = x_{min} + i \cdot \delta x$, and then employ the limit definitions of the derivatives. We will use the three point definitions because their error goes as $O(\delta x^2)$ rather than using the two point definition with an error that goes as $O(\delta x)$ \cite{morten}.  Further, because there are only one order of Bessel functions in Bessel's equation, the order is implied by the $n$ that appears, so we will drop the subscript of $n$, $J_n \to J$, and adopt the notation $J(x_i) = J_i$.
 
 \begin{align}
 J_i'  &= \frac{J_{i+1} - J_{i-1}}{2 \delta x} \\
-J_i'' &= \frac{J_{i-1} - 2J_{i} + J_{i+1}}{\delta x^2}
+J_i'' &= \frac{J_{i-1} - 2J_{i} + J_{i+1}}{\delta x^2}.
 \end{align}
 
-So the discretized form of Bessel's Equation is
+Therefore the discretized form of Bessel's Equation is
 
 \begin{align}
 \label{eqn:Bessel's Equation Discretized}
@@ -607,8 +607,9 @@ x_i^2 \frac{J_{i-1} - 2J_{i} + J_{i+1}}{\delta x^2} + x \frac{J_{i+1} - J_{i-1}}
 	+ \left(\frac{x_i^2}{\delta x^2} + \frac{x_i}{2\delta x}\right) J_{i+1}
 	= 0
 \end{align}
+where we have collected like terms of $J_i$.
 
-Where we have collected like terms of $J_i$.  For convenience we define coefficients to simplify the above equation.
+For convenience we define coefficients to simplify the above equation.
 
 \begin{align}
 a_i &= \frac{x_i^2}{\delta x^2} - \frac{x_i}{2\delta x} 	\\
@@ -624,13 +625,13 @@ b_i &= i^2 \left( \delta x^2 - 2  \right) - n^2 		 	\\
 c_i &= i   \left( i + \frac{1}{2} \right)
 \end{align}
 
-So the discretized Bessel equation with simplified coefficients is
+In effect, the discretized Bessel equation with simplified coefficients is
 
 \begin{align}
 a_i J_{i-1} + b_i J_i + c_i J_{i+1} = 0
 \end{align}
 
-Wrighting out the system of equations explicitly:
+Writing out the system of equations explicitly:
 
 \begin{align}
 b_1 J_1 + c_1 J_2                                 &= - a_1 J_0		\\
