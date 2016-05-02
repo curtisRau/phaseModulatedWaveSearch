@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  2 MAY 2016 06:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.1)  2 MAY 2016 06:43
 entering extended mode
 **phaseModulatedGravitationalWaves.tex
 
@@ -518,7 +518,11 @@ Class revtex4-1 Info: mcite was not loaded (OK!) on input line 31.
 Class revtex4-1 Info: multicol was not loaded (OK!) on input line 31.
 
 (C:\Users\Samuel\Documents\GitHub\phaseModulatedWaveSearch\paper\phaseModulated
-GravitationalWaves.aux)
+GravitationalWaves.aux
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
@@ -531,8 +535,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen128
@@ -582,10 +585,6 @@ LaTeX Font Info:    ... okay on input line 31.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-Package natbib Warning: Citation `Deanna' on page 1 undefined on input line 43.
-
-
 LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -603,23 +602,6 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
  [2]
-
-Package natbib Warning: Citation `einstein1990gravitational' on page 3 undefine
-d on input line 92.
-
-
-Package natbib Warning: Citation `poisson1998gravitational' on page 3 undefined
- on input line 92.
-
-
-Package natbib Warning: Citation `abbott' on page 3 undefined on input line 94.
-
-
-
-Package natbib Warning: Citation `magalhaes1995determination' on page 3 undefin
-ed on input line 94.
-
-
 <earthMotionModulationFigure/earthMotionModulationFigure.pdf, id=18, 346.68823p
 t x 241.17703pt>
 File: earthMotionModulationFigure/earthMotionModulationFigure.pdf Graphic file 
@@ -630,65 +612,18 @@ Package pdftex.def Info: earthMotionModulationFigure/earthMotionModulationFigur
 e.pdf used on input line 102.
 (pdftex.def)             Requested size: 375.36299pt x 261.14812pt.
  [3 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/earthMotio
-nModulationFigure/earthMotionModulationFigure.pdf>]
-
-Package natbib Warning: Citation `rader1968discrete' on page 4 undefined on inp
-ut line 172.
-
-[4]
-
-LaTeX Warning: Reference `eqn:derivation:convolutionThmStep' on page 5 undefine
-d on input line 198.
-
-
-LaTeX Warning: Reference `eqn:derivation:jacobiAngerInsertion' on page 5 undefi
-ned on input line 222.
-
-[5]
+nModulationFigure/earthMotionModulationFigure.pdf>] [4] [5]
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 262.
 
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\dstroke\udsrom.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\dstroke\udsrom.fd"
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-
-LaTeX Warning: Reference `eqn:gustafsonAlgorithm' on page 6 undefined on input 
-line 264.
-
-
-LaTeX Warning: Reference `eqn:gustafsonAlgorithm' on page 6 undefined on input 
-line 273.
-
-
-LaTeX Warning: Reference `eqn:gustafsonAlgorithm' on page 6 undefined on input 
-line 273.
-
-
-LaTeX Warning: Reference `eqn:realFourierTransform' on page 6 undefined on inpu
-t line 289.
-
-[6] [7]
-
-LaTeX Warning: Reference `eqn:Bessel's Equation' on page 8 undefined on input l
-ine 418.
-
-
-Package natbib Warning: Citation `folland' on page 8 undefined on input line 41
-8.
-
+) [6] [7]
 
 Package natbib Warning: Citation `morten' on page 8 undefined on input line 425
 .
 
-[8]
-
-LaTeX Warning: Reference `eqn:finalDiscretizedBesselMatrixEqn' on page 9 undefi
-ned on input line 548.
-
-[9]
-
-Package natbib Warning: Citation `folland' on page 10 undefined on input line 5
-81.
-
+[8] [9]
 
 LaTeX Warning: Reference `fig:BesselBadBoundary' on page 10 undefined on input 
 line 590.
@@ -712,36 +647,12 @@ Package pdftex.def Info: images/BesselGoodBoundary.png used on input line 622.
 (pdftex.def)             Requested size: 225.21626pt x 142.16905pt.
 
 
-LaTeX Warning: Reference `eqn:asymtoticBessel' on page 11 undefined on input li
-ne 625.
-
-
 LaTeX Warning: Reference `fig:BesselBadBoundary' on page 11 undefined on input 
 line 625.
 
 
-LaTeX Warning: Reference `eqn:asymtoticBessel' on page 11 undefined on input li
-ne 625.
-
-
 LaTeX Warning: Reference `fig:BesselBadBoundary' on page 11 undefined on input 
 line 625.
-
-
-LaTeX Warning: Reference `eqn:numericalIntegralBessel' on page 11 undefined on 
-input line 629.
-
-
-LaTeX Warning: Reference `eqn:dynamicIntegrationPoints' on page 11 undefined on
- input line 629.
-
-
-LaTeX Warning: Reference `table:besselSpeed' on page 11 undefined on input line
- 629.
-
-
-LaTeX Warning: Reference `fig:selectBesselFunctions' on page 11 undefined on in
-put line 649.
 
 <images/BesselJ4.png, id=66, 501.875pt x 304.13625pt>
 File: images/BesselJ4.png Graphic file (type png)
@@ -764,10 +675,6 @@ File: images/BesselJ400.png Graphic file (type png)
 Package pdftex.def Info: images/BesselJ400.png used on input line 665.
 (pdftex.def)             Requested size: 125.12099pt x 76.32086pt.
 
-
-LaTeX Warning: Reference `fig:TA_bessel' on page 11 undefined on input line 671
-.
-
 <images/BesselJn80.png, id=69, 803.0pt x 500.87125pt>
 File: images/BesselJn80.png Graphic file (type png)
 
@@ -779,52 +686,18 @@ sselJ4.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSear
 ch/paper/images/BesselJ40.png (PNG copy)> <C:/Users/Samuel/Documents/GitHub/pha
 seModulatedWaveSearch/paper/images/BesselJ400.png (PNG copy)>] [12 <C:/Users/Sa
 muel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/BesselJn80.png (PNG
- copy)>]
-
-Package natbib Warning: Citation `abramovici1996improved' on page 13 undefined 
-on input line 699.
-
-
-Package natbib Warning: Citation `aasi2013enhanced' on page 13 undefined on inp
-ut line 699.
-
-
-Package natbib Warning: Citation `Saulson' on page 13 undefined on input line 7
-05.
-
-
-Package natbib Warning: Citation `oweiss2001noise' on page 13 undefined on inpu
-t line 709.
-
-
-Package natbib Warning: Citation `aminghafari2006multivariate' on page 13 undef
-ined on input line 709.
-
-[13]
-
-LaTeX Warning: Reference `fig:denoise_1' on page 14 undefined on input line 797
-.
-
-
-LaTeX Warning: Reference `fig:denoise_2' on page 14 undefined on input line 797
-.
-
-[14] <images/denoise_1.jpg, id=87, 3613.5pt x 3613.5pt>
+ copy)>] [13] [14]
+<images/denoise_1.jpg, id=87, 3613.5pt x 3613.5pt>
 File: images/denoise_1.jpg Graphic file (type jpg)
-
-<use images/denoise_1.jpg>
+ <use images/denoise_1.jpg>
 Package pdftex.def Info: images/denoise_1.jpg used on input line 803.
 (pdftex.def)             Requested size: 216.80064pt x 216.80064pt.
- <images/denoise_2.jpg, id=88, 3613.5pt x 3613.5pt>
-File: images/denoise_2.jpg Graphic file (type jpg)
 
-<use images/denoise_2.jpg>
+<images/denoise_2.jpg, id=88, 3613.5pt x 3613.5pt>
+File: images/denoise_2.jpg Graphic file (type jpg)
+ <use images/denoise_2.jpg>
 Package pdftex.def Info: images/denoise_2.jpg used on input line 808.
 (pdftex.def)             Requested size: 216.80064pt x 216.80064pt.
-
-
-LaTeX Warning: Reference `fig:denoise_3' on page 15 undefined on input line 814
-.
 
 <images/denoise_3.jpg, id=89, 3613.5pt x 3613.5pt>
 File: images/denoise_3.jpg Graphic file (type jpg)
@@ -834,47 +707,22 @@ Package pdftex.def Info: images/denoise_3.jpg used on input line 818.
 
 [15 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/den
 oise_1.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/im
-ages/denoise_2.jpg>]
-
-LaTeX Warning: Reference `fig:denoise_3' on page 16 undefined on input line 823
-.
-
-
-LaTeX Warning: Reference `fig:denoise_4' on page 16 undefined on input line 823
-.
-
-<images/denoise_4.jpg, id=93, 4818.0pt x 3613.5pt>
+ages/denoise_2.jpg>] <images/denoise_4.jpg, id=93, 4818.0pt x 3613.5pt>
 File: images/denoise_4.jpg Graphic file (type jpg)
- <use images/denoise_4.jpg>
+
+<use images/denoise_4.jpg>
 Package pdftex.def Info: images/denoise_4.jpg used on input line 829.
 (pdftex.def)             Requested size: 240.91411pt x 180.68558pt.
-
-<images/denoise_5.jpg, id=94, 4818.0pt x 3613.5pt>
+ <images/denoise_5.jpg, id=94, 4818.0pt x 3613.5pt>
 File: images/denoise_5.jpg Graphic file (type jpg)
- <use images/denoise_5.jpg>
+
+<use images/denoise_5.jpg>
 Package pdftex.def Info: images/denoise_5.jpg used on input line 834.
 (pdftex.def)             Requested size: 240.91411pt x 180.68558pt.
-
-[16 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/den
-oise_3.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/im
-ages/denoise_4.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/
-paper/images/denoise_5.jpg>]
-
-LaTeX Warning: Reference `fig:results_1' on page 17 undefined on input line 845
-.
-
-
-LaTeX Warning: Reference `fig:results2' on page 17 undefined on input line 845.
-
-
-
-LaTeX Warning: Reference `fig:results3' on page 17 undefined on input line 847.
-
-
-
-LaTeX Warning: Reference `fig:results4' on page 17 undefined on input line 847.
-
-
+ [16 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/de
+noise_3.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/i
+mages/denoise_4.jpg> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch
+/paper/images/denoise_5.jpg>]
 <images/trial1Results/timeSeries.pdf, id=98, 501.875pt x 327.2225pt>
 File: images/trial1Results/timeSeries.pdf Graphic file (type pdf)
 
@@ -906,28 +754,9 @@ File: images/trial1Results/fourierSeriesNoise.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/trial1Results/fourierSeriesNoise.pdf used on in
 put line 868.
 (pdftex.def)             Requested size: 225.21626pt x 151.7992pt.
-
-
-LaTeX Warning: Reference `fig:results2' on page 17 undefined on input line 875.
-
-
-
-LaTeX Warning: Reference `fig:results5' on page 17 undefined on input line 875.
-
-
-
-LaTeX Warning: Reference `fig:results6' on page 17 undefined on input line 875.
-
-
-
-LaTeX Warning: Reference `fig:result7' on page 17 undefined on input line 875.
-
-
-LaTeX Warning: Reference `fig:result8' on page 17 undefined on input line 875.
-
-[17 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/tri
-al1Results/timeSeries.pdf> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWave
-Search/paper/images/trial1Results/timeSeriesNoise.pdf
+ [17 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/tr
+ial1Results/timeSeries.pdf> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWav
+eSearch/paper/images/trial1Results/timeSeriesNoise.pdf
 
 pdfTeX warning: pdflatex.exe (file C:/Users/Samuel/Documents/GitHub/phaseModula
 tedWaveSearch/paper/images/trial1Results/timeSeriesNoise.pdf): PDF inclusion: m
@@ -1006,12 +835,7 @@ usion: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file C:/Users/Samuel/Documents/GitHub/phaseModula
 tedWaveSearch/paper/images/trial1Results/gustafsonAlgoStepInGamma.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
->] [19]
-
-Package natbib Warning: Citation `huang1998empirical' on page 20 undefined on i
-nput line 980.
-
-<images/classicSignal.png, id=286, 488.82625pt x 290.08376pt>
+>] [19] <images/classicSignal.png, id=286, 488.82625pt x 290.08376pt>
 File: images/classicSignal.png Graphic file (type png)
 
 <use images/classicSignal.png>
@@ -1033,41 +857,31 @@ Package pdftex.def Info: images/nastySignal.png used on input line 999.
 (pdftex.def)             Requested size: 225.21626pt x 134.11507pt.
 
 (C:\Users\Samuel\Documents\GitHub\phaseModulatedWaveSearch\paper\phaseModulated
-GravitationalWaves.bbl
-
-LaTeX Warning: Reference `LastBibItem' on page 20 undefined on input line 1.
-
-[20 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/paper/images/cla
-ssicSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseModulatedWaveSearch/pape
-r/images/interestingSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseModulate
-dWaveSearch/paper/images/nastySignal.png>])
+GravitationalWaves.bbl [20 <C:/Users/Samuel/Documents/GitHub/phaseModulatedWave
+Search/paper/images/classicSignal.png> <C:/Users/Samuel/Documents/GitHub/phaseM
+odulatedWaveSearch/paper/images/interestingSignal.png> <C:/Users/Samuel/Documen
+ts/GitHub/phaseModulatedWaveSearch/paper/images/nastySignal.png>])
 
 Package natbib Warning: There were undefined citations.
 
 [21]
 (C:\Users\Samuel\Documents\GitHub\phaseModulatedWaveSearch\paper\phaseModulated
-GravitationalWaves.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+GravitationalWaves.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  6096 strings out of 493921
  88124 string characters out of 3144874
- 182579 words of memory out of 3000000
+ 181579 words of memory out of 3000000
  9283 multiletter control sequences out of 15000+200000
  11764 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,18n,38p,1504b,515s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,18n,38p,1503b,515s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/P
@@ -1091,7 +905,7 @@ blic/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/dst
 roke/dsrom10.pfb>
-Output written on phaseModulatedGravitationalWaves.pdf (21 pages, 4742998 bytes
+Output written on phaseModulatedGravitationalWaves.pdf (21 pages, 4742182 bytes
 ).
 PDF statistics:
  368 PDF objects out of 1000 (max. 8388607)
