@@ -1,56 +1,11 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: phaseModulatedGravitationalWaves.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: phaseModulatedGravitationalWaves.aux
 The style file: plain.bst
 Database file #1: phaseModulatedGravitationalWavesNotes.bib
 Database file #2: shgBibliographyCopy.bib
 Warning--I didn't find a database entry for "LSCall"
 Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "abramovici1996improved"
-Warning--I didn't find a database entry for "aasi2013enhanced"
 Warning--I didn't find a database entry for "morten"
 Warning--there's a number but no volume in Deanna
 Warning--there's a number but no series in folland
 Warning--there's a number but no series in griffiths
-You've used 5 entries,
-            2118 wiz_defined-function locations,
-            537 strings with 4862 characters,
-and the built_in function-call counts, 1232 in all, are:
-= -- 119
-> -- 41
-< -- 2
-+ -- 18
-- -- 12
-* -- 73
-:= -- 221
-add.period$ -- 17
-call.type$ -- 5
-change.case$ -- 19
-chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 57
-empty$ -- 109
-format.name$ -- 12
-if$ -- 258
-int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 8
-newline$ -- 28
-num.names$ -- 10
-pop$ -- 25
-preamble$ -- 1
-purify$ -- 16
-quote$ -- 0
-skip$ -- 30
-stack$ -- 0
-substring$ -- 38
-swap$ -- 7
-text.length$ -- 2
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 14
-warning$ -- 3
-while$ -- 11
-width$ -- 6
-write$ -- 57
-(There were 8 warnings)
+(There were 6 warnings)

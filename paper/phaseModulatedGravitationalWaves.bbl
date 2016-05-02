@@ -1,4 +1,23 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{aasi2013enhanced}
+Junaid Aasi, J~Abadie, BP~Abbott, Richard Abbott, TD~Abbott, MR~Abernathy, Carl
+  Adams, Thomas Adams, Paolo Addesso, RX~Adhikari, et~al.
+\newblock Enhanced sensitivity of the ligo gravitational wave detector by using
+  squeezed states of light.
+\newblock {\em Nature Photonics}, 7(8):613--619, 2013.
+
+\bibitem{abramovici1996improved}
+A~Abramovici, W~Althouse, J~Camp, D~Durance, JA~Giaime, A~Gillespie,
+  S~Kawamura, A~Kuhnert, T~Lyons, FJ~Raab, et~al.
+\newblock Improved sensitivity in a gravitational wave interferometer and
+  implications for ligo.
+\newblock {\em Physics Letters A}, 218(3):157--163, 1996.
+
+\bibitem{einstein1990gravitational}
+Albert Einstein.
+\newblock {\em On gravitational waves}.
+\newblock Springer, 1990.
 
 \bibitem{Deanna}
 Deanna Emery.
@@ -20,6 +39,19 @@ Gerald~B. Folland.
 David~J. Griffiths.
 \newblock {\em Introduction to Quantum Mechanics}.
 \newblock Number ISBN 0-13-111892-7. Pearson, second edition edition, 2005.
+
+\bibitem{magalhaes1995determination}
+Nadja~S Magalh{\~a}es, Warren~W Johnson, Carlos Frajuca, and Odylio~D Aguiar.
+\newblock Determination of astrophysical parameters from the spherical
+  gravitational wave detector data.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  274(3):670--678, 1995.
+
+\bibitem{poisson1998gravitational}
+Eric Poisson.
+\newblock Gravitational waves from inspiraling compact binaries: The
+  quadrupole-moment term.
+\newblock {\em Physical Review D}, 57(8):5287, 1998.
 
 \bibitem{Saulson}
 Peter~R. Saulson.
