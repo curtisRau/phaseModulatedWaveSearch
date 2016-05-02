@@ -40,13 +40,8 @@
 
 
 \begin{abstract}
-In this paper we will introduce the Gustafson Algorithm for removing frequency/phase modulation from a signal.  It takes as input time series data and outputs the original single tone carrier frequency. This method is powerful because it works in the frequency rather than time domain which more easily allows for filtering of the signal and the desired carrier frequency is close to constant over time. Here we will focus on the Gustafson Algorithm's applications to LIGO and the search for gravity waves, but there are many other possible applications for the algorithm such as radio wave astronomy and communications systems using frequency-modulated signals.
+By building on the method established in \citep{Deanna}, this paper primarily seeks to introduce the Gustafson algorithm for removing frequency/phase modulation from a signal. The Gustafson algorithm uses the time series data as its input and outputs the original single tone carrier frequency. This method is powerful because it works in the frequency rather than time domain --- which easily allows for filtering of the signal. Here, we will focus on the Gustafson algorithm's applications to LIGO and the search for gravitational waves; nevertheless, there are many other possible applications for the algorithm such as radio wave astronomy and communications systems using frequency modulated signals. Since one of the pertinent issues in any detection algorithm is signal adulteration by noise, we shall also introduce a novel approach to deal with correlated noise from a multichannel perspective.
 
-\citep{Saulson}
-\citep{LSCall}
-\citep{Deanna}
-\citep{folland}
-\citep{griffiths}
 \end{abstract}
 
 \maketitle
@@ -87,7 +82,7 @@ David researched and wrote the sections concerning the Nyquist frequency and Car
 Same researched and wrote the section on noise and error analysis, and wrote the results. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics. Sam played a major role in reviewing and editing others' sections. He presented his work in class.
 \begin{itemize}
 \item reviewed and expanded paper (all sections)
-\item researched and wrote sections on error analysis,  wrote the results-discussion and conclusion, wrote parts of the introduction
+\item researched and wrote sections on error analysis,  wrote the results-discussion and conclusion, wrote parts of the introduction, MATLAB code for noise section
 \end{itemize}
 
 \pagebreak
@@ -877,7 +872,7 @@ In Figures \ref{fig:results3} and \ref{fig:results4} the Fourier transform of th
 \end{figure}	
 
 
-To test the  robustness of the Gustafson algorithm against noise, we searched for the carrier frequency, modulation frequency, modulation index and the recipient's angular frequency for they noisy signal provided in Figure \ref{fig:denoise_2}. From Figure \ref{fig:results5} we can see that the Gustafson algorithm appropriately separated out the signal (carrier frequency) from the noise even though it was noise obvious in the corresponding Fourier transform. It is worth noting that the search results in a transform that is asymmetric in frequency; this is a function of the fact that the Gustafson algorithm includes a rotation in Fourier space that is opposite to that of the Fourier transform. With Figure \ref{fig:results6}, it can be observed that the Gustafson algorithm accurately obtained modulation frequency of the noisy signal. Since the search for the carrier frequency and modulation frequency is sensitive, it is important to use small steps; this will aid in preventing one from accidentally skipping over the correct solution. Like the previous results, the Gustafson algorithm was able to extract the correct recipient's angular frequency (Fig. \ref{fig:results6}) and the modulation index (Fig. \ref{fig:result7}) of the frequency modulated signal. Since the search for the modulation index and recipient's angular frequency is relatively smooth, one may take tolerably larger step sizes and still converge to the right solution.
+To test the  robustness of the Gustafson algorithm against noise, we searched for the carrier frequency, modulation frequency, modulation index and the recipient's angular frequency for they noisy signal provided in Figure \ref{fig:results2}. From Figure \ref{fig:results5} we can see that the Gustafson algorithm appropriately separated out the signal (carrier frequency) from the noise even though it was noise obvious in the corresponding Fourier transform. It is worth noting that the search results in a transform that is asymmetric in frequency; this is a function of the fact that the Gustafson algorithm includes a rotation in Fourier space that is opposite to that of the Fourier transform. With Figure \ref{fig:results6}, it can be observed that the Gustafson algorithm accurately obtained modulation frequency of the noisy signal. Since the search for the carrier frequency and modulation frequency is sensitive, it is important to use small steps; this will aid in preventing one from accidentally skipping over the correct solution. Like the previous results, the Gustafson algorithm was able to extract the correct recipient's angular frequency (Fig. \ref{fig:result7}) and the modulation index (Fig. \ref{fig:result8}) of the frequency modulated signal. Since the search for the modulation index and recipient's angular frequency is relatively smooth, one may take tolerably larger step sizes and still converge to the right solution.
 
 \begin{figure}[H]
 	\centering	
@@ -899,9 +894,9 @@ To test the  robustness of the Gustafson algorithm against noise, we searched fo
 	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=.9\linewidth]{gustafsonAlgoStepInGamma.pdf}
-  		\caption{}
+  		\caption{\label{fig:result8} Search over modulation index}
 	\end{subfigure}
-	\caption{\label{fig:} Sampling Rate = 300Hz, Carrier = 20Hz, Mod Frequency = 6Hz, Mod Index = 10, Time Series Duration = 10s}
+	\caption{\label{fig:} Application of the Gustafson algorithm to the noisy frequency modulated signal illustrated in Fig. \ref{denoise_2}}
 \end{figure}
 
 \section{Conclusion}
