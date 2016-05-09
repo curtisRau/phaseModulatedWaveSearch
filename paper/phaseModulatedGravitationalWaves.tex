@@ -1,7 +1,6 @@
 \documentclass[onecolumn, groupedaddress, 10pt]{revtex4-1}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-%\usepackage{mathtools}											% For putting boxes around equations "\Aboxed{}"
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}											% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI
@@ -47,25 +46,6 @@ By building on the method established in \citep{Deanna}, this paper primarily se
 \maketitle
 
 % --------------------------- Code for the Cover Page ---------------------------------------------------------------------------------
-
-\pagebreak
-
-\section*{Division of Labor}
-\textbf{Curtis Rau:}
-Curtis was the most familiar with the topic and therefore performed the role of group leader identifying topics and problems of interest to be researched. He was also in charge of writing sections: "The Gustafson Algorithm", and "The Gustafson Algorithm as a Search Algorithm".  He also wrote the section "Implementation of the Gustafson Algorithm in C++" for another class, along with the C++ code.  He presented his part in the class presentation.
-
-
-\textbf{Colin Gordon:}
-Colin contributed greatly in his research and solving of the phase modulation problem for astronomical signals cause by rotation of the earth using circular orbit approximation. He wrote the introduction to the paper, advised Sam on his section for noise and error analysis, and helped review and edit the paper as a whole. He presented his work in class.
-
-\textbf{David Witalka:}
-David researched and wrote the sections concerning the Nyquist frequency and Carson's rule. He also added the section pertaining to the speed of the Gustafson Algorithm. David edited and reworded the introduction and helped review and edit the paper as a whole. He also created and organized the slides presented in class.
-
-\textbf{Samuel Akwei-Sekyere:}
-Sam researched and wrote the section on noise and error analysis, and wrote the results. He helped greatly in rewording problem sections through out the paper, and greatly expanded the discussion of all topics.  Sam played a major role in reviewing and editing others' sections.  He presented his work in class.  Sam also wrote the Matlab code for the noise removal.
-
-\pagebreak
-
 
 \section{Introduction}
 General Relativity postulates that information about the spatial distribution of matter in the universe is transmitted via a gravitational field \cite{einstein1990gravitational}. Information regarding changes in mass distribution of the universe propagate through space-time away from the location of that change at the speed of light.  Special events, where the quadrupole moment of the mass distribution changes, emit gravitational radiation \cite{poisson1998gravitational}.  Extremely violent events in the universe can release enough gravitational radiation to be detectable from Earth.
@@ -224,6 +204,7 @@ h_0 e^{i\phi_0} \delta (\omega - \omega_0) = \sum_{n=-\infty}^{\infty} e^{in(\ph
 For clarity and later convenience let's have $n\to -n$.  Let us employ a property of the Bessel functions: \cite{kreh}
 
 \begin{align}
+\label{eqn:property 2 of Bessel Functions}
 J_{-n} (z) &= (-1)^n J_n(z).
 \end{align}
 
@@ -351,164 +332,6 @@ This too can happen twice or never.  If this is false then the sum is zero.
 \end{align}
 
 So if we guess every search parameter correctly, $\omega = \omega_0$, $\omega_1 = \widetilde{\omega}_1$, $\Gamma = \widetilde{\Gamma}$, and $\phi_1 = \widetilde{\phi}_1$, then we recover the true amplitude of the wave, as indicated by the Gustafson Algorithm. 
-
-
-\section{Carson's Rule and the Nyquist frequency}
-In order too fully reconstruct the carrier frequency we would need to take an infinite sum over the sidebands. As this is impractical and unnecessary as many terms are insignificant, we need to find a way to limit the number of sidebands we are summing over. The first problem is locating the sidebands' characteristic frequency. There are infinite sideband frequencies and eventually they will be higher than the Nyquist frequency which will cause aliasing of the sideband frequency. The Nyquist frequency, $\psi_N$, is defined as the maximum frequency that can be accurately reconstructed and is equal to half of the sampling frequency, $\psi_s$.
-
-\begin{equation}
-\psi_N = \frac{1}{2}\psi_s
-\end{equation}
-
-Any side band with a frequency of $\psi_0$ higher than the Nyquist frequency, but less than the sampling frequency, will be reconstructed with a frequency of ($\psi_s$ –- $\psi_0$). That is the frequency will be under-sampled and an alias frequency will be produced. When this occurs the best case scenario is that the alias frequency is unique and does not correspond to the frequency of another lower frequency sideband. In this case we can use anti-aliasing techniques to correct for the aliasing and still obtain information about the amplitude and frequency of the higher side bands. The worst case scenario is that the aliased frequency is too close to another lower frequency sideband and this will cause two problems: a systematic error will be added to the measurement of the lower side band’s amplitude, and we will be unable to determine the necessary information on what the amplitude of the higher frequency would be. To minimize the effect this might have we would like any sidebands with a frequency over the Nyquist frequency to have as low an amplitude as possible. For this we can employ Carson’s rule. Carson’s rule can be understood to say that almost all (roughly 98 percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$, defined by:
-
-\begin{equation}
-B_T = 2(\Delta\psi + \psi_m)
-\end{equation}
-
-where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to perfectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
-
-\begin{equation}
-B_T = 2(\Delta\psi + \psi_m)
-\end{equation}
-
-where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to perfectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
- 
-
-\section{Error Analysis}
-While the search for monochromatic gravitational waves via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detected by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated \citep{abramovici1996improved} \citep{aasi2013enhanced}.
-
-\subsection{Noise Sources}
-Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
-
-\subsection{Noise Elimination}
-As mentioned previously, quantum noise --- in particular, thermal noise --- has been implicated as a limiting factor in the sensitivity of gravitational wave interferometers and hence a prime factor in the degradation of the signal quality \citep{Saulson}. Following from this, it can be inferred that the distribution of the noise is approximately Gaussian.
-
-By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to find segments with pure noise.
-
-In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. This method utilizes the following principle: the nature of the noise is not known but the nature of the signal is known. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of intrinsic mode functions and assumes the noise is correlated across different channels.
-
-\subsubsection{Proposed Denoising Algorithm}
-In an effort to reduce the noise, we shall consider data from two channels. By the assumption that the noise observed is additive (and correlated), we yield the following:
-\begin{equation}
-\xi^{(1)}(t) = f^{(1)}(t) + \epsilon^{(1)}(t)
-\end{equation}
-\begin{equation}
-\xi^{(2)}(t) = f^{(2)}(t) + \epsilon^{(2)}(t)
-\end{equation}
-
-%\section{Various Complecations that need to be dealt with}
-%-The LIGO data is interupted (ie. it comes in chunks--it is not a continuous streem of data).  How will this be dealt with?
-%-Estimating the likelyhood that any signal we see is truly a discovery and not noise. (Error Analysis)
-%-Negative frequencies imply the wave is traveling backwards in time.  This is not physically realistic.  How can we deal with this?  The wave we see is real, so in order for the fourier series to be real we need negative frequencies to cancel the imaginary terms.
-%-Real data obays the law of causality.  That means the signal starts at t=0 and f(t)=0 for t<0.  Putting this restriction on our waveform adds an infinite number of higher frequencies to the fourier transform, even though our waveform doesn't truly contain those frequencies.  How should this be dealt with?  Hardy functions?  (Colin)
-%-Nyquist frequency is defined as half of the sampling frequency and it puts an effective maximum on the frequencies we can detect. Any frequency that exists above the Nyquist frequency will result in ailising. Specifically the amplitude of any frequency $\omega_0$ higher than $\omega_N$ will be "folded over" and be added to the amplitude of its symmetric counterpart $(\omega_0 - \omega_N)$. This will result in the measured amplitude of frequencies lower than $\omega_N$ having a systematic error component equal to the magnitude of the amplitude of the frequencies greater than $\omega_N$.  Assuming that the amplitude of frequenices decays fast enough this systematic error component can be made arbitrarliy small by increasing the sampling frequency. An inspection of the sampling frequency used in the experiment will allow us to estimate this systematic error component and put a maximum on its effect. 
-%-The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
-%-Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
-%-This means taking the fourier transform over more data will increase the signal to noise ratio.
-%-The LIGO interferometers sample the data at a finite frequency.  This introduces a maximum possible frequency of Gravitational Waves that can be detected, up to the Niquest Frequency.  This will, in tern, limit the maximum number of terms we can include in our sum (equation (9)).  What is the biggest $\omega_c$, $\Omega$, and $\Gamma$ that can be reasonably detected? (Task for Fourier Analysis Class MTH 490)
-%-Obviously the duration of data is finite.  This puts a limit on how finly the Fourier Transform can resolve frequencies, ie. how small frequency bins can be.  This in tern tells us how small our step size in $\omega_c$ and $\Omega$ can be.  What are they? (Task for Fourier Analysis Class MTH 490)
-%-Over very long periods of time $\omega_c \to 0$ because the neutron star loses energy/momentum to gravitational wave radation.  Over relatively much much shorter time periods $\Omega$ and $\Gamma$ change due to environmental reasons (not entirely sure on this).  What limitations does this put on our search, especially if the explicit nature of the time evolution of these parameters is unknown? ANSWER: it shortens the ammount of time we can take data over? (Task for Fourier Analysis Class MTH 490)
-%-There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
-
-where $\xi^{(n)}(t)$ is the data observed, $f^{(n)}(t)$ is the true signal and $\epsilon^{(n)}(t)$ is the noise obtained from the n-th channel (or gravitational wave interferometer) with $\epsilon^{(n)}(t) \sim \mathcal{N}(0,\sigma^2)$.
-
-First, we disintegrate each observed signal into $\alpha$ intrinsic mode functions via empirical mode decomposition and arrange them into a $2 \alpha \times T$ matrix $\mathbf{L}$:
-
-\begin{equation}
-\mathbf{L} = \left( \begin{array}{cccc}
-l_{1,t_1}^{(1)} & l_{1,t_2}^{(1)} & \cdots & l_{1,t_T}^{(1)} \\
-l_{2,t_2}^{(1)} & l_{2,t_2}^{(1)} & \cdots & l_{2,t_T}^{(1)} \\
-\vdots & \vdots & \vdots & \vdots \\
-l_{\alpha,t_1}^{(1)} & l_{\alpha ,t_2}^{(1)} & \cdots & l_{\alpha,t_T}^{(1)} \\
-l_{\alpha+1,t_1}^{(2)} & l_{\alpha+1,t_2}^{(2)} & \cdots & l_{\alpha+1,t_T}^{(2)} \\
-l_{\alpha+2,t_2}^{(2)} & l_{\alpha+2,t_2}^{(2)} & \cdots & l_{\alpha+2,t_T}^{(2)} \\
-\vdots & \vdots & \vdots & \vdots \\
-l_{2\alpha,t_1}^{(2)} & l_{2\alpha,t_2}^{(2)} & \cdots & l_{2\alpha,t_T}^{(2)}
-\end{array} \right)
-\end{equation}
-
-where $l_{p,t_q}^{(n)}$ is the $\left[ \bigg( (p-1) \textnormal{mod } \alpha \bigg) + 1\right]$-th intrinsic mode function at time $t_q$ of $\xi^{(n)}(t)$, and with $T$ being the total number of data points observed.
-
-Thereafter, the fast Fourier transform of each intrinsic mode function in $\mathbf{L}$ is computed to obtain a matrix $\mathcal{F} \left( \mathbf{L} \right)$. Singular value decomposition of the variance-covariance matrix obtained from $\mathcal{F}{ \left( \mathbf{L} \right) }$ is then computed to result in the following:
-\begin{equation}
-\Sigma = \mathbf{USV}
-\end{equation}
- 
-where $\Sigma = T^{-1} \left[ \mathcal{F}(\mathbf{L}) ^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}(\mathbf{L})^{\mathbf{T}} T^{-1} \right]^{ \dagger } \left[ \mathcal{F}(\mathbf{L})^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}( \mathbf{L})^{\mathbf{T}} T^{-1} \right] $with $(\cdot)^\mathbf{T}$ being the transpose, the conjugate transpose $(\cdot)^\dagger$ and $\mathbf{1}$ a $T \times 1$ column matrix.
-
-
-The fast Fourier transforms are de-correlated to form a matrix $\mathbf{R}$ by employing the following:
-\begin{equation}
-\mathbf{R} = \mathbf{U}^{\mathbf{T}}\mathbf{L}
-\end{equation}
-
-After the decorrelation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following procedure:
-
-\begin{equation}
-y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
-\end{equation}
-where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$.
-
-To apply the threshold, the projections with eigenvalues whose indices are less than $y$ are retained and the rest are replaced with zero row vectors:
-
-\begin{displaymath}
-   \mathbf{R}_r = \left\{
-     \begin{array}{lr}
-        \mathbf{R}_r & , r < y     \\
-       \mathbf{0} & , r \geq y
-     \end{array}
-   \right.
-\end{displaymath}
-where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$.
-
-The fast Fourier transforms are then re-correlated to obtain denoised intrinsic mode functions in the following manner:
-\begin{equation}
-\tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}
-\end{equation}
-
-The real component of the inverse fast Fourier transform of each row of $\mathbf{\tilde{L}}$ is then computed to obtain a matrix $\mathbf{D}$ of similar architecture with denoised intrinsic mode functions. Thereafter, the reconstructed signals $\hat{\xi^{(n)}}(t)$ are obtained as follows:
-\begin{equation}
-\hat{\xi^{(n)}}(t_{q}) = \sum_{u = (n-1)\alpha + 1}^{n\alpha} \mathbf{d}_{u,q}
-\end{equation}
-where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\textnormal{th}$ column of $\textbf{D}$.
-
-\subsubsection{Discussion}
-In contrast with denoising techniques such as low-pass filtering, this approach does not require the knowledge of the highest frequency of the signal being recorded. However, the knowledge of how much variance of the data to keep is integral to successful denoising --- this is usually unknown and techniques have been proposed to solve this non-trivial problem \cite{}.
-
-To demonstrate the potential of this procedure in removing correlated Gaussian noise, two frequency modulated signals that are phase shifted from each other are adulterated with correlated Gaussian noise. The original signals are then reconstructed using the proposed denoising algorithm with a threshold of $99$ percent --- that is, eigenvectors that account for closest to (but, less than) $99$ percent of the variation of the data obtained from the set of multichannel intrinsic mode functions are retained. In Figure \ref{fig:denoise_1}, it can be easily observed that the algorithm extinguished an appreciable amount of the high frequency component that was not previously present in the data and selectively reduced the magnitude of the Fourier transform of the noise components with low frequency. Figure \ref{fig:denoise_2} was no different in terms of its denoising performance. It is worth noting that both results do have some discrepancy --- and their discrepancies are not the same. This feature is due to the fact that, although the noise sources are correlated, the noises are different.
-
-\begin{figure*}[ht]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[width=.9\linewidth]{denoise_1.jpg}
-  		\caption{\label{fig:denoise_1} Fourier transform of the proposed denoising approach for channel 1.}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[width=.9\linewidth]{denoise_2.jpg}
-  		\caption{\label{fig:denoise_2} Fourier transform of the proposed denoising approach for channel 2.}
-	\end{subfigure}
-	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
-\end{figure*}
-
-A fundamental inquiry that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean-square errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible th
-
-\begin{figure*}[ht]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[width=.9\linewidth]{denoise_3.jpg}
-  		\caption{\label{fig:denoise_3} Output wrt MSE and SNR}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[width=1.15\linewidth]{denoise_4.jpg}
-  		\caption{\label{fig:denoise_4} Behavior of the proposed algorithm under different correlations and SNRs}
-	\end{subfigure}
-	\caption{Behavior of outputs}
-\end{figure*}
 
 
 \section{Implementing the Gustafson Algorithm in C++}
@@ -729,7 +552,7 @@ N = 100 \cdot (n + 1) \cdot \Bigg \lfloor \frac{2z}{\pi} + 1  \Bigg \rfloor,
 
 we achieved excellent results (accurate consistently to 16 decimal places) for a wide range of $z$ and $n$.  The $+1$'s are to ensure accurate results when $z$ or $n$ are zero.  The algorithm can have problems when $J$ is extremely small.  Then the function can be off by many orders of magnitude, but because it is essentially zero, it does not seem to effect our results when used as a boundary condition for solving Bessel's Differential Equation.
 
-\begin{figure*}[H]
+\begin{figure*}[t]
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
@@ -771,17 +594,17 @@ Figure \ref{fig:selectBesselFunctions} provides three examples of Bessel Functio
 	\centering
 	\begin{subfigure}{.5\textwidth}
   		\centering
-  		\includegraphics[width=.5\linewidth]{BesselJ4.png}
+  		\includegraphics[width=.9\linewidth]{BesselJ4.png}
   		\caption{n=4, numPts=10,000, xMax=20, comptime=0.00082}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
   		\centering
-  		\includegraphics[width=.5\linewidth]{BesselJ40.png}
+  		\includegraphics[width=0.9\linewidth]{BesselJ40.png}
   		\caption{n=40, numPts=10,000, xMax=100, comptime=0.00092}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
   		\centering
-  		\includegraphics[width=.5\linewidth]{BesselJ400.png}
+  		\includegraphics[width=0.9\linewidth]{BesselJ400.png}
   		\caption{n=400, numPts=10,000, xMax=800, comptime=0.00200;  About half the computation time went to calculating the endpoint!}
 	\end{subfigure}
 	\caption{\label{fig:selectBesselFunctions}}
@@ -792,172 +615,108 @@ In Figure \ref{fig:TA_bessel}, it can be observed that the standard approach and
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.75\linewidth]{BesselJn80.png}
-	\caption{This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by our code.  The two sets of data are in excellent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement.  This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a laptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma$ and n were solved for.}
+	\caption{This plot is a plot of $J_n(80)$ for values of $n\in (0,100)$.  The blue curve was generated by the BesselJ function of Mathematica.  The red dots were calculated by our code.  The two sets of data are in excellent agreement at except perhaps $n=0,85$ in which case there is a slight disagreement.  This is a small selection of the $400,000$ data points my code generated in $0.33$ seconds (on 5 year old a laptop).  It solved the Bessel differential equation for $4000$ steps in $\Gamma \in (0,100)$, then saves the output, and moved on to solve Bessel's Equation for the next value of n until all values of $\Gamma$ and n were solved for.\label{fig:TA_bessel} }
 \end{figure}
 
+\subsection{Implementing the Gustafson Algorithm}
+A practical implementation requires some modifications to the Gustafson Algorithm.  Instead of calculating the negative order Bessel Functions we can use the relation given in equation (\ref{eqn:property 2 of Bessel Functions}).  Restricting the algorithm in this way reduces computation time and memory requirements.
+
+\begin{align}
+h_0 e^{i\phi_0} \delta (\omega - \omega_0) 
+&= 2 
+	\left( 
+  		  \sum_{n=-\infty}^{-1} e^{in(-\phi_1+\pi/2)} J_{|n|}(\Gamma) \hat{f} (\omega + n\omega_1)
+		+ \sum_{n=0}^{\infty} e^{-in(\phi_1+\pi/2)} J_n(\Gamma) \hat{f} (\omega + n\omega_1)
+	\right)																							\\
+&= 2 
+	\left( 
+		J_0(\Gamma) \hat{f} (\omega) + \sum_{n=1}^{\infty} e^{-in\pi/2} J_n(\Gamma) 
+		\left[ 
+			e^{in\phi_1} \hat{f} (\omega - n\omega_1) + e^{-in\phi_1} \hat{f} (\omega + n\omega_1) 
+		\right]
+	\right)
+\end{align}
+
+-because the FT is symmetric about omega0 it is tempting to simply multiply each sideband by 2 and sum over one side.
+-for robustness against noise we want to sum over sidebands on both sides of omega0, not just one.
+
+The infinite limits on the sums must be made finite in any computational implementation.  By the \textit{\textbf{Riemann-Lebesgue Lemma:} If $f\in L^1$, then $\hat{f}(\omega)\to 0$ as $\omega \to \pm \infty$ \citep[P.217]{folland}.} this is well justified.  The question is, what is an appropriate number of sidebands to sum over?  Power is distributed to higher order sidebands as the modulation index increases, thus the number of sidebands to include in the sum should be determined by $\Gamma$.  Upon inspection of the Fourier Transform plotted for various values of $\Gamma$ a trend appears.  Going out from the carrier frequency in ether direction, the power in the sidebands oscillates around, slowly increasing until a maximum is reached, after which the power rapidly goes to zero.  We therefore want to find the value of $n$ that maximizes $J_n(\Gamma)$ for any value of $\Gamma$.  This $n$, multiplied by some constant, gives the number of sidebands to include in the sum.  The following relation, which could not be found in existing literature, was discovered while researching this project.  It will be stated without proof.
+
+\textit{\textbf{Rau's Theorem:} For any $z\in (2,\infty)$ the value of $\nu$ that maximizes $J_\nu (z)$ asymtotically approaches $\nu \to z - \log_\pi (z)$.}
+
+We can use this to calculate how many sidebands we need to sum over.  
+
+\begin{align}
+N_{sb} (\Gamma) = 1.5 \, \textsc{round} \left[ \Gamma - \log_\pi ( \Gamma ) \right] + 1
+\end{align}
+
+The multiplicative factor of $1.5$ and the additive constant of $1$ are to make the relation work for smaller modulation indicies.  This ensures at least $98\%$ of the power is included in the sum for all values of $\Gamma$.
+
+-the size of the bessel matrix is based on the max value of gamma in the search.
+-performing the algorithm suggests that steps in gamma may not need to be very small because we're not stepping over a delta function
+
+
+\subsubsection{Aliasing and Frequency Folding}
+Typically the Discrete Fourier Transform runs over both positive and negative frequencies.  Since the data considered here is real, the negative frequencies contain no additional information and can be ignored.  This restriction cuts the time required to perform the DFT in half.  The frequencies the search has access to are between zero and the Nyquist Frequency.  It is possible for frequencies outside of this range to contain a significant portion of the power.  These frequencies will be folded.  
 
 
 
-\section{Carson's Rule and the Nyquist frequency}
-In order too fully reconstruct the carrier frequency we would need to take an infinite sum over the sidebands. As this is impractical and unnecessary as many terms are insignificant, we need to find a way to limit the number of sidebands we are summing over. The first problem is locating the sidebands' characteristic frequency. There are infinite sideband frequencies and eventually they will be higher than the Nyquist frequency which will cause aliasing of the sideband frequency. The Nyquist frequency, $\psi_N$, is defined as the maximum frequency that can be accurately reconstructed and is equal to half of the sampling frequency, $\psi_s$.
+-only search over positive values of omega0.
+-only search over positive values of omega1.
 
-\begin{equation}
-\psi_N = \frac{1}{2}\psi_s
-\end{equation}
 
-Any side band with a frequency of $\psi_0$ higher than the Nyquist frequency, but less than the sampling frequency, will be reconstructed with a frequency of ($\psi_s$ –- $\psi_0$). That is the frequency will be under-sampled and an alias frequency will be produced. When this occurs the best case scenario is that the alias frequency is unique and does not correspond to the frequency of another lower frequency sideband. In this case we can use anti-aliasing techniques to correct for the aliasing and still obtain information about the amplitude and frequency of the higher side bands. The worst case scenario is that the aliased frequency is too close to another lower frequency sideband and this will cause two problems: a systematic error will be added to the measurement of the lower side band’s amplitude, and we will be unable to determine the necessary information on what the amplitude of the higher frequency would be. To minimize the effect this might have, we would like any sidebands with a frequency over the Nyquist frequency to have as low an amplitude as possible. For this we can employ Carson’s rule. Carson’s rule can be understood to say that almost all (roughly 98 percent) of the power for a frequency-modulated sinusoidal signal is contained within a finite bandwidth $B_T$, defined by:
-
-\begin{equation}
-B_T = 2(\Delta\psi + \psi_m)
-\end{equation}
-
-where $\Delta\psi$ is the peak frequency deviation of the instantaneous frequency $\psi(t)$ from the center carrier frequency $\psi_c$, and $\psi_m$ is the highest frequency in the modulating signal. In our case the highest frequency of the modulating signal is the carrier frequency, $\psi_c$. From this calculation we can adjust our sampling frequency to ensure it is large enough in order to minimize aliasing. This also puts a limit on the number  of sidebands we need to sum over to just those that fall within the bandwidth.  The important thing to take away from this is that it takes an infinite bandwidth to perfectly transmit a phase or frequency modulated wave, regardless of how smooth it is, but in practice only a finite bandwidth is needed for an accurate approximation.
+-using aliased sidebands adds some computational overhead in calculating the new frequency.  How much? probably not a lot.
 
 
 
-\section{Error Analysis}
-While the search for monochromatic gravitational waves obtained via the LIGO detector is relatively effortless, the adulteration of signals obtained from the detector by noise adds an appreciable number of complications to the problem. By the same token, techniques by which improved resistance of the LIGO detector to noise can be obtained has been investigated vigorously \citep{abramovici1996improved} \citep{aasi2013enhanced}.
 
-\subsection{Noise Sources}
-Since the signal being searched for is relatively stable but of little amplitude, the reliability of data obtained from the detector is related to the degree of noise therein. Among others, quantum, thermal, seismic and Newtonian noise have been implicated as prime drivers of LIGO data adulteration \citep{Saulson}. Since the prime noise contributor is quantum, a summation of all the noise sources are approximately Gaussian. Thus, it suffices to use the properties of Gaussian noise to understand the volatility of the data.
+now to calculate the new frequency bin for aliased sidebands. 
 
-\subsection{Noise Elimination}
-As mentioned previously, quantum noise --- in particular, thermal noise --- has been implicated as a limiting factor in the sensitivity of gravitational wave inteferometers and hence a prime factor in the degradation of the signal quality; this noise source is generally modeled as Gaussian \citep{Saulson}.
+for positive frequencies
+Calculate the folding zone:
 
-By low-pass filtering or spectral subtraction, it is possible to derive signals with high SNR; however, these widely-accepted approaches require information which can be difficult to obtain. Since the frequency of the monochromatic wave being searched for is not known, low-pass filtering may result in erroneous outputs. Spectral subtraction requires a sample of the noise; nevertheless, due to the low SNR of LIGO data, it is precarious to search for segments with pure noise.
+\begin{align}
+N_{FZ} = \left\lceil \frac{|f|}{f_{nq}} \right\rceil
+\end{align} 
 
-In this section, we introduce an alternate approach by which Gaussian noise in data may be reduced. Our methodology consists of subtracting estimated noise from the signal via singular value decomposition of the Fourier transform of intrinsic mode functions (see appendix) and assumes the noise is correlated across different channels. A significant part of this approach is motivated by \cite{oweiss2001noise} and \cite{aminghafari2006multivariate}. It is worth noting that because correlated Gaussian noise is prevalent, this approach may be used for a host of other signals.
+if $N_{FZ}$ is $0$ or $1$, then the frequency is unaliased.  If this is not the case and $N_{FZ}$ is even, then the frequency is aliased and is said to be in an even folding zone.  Frequencies in these zones are mirrored and encure a phase shift of $\pi$.  
 
-\subsubsection{Proposed Denoising Algorithm}
-In an effort to reduce the noise, we shall consider data from two channels. By the assumption that the noise observed is additive (and correlated), we yield the following:
-\begin{equation}
-\xi^{(1)}(t) = f^{(1)}(t) + \epsilon^{(1)}(t)
-\end{equation}
-\begin{equation}
-\xi^{(2)}(t) = f^{(2)}(t) + \epsilon^{(2)}(t)
-\end{equation}
+\begin{align}
+\hat{f}[f] \to -\hat{f}[f_{nq} - f \pmod{f_{nq}} ]
+\end{align}
 
-%\section{Various Complecations that need to be dealt with}
-%-The LIGO data is interupted (ie. it comes in chunks--it is not a continuous streem of data).  How will this be dealt with?
-%-Estimating the likelyhood that any signal we see is truly a discovery and not noise. (Error Analysis)
-%-Negative frequencies imply the wave is traveling backwards in time.  This is not physically realistic.  How can we deal with this?  The wave we see is real, so in order for the fourier series to be real we need negative frequencies to cancel the imaginary terms.
-%-Real data obays the law of causality.  That means the signal starts at t=0 and f(t)=0 for t<0.  Putting this restriction on our waveform adds an infinite number of higher frequencies to the fourier transform, even though our waveform doesn't truly contain those frequencies.  How should this be dealt with?  Hardy functions?  (Colin)
-%-Nyquist frequency is defined as half of the sampling frequency and it puts an effective maximum on the frequencies we can detect. Any frequency that exists above the Nyquist frequency will result in ailising. Specifically the amplitude of any frequency $\omega_0$ higher than $\omega_N$ will be "folded over" and be added to the amplitude of its symmetric counterpart $(\omega_0 - \omega_N)$. This will result in the measured amplitude of frequencies lower than $\omega_N$ having a systematic error component equal to the magnitude of the amplitude of the frequencies greater than $\omega_N$.  Assuming that the amplitude of frequenices decays fast enough this systematic error component can be made arbitrarliy small by increasing the sampling frequency. An inspection of the sampling frequency used in the experiment will allow us to estimate this systematic error component and put a maximum on its effect. 
-%-The signal we are looking for is a very stable wave, it has little phase drift, frequency drift, and amplitude drift on time scales of the order of many periods.
-%-Much of the noise on the other hand is Quantum Noise, so it is perfectly random.  The phase, and amplitude of a certain frequency share an uncertainty relation so the phase and amplitude, by the laws of physics, must drift.
-%-This means taking the fourier transform over more data will increase the signal to noise ratio.
-%-The LIGO interferometers sample the data at a finite frequency.  This introduces a maximum possible frequency of Gravitational Waves that can be detected, up to the Niquest Frequency.  This will, in tern, limit the maximum number of terms we can include in our sum (equation (9)).  What is the biggest $\omega_c$, $\Omega$, and $\Gamma$ that can be reasonably detected? (Task for Fourier Analysis Class MTH 490)
-%-Obviously the duration of data is finite.  This puts a limit on how finly the Fourier Transform can resolve frequencies, ie. how small frequency bins can be.  This in tern tells us how small our step size in $\omega_c$ and $\Omega$ can be.  What are they? (Task for Fourier Analysis Class MTH 490)
-%-Over very long periods of time $\omega_c \to 0$ because the neutron star loses energy/momentum to gravitational wave radation.  Over relatively much much shorter time periods $\Omega$ and $\Gamma$ change due to environmental reasons (not entirely sure on this).  What limitations does this put on our search, especially if the explicit nature of the time evolution of these parameters is unknown? ANSWER: it shortens the ammount of time we can take data over? (Task for Fourier Analysis Class MTH 490)
-%-There are multiple data channels (because there are multiple observatories).  Could we compare data channels to help eliminate noise and pick out the exceptionally weak signals?
+If $N_{FZ}$ is greater than $1$ and odd, then the frequency is aliased and said to be in an odd folding zone.  Frequencies in these zones are translated and do not encure a phase shift.
 
-where $\xi^{(n)}(t)$ is the data observed, $f^{(n)}(t)$ is the true signal and $\epsilon^{(n)}(t)$ is the noise obtained from the n-th channel (or gravitational wave interferometer) with $\epsilon^{(n)}(t) \sim \mathcal{N}(0,\sigma^2)$.
-
-First, we disintegrate each observed signal into $\alpha$ intrinsic mode functions via empirical mode decomposition (see appendix) and arrange them into a $2 \alpha \times T$ matrix $\mathbf{L}$:
-
-\begin{equation}
-\mathbf{L} = \left( \begin{array}{cccc}
-l_{1,t_1}^{(1)} & l_{1,t_2}^{(1)} & \cdots & l_{1,t_T}^{(1)} \\
-l_{2,t_2}^{(1)} & l_{2,t_2}^{(1)} & \cdots & l_{2,t_T}^{(1)} \\
-\vdots & \vdots & \vdots & \vdots \\
-l_{\alpha,t_1}^{(1)} & l_{\alpha ,t_2}^{(1)} & \cdots & l_{\alpha,t_T}^{(1)} \\
-l_{\alpha+1,t_1}^{(2)} & l_{\alpha+1,t_2}^{(2)} & \cdots & l_{\alpha+1,t_T}^{(2)} \\
-l_{\alpha+2,t_2}^{(2)} & l_{\alpha+2,t_2}^{(2)} & \cdots & l_{\alpha+2,t_T}^{(2)} \\
-\vdots & \vdots & \vdots & \vdots \\
-l_{2\alpha,t_1}^{(2)} & l_{2\alpha,t_2}^{(2)} & \cdots & l_{2\alpha,t_T}^{(2)}
-\end{array} \right)
-\end{equation}
-
-where $l_{p,t_q}^{(n)}$ is the $\left[ \bigg( (p-1) \textnormal{mod } \alpha \bigg) + 1\right]$-th intrinsic mode function at time $t_q$ of $\xi^{(n)}(t)$, and with $T$ being the total number of data points observed.
-
-Thereafter, the fast Fourier transform of each intrinsic mode function in $\mathbf{L}$ is computed to obtain a matrix $\mathcal{F} \left( \mathbf{L} \right)$. Singular value decomposition of the variance-covariance matrix $\Sigma$ obtained from $\mathcal{F}{ \left( \mathbf{L} \right) }$ is then computed to result in the following:
-\begin{equation}
-\Sigma = \mathbf{USV}
-\end{equation}
- 
-where $\Sigma = T^{-1} \left[ \mathcal{F}(\mathbf{L}) ^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}(\mathbf{L})^{\mathbf{T}} T^{-1} \right]^{ \dagger } \left[ \mathcal{F}(\mathbf{L})^{\mathbf{T}} - \mathbf{1}\mathbf{1}^{\mathbf{T}} \mathcal{F}( \mathbf{L})^{\mathbf{T}} T^{-1} \right] $with $(\cdot)^\mathbf{T}$ being the transpose, the conjugate transpose $(\cdot)^\dagger$ and $\mathbf{1}$ a $T \times 1$ column matrix.
+\begin{align}
+\hat{f}[f] \to \hat{f}[f \pmod{f_{nq}} ]
+\end{align}
 
 
-The fast Fourier transforms are then decorrelated to form a matrix $\mathbf{R}$ by employing the following:
-\begin{equation}
-\mathbf{R} = \mathbf{U}^{\mathbf{T}}\mathbf{L}.
-\end{equation}
-
-After the decorrelation procedure above, we seek to apply a threshold $\Delta$ which dictates the approximate percentage of statistically irrelevant information about the Fourier transform we shall discard. Prior to the thresholding procedure, the eigenvectors that contribute to approximately $\Delta$ percent of the variance of the transform by virtue of their respective eigenvalues is estimated using the following formulation:
-
-\begin{equation}
-y = \underset{b}{\operatorname{argmin}} \left( \Bigg| \frac{\sum_{j=1}^{(b)} \lambda_j}{trace \{ \mathbf{S} \}} - \frac{\Delta}{100} \Bigg| \right)
-\end{equation}
-where $y$ is the index denoting the $y^\textnormal{th}$ eigenvalue from $\lambda_y$ with $\lambda = diag{(\mathbf{S})}$. It is essential to note that the eigenvalues are ordered from the highest to the lowest; the eigenvectors are also ordered by the position of their corresponding eigenvalues.
-
-To apply the threshold, the projections with eigenvalues whose indices are less than $y$ are retained and the rest are replaced with zero row vectors:
-
-\begin{displaymath}
-   \mathbf{R}_r = \left\{
-     \begin{array}{lr}
-        \mathbf{R}_r & , r < y     \\
-       \mathbf{0} & , r \geq y
-     \end{array}
-   \right.
-\end{displaymath}
-where $\mathbf{R}_r$ the $r^{\textnormal{th}}$ row of the matrix $\mathbf{R}$. This preserves the vectors that explain closest to, but less than, $\Delta$ percent of the total variance.
-
-The fast Fourier transforms are then recorrelated to obtain denoised Fourier transforms of intrinsic mode functions in the following manner:
-\begin{equation}
-\tilde{ \mathbf{L} } = \mathbf{V}\mathbf{R}.
-\end{equation}
-
-The real component of the inverse fast Fourier transform of each row of $\mathbf{\tilde{L}}$ is then computed to obtain a matrix $\mathbf{D}$ of similar architecture with denoised intrinsic mode functions. Thereafter, the reconstructed signals $\hat{\xi^{(n)}}(t)$ are obtained as follows:
-\begin{equation}
-\hat{\xi^{(n)}}(t_{q}) = \sum_{u = (n-1)\alpha + 1}^{n\alpha} \mathbf{d}_{u,q}
-\end{equation}
-where $\mathbf{d}_{u,q}$ is the value at the $u^\textnormal{th}$ row and $q^\textnormal{th}$ column of $\textbf{D}$.
-
-\subsubsection{Discussion}
-To demonstrate the potential of this procedure in removing correlated Gaussian noise, two frequency modulated signals that are phase shifted from each other are adulterated with correlated Gaussian noise. The original signals are then reconstructed using the proposed denoising algorithm with a threshold of $99$ percent --- that is, eigenvectors that account for closest to (but, less than) $99$ percent of the variation of the data obtained from the set of multichannel intrinsic mode functions are retained. In Figure \ref{fig:denoise_1}, it can be easily observed that the algorithm extinguished an appreciable amount of the high frequency component that was not previously present in the data and selectively reduced the magnitude of the Fourier transform of the noise components with low frequency. Figure \ref{fig:denoise_2} was no different in terms of its denoising performance. It is worth noting that both results do have some discrepancy --- and their discrepancies are not the same. This feature is due to the fact that, although the noise sources are correlated, the noises are different.
-
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[scale=0.06]{denoise_1.jpg}
-  		\caption{\label{fig:denoise_1} Fourier transform of the proposed denoising approach for channel 1.}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[scale=0.06]{denoise_2.jpg}
-  		\caption{\label{fig:denoise_2} Fourier transform of the proposed denoising approach for channel 2.}
-	\end{subfigure}
-	\caption{Output of the proposed denoising approach on two channels with signals of similar frequency modulation, but shifted in time. This procedure assumes the signal being recorded is from the same source and the noise observed in each channel are correlated.}
-\end{figure}
-
-A fundamental question that needs a resolution is about how the proposed algorithm responds to different SNRs. To address this, the deviations of the Fourier transforms of reconstructed signals as a function of a myriad of SNRs were computed from the Fourier transform of the original signal. These deviation scores were measured as the mean squared errors between the reconstructed signals and the original signal. The threshold employed in this investigation was $99$ percent. From Figure \ref{fig:denoise_3}, it can be noted that the performance of the proposed algorithm increases with an increasing SNR; however, this increase in performance is limited. Since the proposed approach disregards parts of the data that are statistically irrelevant (with respect to the threshold chosen), it is plausible that parts of the original data may have been erased. This suggests that an adaptive threshold that depends on the structure of the data and the structure of the noise to be extinguished may be most appropriate for this algorithm.
-
-\begin{figure}[H]
-	\centering
-  		\includegraphics[scale=0.05]{denoise_3.jpg}
-  		\caption{\label{fig:denoise_3} The algorithm performs better with increasing SNR; however, this performance plateaus at high SNRs. The correlation coefficient $r^2 = -0.6543$ with $p < 0.05$.}
-\end{figure}
 
 
-Since a fundamental assumption the proposed algorithm makes is that the noise sources are correlated, it is important to investigate how the correlation affects its performance. To this end, a procedure similar to that of Figure \ref{fig:denoise_3} was implemented; nevertheless, a second independent variable was added --- the correlation between the noise sources. The performance for denoising in each channel was not analyzed jointly. From Figure \ref{fig:denoise_4}, it can be noticed --- as insinuated before --- that the algorithm's performance plateaus at high SNRs and progressively worsens as the same threshold is more likely to remove parts of the original data. Interestingly, the proposed approach works well with noise sources of tolerably high correlation; however, it fails to produce quality results when the correlation is really high.
+-the number of bins in the fourier transform is (only including positive frequencies)
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[scale=0.05]{denoise_4.jpg}
-  		\caption{\label{fig:denoise_4} Response of the algorithm with changing noise correlations and SNRs for channel 1.}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[scale=0.05]{denoise_5.jpg}
-  		\caption{\label{fig:denoise_5} Response of the algorithm with changing noise correlations and SNRs for channel 2.}
-	\end{subfigure}
-	\caption{Behavior of the proposed algorithm with respect to differing SNRs and noise correlations. This figure provides an insight to the performance of the proposed denoising algorithm (via the mean squared error) under the outlined conditions.}
-\end{figure}
+\begin{align}
+N_{FS}=\frac{f_{nq}}{df} + 1
+\end{align}
 
-The potential of this approach has been outlined above. With a few modifications, this denoising algorithm may improve its capability and, to some extent (depending on the structure of the data and the noise), could be modified to deal with uncorrelated noise. In the spirit of demonstrating the robustness of the Gustafson algorithm against noise, the results from the search algorithm will be analyzed with no attempt to remove noise.
+
+now we need to translate this into c++.  In our fourier transform array 
+$f_{nq} \to N_{FS} - 1$
+and
+$\hat{f}(f_i = df * i) \to \hat{f} (i) $
+
+now we can just change the index:
+if n is 0 or 1 do nothing
+
+if n is even: (where i is the ith sideband)
+$N_{FS} - 1 - N_{df} * i \pmod{N_{FS} - 1}$
+
+$N_{df} = \lfloor f_1 / df \rfloor $
+
+if n is odd: 
+$N_{df} * i \pmod{N_{FS} - 1}$
+
 
 \section{Results and Discussion}
 Since frequency modulated signals may sometimes look like noise in the time domain (see appendix), it is imperative to ascertain that the Gustafson algorithm provides accurate information about the carrier frequency. For this purpose, the Gustafson algorithm was designed to be implemented in Fourier space.
@@ -1095,36 +854,7 @@ so the Fourier transform of the real part of our frequency/phase modulated signa
 + e^{-i(\phi_0 + n\pi/2)} \delta(\omega + \omega_0 - n\omega_1) \right]
 \end{align}
 
-<<<<<<< HEAD
 Notice that the Fourier Transform of the real wave looks very similar to the Fourier Transform of the complex wave.  The difference being that the Fourier Transform of the real is symmetric about $\omega=0$ up to a phase factor.  The vectors corresponding to the positive carrier frequency rotate counterclockwise, whereas the vectors corresponding to the negative carrier frequency rotate clockwise (neglecting the rotation due to $\phi_1$ which is the same for both).  \textbf{This phase factor is the reason why the Gustafson Algorithm only picks out the positive value of $\omega_0$.}  If it is unclear what this means refer to figure (\ref{fig:gustafsonAlgoResults}e).
-=======
-%Notice that, by taking the fourier transform of just the real part of our frequency modulated function it has added the terms in red.  (Go into more detail why that is)  The other important change is that the $X_n$ and $Y_n$ terms were added (Again, go into more detail why that is).
->>>>>>> master
-
-\section{Intrinsic Mode Functions}
-Intrinsic mode functions are functions that are obtained by decomposing a signal. In general, intrinsic mode functions add up to the signal that was decomposed and are usually extracted by empirical mode decomposition \cite{huang1998empirical}.
-
-Classically, the extraction of intrinsic mode functions also yields a component named the residue --- which is the back-bone of the signal. In this section, we shall assume the residue is one of the intrinsic mode functions for simplicity. Suppose we want to disintegrate a signal $f(t)$ into $k$ intrinsic mode functions. We first find the local maxima and minima of $f(t)$. Thereafter, we interpolate the local maxima to create an upper envelope and interpolate the local minima to create a lower envelope via cubic splines. The mean of these envelopes is computed and subtracted from the input signal to result in the first intrinsic mode function. This intrinsic mode function is then subtracted from the input signal to result in the residue. This approach is repeated $k-1$ times in total to obtain $k$ intrinsic mode functions (where the last intrinsic mode function is the residue).
-
-\section{Selected Waveforms}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[width=.9\linewidth]{classicSignal.png}
-  		\caption{When the carrier frequency is much higher than the modulation frequency the frequency modulated wave is "nice". $\Gamma = 9.88, \omega_0 = 3.62, \omega_1 = 0.21, \phi_1 = 3.14$ \label{fig:niceSignal}}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[width=.9\linewidth]{interestingSignal.png}
-  		\caption{When the carrier frequency is a multiple of the modulation frequency one can get exotic waveforms.  One example of the exotic signals cyclic frequency modulation can produce.  $\Gamma = 2.88, \omega_0 = 1.5, \omega_1 = 0.75, \phi_1 = 0$ \label{fig:interestingSignal}}
-	\end{subfigure}
-	\begin{subfigure}{.5\textwidth}
-  		\centering
-  		\includegraphics[width=.9\linewidth]{nastySignal.png}
-  		\caption{When the carrier and modulation frequencies are almost equal the resulting FM wave is not so nice.  This is a particularly nasty waveform that could be mistaken as noise by looking at it. $\Gamma = 3, \omega_0 = 0.42, \omega_1 = 0.46, \phi_1 = 0.1$ \label{fig:nastySignal}}
-	\end{subfigure}
-\end{figure}
 
 % --------------------------- Code for the bibliography ---------------------------------------------------------------------------------
 \bibliography{shgBibliographyCopy}

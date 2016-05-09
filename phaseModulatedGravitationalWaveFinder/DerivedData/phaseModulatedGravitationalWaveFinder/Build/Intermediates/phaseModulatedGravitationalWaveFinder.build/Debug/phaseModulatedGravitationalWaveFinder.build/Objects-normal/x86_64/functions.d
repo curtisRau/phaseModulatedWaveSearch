@@ -1,0 +1,3 @@
+dependencies: \
+  /Volumes/userFilesPartition/Users/curtisrau/Documents/School/Physics/PHY480ComputationalPhysics/phaseModulatedGravitationalWaveFinder/phaseModulatedGravitationalWaveFinder/functions.cpp \
+  /Volumes/userFilesPartition/Users/curtisrau/Documents/School/Physics/PHY480ComputationalPhysics/phaseModulatedGravitationalWaveFinder/phaseModulatedGravitationalWaveFinder/functions.hpp
