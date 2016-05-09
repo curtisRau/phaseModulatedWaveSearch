@@ -1,53 +1,57 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: phaseModulatedGravitationalWaves.aux
+Case mismatch error between cite keys deanna and Deanna
+---line 18 of file phaseModulatedGravitationalWaves.aux
+ : \citation{deanna
+ :                 }
+I'm skipping whatever remains of this command
 The style file: plain.bst
 Database file #1: phaseModulatedGravitationalWavesNotes.bib
 Database file #2: shgBibliographyCopy.bib
-Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "morten"
+Warning--I didn't find a database entry for ""
 Warning--there's a number but no volume in Deanna
 Warning--there's a number but no series in folland
-Warning--can't use both volume and number fields in huang1998empirical
-You've used 14 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            600 strings with 6915 characters,
-and the built_in function-call counts, 4987 in all, are:
-= -- 477
-> -- 280
-< -- 3
-+ -- 114
-- -- 98
-* -- 391
-:= -- 863
-add.period$ -- 44
-call.type$ -- 14
-change.case$ -- 86
+            555 strings with 5332 characters,
+and the built_in function-call counts, 2124 in all, are:
+= -- 209
+> -- 78
+< -- 1
++ -- 33
+- -- 24
+* -- 141
+:= -- 378
+add.period$ -- 25
+call.type$ -- 8
+change.case$ -- 34
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 163
-empty$ -- 352
-format.name$ -- 98
-if$ -- 1000
+cite$ -- 10
+duplicate$ -- 84
+empty$ -- 178
+format.name$ -- 24
+if$ -- 432
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 16
-newline$ -- 73
-num.names$ -- 28
-pop$ -- 82
+int.to.str$ -- 8
+missing$ -- 9
+newline$ -- 43
+num.names$ -- 16
+pop$ -- 32
 preamble$ -- 1
-purify$ -- 75
+purify$ -- 28
 quote$ -- 0
-skip$ -- 105
+skip$ -- 50
 stack$ -- 0
-substring$ -- 296
-swap$ -- 26
-text.length$ -- 3
+substring$ -- 121
+swap$ -- 8
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 50
-warning$ -- 3
-while$ -- 45
-width$ -- 16
-write$ -- 154
-(There were 5 warnings)
+type$ -- 28
+warning$ -- 2
+while$ -- 22
+width$ -- 9
+write$ -- 87
+(There was 1 error message)
